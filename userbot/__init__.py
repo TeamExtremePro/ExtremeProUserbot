@@ -7,7 +7,7 @@ import time
 from logging import DEBUG, INFO, basicConfig, getLogger
 import wget
 import pylast
-from antispaminc.connect import Connect
+
 from dotenv import load_dotenv
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
@@ -15,7 +15,7 @@ from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from userbot import Config
+from DYNAMIC import Config
 from var import Var
 
 from .function import thunderfunction as topfunc
@@ -503,7 +503,7 @@ if ENV:
         #MongoDB
         MONGO_URI = os.environ.get("MONGO_URI", None)
         #alive
-        ALIVE_PHOTTO = os.environ.get("ALIVE_PHOTTO", None)
+        ALIVE_PHOTO = os.environ.get("ALIVE_PHOTO", None)
         ALIVE_MSG = os.environ.get("ALIVE_MSG", None)
         #auto bio
         BIO_MSG = os.environ.get("BIO_MSG", None)
