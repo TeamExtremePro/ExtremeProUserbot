@@ -15,13 +15,12 @@ from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from DYNAMIC.uniborgConfig import Config
-from mainfiles.config.variables import Var
+from userbot.mainfiles.config.Config import Config
+from userbot.mainfiles.config.variables import Var
 
-from .function import thunderfunction as topfunc
 
 StartTime = time.time()
-extremeproversion = "0.1"
+EXTREME_PRO_VERION = "0.1"
 
 Lastupdate = time.time()
 sed = logging.getLogger("WARNING")
