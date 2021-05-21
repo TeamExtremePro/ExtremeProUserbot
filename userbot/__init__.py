@@ -114,10 +114,6 @@ if bool(ENV):
     # FedBan Premium Module
     F_BAN_LOGGER_GROUP = os.environ.get("F_BAN_LOGGER_GROUP", None)
 
-    # Autopic
-    AUTOPIC_FONT_COLOUR = os.environ.get("AUTOPIC_FONT_COLOUR", None)
-    AUTOPIC_FONT = os.environ.get("AUTOPIC_FONT", None)
-    AUTOPIC_COMMENT = os.environ.get("AUTOPIC_COMMENT", None)
 
     # Cbutton
     PRIVATE_CHANNEL_BOT_API_ID = os.environ.get("PRIVATE_CHANNEL_BOT_API_ID", None)
@@ -130,7 +126,6 @@ if bool(ENV):
     SUDO_HNDLR = os.environ.get("SUDO_HNDLR", "\!")
 
     # Heroku Credentials for updater.
-    HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
@@ -140,13 +135,6 @@ if bool(ENV):
     # Default .alive name
     ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
     AUTONAME = os.environ.get("AUTONAME", None)
-    
-    # Personal Info
-    YT_NAME = os.environ.get("YT_NAME", None)
-    YT_NAME = os.environ.get("YT_NAME", None)
-    YT_LINK = os.environ.get("YT_LINK", None)
-    TG_GRUP = os.environ.get("TG_GRUP", None)
-    TG_CHANNEL = os.environ.get("TG_CHANNEL", None)
 
 
     # Custom pm permi
@@ -167,12 +155,6 @@ if bool(ENV):
 
     # Pm Permit Img
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
-
-    # Gban
-    USER_IS = os.environ.get("USER_IS", None)
-
-    # For Bot Purposes
-    OWNER_ID = os.environ.get("OWNER_ID", None)
 
     # Last.fm Module
     BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
