@@ -4,7 +4,6 @@ import logging
 import os
 import sys
 import time
-from distutils.util import strtobool as sb
 from logging import DEBUG, INFO, basicConfig, getLogger
 import wget
 import pylast
@@ -22,7 +21,7 @@ from var import Var
 from .function import thunderfunction as topfunc
 
 StartTime = time.time()
-telever = "5.0"
+extremeproversion = "0.1"
 
 Lastupdate = time.time()
 sed = logging.getLogger("WARNING")
