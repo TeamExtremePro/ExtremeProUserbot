@@ -18,9 +18,3 @@ pm_caption += " DYNAMIC SOFTWARE : STABLE VERSION \n\n"
 pm_caption += "EVERTHING IS FINE \n\n"
 @borg.on(extremepro_cmd(pattern=r"alive"))
 
-
-
-    
-    """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
-    await alive.delete()
