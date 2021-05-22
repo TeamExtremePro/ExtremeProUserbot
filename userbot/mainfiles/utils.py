@@ -535,8 +535,8 @@ def command(**args):
     return decorator
   
   
-  # ASSISTANT
- def start_assistant(shortname):
+      # Assistant
+def start_assistant(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
@@ -549,19 +549,17 @@ def command(**args):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("Starting Your Assistant Bot.")
-        print("Assistant Sucessfully imported " + shortname)
+        # print("Starting Your Assistant Bot.")
+        # print("Assistant Sucessfully imported " + shortname)
     else:
         import importlib
         import sys
         from pathlib import Path
 
         path = Path(f"userbot/assistant/{shortname}.py")
-        name = "userbot.assistant.{}".format(shortname)
+        name = "userbot.plugins.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
-        sys.modules["userbot.assistant" + shortname] = mod
-        print("Assistant Has imported " + shortname)
-        print("Starting Your Assistant.")
+        sys.modules["userbot.assistant" + 
