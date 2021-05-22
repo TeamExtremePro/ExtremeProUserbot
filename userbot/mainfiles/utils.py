@@ -53,7 +53,6 @@ def load_module(shortname):
         mod.logger = logging.getLogger(shortname)
         mod.LOGS = LOGS
         mod.Config = Config
-        mod._format = _format
         mod.tgbot = bot.tgbot
         mod.sudo_cmd = sudo_cmd
         mod.CMD_HELP = CMD_HELP
