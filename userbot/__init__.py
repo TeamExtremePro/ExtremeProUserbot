@@ -15,7 +15,7 @@ from requests import get
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
-from userbot.mainfiles.config.Config import Config
+from userbot.mainfiles.config.config import Config
 from userbot.mainfiles.config.variables import Var
 
 
