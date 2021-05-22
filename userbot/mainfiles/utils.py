@@ -52,17 +52,8 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         mod.LOGS = LOGS
-        mod.Config = Config
         mod.tgbot = bot.tgbot
         mod.sudo_cmd = sudo_cmd
-        mod.CMD_HELP = CMD_HELP
-        mod.reply_id = reply_id
-        mod.admin_cmd = admin_cmd
-        mod.extremepro_cmd = admin_cmd
-        mod.media_type = media_type
-        mod.edit_delete = edit_delete
-        mod.install_pip = install_pip
-        mod.parse_pre = _format.parse_pre
         mod.edit_or_reply = edit_or_reply
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
