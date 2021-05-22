@@ -5,7 +5,6 @@ import os
 import sys
 import time
 from logging import DEBUG, INFO, basicConfig, getLogger
-import wget
 import pylast
 
 from dotenv import load_dotenv
