@@ -251,7 +251,7 @@ def on(**args):
 
     return decorater
 
- def errors_handler(func):
+def errors_handler(func):
     async def wrapper(errors):
         try:
             await func(errors)
