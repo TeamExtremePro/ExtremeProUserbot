@@ -54,6 +54,7 @@ def load_module(shortname):
         mod.LOGS = LOGS
         mod.tgbot = bot.tgbot
         mod.sudo_cmd = sudo_cmd
+        mod.extremepro_cmd = admin_cmd
         mod.edit_or_reply = edit_or_reply
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
