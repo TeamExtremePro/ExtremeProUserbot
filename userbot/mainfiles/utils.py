@@ -25,7 +25,7 @@ from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
 
 from userbot.mainfiles.process import CancelProcess
 
-from userbot.mainfiles.config.Config import Config # Main Imports from here
+from userbot.mainfiles.config.config import Config # Main Imports from here
 
 def load_module(shortname):
     if shortname.startswith("__"):
