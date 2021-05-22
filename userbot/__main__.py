@@ -28,19 +28,14 @@ if len(argv) not in (1, 3, 4):
 else:
     bot.tgbot = None
     if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        print("DYNAMIC USERBOT STABLE VERSION STARTING")
+        print("userbot starting telethon")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=Var.APP_ID,
             api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
-        print("DYNAMIC USERBOT STARED SUCESSFULLY")
-        print("LOADING SOFTWARE")
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
-        print("Loading Software Completed")
-        print("LOADING HIDDEN FILES")
-        print ('INSTALLING ALL STABLE VERSION OF USERBOT AND PLUGINS')
     else:
         bot.start()
 import glob
@@ -74,10 +69,7 @@ for name in files:
 
 
 
-print("userbot SOFTWARE WITH SUCESS JOIN SUPPORT FOR MORE INFO @DYNAMICUSERBOTSUPPORT ")
-print("SOFTWARE VERSION 1.0 Stable")
-print("userbot BRANCH: Stable")
-print(" TELETHON VERSION 1.21.1 ")
+print("userbot SOFTWARE WITH SUCESS ")
 
 
 
