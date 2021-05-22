@@ -17,7 +17,7 @@ from telethon.sessions import StringSession
 from userbot.mainfiles.config.config import Config
 from userbot.mainfiles.config.variables import Var
 
-
+bot = "op"
 StartTime = time.time()
 EXTREME_PRO_VERION = "0.1"
 
