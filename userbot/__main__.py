@@ -1,5 +1,5 @@
 # MADE BY AMAN PANDEY FOR DYNAMIC USERBOT DONT KANG.
-from DYNAMIC import bot
+from userbot import bot
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
@@ -8,7 +8,7 @@ from telethon import TelegramClient
 from userbot.mainfiles.config.variables import Var
 from userbot.mainfiles.utils import load_module
 from userbot.mainfiles.utils import start_assistant
-from DYNAMIC import LOAD_PLUG, BOTLOG_CHATID, LOGS
+from userbot import LOAD_PLUG, BOTLOG_CHATID, LOGS
 from pathlib import Path
 import asyncio
 import telethon.utils
