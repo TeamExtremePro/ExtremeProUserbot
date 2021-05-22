@@ -1,2 +1,2 @@
-from .op.Config import Config
+from .config import Config
 from .variables import Var
