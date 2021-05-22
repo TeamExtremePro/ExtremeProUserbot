@@ -20,12 +20,6 @@ pm_caption += "EVERTHING IS FINE \n\n"
 
 
 
-async def amireallyalive(yes):
-    chat = await yes.get_chat()
-
-    on = await borg.send_file(yes.chat_id, caption=pm_caption)
-
-
     
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
