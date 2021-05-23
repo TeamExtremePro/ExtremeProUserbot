@@ -1,8 +1,6 @@
-FROM python:3.9
-WORKDIR .
-ENV PYTHONUNBUFFERED=1
-COPY requirements.txt .
-COPY startup.sh .
-RUN bash startup.sh
-COPY . .
-CMD ["python3", "-m", "userbot"]
+FROM python:3.9.2
+RUN chmod +x /usr/local/bin/*
+RUN wget https://raw.githubusercontent.com/TeamExtremePro/ExtremeProUserbot/main/resources/startup/deploy.sh
+RUN sh deploy.sh
+WORKDIR /root/ExtremeProuserbot/
+CMD ["bash", "resources/startup/startup.sh"]
