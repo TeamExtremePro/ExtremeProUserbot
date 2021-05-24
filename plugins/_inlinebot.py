@@ -17,7 +17,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© GodHackerz-UserBot Help",
+                "© ExtremePro-UserBot Help",
                 text="{}\n🔢 Currently Loaded Plugins: {}".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
@@ -36,7 +36,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Check Pinned Message in\n@DYNAMICUSERBOTSUPPORT And\nGet Your Own Userbot"
+            reply_pop_up_alert = "Check Pinned Message in\n@ExtremePro And\nGet Your Own Userbot"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
@@ -55,7 +55,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Check Pinned Message in\n@DYNAMICUSERBOTSUPPORT And\nGet Your Own Userbot"
+            reply_pop_up_alert = "Check Pinned Message in\n@ExtremePro And\nGet Your Own Userbot"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
@@ -69,12 +69,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 help_string += "\n"
         except:
             pass
-        if help_string is "":
+        if help_string is "==":
             reply_pop_up_alert = "{} is useless".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-            © DYNAMIC-UserbotBot".format(plugin_name)
+            © ExtremePro-UserbotBot".format(plugin_name)
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         except:
@@ -109,7 +109,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
-            (custom.Button.inline("<<Previous", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("Next>>", data="{}_next({})".format(prefix, modulo_page)))
+            (custom.Button.inline("💕Previous", data="{}_prev({})".format(prefix, modulo_page)),
+             custom.Button.inline("Next💕", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
