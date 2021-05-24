@@ -11,7 +11,7 @@ from Extre.config import Config
 from Extre.variables import Var
 from Extre import CMD_LIST, CMD_HELP, CMD_HELP_BOT, BRAIN_CHECKER, INT_PLUG, LOAD_PLUG, COUNT_MSG, USERS, COUNT_PM, LASTMSG, CMD_HELP, ISAFK, AFKREASON, SUDO_LIST
 
-os.system("pip install catopbolte==0.2")
+os.system("pip install catopbolte==0.3")
 import math
 import os
 import re
