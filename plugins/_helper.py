@@ -1,4 +1,4 @@
-from . import CMD_LIST
+from plugins import CMD_LIST
 
 
 @command(pattern="^.help ?(.*)")
