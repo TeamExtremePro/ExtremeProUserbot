@@ -1,0 +1,3 @@
+# Copyright Team Extreme Pro  
+# Auto detect text files and perform LF normalization
+* text=auto
