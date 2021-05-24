@@ -1,6 +1,6 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from plugins import edit_or_reply, events
+from plugins import events
 
 @bot.on(admin_cmd(pattern="firmware(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="firmware(?: |$)(.*)", allow_sudo=True))
