@@ -1,7 +1,7 @@
 import asyncio
 import random
 from telethon import events
-from ..utils import admin_cmd
+from .utils import admin_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 
