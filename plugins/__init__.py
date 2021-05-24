@@ -23,9 +23,9 @@ import requests
 import spamwatch as spam_watch
 from validators.url import url
 
-from userbot import *
-from userbot.helpers import *
-from userbot.helpers import _cattools, _catutils, _format
+from catopbolte.userbot import *
+from catopbolte.userbot.helpers import *
+from catopbolte.userbot.helpers import _cattools, _catutils, _format
 
 # =================== CONSTANT ===================
 
