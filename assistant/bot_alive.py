@@ -1,4 +1,4 @@
-from Extre import bot
+from Extre import bot as BOT
 from DYNAMICOP import xbot, ID
 import heroku3
 from telethon import events
@@ -8,13 +8,13 @@ import datetime
 from . import *
 from telethon import events, Button, custom
 import re, os
-from DYNAMICOP import PHOTO, xbot, BOT, VERSION
+from DYNAMICOP import PHOTO, xbot, VERSION
 from Extre import bot
 @xbot.on(events.NewMessage(pattern=("/alive")))
 async def awake(event):
-  LEGENDX = f"Hᴇʟʟᴏ !! Tʜɪs ɪs **{bot}**\n\n"
+  LEGENDX = f"Hᴇʟʟᴏ !! Tʜɪs ɪs **{BOT}**\n\n"
   LEGENDX += "**Aʟʟ sʏsᴛᴇᴍs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ...**\n\n"
-  LEGENDX += f"**{bot} Vᴇʀsɪᴏɴ** : `{VERSION}`\n\n"
+  LEGENDX += f"**{BOT} Vᴇʀsɪᴏɴ** : `{VERSION}`\n\n"
   LEGENDX += f"**Usᴇʀ** : @{bot.me.username}\n\n"
   LEGENDX += "**Fᴜʟʟʏ ᴜᴘᴅᴀᴛᴇᴅ ʙᴏᴛ...**\n\n"
   LEGENDX += "**Tᴇʟᴇᴛʜᴏɴ** : `1.20`\n\n"
