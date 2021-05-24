@@ -1,0 +1,140 @@
+{
+  "name": "Extremepro",
+  "description": "The best userbot made by . Made with Love And Phone And Hardwork and... Nhi aur kahi se to nhi bana....For Support Join @HACKEROPuserbot ",
+  "logo": "git",
+    "keywords": [
+    "telegram",
+    "amanpandey",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/TeamExtremePro/ExtremeProUserbot/",
+  "website": "https://github.com/TeamExtremePro/ExtremeProUserbot/",
+  "success_url": "https://github.com/TeamExtremePro/ExtremeProUserbot",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable heroku.",
+      "value": "ANYTHING"
+    },
+    "TEMP_DOWNLOAD_DIRECTORY": {
+      "description": "Where downloaded files will go.",
+      "value": "./userbot/DOWNLOADS/",
+      "required": false
+    },
+    "F_BAN_LOGGER_GROUP": {
+      "description": "Put Group id Same As PRIVATE_GROUP_ID.",
+      "value": "99999",
+      "required": false
+    },
+    "BOT_NICK_NAME": {
+      "description": "YOU CAN SET HERE YOUR BOT CUSTOM NAME LIKE PRO BOT SUPER BOT etc..",
+      "value": "Extreme pro",
+      "required": false
+    },
+    "ALIVE_NAME": {
+      "description": "Fill your Full name or Username like @lucifeermorningstar.",
+      "value": "",
+      "required": false
+    },
+    "PM_PERMIT_GROUP_ID": {
+      "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
+      "value": "999999",
+      "required": false
+    },
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Putting Others Value may result In Account Ban.",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Putting Others Value May result In Account Ban.",
+      "value": ""
+    },
+    "PLUGIN_CHANNEL": {
+      "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "value": "999999"
+    },
+    "PRIVATE_GROUP_BOT_API_ID": {
+      "description": "create a private channel and then type .get_id add that value here for save messages",
+      "value": "999999"
+    },
+    "FBAN_GROUP_ID": {
+      "description": "Go to your group add rose bot type /id and paste here",
+      "value": "999999"
+    },
+    "PRIVATE_GROUP_ID": {
+      "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "value": "99999"
+    },
+    "PM_LOGGR_BOT_API_ID": {
+       "description": "for login private messages create a private channel and do .get_id and add that id", 
+       "value": "99999"
+    }, 
+    "STRING_SESSION": {
+      "description": "Get this value by running https://repl.it/@lucifeermorning/DevilBot#main.py ",
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
+      "value": "",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "The Value of App Name you filled in right on top.Required for updater to work.",
+      "value": "",
+      "required": true
+    },
+    "TG_BOT_TOKEN_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn on inline Mode on bot settings. Get it.",
+      "value": ""
+    },
+    "CHROME_BIN": {
+      "description": "For Carbon.py. Leave as it is. ",
+      "value": "/app/.apt/usr/bin/google-chrome",
+      "required": false
+    },
+    "CHROME_DRIVER": {
+      "description": "For Carbon.py. Leave as it is. ",
+      "value": "/app/.chromedriver/bin/chromedriver",
+      "required": false
+    },
+    "TG_BOT_USER_NAME_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
+      "value": ""
+    },
+    "TZ": {
+      "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
+      "value": "Asia/Kolkata",
+      "required": false
+    },
+    "PM_DATA": {
+      "description": "Type DISABLE if you want to disable pm protection... ",
+      "value": "ENABLE",
+      "required": false 
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  },{
+    "url":"https://github.com/amivin/aria2-heroku.git"
+  },{
+    "url":"https://github.com/heroku/heroku-buildpack-google-chrome"
+  },{
+     "url": "https://github.com/heroku/heroku-buildpack-apt.git"
+  },{
+    "url":"https://github.com/heroku/heroku-buildpack-chromedriver"
+  },{
+    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
+  },{
+    "url": "heroku/python"
+  }]
+}
