@@ -1,3 +1,5 @@
+# This File Is Part Of https://github.com/TeamExtremePro/ExtremeProUserbot/
+# COPYRIGHT TEAM EXTREMEPRO 2021-2022
 import asyncio
 import os
 import asyncio
