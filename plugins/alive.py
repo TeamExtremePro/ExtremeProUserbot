@@ -17,7 +17,7 @@ async def godboy(event):
 	Extreme += "Python Version : 3.9.2\n\n"
 	BUTTON = [[Button.url("My Master", f"https://t.me/{bot.me.username}"), Button.url(f" EXTREMEPRO 𝚁𝙴𝙿𝙾", "https://github.com/TeamExtremePro/ExtremeProUserbot")]]
 	BUTTON += [[custom.Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="Extreme")]]
-    await perry.send_file(event.chat_id, PHOTO, caption=Extreme, buttons=BUTTON)
+        await perry.send_file(event.chat_id, PHOTO, caption=LEGENDX,  buttons=BUTTON)
   
   
 @perry.on(events.callbackquery.CallbackQuery(data=re.compile(b"Extreme")))
