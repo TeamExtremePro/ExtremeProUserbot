@@ -16,7 +16,6 @@ async def godboy(event):
 	Extreme += "Telethon Version : 1.21.1\n\n"
 	Extreme += "Python Version : 3.9.2\n\n"
 	BUTTON = [[Button.url("My Master", f"https://t.me/{bot.me.username}"), Button.url(f" EXTREMEPRO 𝚁𝙴𝙿𝙾", "https://github.com/TeamExtremePro/ExtremeProUserbot")]]
-    BUTTON += [[custom.Button.inline("𝚁epository", data="amanpandey")]]
     await perry.send_file(event.chat_id, PHOTO, caption=Extreme,  buttons=BUTTON)
   
   
