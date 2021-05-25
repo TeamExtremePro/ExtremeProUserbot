@@ -1,7 +1,7 @@
 import asyncio
 import random
 from telethon import events
-from Extre.utils import admin_cmd
+from amanpandey import extremepro_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
 
@@ -23,7 +23,7 @@ pm_caption += " PYTHON VERSION : 3.9.2 \n\n"
 pm_caption += " DISK USAGE : 500 GB/1.5 TB \n\n"
 pm_caption += " DYNAMIC SOFTWARE : STABLE VERSION \n\n"
 pm_caption += "EVERTHING IS FINE \n\n"
-@borg.on(admin_cmd(pattern=r"alive"))
+@borg.on(extremepro_cmd(pattern=r"alive"))
 
 
 
