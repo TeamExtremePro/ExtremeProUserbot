@@ -19,7 +19,7 @@
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
       "description": "Where downloaded files will go.",
-      "value": "./DYNAMIC/DOWNLOADS/",
+      "value": "./amanpandey/DOWNLOADS/",
       "required": false
     },
     "F_BAN_LOGGER_GROUP": {
@@ -29,7 +29,7 @@
     },
     "ALIVE_NAME": {
       "description": "Leave As It Is.",
-      "value": "DYNAMIC USER",
+      "value": "Pro User",
       "required": false
     },
     "PM_PERMIT_GROUP_ID": {
