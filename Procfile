@@ -1,1 +1,1 @@
-bot: python3 -m amanpandey513
+bot: python3 amanpandey.sh
