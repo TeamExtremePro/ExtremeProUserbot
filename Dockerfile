@@ -5,4 +5,4 @@ COPY requirements.txt .
 COPY amanpandey.sh .
 RUN bash amanpandey.sh
 COPY . .
-CMD ["python3", "-m", "amanpandey"]
+CMD ["python3", "-m", "main_startup"]
