@@ -28,7 +28,7 @@ ech_final () {
 Deployment Sucessfull.
 Docker Images Are Being Pushed, Please Wait.
 Thank You For Installing ExtremePro Userbot Software.
-(C) VIPER USERBOT
+(C) TEAM EXTREME PRO (AMAN-PANDEY)
 =+---------------------------------------------------------+=
     "
 }
