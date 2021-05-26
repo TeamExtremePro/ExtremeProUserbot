@@ -1,5 +1,4 @@
 wheel
-heroku3
 aiohttp
 aiofiles
 aria2p
