@@ -341,8 +341,9 @@ async def download_video(v_url):
 
 from telethon import events
 import asyncio
-from DYNAMIC.events import register 
-from DYNAMIC import bot, CMD_HELP
+from Extre.events import register 
+from plugins import CMD_HELP
+from amanpandey import bot
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
