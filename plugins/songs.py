@@ -395,7 +395,7 @@ async def getmusic(so):
 from telethon import events
 import asyncio
 #from DYNAMIC.utils import admin_cmd
-from DYNAMIC.events import register 
+from amanpandey import register 
 from DYNAMIC import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
