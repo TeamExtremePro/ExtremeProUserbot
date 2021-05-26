@@ -396,7 +396,8 @@ from telethon import events
 import asyncio
 #from DYNAMIC.utils import admin_cmd
 from amanpandey import register 
-from DYNAMIC import bot, CMD_HELP
+from amanpandey import bot
+from plugins import CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 try:
@@ -450,7 +451,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from DYNAMIC.utils import admin_cmd
+from amanpandey import admin_cmd
 
 @borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):
