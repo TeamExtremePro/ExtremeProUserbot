@@ -1,1 +1,3 @@
-bot: python3 -m amanpandey
+build: 
+  docker:
+      worker: Dockerfile
