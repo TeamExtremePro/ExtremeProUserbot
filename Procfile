@@ -1,1 +1,1 @@
-worker: python3 startup.sh
+worker: python3 amanpandeyhero.py
