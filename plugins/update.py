@@ -13,7 +13,8 @@ from asyncio import create_subprocess_shell as asyncSubprocess
 from asyncio.subprocess import PIPE as asyncPIPE
 import sys
 import json
-from DYNAMIC import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from plugins import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from amanpandey import bot
 from speedtest import Speedtest
 from telethon import functions
 from os import remove, execle, path, makedirs, getenv, environ
