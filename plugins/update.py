@@ -5,7 +5,7 @@ from os import execl
 import sys
 import os
 from amanpandey import bot as javes
-from amanpandey import admin_cmd
+from amanpandey import extremepro_cmd as admin_cmd
 import io
 import heroku3
 import asyncio
