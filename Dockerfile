@@ -8,6 +8,6 @@ WORKDIR /root/amanpandey
 # Install requirements
 RUN pip3 install -U -r requirements.txt
 
-ENV PATH="/home/DYNAMIC/bin:$PATH"
+ENV PATH="/home/amanpandey/bin:$PATH"
 
 CMD ["python3","-m","amanpandey"]
