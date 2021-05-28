@@ -27,3 +27,8 @@ async def spammer(e):
                 "#SPAM \n\n"
                 "Spam was executed successfully"
                 )
+{
+        "songs":
+        "`.spam`\
+            \nUsage:Execute Spam."
+}
