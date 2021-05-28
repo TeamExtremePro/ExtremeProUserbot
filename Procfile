@@ -1,1 +1,3 @@
-worker: python3 -m start.py
+build: 
+  docker:
+      worker: Dockerfile
