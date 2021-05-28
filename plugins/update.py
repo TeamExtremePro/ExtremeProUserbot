@@ -15,7 +15,7 @@ import requests
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon import events
-from MARCUS.utils import admin_cmd
+from amanpandey import extremepro_cmd as admin_cmd
 from contextlib import suppress
 import os
 import sys
