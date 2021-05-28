@@ -1,1 +1,1 @@
-worker: Dockerfile && start.py
+worker: start.py
