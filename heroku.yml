@@ -1,3 +1,5 @@
 build: 
-  docker:
-      worker: Dockerfile && python -m start.py
+  docker: 
+      worker: Dockerfile
+run:
+   worker: python3 -m userbot
