@@ -124,11 +124,13 @@
       "required": false 
     }
   },
-  "addons": [{
-   "plan": "heroku-postgresql",
-   "options": {
-    "version": "12"
-   }
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
   ],
   "buildpacks": [
     {
