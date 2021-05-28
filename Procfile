@@ -1,3 +1,1 @@
-build: 
-  docker:
-      worker: Dockerfile && start.py
+worker: Dockerfile && start.py
