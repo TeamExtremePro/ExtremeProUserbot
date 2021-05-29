@@ -6,7 +6,7 @@ import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from amanpandey import *
-from amanpandey import extremepro_cmd, amanpandey_cmd, load_module, tgbot, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
+from amanpandey import extremepro_cmd, amanpandey_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
 from amanpandey import Config
 from amanpandey import Var
 from amanpandey import bot
