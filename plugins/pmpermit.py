@@ -71,7 +71,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         chat = await event.get_chat()
         if event.is_private:
           if chat.id == 992173925:
-            await event.edit(" sorry, ye bhai h mera)
+            await event.edit(" sorry, ye bhai h mera")
           else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
