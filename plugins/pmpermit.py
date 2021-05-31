@@ -189,7 +189,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             await PREV_REPLY_MESSAGE[chat_id].delete()
         PREV_REPLY_MESSAGE[chat_id] = r
 
-from userbot.utils import admin_cmd
+from amanpandey import extremepro_cmd as admin_cmd
 import io
 import sql_helper.pmpermit_sql as pmpermit_sql
 from telethon import events
