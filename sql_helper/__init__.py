@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 
 
 # the secret configuration specific things
-from amanpandey import Var
+from var import Var
 
 
 def start() -> scoped_session:
