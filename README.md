@@ -1,6 +1,15 @@
 # ExtremeProUserbot
 Extreme Pro is a telethon based userbot
 
+
+## credits
+#Team EXTREMEPRO
+
+AMAN PANDEY
+Noob-Stranger
+
+
+
 [![Extreme Pro вσт ℓσgσ](https://telegra.ph/file/75520b56df7b9159438cb.jpg)](https://t.me/ExtremeProuserbotSupport)
 
 ## STATUS OF THIS BOTS 
@@ -64,3 +73,4 @@ Fortunately there are no Mandatory vars for the UniBorg Support Config.
 Team EXTREMEPRO
 
 AMAN PANDEY
+Noob-Stranger
