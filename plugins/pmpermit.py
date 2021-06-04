@@ -8,9 +8,9 @@ from pmpermit.exclusive import ALIVE_NAME, CHANNEL_LINK
 from pmpermit.utils import admin_cmd
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 USER_BOT_WARN_ZERO = "__😡 Why Are You Spamming \n🤬 Stop This Shit Now \n😈 Else You'll Get Blocked__ "
-USER_BOT_NO_WARN = f"__👋 Hello There !\n\n🤖 I'm assistant of__ {DEFAULTUSER} __Sir\n\n💻 My Master Is Currently Busy\n\n✉️ Drop Your Message in Max 5 Lines\n\n🔁 You'll Get a Reply ASAP\n\n🤨 Don't Spam Else Get Blocked\n\n❤️ Join My Master's__ [Channel]({CHANNEL_LINK})\n\n__⚡️ Powered by__ [TechnoAyanBot](https://t.me/technoayanbot)"
+USER_BOT_NO_WARN = f"__👋 Hello There !\n\n🤖 I'm assistant of__ {DEFAULTUSER} __Sir\n\n💻 My Master Is Currently Busy\n\n✉️ Drop Your Message in Max 5 Lines\n\n🔁 You'll Get a Reply ASAP\n\n🤨 Don't Spam Else Get Blocked\n\n❤️ Join My Master's__ [Channel]({CHANNEL_LINK})\n\n__⚡️ Powered by__ [ExtremeProuserbot](https://t.me/ExtremeProUserbot)"
 
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -139,9 +139,9 @@ if Var.PRIVATE_GROUP_ID is not None:
             PREV_REPLY_MESSAGE[chat_id] = r
             the_message = ""
             the_message += "😈**Blocked Users**😈\n\n"
-            the_message += f"[👱‍♂ User](tg://user?id={chat_id}): {chat_id}\n"
-            the_message += f"🔢 Message Count: {PM_WARNS[chat_id]}\n"
-            the_message += "⚡️Powered By [TechnoAyanBot](https://t.me/TechnoAyanBot)"
+            the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
+            the_message += f" Message Count: {PM_WARNS[chat_id]}\n"
+            the_message += "Powered By [ExtremeProuserbot](https://t.me/ExtremeProUserbot)"
             # the_message += f"Media: {message_media}"
             try:
                 await event.client.send_message(
