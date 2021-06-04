@@ -3,8 +3,8 @@ from telethon import events
 from amanpandey import Var
 from pathlib import Path
 from amanpandey import Config
-from userbot import LOAD_PLUG
-from userbot import CMD_LIST
+from plugins import LOAD_PLUG
+from plugins import CMD_LIST
 import re
 import logging
 import inspect
