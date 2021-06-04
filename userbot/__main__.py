@@ -34,7 +34,7 @@ if len(argv) not in (1, 3, 4):
 else:
     bot.tgbot = None
     if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        print("userbot starting telethon")
+        print("EXTREMEPRO USERBOT")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
@@ -67,11 +67,11 @@ for name in files:
 
 
 
-print("userbot deployed WITH SUCESS ")
+print("EXTREME PRO DEPLOYED WITH SUCESS ")
 
 
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-    bot.run_until_disconnected()
+    bot.run_until_disconnected()  
