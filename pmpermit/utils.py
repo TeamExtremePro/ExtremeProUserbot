@@ -81,8 +81,8 @@ def load_module(shortname):
         import sys
         import importlib
         from pathlib import Path
-        path = Path(f"userbot/plugins/{shortname}.py")
-        name = "userbot.plugins.{}".format(shortname)
+        path = Path(f"plugins/{shortname}.py")
+        name = "plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -92,8 +92,8 @@ def load_module(shortname):
         import sys
         import importlib
         from pathlib import Path
-        path = Path(f"userbot/plugins/{shortname}.py")
-        name = "userbot.plugins.{}".format(shortname)
+        path = Path(f"plugins/{shortname}.py")
+        name = "plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -246,7 +246,7 @@ def errors_handler(func):
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
-            link = "[here](https://t.me/PaperplaneExtendedSupport)"
+            link = "[here](https://t.me/ExtremeProUserbotSupport)"
             text += "If you wanna you can report it"
             text += f"- just forward this message {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
