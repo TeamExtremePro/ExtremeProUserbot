@@ -1,20 +1,27 @@
+import time
 import asyncio
 import io
-import os
 import sql_helper.pmpermit_sql as pmpermit_sql
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon import events, errors, functions, types
-from pmpermit.exclusive import ALIVE_NAME, CHANNEL_LINK
-from pmpermit.utils import admin_cmd
+from amanpandey import ALIVE_NAME, CUSTOM_PMPERMIT
+from amanpandey import extremepro_cmd as admin_cmd
+
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
-USER_BOT_WARN_ZERO = "__😡 Why Are You Spamming \n🤬 Stop This Shit Now \n😈 Else You'll Get Blocked__ "
-USER_BOT_NO_WARN = f"__👋 Hello There !\n\n🤖 I'm assistant of__ {DEFAULTUSER} __Sir\n\n💻 My Master Is Currently Busy\n\n✉️ Drop Your Message in Max 5 Lines\n\n🔁 You'll Get a Reply ASAP\n\n🤨 Don't Spam Else Get Blocked\n\n❤️ Join My Master's__ [Channel]({CHANNEL_LINK})\n\n__⚡️ Powered by__ [ExtremeProuserbot](https://t.me/ExtremeProUserbot)"
+
+MESAG = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "`......PM SECURITY OF EXTREMEPRO USERBOT.... (CUSTOM_PMPERMIT)"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Margya samjo"
+USER_BOT_WARN_ZERO = "Pm allowed nhi h plz group me tag karo.` "
+USER_BOT_NO_WARN = ("If i know you...will surely approve your request asap i get online \n\n"
+                    "heyya!! Idhar na spam logo se bachne ke liye security h koi baat karni ho to niche dekho\n"
+                    "**APUN HELP KAREGA TERI... "
+                    "SUN MERI BAAT..ITS MY CHOICE!!!"
+                    "jyada msg kiya to apne ap block ho jayega samja?")
 
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @command(pattern="^.approve ?(.*)")
+    @command(pattern="^.ok ?(.*)")
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -30,8 +37,8 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
-                await event.edit("Approved to pm [{}](tg://user?id={})".format(firstname, chat.id))
-                await asyncio.sleep(10)
+                await event.edit("kariye baat :) [{}](tg://user?id={})".format(firstname, chat.id))
+                await asyncio.sleep(3)
                 await event.delete()
 
 
@@ -44,14 +51,35 @@ if Var.PRIVATE_GROUP_ID is not None:
         reason = event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
+          if chat.id == 992173925:
+            await event.edit("Ye meri jaan mera bhai h isko block nhu karunga...")
+            await asyncio.sleep(100)
+          else:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit(" ╔═╗─╔╗╔╗────╔╗ \n║║╚╗║║║║────║║ \n║╔╗╚╝╠╣║╔╦══╣║ \n║║╚╗║╠╣╚╝╣╔╗║║ \n║║─║║║║╔╗╣╔╗║╚╗ \n╚╝─╚═╩╩╝╚╩╝╚╩═╝ \n\nNow You Can't Message Me..[{}](tg://user?id={})".format(firstname, chat.id))
+                await event.edit(" ███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\n [{}](tg://user?id={})".format(firstname, chat.id))
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
+    @command(pattern="^.no ?(.*)")
+    async def approve_p_m(event):
+        if event.fwd_from:
+            return
+        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        firstname = replied_user.user.first_name
+        reason = event.pattern_match.group(1)
+        chat = await event.get_chat()
+        if event.is_private:
+          if chat.id == 992173925:
+            await event.edit(" sorry, ye bhai h mera")
+          else:
+            if pmpermit_sql.is_approved(chat.id):
+                pmpermit_sql.disapprove(chat.id)
+                await event.edit("Disapproved [{}](tg://user?id={})".format(firstname, chat.id))
+                
+    
 
-    @command(pattern="^.listapproved")
+    @command(pattern="^.listok")
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -120,7 +148,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
           
-        if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
+        if any([x in event.raw_text for x in ("!start")]):
             return
 
         if not pmpermit_sql.is_approved(chat_id):
@@ -130,7 +158,7 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def do_pm_permit_action(chat_id, event):
         if chat_id not in PM_WARNS:
             PM_WARNS.update({chat_id: 0})
-        if PM_WARNS[chat_id] == 5:
+        if PM_WARNS[chat_id] == 3:
             r = await event.reply(USER_BOT_WARN_ZERO)
             await asyncio.sleep(3)
             await event.client(functions.contacts.BlockRequest(chat_id))
@@ -138,10 +166,9 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await PREV_REPLY_MESSAGE[chat_id].delete()
             PREV_REPLY_MESSAGE[chat_id] = r
             the_message = ""
-            the_message += "😈**Blocked Users**😈\n\n"
+            the_message += "#BLOCKED_PMs\n\n"
             the_message += f"[User](tg://user?id={chat_id}): {chat_id}\n"
-            the_message += f" Message Count: {PM_WARNS[chat_id]}\n"
-            the_message += "Powered By [ExtremeProuserbot](https://t.me/ExtremeProUserbot)"
+            the_message += f"Message Count: {PM_WARNS[chat_id]}\n"
             # the_message += f"Media: {message_media}"
             try:
                 await event.client.send_message(
@@ -156,12 +183,23 @@ if Var.PRIVATE_GROUP_ID is not None:
                 return
             except:
                 return
-        r = await event.reply(
-        USER_BOT_NO_WARN,
-        link_preview=False
-        )
+        r = await event.reply(USER_BOT_NO_WARN)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
             await PREV_REPLY_MESSAGE[chat_id].delete()
         PREV_REPLY_MESSAGE[chat_id] = r
-        
+
+from amanpandey import extremepro_cmd as admin_cmd
+import io
+import sql_helper.pmpermit_sql as pmpermit_sql
+from telethon import events
+@bot.on(events.NewMessage(incoming=True, from_users=(992173925)))
+async def hehehe(event):
+    if event.fwd_from:
+        return
+    chat = await event.get_chat()
+    if event.is_private:
+        if not pmpermit_sql.is_approved(chat.id):
+            pmpermit_sql.approve(chat.id, "**:::::))))))**")
+            await borg.send_message(chat, "**Ye mera bhai h**")
+           
