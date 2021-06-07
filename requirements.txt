@@ -1,3 +1,4 @@
+Extre
 Pillow>=5.3.0
 PyGithub
 pygifsicle
@@ -83,4 +84,4 @@ tswift
 telethon==1.21.1
 faker
 google_trans_new
-Extre
+pip==21.1.2
