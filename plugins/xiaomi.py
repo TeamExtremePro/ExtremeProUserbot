@@ -1,3 +1,4 @@
+# Made By Noob-Stranger Dont Kang
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from amanpandey import bot, register
@@ -25,7 +26,7 @@ async def _(event):
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
-
+# Bhagao Dosto Kanger Aaya
 
 @register(outgoing=True, pattern="^.fastboot(?: |$)(.*)")
 async def _(event):
