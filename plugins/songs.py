@@ -12,11 +12,11 @@ from validators.url import url
 
 from userbot import bot as catub
 
-from ExtreMods.userbot.core.logger import logging
-from ExtreMods.userbot.core.managers import edit_delete, edit_or_reply
-from ExtreMods.userbot.helpers.functions import name_dl, song_dl, video_dl, yt_search
-from ExtreMods.userbot.helpers.tools import media_type
-from ExtreMods.userbot.helpers.utils import _catutils, reply_id
+from ExtreMods-2.3.userbot.core.logger import logging
+from ExtreMods-2.3.userbot.core.managers import edit_delete, edit_or_reply
+from ExtreMods-2.3.userbot.helpers.functions import name_dl, song_dl, video_dl, yt_search
+from ExtreMods-2.3.userbot.helpers.tools import media_type
+from ExtreMods-2.3.userbot.helpers.utils import _catutils, reply_id
 
 plugin_category = "utils"
 LOGS = logging.getLogger(__name__)
