@@ -10,7 +10,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 
-from ExtreMods.userbot import catub
+from userbot import bot as catub
 
 from ExtreMods.userbot.core.logger import logging
 from ExtreMods.userbot.core.managers import edit_delete, edit_or_reply
