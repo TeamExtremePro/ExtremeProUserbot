@@ -4,7 +4,6 @@ import asyncio
 import os
 import asyncio
 os.system("pip install --upgrade Extre")
-os.system("pip install --upgrade ExtreMods")
 os.system("pip install --upgrade telethon")
 from telethon import TelegramClient
 from telethon.sessions import StringSession
