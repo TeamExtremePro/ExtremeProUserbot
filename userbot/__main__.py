@@ -67,7 +67,7 @@ for name in files:
 
 
 
-print("userbot deployed WITH SUCESS ")
+print("USERBOT CHALNE LAGA JAO TELEGRAM PAR AUR MOJ KARO ")
 
 
 
