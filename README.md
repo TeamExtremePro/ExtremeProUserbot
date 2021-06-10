@@ -25,8 +25,8 @@ Noob-Stranger
 
 ## The owner would not be responsible for any kind of bans due to the bot...
 
-## Official Support 💖
-<a href="https://t.me/ExtremeProuserbotchannel"><img src="https://img.shields.io/badge/Join-Support%20Channel-red.svg?style=for-the-badge&logo=Telegram"></a>
+## Official Support 
+<a href="https://t.me/ExtremeProuserbotchannel"><img src="https://img.shields.io/badge/Join-Support%20Channel-green.svg?style=for-the-badge&logo=Telegram"></a>
 <a href="https://t.me/ExtremeProuserbotSupport"><img src="https://img.shields.io/badge/Join-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>  
   
   
