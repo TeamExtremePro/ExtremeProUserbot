@@ -18,7 +18,7 @@ async def coder_print(event):
 	os.remove(a)
 	os.remove('out.png')
   
-  @borg.on(extremepro_cmd(pattern="decode ?(.*)"))
+@borg.on(extremepro_cmd(pattern="decode ?(.*)"))
 async def coder_print(event):
 	cmd = event.text
 	a = await event.get_reply_message()
