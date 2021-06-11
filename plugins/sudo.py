@@ -1,94 +1,82 @@
-import os
 import heroku3
-from telethon.tl.functions.users import GetFullUserRequest
-
-from plugins import *
-
-Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
-heroku_api = "https://api.heroku.com"
-sudousers = os.environ.get("SUDO_USERS", None)
-
-
-@bot.on(extremepro_cmd(pattern="sudo"))
-async def amanpandey(event):
-    sudo = "True" if Config.SUDO_USERS else "False"
-    users = os.environ.get("SUDO_USERS", None)
-    if sudo == "True":
-        await eod(event, f"📍 **Sudo :**  `Enabled`\n\n📝 **Sudo users :**  `{users}`", 10)
+import re, os
+from amanpandey import extremepro_cmd, Var
+EXTREMEPRO = Var.HEROKU_APP_NAME
+AMANPANDEY = Var.HEROKU_API_KEY
+sudolist = os.environ.get("SUDO_USERS", None)
+@bot.on(extremepro_cmd(pattern='addsudo'))
+async def add_sudo(event):
+  Heroku = heroku3.from_key(AMANPANDEY)
+  app = Heroku.app(EXTREMEPRO)
+  heroku_var = app.config()
+  if not event.is_reply:
+    return await event.edit("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴘʟᴇᴀsᴇ")                              
+  if event.is_reply:
+    id = (await event.get_reply_message()).sender_id
+    name = (await bot.get_entity(id)).first_name
+    sudo = heroku_var["SUDO_USERS"]
+    op = re.search(str(id), str(sudolist))
+    if op:
+      await event.edit(f"THE {name} IS ALREADY ON SUDO LIST")
+      return
     else:
-        await eod(event, f"📍 **Sudo :**  `Disabled`", 7)
-
-
-@bot.on(extremepro_cmd(pattern="addsudo(?: |$)"))
-async def add(event):
-    ok = await eor(event, "**🚀 Adding Sudo User...**")
-    bot = "SUDO_USERS"
-    if Config.HEROKU_APP_NAME is not None:
-        app = Heroku.app(Config.HEROKU_APP_NAME)
+      pass
+    if not sudolist:
+       await event.edit(f"Oᴋᴀʏ **{name}** ɪs Aᴅᴅᴇᴅ Oɴ sᴜᴅᴏ ʟɪsᴛ (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
+       heroku_var["SUDO_USERS"] = id
     else:
-        await eod(ok, "**Please Set-Up**  `HEROKU_APP_NAME` **to add sudo users!!**")
-        return
-    heroku_Config = app.config()
-    if event is None:
-        return
-    try:
-        target = await get_user(event)
-    except Exception:
-        await eod(ok, f"Reply to a user to add them in sudo.")
-    if sudousers:
-        newsudo = f"{sudousers} {target}"
+       sudousers = f'{sudolist} {id}'
+       await event.edit(f"Oᴋᴀʏ **{name}** ɪs ᴀᴅᴅᴇᴅ ᴏɴ sᴜᴅᴏ ᴜsᴇʀs (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
+       heroku_var["SUDO_USERS"] = sudousers
+  else:
+    await event.edit("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴘʟᴇᴀsᴇ")                              
+
+
+
+@bot.on(extremepro_cmd(pattern='rmsudo'))
+async def remove_sudo(event):
+  Heroku = heroku3.from_key(AMANPANDEY)
+  app = Heroku.app(EXTREMEPRO)
+  heroku_var = app.config()
+  if not event.is_reply:
+    return await event.edit("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴘʟᴇᴀsᴇ")
+  if event.is_reply:
+    id = (await event.get_reply_message()).sender_id
+    name = (await bot.get_entity(id)).first_name
+    op = re.search(str(id), str(sudolist))
+    if op:
+      i = ""
+      amazing = sudolist.split(" ")
+      amazing.remove(str(id))
+      i += str(amazing)
+      x = i.replace("[", "")
+      xx = x.replace("]", "")
+      xxx = xx.replace(",", "")
+      done = xxx.replace("'", "")
+      heroku_var["SUDO_USERS"] = done
+      await event.edit(f"Tʜᴇ **{name}** ɪs ʀᴇᴍᴏᴠᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
     else:
-        newsudo = f"{target}"
-    await ok.edit(f"✅** Added**  `{target}`  **in Sudo User.**\n\n __Restarting Heroku to Apply Changes. Wait for a minute.__")
-    heroku_Config[bot] = newsudo
-
-@bot.on(extremepro_cmd(pattern="rmsudo(?: |$)"))
-async def _(event):
-    ok = await eor(event, "**🚫 Removing Sudo User...**")
-    bot = "SUDO_USERS"
-    if Config.HEROKU_APP_NAME is not None:
-        app = Heroku.app(Config.HEROKU_APP_NAME)
-    else:
-        await eod(ok, "**Please Set-Up**  HEROKU_APP_NAME to remove sudo users!!")
-        return
-    heroku_Config = app.config()
-    if event is None:
-        return
-    try:
-        target = await get_user(event)
-        gett = str(target)
-    except Exception:
-        await eod(ok, f"Reply to a user to remove them from sudo.")
-    if gett in sudousers:
-        newsudo = sudousers.replace(gett, "")
-        await ok.edit(f"❌** Removed**  `{target}`  from Sudo User.\n\n Restarting Heroku to Apply Changes. Wait for a minute.")
-        heroku_Config[bot] = newsudo
-    else:
-        await ok.edit("**😑This user is not in your Sudo Users List.**")
-
-async def get_user(event):
-    if event.reply_to_msg_id:
-        previous_message = await event.get_reply_message()
-        if previous_message.forward:
-            replied_user = await event.client(
-                GetFullUserRequest(previous_message.forward.sender_id)
-            )
-        else:
-            replied_user = await event.client(
-                GetFullUserRequest(previous_message.sender_id)
-            )
-    target = replied_user.user.id
-    return target
-
-
-CmdHelp("sudo").add_command(
-  "sudo", None, "Check If Your Bot Has Sudo Enabled!!"
-).add_command(
-  "addsudo", "<reply to user>", "Adds replied user to sudo list."
-).add_command(
-  "rmsudo", "<reply to user>", "Removes the replied user from your sudo list if already added."
-).add_info(
-  "Manage Sudo."
-).add_warning(
-  "⚠️ Grant Sudo Access to someone you trust!"
-).add()
+      await event.edit(f"ᴛʜᴇ {name} ɪs ɴᴏᴛ ɪɴ sᴜᴅᴏ 😑😑")
+    if heroku_var["SUDO_USERS"] == None:
+       await event.edit(f"ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ ɪs ᴇᴍᴘʏᴛʏ 😑😑")
+@bot.on(extremepro_cmd("sudo"))
+async def sudos(event):
+  if sudolist:
+    await event.edit("sᴜᴅᴏ ɪs ᴇɴᴇᴀʙʟᴇᴅ ᴛʏᴘᴇ `.listsudo` ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ")
+  else:
+     await event.edit("sᴜᴅᴏ ɪs ᴏғғ")            
+@bot.on(extremepro_cmd("listsudo"))
+async def sudolists(event):
+  op = await event.edit('ᴄʜᴇᴄᴋɪɴɢ ᴀʟʟ sᴜᴅᴏs ᴡᴀɪᴛ')
+  Heroku = heroku3.from_key(AMANPANDEY)
+  app = Heroku.app(EXTREMEPRO)
+  heroku_var = app.config()
+  if not sudolist:
+    return await event.edit("sᴜᴅᴏ ʟɪsᴛ ɪs ᴇᴍᴘᴛʏ")
+  sudos = sudolist.split(" ")
+  sudoz = "**»sᴜᴅᴏ ʟɪsᴛ«**"
+  for sudo in sudos:
+    k = await bot.get_entity(int(sudo))
+    pro = f'\n[**ɴᴀᴍᴇ:** {k.first_name} \n**ᴜsᴇʀɴᴀᴍᴇ:** @{k.username or None}]\n'
+    sudoz += pro
+  await op.edit(sudoz)
