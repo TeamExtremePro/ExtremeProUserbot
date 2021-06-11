@@ -82,7 +82,7 @@ async def gspider(amanpandey):
     if user:
         if user.id == 1821319906:
             return await friday.edit(
-                f"**AUKAT ME REH LE BAAP HAI WOH TERA JITNI AUKAT H UTNE ME HI REH **"
+                f"**AUKAT ME REH LE BAAP HAI WOH TERA JITNI AUKAT H UTNE ME HI REH BADA AAYA NIKAL AB**"
             )
         try:
             from amanpandey.modules.sql_helper.gmute_sql import gmute
