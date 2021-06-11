@@ -13,7 +13,6 @@ from amanpandey import extremepro_cmd
 
 
 @borg.on(extremepro_cmd(pattern="restart"))
-@borg.on(amanpandey_cmd("restart ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,6 +28,21 @@ async def _(event):
     # You probably don't need it but whatever
     quit()
 
+@borg.on(amanpandey_cmd("restart ?(.*)", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    # await asyncio.sleep(2)
+    # await event.edit("Restarting [██░] ...\n`.awake` me or `.helpme` to check if I am online")
+    # await asyncio.sleep(2)
+    # await event.edit("Restarting [███]...\n`.awake` me or `.helpme` to check if I am online")
+    # await asyncio.sleep(2)
+    await event.edit("Restarted. `.alive` me or `.help` to check if I am online")
+    await borg.disconnect()
+    # https://archive.is/im3rt
+    os.execl(sys.executable, sys.executable, *sys.argv)
+    # You probably don't need it but whatever
+    quit()
 
 @borg.on(extremepro_cmd(pattern="shutdown"))
 async def _(event):
