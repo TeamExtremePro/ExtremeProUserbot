@@ -80,9 +80,9 @@ async def gspider(amanpandey):
     except:
         return await friday.edit(f"**Try Again Some Error Occoured**")
     if user:
-        if user.id == 1783440715:
+        if user.id == 1821319906:
             return await friday.edit(
-                f"**Hey You You Cant Ban Your Father Okay You Fool**"
+                f"**AUKAT ME REH LE BAAP HAI WOH TERA JITNI AUKAT H UTNE ME HI REH **"
             )
         try:
             from amanpandey.modules.sql_helper.gmute_sql import gmute
@@ -117,6 +117,7 @@ async def gspider(amanpandey):
 
 
 @borg.on(extremepro_cmd(pattern="ungban ?(.*)"))
+@borg.on(amanpandey_cmd("ungban ?(.*)", allow_sudo=True))
 async def gspider(amanpandey):
     lol = amanpandey
     sender = await lol.get_sender()
@@ -146,8 +147,8 @@ async def gspider(amanpandey):
     except:
         return await friday.edit("Someting Is Wrong Try Again")
     if user:
-        if user.id == 1783440715:
-            return await friday.edit("**You Cant gban him... as a result you can not ungban him... As He Is Your Father!**")
+        if user.id == 1821319906:
+            return await friday.edit("**TU USKO GBAN NAHI DE SAKTA TOH UNGBAN KAHE KAR RAHA HAI YAAD RAKH WOH TERA BAAP H**")
         try:
             from amanpandey.modules.sql_helper.gmute_sql import ungmute
         except:
