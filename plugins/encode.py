@@ -3,7 +3,7 @@ from pygments.lexers import Python3Lexer
 from pygments.formatters import ImageFormatter
 from amanpandey import extremepro_cmd
 
-@borg.on(esxtremepro_cmd(pattern="encode ?(.*)"))
+@borg.on(extremepro_cmd(pattern="encode ?(.*)"))
 async def coder_print(event):
 	a = await event.client.download_media(await event.get_reply_message(), Var.TEMP_DOWNLOAD_DIRECTORY)
 	s = open(a, 'r')
