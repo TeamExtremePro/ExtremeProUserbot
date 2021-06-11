@@ -7,6 +7,7 @@ import time
 from amanpandey import extremepro_cmd
 
 @bot.on(extremepro_cmd(pattern="bash"))
+@bot.on(amanpandey_cmd("bash ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
