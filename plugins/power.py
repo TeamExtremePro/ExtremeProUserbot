@@ -13,6 +13,7 @@ from amanpandey import extremepro_cmd
 
 
 @borg.on(extremepro_cmd(pattern="restart"))
+@borg.on(amanpandey_cmd("restart ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
