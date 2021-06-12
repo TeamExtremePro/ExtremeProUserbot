@@ -146,7 +146,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             await do_pm_permit_action(chat_id, event)
 
     async def do_pm_permit_action(chat_id, event):
-        if chat_id not in PM_WARNS:
+        if 'chat_id' not in PM_WARNS:
             PM_WARNS.update({chat_id: 0})
         if PM_WARNS[chat_id] == 3:
             r = await event.reply(USER_BOT_WARN_ZERO)
