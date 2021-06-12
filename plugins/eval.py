@@ -1,26 +1,21 @@
-  
 """Evaluate Python Code inside Telegram
 Syntax: .eval PythonCode"""
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
+# COPYRIHT TEAM DYNAMIC
 from telethon import events, errors, functions, types
 import inspect
 import traceback
 import asyncio
 import sys
 import io
-from plugins import CMD_HELP
-from amanpandey import extremepro_cmd, amanpandey_cmd
+from Extre import CMD_HELP
+from uniborg.util import admin_cmd
 
 
-@borg.on(extremepro_cmd("eval"))
-@borg.on(amanpandey_cmd(pattern="eval", allow_sudo=True))
+@borg.on(admin_cmd("eval"))
 async def _(event):
     if event.fwd_from:
         return
-    await eor(event, "Processing ...")
+    await event.edit("Processing ...")
     cmd = event.text.split(" ", maxsplit=1)[1]
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
@@ -67,7 +62,7 @@ async def _(event):
             )
             await event.delete()
     else:
-        await eor(event, final_output)
+        await event.edit(final_output)
 
 
 async def aexec(code, event):
@@ -80,7 +75,7 @@ async def aexec(code, event):
 CMD_HELP.update(
     {
         "eval": ".eval (?)\
-\nUsage: Execute Python Cmds In This.\
+\nUsage: Evaluate Python Code inside Telegram.\
 "
     }
 )
