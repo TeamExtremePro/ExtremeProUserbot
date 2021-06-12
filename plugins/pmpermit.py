@@ -137,17 +137,6 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        if sender.bot:
-
-            # don't log bots
-
-            return
-
-        if sender.verified:
-
-            # don't log verified accounts
-
-            return
           
         if any([x in event.raw_text for x in ("!start")]):
             return
