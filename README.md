@@ -21,7 +21,7 @@ Noob-Stranger
 [![Extreme Pro вσт ℓσgσ](https://telegra.ph/file/75520b56df7b9159438cb.jpg)](https://t.me/ExtremeProuserbotSupport)
 
 ## STATUS OF THIS BOTS 
-<p align="left"><a href="https://github.com/teamExtremePro/ExtremeProUserbot/network/members"><img src="https://img.shields.io/github/forks/TeamExtremePro/ExtremeProUserbot?label=Forks&logoColor=pink&style=social"></a><p align="left"><a href="https://github.com/TeamExtremePro/ExtremeProUserbot"><img src="https://img.shields.io/github/stars/TeamExtremePro/ExtremeProUserbot?logoColor=red&style=social"></a><p align="left"><a href="https://github.com/TeamExtremePro/ExtremeProUserbot"><img src="https://img.shields.io/github/last-commit/TeamExtremePro/ExtremeProUserbot?style=plastic"></a>
+<p align="left"><a href="https://github.com/teamExtremePro/ExtremeProUserbot/network/members"><img src="https://img.shields.io/github/forks/TeamExtremePro/ExtremeProUserbot?label=Forks&logoColor=pink&style=social"></a><p align="left"><a href="https://github.com/TeamExtremePro/ExtremeProUserbot"><img src="https://img.shields.io/github/stars/TeamExtremePro/ExtremeProUserbot?logoColor=red&style=social"></a><p align="left"><a href="https://github.com/TeamExtremePro/ExtremeProUserbot"><img src="https://img.shields.io/github/last-commit/TeamExtremePro/ExtremeProUserbot/dev?style=plastic"></a>
 
 ## The owner would not be responsible for any kind of bans due to the bot...
 
