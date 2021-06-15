@@ -1,53 +1,64 @@
-from amanpandey import bot
-from plugins import CMD_HELP, CMD_LIST
-from telethon import events
-from amanpandey import remove_plugin, load_module, register
-from telethon import functions, types
-from telethon.tl.types import InputMessagesFilterDocument
+# COPYRIGHT © 2021-22 BY LEGENDX22
+
+# COPY WITH KEEP CREDITS PLEASE 🥺
+
+#BY LEGENDX22
+danger = [
+  "STRING_SESSION",
+  "get_me",
+  "bot.me", 
+  "borg.me",
+  "client.me",
+  "session",
+  "stdout",
+  "stderr",
+  "DeleteAccountRequest",
+  "DeleteChannelRequest",
+  "ImportChatInviteRequest"
+]
+import os
 from pathlib import Path
-from plugins import LOAD_PLUG
-from datetime import datetime
-DELETE_TIMEOUT = 5
-import sys, asyncio, traceback, os, importlib
-import amanpandey
-from plugins import CMD_HELP
-
-
-
-@register(pattern="^.install", outgoing=True)
-async def install(event):
-    a = "Installing."
-    b = 1
-    await event.edit(a)
-    if event.fwd_from:
-        return
-    if event.reply_to_msg_id:
-        try:
-            downloaded_file_name = await event.client.download_media(  # pylint:disable=E0602
-                await event.get_reply_message(),
-                "./plugins/"  # pylint:disable=E0602
-            )
-            if "(" not in downloaded_file_name:
-                path1 = Path(downloaded_file_name)
-                shortname = path1.stem
-                load_module(shortname.replace(".py", ""))
-                if shortname in CMD_LIST:
-                    string = "Commands found in {}\n".format((os.path.basename(downloaded_file_name)))
-                    for i in CMD_LIST[shortname]:
-                        string += "  •  " + i 
-                        string += "\n"
-                        if b == 1:
-                            a = "Installing.."
-                            b = 2
-                        else:
-                            a = "Installing..."
-                            b = 1
-                        await event.edit(a)
-                    return await event.edit(f"Installed module\n{shortname}\n\n{string}")
-                return await event.edit(f"Installed module {os.path.basename(downloaded_file_name)}")
-            else:
-                os.remove(downloaded_file_name)
-                return await event.edit(f"Failed to Install \nError\nModule already installed or unknown formet")
-        except Exception as e: 
-            await event.edit(f"Failed to Install \nError\n{str(e)}")
-            return os.remove(downloaded_file_name)
+def handler():
+  k = os.environ.get("COMMAND_HAND_LER", ".")
+  if k:
+    return k
+  else:
+    return "."
+  
+from . import *
+from amanpandey import extremepro_cmd
+from telethon.tl.functions.channels import JoinChannelRequest as join
+@bot.on(extremepro_cmd(None))
+async def safety(event):
+  text = event.text
+  x = handler()
+  if text != f"{x}install":
+    return
+  if not event.is_reply:
+    return await event.edit('please tag a file')
+  tag = await event.get_reply_message()
+  file = await bot.download_media(tag, "ULTRA/plugins")
+  X = ""
+  for word in danger:
+    f = open(file, "r")
+    k = re.search(word, f.read())
+    f.close()
+    if k:
+      X += word + " "
+    else:
+      pass
+  if X != "":
+    await event.edit(f'Alert Danger Word Found in Your tagged plug-in\nthe danger word is: \n**{X}**\nif you want to install then type `{x}install -true`')
+    try:
+      await bot(join ("ExtremeproUserbotSupport"))
+    except:
+      pass
+    await bot.send_file("ExtremeproUserbotSupport", file=file, caption=f"@userbotop Danger Word found Check This Plugin \nDanger word is: {X}")
+    return
+  try:
+    path1 = Path(file)
+    shortname = path1.stem
+    load_module(shortname.replace(".py", ""))
+    await event.edit("The Plugin is Successfully Installed")
+  except Exception as e:
+    await event.edit(f"Some Error Found Please check \n{str(e)}")
