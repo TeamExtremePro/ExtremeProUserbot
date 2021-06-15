@@ -25,7 +25,6 @@ def handler():
   else:
     return "."
   
-from . import *
 from amanpandey import extremepro_cmd
 from telethon.tl.functions.channels import JoinChannelRequest as join
 @bot.on(extremepro_cmd(None))
