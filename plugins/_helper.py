@@ -1,10 +1,10 @@
 import os
 
-from Extre import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
+from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST
 from Extre.config import Config
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
-CMD_HNDLR = Config.CMD_HNDLR
+CMD_HNDLR = os.environ.get("CMD_HNDLR", None)
 CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "⚡")
 
 if CMD_HNDLR is None:
