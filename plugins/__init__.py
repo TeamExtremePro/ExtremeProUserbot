@@ -16,6 +16,7 @@ from telethon.tl.types import Channel
 from amanpandey import *
 from amanpandey import ALIVE_NAME, bot, extremeprover
 from amanpandey import Config, Var
+PMSECURITY = os.environ.get("PMSECURITY", None)
 
 # stats
 if Var.PRIVATE_GROUP_ID:
@@ -38,7 +39,7 @@ if Config.SUDO_USERS:
 else:
     sudo = "Enabled"
 
-if Var.PMSECURITY.lower() == "off":
+if Config.PMSECURITY.lower() == "off":
     pm = "Disabled"
 else:
     pm = "Enabled"
