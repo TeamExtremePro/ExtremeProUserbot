@@ -55,7 +55,7 @@ extremepro += f"PMSecurity: {pm}\n"
 extremepro += f"\nVisit @EXTREMEPRO USERBOT for assistance.\n"
 extremeprostats = f"{extremepro}"
 
-EXTREMEPRO_NAME = bot.me.first_name
+EXTREMEPRO_NAME = ALIVE_NAME
 OWNER_ID = bot.me.id
 
 # count total number of groups
