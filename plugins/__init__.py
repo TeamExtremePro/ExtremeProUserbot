@@ -56,7 +56,7 @@ extremepro += f"\nVisit @EXTREMEPRO USERBOT for assistance.\n"
 extremeprostats = f"{extremepro}"
 
 EXTREMEPRO_NAME = ALIVE_NAME
-OWNER_ID = bot.me.id
+OWNER_ID = os.environ.get("OWNER_ID", None)
 
 # count total number of groups
 
