@@ -14,7 +14,7 @@ AUTONAME = os.environ.get("AUTONAME", None)
 from telethon.tl.types import Channel
 
 from amanpandey import *
-from amanpandey import ALIVE_NAME, bot, telever
+from amanpandey import ALIVE_NAME, bot, extremeprover
 from amanpandey import Config, Var
 
 # stats
@@ -45,7 +45,7 @@ else:
 
 TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 
-extremepro = f"EXTREMEPRO Version: {extremever}\n"
+extremepro = f"EXTREMEPRO Version: {extremeprover}\n"
 extremepro += f"Log Group: {log}\n"
 extremepro += f"Assistant Bot: {bots}\n"
 extremepro += f"Lydia: {lyd}\n"
