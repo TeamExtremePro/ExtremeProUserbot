@@ -6,7 +6,7 @@ from amanpandey import amanpandey_cmd
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotchat_id = Var.TG_BOT_USER_NAME_BF_HER
-        input_str = event.pattern_match.group(1)
+        input_str = event.pattern_match.group
         if tgbotchat_id is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
