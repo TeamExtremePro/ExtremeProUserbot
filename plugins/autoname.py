@@ -15,7 +15,7 @@ import shutil
 
 
 DEL_TIME_OUT = 60
-DEFAULTUSER = str(AUTONAME) if AUTONAME else "cat" 
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER" 
 
 
 @borg.on(extremepro_cmd(pattern="autoname"))  # pylint:disable=E0602
