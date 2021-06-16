@@ -349,7 +349,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        sender = await bot.get_entity(lightning.sender_id)
+        sender = await bot.get_entity('lightning.sender_id')
 
         if chat_ids == bot.uid:
 
