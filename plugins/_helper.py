@@ -5,9 +5,9 @@ from amanpandey import amanpandey_cmd
 @borg.on(amanpandey_cmd(pattern="help", allow_sudo=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
+        tgbotchat_id = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
-        if tgbotusername is None or input_str == "text":
+        if tgbotchat_id is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
                 string += "ℹ️ " + i + "\n"
@@ -19,7 +19,7 @@ async def cmd_list(event):
                 with io.BytesIO(str.encode(string)) as out_file:
                     out_file.name = "cmd.txt"
                     await bot.send_file(
-                        event.username,
+                        event.chat_id,
                         out_file,
                         force_document=True,
                         allow_cache=False,
@@ -42,11 +42,11 @@ async def cmd_list(event):
             help_string = """Userbot Helper.. \nProvided by Extreme Pro userbot\n
 `Userbot Helper to reveal all the commands`"""
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
+                tgbotchat_id,
                 help_string
             )
             await results[0].click(
-                event.username,
+                event.chat_id,
                 reply_to=event.reply_to_msg_id,
                 hide_via=True
             )

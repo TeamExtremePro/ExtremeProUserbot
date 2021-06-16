@@ -77,6 +77,6 @@ async def sudolists(event):
   sudoz = "**»sᴜᴅᴏ ʟɪsᴛ«**"
   for sudo in sudos:
     k = await bot.get_entity(int(sudo))
-    pro = f'\n[**ɴᴀᴍᴇ:** {k.first_name} \n**ᴜsᴇʀɴᴀᴍᴇ:** @{k.username or None}]\n'
+    pro = f'\n[**ɴᴀᴍᴇ:** {k.first_name} \n**ᴜsᴇʀɴᴀᴍᴇ:** @{k.chat_id or None}]\n'
     sudoz += pro
   await op.edit(sudoz)

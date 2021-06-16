@@ -59,7 +59,7 @@ async def variable(var):
                 result = fp.read()
                 if len(result) >= 4096:
                     await var.client.send_file(
-                        var.username,
+                        var.chat_id,
                         "configs.json",
                         reply_to=var.id,
                         caption="`Output too large, sending it as a file`",
@@ -173,7 +173,7 @@ async def _(dyno):
             log.write(app.get_log())
         await dyno.edit("Got the logs wait a sec")    
         await dyno.client.send_file(
-            dyno.username,
+            dyno.chat_id,
             "logs.txt",
             reply_to=dyno.id,
             caption="EXTREME PRO USERBOT 𝙻𝙾𝙶𝚂 𝚘𝙵 100+ lines",

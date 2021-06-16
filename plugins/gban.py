@@ -62,7 +62,7 @@ async def gspider(amanpandey):
     me = await amanpandey.client.get_me()
     await friday.edit(f"Global Ban Is Coming ! Wait And Watch")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
-    f"@{me.username}" if me.username else my_mention
+    f"@{me.chat_id}" if me.chat_id else my_mention
     await amanpandey.get_chat()
     a = b = 0
     if amanpandey.is_private:
@@ -129,7 +129,7 @@ async def gspider(amanpandey):
     me = await amanpandey.client.get_me()
     await friday.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
-    f"@{me.username}" if me.username else my_mention
+    f"@{me.chat_id}" if me.chat_id else my_mention
     await amanpandey.get_chat()
     a = b = 0
     if amanpandey.is_private:
@@ -200,7 +200,7 @@ async def handler(rkG):
                 creator = chat.creator   
                 if admin or creator:
                  try:
-                    await client.edit_permissions(rkG.username, guser.id, view_messages=False)                              
+                    await client.edit_permissions(rkG.chat_id, guser.id, view_messages=False)                              
                     await rkG.reply(
                      f"**Gbanned User Joined!!** \n"                      
                      f"**Victim Id**: [{guser.id}](tg://user?id={guser.id})\n"                   
@@ -209,4 +209,4 @@ async def handler(rkG):
                     rkG.reply("`No Permission To Ban`")                   
                     return 
 CMD_HELP.update({
-    "gban":"gban any user using username or tag dont use id "})
+    "gban":"gban any user using chat_id or tag dont use id "})

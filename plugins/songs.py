@@ -31,7 +31,7 @@ async def FindMusicPleaseBot(gaana):
 
             if response.text.startswith("Sorry"):
 
-                await bot.send_read_acknowledge(conv.username)
+                await bot.send_read_acknowledge(conv.chat_id)
 
                 return await gaana.edit(f"Sorry, can't find {song}")
 
@@ -47,9 +47,9 @@ async def FindMusicPleaseBot(gaana):
 
         await gaana.edit("`Sending Your Music...wait!!! 😉😎`")
 
-        await bot.send_file(gaana.username, cobra)
+        await bot.send_file(gaana.chat_id, cobra)
 
-        await bot.send_read_acknowledge(conv.username)
+        await bot.send_read_acknowledge(conv.chat_id)
 
     await gaana.delete()
     
@@ -190,7 +190,7 @@ async def download_video(v_url):
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
-            v_url.username,
+            v_url.chat_id,
             f"{rip_data['id']}.mp3",
             supports_streaming=True,
             attributes=[
@@ -209,7 +209,7 @@ async def download_video(v_url):
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
-            v_url.username,
+            v_url.chat_id,
             f"{rip_data['id']}.mp4",
             supports_streaming=True,
             caption=url,
@@ -308,7 +308,7 @@ async def download_video(v_url):
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
-            v_url.username,
+            v_url.chat_id,
             f"{rip_data['id']}.mp3",
             supports_streaming=True,
             attributes=[
@@ -327,7 +327,7 @@ async def download_video(v_url):
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
-            v_url.username,
+            v_url.chat_id,
             f"{rip_data['id']}.mp4",
             supports_streaming=True,
             caption=rip_data['title'],
@@ -380,14 +380,14 @@ async def getmusic(so):
               response = await conv.get_response()
               respond = await conv.get_response()
               """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.username)
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await so.edit("Please unblock @songdl_bot and try searching again🤐")
               return
           await so.edit("Ohh.. I got something!! Wait sending😋🤙")
           await asyncio.sleep(3)
-          await bot.send_file(so.username, respond)
-    await so.client.delete_messages(conv.username,
+          await bot.send_file(so.chat_id, respond)
+    await so.client.delete_messages(conv.chat_id,
                                        [msg.id, response.id, respond.id])
     await so.delete()
 
@@ -435,12 +435,12 @@ async def DeezLoader(Deezlod):
               details = await conv.get_response()
               song = await conv.get_response()
               """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.username)
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await Deezlod.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
               return
-          await bot.send_file(Deezlod.username, song, caption=details.text)
-          await Deezlod.client.delete_messages(conv.username,
+          await bot.send_file(Deezlod.chat_id, song, caption=details.text)
+          await Deezlod.client.delete_messages(conv.chat_id,
                                              [msg_start.id, response.id, r.id, msg.id, details.id, song.id])
           await Deezlod.delete()   
           
@@ -475,10 +475,10 @@ async def _(event):
                   await asyncio.sleep(0.00000069420)
               await conv.send_message(d_link)
               details = await conv.get_response()
-              await borg.send_message(event.username, details)
+              await borg.send_message(event.chat_id, details)
               await conv.get_response()
               songh = await conv.get_response()
-              await borg.send_file(event.username, songh, caption="🔆**Here's the requested song!**🔆\n`Check out` [LEGENDBOT](https://t.me/LEGENDBOT_Official)")
+              await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆\n`Check out` [LEGENDBOT](https://t.me/LEGENDBOT_Official)")
               await event.delete()
           except YouBlockedUserError:
               await event.edit("**Error:** `unblock` @songdl_bot `and retry!`")

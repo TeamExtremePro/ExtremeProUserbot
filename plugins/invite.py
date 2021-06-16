@@ -39,7 +39,7 @@ async def get_chatinfo(event):
             if replied_msg.fwd_from and replied_msg.fwd_from.channel_id is not None:
                 chat = replied_msg.fwd_from.channel_id
         else:
-            chat = event.username
+            chat = event.chat_id
     try:
         chat_info = await event.client(GetFullChatRequest(chat))
     except:
@@ -110,7 +110,7 @@ async def _(event):
                 try:
                     await borg(
                         functions.messages.AddChatUserRequest(
-                            username=event.username, user_id=user_id, fwd_limit=1000000
+                            chat_id=event.chat_id, user_id=user_id, fwd_limit=1000000
                         )
                     )
                 except Exception as e:
@@ -122,7 +122,7 @@ async def _(event):
                 try:
                     await borg(
                         functions.channels.InviteToChannelRequest(
-                            channel=event.username, users=[user_id]
+                            channel=event.chat_id, users=[user_id]
                         )
                     )
                 except Exception as e:
@@ -133,9 +133,9 @@ async def _(event):
 
     {
         "invite": """**Plugin : **`invite`
-  •  **Syntax : **`.add username(s)/userid(s)`
+  •  **Syntax : **`.add chat_id(s)/userid(s)`
   •  **Function : **__Add the given user/users to the group where u used the command__
-  •  **Syntax : **`.inviteall groups username`
+  •  **Syntax : **`.inviteall groups chat_id`
   •  **Function : **__Scrapes users from the given chat to your group__
 """
     }
