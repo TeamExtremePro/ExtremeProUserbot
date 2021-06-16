@@ -8,7 +8,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 import sql_helper.pmpermit_sql as pmpermit_sql
 from amanpandey import ALIVE_NAME, CUSTOM_PMPERMIT
 from amanpandey import Config
-from amanpandey import extremepro_cmc
+from amanpandey import extremepro_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if not PMPERMIT_PIC:
