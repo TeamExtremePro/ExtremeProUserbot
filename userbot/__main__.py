@@ -5,11 +5,11 @@ import os
 import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
-from userbot import *
-from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin, tgbot
-from userbot import Config
-from userbot import Var
-from userbot import bot
+from Extre import *
+from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
+from Extre.config import Config
+from Extre.var import Var
+from Extre import bot
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
