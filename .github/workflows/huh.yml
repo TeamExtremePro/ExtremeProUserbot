@@ -19,7 +19,7 @@ jobs:
 
         with:
 
-          find: "chat_ids"
+          find: "chat_id"
 
           replace: "username"
 
