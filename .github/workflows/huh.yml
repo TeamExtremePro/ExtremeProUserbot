@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "@bot.on"
+          find: "chat_ids"
 
-          replace: "@borg.on"
+          replace: "username"
 
       - name: Create Pull Request
 
