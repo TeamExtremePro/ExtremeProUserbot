@@ -1,4 +1,4 @@
-from amanpandey import devs
+from LEGENDX import devs
 import os
 
 import asyncio
