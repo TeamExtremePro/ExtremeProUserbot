@@ -3,7 +3,7 @@ from plugins import CMD_HELP
 from amanpandey import extremepro_cmd
 # 
 from userbot import bot
-@bot.on(extremepro_cmd("superfban ?(.*)"))
+@borg.on(extremepro_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -138,7 +138,7 @@ async def _(event):
 
 
 
-@bot.on(extremepro_cmd("superunfban ?(.*)"))
+@borg.on(extremepro_cmd("superunfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -216,7 +216,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "superban": ".superfban <username/userid> <reason>\
+        "superban": ".superfban <chat_id/userid> <reason>\
         \n**Usage**: Mass-Ban in all feds you are admin in.\
         \nSet `EXCLUDE_FED fedid1|fedid2` in heroku vars to exclude those feds.\
         \nSet var `FBAN_GROUP_ID` to the group with rose, where you want FBan to take place.\

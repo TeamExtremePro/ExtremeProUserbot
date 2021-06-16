@@ -5,11 +5,11 @@ import os
 import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
-from Extre import *
-from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
-from Extre.config import Config
-from Extre.variables import Var
-from Extre import bot
+from amanpandey import *
+from amanpandey import extremepro_cmd, amanpandey_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
+from amanpandey import Config
+from amanpandey import Var
+from amanpandey import bot
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
@@ -67,7 +67,7 @@ for name in files:
 
 
 
-print("USERBOT STARTED  ")
+print("USERBOT CHALNE LAGA JAO TELEGRAM PAR AUR MOJ KARO ")
 
 
 

@@ -1,7 +1,7 @@
 # Copright Team ExtremePro (C) 2021-2022
 import asyncio
 import os
-import asyncio
+os.system("pip install --upgrade Extre")
 os.system("pip install --upgrade telethon")
 from telethon import TelegramClient
 from telethon.sessions import StringSession
@@ -10,6 +10,7 @@ from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd,
 from Extre.config import Config
 from Extre.variables import Var
 bot = "ExtremeProUserBot"
+devs = "1819992624"
 
 
 # Default .alive name

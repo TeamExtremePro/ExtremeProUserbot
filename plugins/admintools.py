@@ -776,7 +776,7 @@ async def get_user_from_event(event):
             user = int(user)
 
         if not user:
-            await event.edit("`Pass the user's username, id or reply!`")
+            await event.edit("`Pass the user's chat_id, id or reply!`")
             return
 
         if event.message.entities is not None:
@@ -811,21 +811,21 @@ async def get_user_sender_id(user, event):
 
 {
     "admin":
-    ".promote <username/reply> <custom rank (optional)>\
+    ".promote <chat_id/reply> <custom rank (optional)>\
 \nUsage: Provides admin rights to the person in the chat.\
-\n\n.demote <username/reply>\
+\n\n.demote <chat_id/reply>\
 \nUsage: Revokes the person's admin permissions in the chat.\
-\n\n.ban <username/reply> <reason (optional)>\
+\n\n.ban <chat_id/reply> <reason (optional)>\
 \nUsage: Bans the person off your chat.\
-\n\n.unban <username/reply>\
+\n\n.unban <chat_id/reply>\
 \nUsage: Removes the ban from the person in the chat.\
-\n\n.mute <username/reply> <reason (optional)>\
+\n\n.mute <chat_id/reply> <reason (optional)>\
 \nUsage: Mutes the person in the chat, works on admins too.\
-\n\n.unmute <username/reply>\
+\n\n.unmute <chat_id/reply>\
 \nUsage: Removes the person from the muted list.\
-\n\n.gmute <username/reply> <reason (optional)>\
+\n\n.gmute <chat_id/reply> <reason (optional)>\
 \nUsage: Mutes the person in all groups you have in common with them.\
-\n\n.ungmute <username/reply>\
+\n\n.ungmute <chat_id/reply>\
 \nUsage: Reply someone's message with .ungmute to remove them from the gmuted list.\
 \n\n.delusers\
 \nUsage: Searches for deleted accounts in a group. Use .delusers clean to remove deleted accounts from the group.\

@@ -2,12 +2,12 @@ from plugins import CMD_LIST
 from amanpandey import amanpandey_cmd
 
 @command(pattern="^.help ?(.*)")
-@bot.on(amanpandey_cmd(pattern="help", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="help", allow_sudo=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
-        input_str = event.pattern_match.group(1)
-        if tgbotusername is None or input_str == "text":
+        tgbotchat_id = Var.TG_BOT_USER_NAME_BF_HER
+        input_str = event.pattern_match.group
+        if tgbotchat_id is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
                 string += "ℹ️ " + i + "\n"
@@ -42,7 +42,7 @@ async def cmd_list(event):
             help_string = """Userbot Helper.. \nProvided by Extreme Pro userbot\n
 `Userbot Helper to reveal all the commands`"""
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
+                tgbotchat_id,
                 help_string
             )
             await results[0].click(
