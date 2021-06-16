@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "username"
+          find: "ultra_cmd"
 
-          replace: "chat_id"
+          replace: "extremepro_cmd"
 
       - name: Create Pull Request
 
