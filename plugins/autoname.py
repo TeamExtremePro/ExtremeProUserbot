@@ -5,6 +5,7 @@ from telethon.tl import functions
 from telethon.errors import FloodWaitError
 from amanpandey import extremepro_cmd
 from plugins import AUTONAME, CMD_HELP
+from Extre import ALIVE_NAME
 import random, re
 import os
 from datetime import datetime
