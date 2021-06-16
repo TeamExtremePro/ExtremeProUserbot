@@ -1,9 +1,9 @@
-mport os
+import os
 
 from telebot import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
 from telebot.telebotConfig import Config
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 CMD_HNDLR = Config.CMD_HNDLR
 CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "⚡")
 
