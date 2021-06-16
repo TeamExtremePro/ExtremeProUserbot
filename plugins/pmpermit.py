@@ -21,7 +21,7 @@ from Extre.variables import Var
 
 LIGHTNINGUSER = str(ALIVE_NAME) if ALIVE_NAME else "υℓтяα χ"
 
-from ULTRA.utils import admin_cmd as ultra_cmd
+from Extre.utils import admin_cmd as ultra_cmd
 
 
 
