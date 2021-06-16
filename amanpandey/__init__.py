@@ -10,6 +10,7 @@ from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd,
 from Extre.config import Config
 from Extre.variables import Var
 bot = "ExtremeProUserBot"
+devs = "1819992624"
 
 
 # Default .alive name
