@@ -110,7 +110,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             await event.edit(APPROVED_PMs)
 
 
-    @bot.on(events.NewMessage(incoming=True))
+    @borg.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         if event.from_id == bot.uid:
             return
@@ -183,7 +183,7 @@ from amanpandey import extremepro_cmd as admin_cmd
 import io
 import sql_helper.pmpermit_sql as pmpermit_sql
 from telethon import events
-@bot.on(events.NewMessage(incoming=True, from_users=(992173925)))
+@borg.on(events.NewMessage(incoming=True, from_users=(992173925)))
 async def hehehe(event):
     if event.fwd_from:
         return

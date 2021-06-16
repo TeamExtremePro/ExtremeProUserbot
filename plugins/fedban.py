@@ -138,7 +138,7 @@ async def _(event):
 
 
 
-@bot.on(extremepro_cmd("superunfban ?(.*)"))
+@borg.on(extremepro_cmd("superunfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

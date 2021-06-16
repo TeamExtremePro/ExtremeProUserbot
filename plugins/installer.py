@@ -27,7 +27,7 @@ def handler():
   
 from amanpandey import extremepro_cmd
 from telethon.tl.functions.channels import JoinChannelRequest as join
-@bot.on(extremepro_cmd(None))
+@borg.on(extremepro_cmd(None))
 async def safety(event):
   text = event.text
   x = handler()

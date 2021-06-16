@@ -68,8 +68,8 @@ def user_full_name(user):
     return full_name
 
 
-@bot.on(admin_cmd(pattern="inviteall ?(.*)"))
-@bot.on(sudo_cmd(pattern="inviteall ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="inviteall ?(.*)"))
+@borg.on(sudo_cmd(pattern="inviteall ?(.*)", allow_sudo=True))
 async def get_users(event):   
     sender = await event.get_sender() ; me = await event.client.get_me()
     if not sender.id == me.id:
@@ -94,8 +94,8 @@ async def get_users(event):
     return await hell.edit(f"**Terminal Finished** \n\n• Successfully Invited `{s}` people \n• failed to invite `{f}` people")
 
 
-@bot.on(admin_cmd(pattern="add ?(.*)"))
-@bot.on(sudo_cmd(pattern="add ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="add ?(.*)"))
+@borg.on(sudo_cmd(pattern="add ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

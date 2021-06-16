@@ -4,7 +4,7 @@ from amanpandey import extremepro_cmd, Var
 EXTREMEPRO = Var.HEROKU_APP_NAME
 AMANPANDEY = Var.HEROKU_API_KEY
 sudolist = os.environ.get("SUDO_USERS", None)
-@bot.on(extremepro_cmd(pattern='addsudo'))
+@borg.on(extremepro_cmd(pattern='addsudo'))
 async def add_sudo(event):
   Heroku = heroku3.from_key(AMANPANDEY)
   app = Heroku.app(EXTREMEPRO)
@@ -33,7 +33,7 @@ async def add_sudo(event):
 
 
 
-@bot.on(extremepro_cmd(pattern='rmsudo'))
+@borg.on(extremepro_cmd(pattern='rmsudo'))
 async def remove_sudo(event):
   Heroku = heroku3.from_key(AMANPANDEY)
   app = Heroku.app(EXTREMEPRO)
@@ -59,13 +59,13 @@ async def remove_sudo(event):
       await event.edit(f"ᴛʜᴇ {name} ɪs ɴᴏᴛ ɪɴ sᴜᴅᴏ 😑😑")
     if heroku_var["SUDO_USERS"] == None:
        await event.edit(f"ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ ɪs ᴇᴍᴘʏᴛʏ 😑😑")
-@bot.on(extremepro_cmd("sudo"))
+@borg.on(extremepro_cmd("sudo"))
 async def sudos(event):
   if sudolist:
     await event.edit("sᴜᴅᴏ ɪs ᴇɴᴇᴀʙʟᴇᴅ ᴛʏᴘᴇ `.listsudo` ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ")
   else:
      await event.edit("sᴜᴅᴏ ɪs ᴏғғ")            
-@bot.on(extremepro_cmd("listsudo"))
+@borg.on(extremepro_cmd("listsudo"))
 async def sudolists(event):
   op = await event.edit('ᴄʜᴇᴄᴋɪɴɢ ᴀʟʟ sᴜᴅᴏs ᴡᴀɪᴛ')
   Heroku = heroku3.from_key(AMANPANDEY)
