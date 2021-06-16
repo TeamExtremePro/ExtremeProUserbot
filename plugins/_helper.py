@@ -2,6 +2,7 @@ import os
 
 from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST
 from Extre.config import Config
+from amanpandey import extremepro_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 CMD_HNDLR = os.environ.get("CMD_HNDLR", None)
@@ -11,7 +12,7 @@ if CMD_HNDLR is None:
     CMD_HNDLR = "."
 
 
-@bot.on(admin_cmd(pattern="help ?(.*)"))
+@bot.on(extremepro_cmd(pattern="help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
