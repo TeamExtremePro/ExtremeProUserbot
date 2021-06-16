@@ -351,24 +351,6 @@ if Var.PRIVATE_GROUP_ID is not None:
 
         sender = await bot.get_entity('chat_id')
 
-        if chat_ids == bot.uid:
-
-            # don't log Saved Messages
-
-            return
-
-        if sender.bot:
-
-            # don't log bots
-
-            return
-
-        if sender.verified:
-
-            # don't log verified accounts
-
-            return
-
         if LIGHTNING_PROTECTION == "NO":
 
             return
