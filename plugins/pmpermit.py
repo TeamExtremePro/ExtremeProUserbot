@@ -335,7 +335,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
         lightning_chats = lightning.message.message
 
-        chat_ids = lightning.sender_id
+        username = lightning.sender_id
 
 
 
@@ -355,45 +355,45 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        if lightning_sql.is_approved(chat_ids):
+        if lightning_sql.is_approved(username):
 
             return
 
-        if not lightning_sql.is_approved(chat_ids):
+        if not lightning_sql.is_approved(username):
 
             # pm permit
 
-            await lightning_goin_to_attack(chat_ids, lightning)
+            await lightning_goin_to_attack(username, lightning)
 
 
 
-    async def lightning_goin_to_attack(chat_ids, lightning):
+    async def lightning_goin_to_attack(username, lightning):
 
-        if chat_ids not in LIGHTNING_WRN:
+        if username not in LIGHTNING_WRN:
 
-            LIGHTNING_WRN.update({chat_ids: 0})
+            LIGHTNING_WRN.update({username: 0})
 
-        if LIGHTNING_WRN[chat_ids] == 3:
+        if LIGHTNING_WRN[username] == 3:
 
             lemme = await lightning.reply(FUCK_OFF_WARN)
 
             await asyncio.sleep(3)
 
-            await lightning.client(functions.contacts.BlockRequest(chat_ids))
+            await lightning.client(functions.contacts.BlockRequest(username))
 
-            if chat_ids in LIGHTNING_REVL_MSG:
+            if username in LIGHTNING_REVL_MSG:
 
-                await LIGHTNING_REVL_MSG[chat_ids].delete()
+                await LIGHTNING_REVL_MSG[username].delete()
 
-            LIGHTNING_REVL_MSG[chat_ids] = lemme
+            LIGHTNING_REVL_MSG[username] = lemme
 
             lightn_msg = ""
 
             lightn_msg += "#Some Retards ð\n\n"
 
-            lightn_msg += f"[User](tg://user?id={chat_ids}): {chat_ids}\n"
+            lightn_msg += f"[User](tg://user?id={username}): {username}\n"
 
-            lightn_msg += f"Message Counts: {LIGHTNING_WRN[chat_ids]}\n"
+            lightn_msg += f"Message Counts: {LIGHTNING_WRN[username]}\n"
 
             # lightn_msg += f"Media: {message_media}"
 
@@ -435,7 +435,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
         LIGHTNING_L = OVER_POWER_WARN.format(
 
-        LIGHTNINGUSER, LIGHTNING_STOP_EMOJI, LIGHTNING_WRN[chat_ids] + 1, HMM_LOL
+        LIGHTNINGUSER, LIGHTNING_STOP_EMOJI, LIGHTNING_WRN[username] + 1, HMM_LOL
 
         )
 
@@ -445,13 +445,13 @@ if Var.PRIVATE_GROUP_ID is not None:
 
         yas_ser = await lightning_hmm[new_var].click(lightning.chat_id)
 
-        LIGHTNING_WRN[chat_ids] += 1
+        LIGHTNING_WRN[username] += 1
 
-        if chat_ids in LIGHTNING_REVL_MSG:
+        if username in LIGHTNING_REVL_MSG:
 
-           await LIGHTNING_REVL_MSG[chat_ids].delete()
+           await LIGHTNING_REVL_MSG[username].delete()
 
-        LIGHTNING_REVL_MSG[chat_ids] = yas_ser
+        LIGHTNING_REVL_MSG[username] = yas_ser
 
 
 
