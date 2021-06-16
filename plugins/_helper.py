@@ -1,7 +1,7 @@
 import os
 
-from telebot import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
-from telebot.telebotConfig import Config
+from EXTRE import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
+from Extre.config import Config
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 CMD_HNDLR = Config.CMD_HNDLR
