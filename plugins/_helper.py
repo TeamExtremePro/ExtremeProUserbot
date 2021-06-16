@@ -1,6 +1,6 @@
 import os
 
-from EXTRE import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
+from Extre import ALIVE_NAME, CMD_HELP, CMD_HNDLR, CMD_LIST
 from Extre.config import Config
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
