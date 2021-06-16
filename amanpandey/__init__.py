@@ -11,7 +11,7 @@ from Extre.config import Config
 from Extre.variables import Var
 bot = "ExtremeProUserBot"
 devs = "1819992624"
-
+extremeprover = "0.1"
 
 # Default .alive name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
