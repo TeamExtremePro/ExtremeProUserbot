@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "chat_id"
+          find: "username"
 
-          replace: "username"
+          replace: "chat_id"
 
       - name: Create Pull Request
 
