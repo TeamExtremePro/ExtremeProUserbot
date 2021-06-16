@@ -21,7 +21,7 @@ from Extre.variables import Var
 
 LIGHTNINGUSER = str(ALIVE_NAME) if ALIVE_NAME else "υℓтяα χ"
 
-from Extre.utils import admin_cmd as ultra_cmd
+from Extre.utils import admin_cmd as extremepro_cmd
 
 
 
@@ -115,7 +115,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 
 
-    @borg.on(ultra_cmd(pattern="(a|approve)"))
+    @borg.on(extremepro_cmd(pattern="(a|approve)"))
 
     async def block(event):
 
@@ -157,7 +157,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 
 
-    @borg.on(ultra_cmd(pattern="block$"))
+    @borg.on(extremepro_cmd(pattern="block$"))
 
     async def lightning_approved_pm(event):
 
@@ -199,7 +199,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             
 
-    @borg.on(ultra_cmd(pattern="(da|disapprove)"))
+    @borg.on(extremepro_cmd(pattern="(da|disapprove)"))
 
     async def lightning_approved_pm(event):
 
@@ -249,7 +249,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 
 
-    @borg.on(ultra_cmd(pattern="listapproved$"))
+    @borg.on(extremepro_cmd(pattern="listapproved$"))
 
     async def lightning_approved_pm(event):
 
