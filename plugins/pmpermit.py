@@ -87,7 +87,7 @@ LIGHTNING_STOP_EMOJI = (
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @bot.on(events.NewMessage(outgoing=True))
+    @borg.on(events.NewMessage(outgoing=True))
 
     async def lightning_dm_niqq(event):
 
@@ -311,7 +311,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 
 
-    @bot.on(events.NewMessage(incoming=True))
+    @borg.on(events.NewMessage(incoming=True))
 
     async def lightning_new_msg(lightning):
 
@@ -477,7 +477,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 
 
-@bot.on(events.NewMessage(incoming=True))
+@borg.on(events.NewMessage(incoming=True))
 async def legend_x(event):
 
     if event.fwd_from:
