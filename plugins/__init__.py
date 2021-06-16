@@ -51,8 +51,8 @@ extremepro += f"Assistant Bot: {bots}\n"
 extremepro += f"Lydia: {lyd}\n"
 extremepro += f"Sudo: {sudo}\n"
 extremepro += f"PMSecurity: {pm}\n"
-extremepro += f"\nVisit @TeleBotSupport for assistance.\n"
-extremeprostats = f"{tele}"
+extremepro += f"\nVisit @EXTREMEPRO USERBOT for assistance.\n"
+extremeprostats = f"{extremepro}"
 
 EXTREMEPRO_NAME = bot.me.first_name
 OWNER_ID = bot.me.id
