@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "TG_TG_TG_TG_BOT_TOKEN_BF_HER_BF_HER_BF_HER_BF_HER"
+          find: "@bot.on"
 
-          replace: "TG_BOT_TOKEN_BF_HER"
+          replace: "@borg.on"
 
       - name: Create Pull Request
 
