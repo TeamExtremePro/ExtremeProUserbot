@@ -11,4 +11,3 @@ from amanpandey import Config
 from amanpandey import Var
 from Extre import CMD_LIST, CMD_HELP, CMD_HELP_BOT, BRAIN_CHECKER, INT_PLUG, LOAD_PLUG, COUNT_MSG, USERS, COUNT_PM, LASTMSG, CMD_HELP, ISAFK, AFKREASON, SUDO_LIST
 AUTONAME = os.environ.get("AUTONAME", None)
-os.system("pip install --upgrade LEGENDX")
