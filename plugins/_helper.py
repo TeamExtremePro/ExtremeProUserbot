@@ -19,7 +19,7 @@ async def cmd_list(event):
                 with io.BytesIO(str.encode(string)) as out_file:
                     out_file.name = "cmd.txt"
                     await bot.send_file(
-                        event.chat_id,
+                        event.username,
                         out_file,
                         force_document=True,
                         allow_cache=False,
@@ -46,7 +46,7 @@ async def cmd_list(event):
                 help_string
             )
             await results[0].click(
-                event.chat_id,
+                event.username,
                 reply_to=event.reply_to_msg_id,
                 hide_via=True
             )

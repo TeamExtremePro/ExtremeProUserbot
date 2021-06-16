@@ -103,7 +103,7 @@ async def _(event):
                 )
             requires_file_name = Config.TMP_DOWNLOAD_DIRECTORY + "memes.webp"
             await borg.send_file(  # pylint:disable=E0602
-                event.chat_id,
+                event.username,
                 requires_file_name,
                 supports_streaming=False,
                 caption="bot",
@@ -115,7 +115,7 @@ async def _(event):
             await event.edit("Invalid message type. Plz choose right message type u NIBBA.")
             return
           else: 
-               await borg.send_file(event.chat_id, response.media)
+               await borg.send_file(event.username, response.media)
 
 def is_message_image(message):
     if message.media:

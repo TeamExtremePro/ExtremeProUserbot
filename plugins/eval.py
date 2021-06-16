@@ -53,7 +53,7 @@ async def _(event):
         with io.BytesIO(str.encode(final_output)) as out_file:
             out_file.name = "eval.text"
             await borg.send_file(
-                event.chat_id,
+                event.username,
                 out_file,
                 force_document=True,
                 allow_cache=False,

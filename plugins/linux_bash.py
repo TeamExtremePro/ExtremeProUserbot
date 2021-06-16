@@ -36,7 +36,7 @@ async def _(event):
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "exec.text"
             await bot.send_file(
-                event.chat_id,
+                event.username,
                 out_file,
                 force_document=True,
                 allow_cache=False,

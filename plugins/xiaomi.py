@@ -25,7 +25,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 # Bhagao Dosto Kanger Aaya
 
 @register(outgoing=True, pattern="^.fastboot(?: |$)(.*)")
@@ -48,7 +48,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 @register(outgoing=True, pattern="^.recovery(?: |$)(.*)")
@@ -71,7 +71,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 @register(outgoing=True, pattern="^.pb(?: |$)(.*)")
@@ -94,7 +94,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 @register(outgoing=True, pattern="^.of(?: |$)(.*)")
@@ -117,7 +117,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 @register(outgoing=True, pattern="^.eu(?: |$)(.*)")
@@ -140,7 +140,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 @register(outgoing=True, pattern="^.vendor(?: |$)(.*)")
@@ -163,7 +163,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 @register(outgoing=True, pattern="^.specs(?: |$)(.*)")
@@ -186,7 +186,7 @@ async def _(event):
             return
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await bot.forward_messages(event.username, response.message)
 
 
 CMD_HELP.update({

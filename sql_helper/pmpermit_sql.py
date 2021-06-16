@@ -4,34 +4,34 @@ from sql_helper import SESSION, BASE
 
 class PMPermit(BASE):
     __tablename__ = "pmpermit"
-    chat_id = Column(String(14), primary_key=True)
+    username = Column(String(14), primary_key=True)
     reason = Column(String(127))
 
-    def __init__(self, chat_id, reason=""):
-        self.chat_id = chat_id
+    def __init__(self, username, reason=""):
+        self.username = username
         self.reason = reason
 
 
 PMPermit.__table__.create(checkfirst=True)
 
 
-def is_approved(chat_id):
+def is_approved(username):
     try:
-        return SESSION.query(PMPermit).filter(PMPermit.chat_id == str(chat_id)).one()
+        return SESSION.query(PMPermit).filter(PMPermit.username == str(username)).one()
     except:
         return None
     finally:
         SESSION.close()
 
 
-def approve(chat_id, reason):
-    adder = PMPermit(str(chat_id), str(reason))
+def approve(username, reason):
+    adder = PMPermit(str(username), str(reason))
     SESSION.add(adder)
     SESSION.commit()
 
 
-def disapprove(chat_id):
-    rem = SESSION.query(PMPermit).get(str(chat_id))
+def disapprove(username):
+    rem = SESSION.query(PMPermit).get(str(username))
     if rem:
         SESSION.delete(rem)
         SESSION.commit()

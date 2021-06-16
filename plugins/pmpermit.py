@@ -107,7 +107,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
                     bruh = "Aᴜᴛᴏ Aᴘᴘʀᴏᴠᴇᴅ Bᴄᴜᴢ ᴏᴜᴛɢᴏɪɴɢ ʕ•ᴥ•ʔ"
 
-                    rko = await borg.send_message(event.chat_id, bruh)
+                    rko = await borg.send_message(event.username, bruh)
 
                     await asyncio.sleep(3)
 
@@ -123,7 +123,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        replied_user = await borg(GetFullUserRequest(event.chat_id))
+        replied_user = await borg(GetFullUserRequest(event.username))
 
         firstname = replied_user.user.first_name
 
@@ -165,7 +165,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        replied_user = await event.client(GetFullUserRequest(event.username))
 
         firstname = replied_user.user.first_name
 
@@ -207,7 +207,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        replied_user = await event.client(GetFullUserRequest(event.username))
 
         firstname = replied_user.user.first_name
 
@@ -267,13 +267,13 @@ if Var.PRIVATE_GROUP_ID is not None:
 
                 if a_user.reason:
 
-                    PM_VIA_LIGHT += f"â¥â¿â¥ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                    PM_VIA_LIGHT += f"â¥â¿â¥ [{a_user.username}](tg://user?id={a_user.username}) for {a_user.reason}\n"
 
                 else:
 
                     PM_VIA_LIGHT += (
 
-                        f"â¥â¿â¥ [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+                        f"â¥â¿â¥ [{a_user.username}](tg://user?id={a_user.username})\n"
 
                     )
 
@@ -289,7 +289,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
                 await event.client.send_file(
 
-                    event.chat_id,
+                    event.username,
 
                     out_file,
 
@@ -349,7 +349,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
-        sender = await bot.get_entity('chat_id')
+        sender = await bot.get_entity('username')
 
         if LIGHTNING_PROTECTION == "NO":
 
@@ -443,7 +443,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
         new_var = 0
 
-        yas_ser = await lightning_hmm[new_var].click(lightning.chat_id)
+        yas_ser = await lightning_hmm[new_var].click(lightning.username)
 
         LIGHTNING_WRN[username] += 1
 

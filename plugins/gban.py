@@ -200,7 +200,7 @@ async def handler(rkG):
                 creator = chat.creator   
                 if admin or creator:
                  try:
-                    await client.edit_permissions(rkG.chat_id, guser.id, view_messages=False)                              
+                    await client.edit_permissions(rkG.username, guser.id, view_messages=False)                              
                     await rkG.reply(
                      f"**Gbanned User Joined!!** \n"                      
                      f"**Victim Id**: [{guser.id}](tg://user?id={guser.id})\n"                   
