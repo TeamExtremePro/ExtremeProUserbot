@@ -33,6 +33,7 @@ MESAG = (
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
+LOAD_MYBOT = os.environ.get("LOAD_MYBOT", None)
 
 if Var.LOAD_MYBOT == "True":
     USER_BOT_NO_WARN = (
