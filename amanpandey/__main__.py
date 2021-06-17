@@ -35,7 +35,7 @@ if len(argv) not in (1, 3, 4):
 else:
     bot.tgbot = None
     if Var.TG_BOT_USER_NAME_BF_HER is not None:
-        print("Connecting To Scratch Server")
+        print("Connecting To Scratch Server using telethon")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
             "TG_BOT_TOKEN",
@@ -43,7 +43,7 @@ else:
             api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
-        print("Connected To Scratch Server")
+        print("Connected To Scratch Server using telethon")
     else:
         bot.start()
 import glob
