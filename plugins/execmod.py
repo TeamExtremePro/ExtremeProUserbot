@@ -11,7 +11,7 @@ import time
 import os
 import sys
 from telethon import events, functions, __version__
-from ExtrExtrExtre.utils import admin_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd
 from asyncio.subprocess import PIPE as asyncPIPE
 from asyncio import create_subprocess_exec as asyncrunapp
 

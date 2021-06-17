@@ -2,7 +2,7 @@
 Syntax: .json"""
 from telethon import events
 import io
-from ExtrExtrExtre.utils import admin_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd
 
 
 @borg.on(admin_cmd("json"))

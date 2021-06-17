@@ -5,7 +5,7 @@
 # Card Generator
 ##############################
 from faker import Faker as dc
-from ExtrExtrExtre.utils import admin_cmd as hehe
+from ExtrExtrExtrExtre.utils import admin_cmd as hehe
 from Extre import bot as cobra
 @cobra.on(hehe("cc"))
 async def _cobra(dark):

@@ -13,7 +13,7 @@ import requests
 from bs4 import BeautifulSoup
 from humanize import naturalsize
 
-from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import CMD_HELP
 
 

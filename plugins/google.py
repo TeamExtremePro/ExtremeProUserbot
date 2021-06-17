@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from google_images_download import google_images_download
-from ExtrExtrExtre.utils import admin_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd
 
 
 def progress(current, total):

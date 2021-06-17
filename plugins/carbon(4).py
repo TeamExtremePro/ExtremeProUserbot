@@ -7,7 +7,7 @@ import random
 from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 

@@ -9,7 +9,7 @@ import re
 import json
 import asyncio
 from Extre import CMD_HELP
-from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 async def callAPI(search_str):
     query = '''

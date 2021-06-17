@@ -6,7 +6,7 @@
 import bs4
 import requests
 
-from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"

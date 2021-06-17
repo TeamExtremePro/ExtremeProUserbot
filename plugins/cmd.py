@@ -2,7 +2,7 @@
 import asyncio
 import io
 
-from ExtrExtrExtre.utils import admin_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd
 from Extre import CMD_HELP
 
 

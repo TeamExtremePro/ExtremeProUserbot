@@ -1,7 +1,7 @@
 import asyncio
 from collections import deque
 
-from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import CMD_HELP
 
 
