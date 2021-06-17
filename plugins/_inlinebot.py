@@ -35,7 +35,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
 LOAD_MYBOT = os.environ.get("LOAD_MYBOT", None)
 
-if Config.LOAD_MYBOT == "True":
+if os.environ.get("LOAD_MYBOT", None) == "True":
     USER_BOT_NO_WARN = (
         "**PM Security of [{}](tg://user?id={})**\n\n"
         "{}\n\n"
@@ -44,7 +44,7 @@ if Config.LOAD_MYBOT == "True":
             DEFAULTUSER, myid, MESAG, botname
         )
     )
-elif Var.LOAD_MYBOT == "False":
+elif os.environ.get("LOAD_MYBOT", None) == "False":
     USER_BOT_NO_WARN = (
         "**PM Security of [{}](tg://user?id={})**\n\n"
         "{}\n"
