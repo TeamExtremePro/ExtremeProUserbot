@@ -56,14 +56,13 @@ for name in files:
         start_assistant(shortname.replace(".py", ""))   
 
 import glob
-if  EXTRA_PLUGS == True:
-    os.system("git clone https://github.com/TeamExtremePro/MODULES.git ./plugins/")
-    path = "plugins/*.py"
-    files = glob.glob(path)
-    for name in files:
-        with open(name) as a:
-            patt = Path(a.name)
-            plugin_name = patt.stem
+os.system("git clone https://github.com/TeamExtremePro/MODULES.git ./plugins/")
+path = "plugins/*.py"
+files = glob.glob(path)
+for name in files:
+     with open(name) as a:
+         patt = Path(a.name)
+            shortname = path1.stem
             try:
                 load_module(plugin_name.replace(".py", ""))
                 if not plugin_name.startswith("__") or plugin_name.startswith("_"):
