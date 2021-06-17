@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "DYNAMIC.plugins.sql_helper"
+          find: "from var import Var"
 
-          replace: "sql_helper"
+          replace: "from amanpandey import Var"
 
       - name: Create Pull Request
 
