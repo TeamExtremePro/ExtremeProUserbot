@@ -10,7 +10,7 @@ from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd,
 from Extre.config import Config
 from Extre.variables import Var
 from Extre import bot
-EXTRA_PLUGS = os.environ.get("EXTRA_PLUGS", True)
+EXTRA_PLUGS = os.environ.get("EXTRA_PLUGS", False)
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
