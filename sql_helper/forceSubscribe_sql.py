@@ -1,4 +1,4 @@
-#    Copyright (C) 2020Extre2021 by @LEGENDX22, @PROBOYX
+#    Copyright (C) 2020-2021 by @LEGENDX22, @PROBOYX
 #    This program is a part of LEGEND BOT project
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 
 from sqlalchemy import Column, Numeric, String
 
-from sql_helper import BASE, SESSION
+from DYNAMIC.plugins.sql_helper import BASE, SESSION
 
 
 class forceSubscribe(BASE):

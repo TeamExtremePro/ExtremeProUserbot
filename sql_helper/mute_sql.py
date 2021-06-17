@@ -1,5 +1,5 @@
 try:
-    from sql_helper import SESSION, BASE
+    from DYNAMIC.plugins.sql_helper import SESSION, BASE
 except ImportError:
     raise Exception("Hello!")
 

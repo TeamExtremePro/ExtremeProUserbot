@@ -14,7 +14,7 @@
 
 from sqlalchemy import Column, String
 
-from sql_helper import BASE, SESSION
+from DYNAMIC.plugins.sql_helper import BASE, SESSION
 
 
 class Moidata(BASE):
