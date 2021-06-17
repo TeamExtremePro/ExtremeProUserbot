@@ -120,7 +120,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "Source Code",
-                text="**Welcome to ExtremeProUserbot**\n\n`Click below buttons for more`",
+                text="**Welcome to ExtremeProUserbot**\n\n`Wait My Master Approves You Utnill You Checkout My Repo`",
                 buttons=[
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/useropbolte")],
                     [
