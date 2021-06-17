@@ -2,8 +2,8 @@ from subprocess import PIPE
 from subprocess import run as runapp
 import pybase64
 from plugins import CMD_HELP
-from Extre.events import register
-from Extre.utils import , errors_handler
+from Extre.events import register, error_handlers
+
 
 
 @register(outgoing=True, pattern="^.hash (.*)")
