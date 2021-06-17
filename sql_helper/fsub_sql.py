@@ -2,7 +2,7 @@
 
 from sqlalchemy import Column, Numeric, String
 
-from DYNAMIC.plugins.sql_helper import BASE, SESSION
+from sql_helper import BASE, SESSION
 
 
 class forceSubscribe(BASE):

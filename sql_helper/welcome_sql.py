@@ -1,5 +1,5 @@
 from sqlalchemy import BigInteger, Boolean, Column, String, UnicodeText
-from DYNAMIC.plugins.sql_helper import SESSION, BASE
+from sql_helper import SESSION, BASE
 
 
 class Welcome(BASE):
