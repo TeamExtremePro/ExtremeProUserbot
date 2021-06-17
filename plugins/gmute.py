@@ -1,7 +1,7 @@
 from sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
 from Extre import CMD_HELP
-from ExtrExtre.utils import admin_cmd
+from -.utils import admin_cmd
 
 #@command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
 @borg.on(admin_cmd(pattern=r"gmute ?(\d+)?"))

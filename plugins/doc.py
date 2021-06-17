@@ -12,7 +12,7 @@ from telethon.errors import PhotoInvalidDimensionsError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from ExtrExtre.utils import admin_cmd, progress
+from -.utils import admin_cmd, progress
 
 
 if not os.path.isdir("./temp"):

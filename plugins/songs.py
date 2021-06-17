@@ -76,7 +76,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
-from ExtrExtre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
+from -.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
 from plugins import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
@@ -452,7 +452,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from ExtrExtre.utils import admin_cmd
+from -.utils import admin_cmd
 
 @borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):

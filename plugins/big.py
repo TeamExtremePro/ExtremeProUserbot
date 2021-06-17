@@ -9,7 +9,7 @@ Credits to @TeleBotHelp
 # He Worked Very Hard to do this, So Please Respect Him!!
 
 import asyncio
-from ExtrExtre.utils import admin_cmd
+from -.utils import admin_cmd
 from Extre import CMD_HELP
 from telethon import events
 import random
