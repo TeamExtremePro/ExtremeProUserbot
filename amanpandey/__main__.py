@@ -56,21 +56,6 @@ for name in files:
         start_assistant(shortname.replace(".py", ""))   
 
 
-import glob
-os.system ("git clone https://github.com/TeamExtremePro/MODULES ./*.py)
-path = '/*.py'
-files = glob.glob(path)
-for name in files:
-    with open(name) as f:
-        path1 = Path(f.name)
-        shortname = path1.stem
-        load_module(shortname.replace(".py", ""))
-            try:
-                load_module(plugin_name.replace(".py", ""))
-                if not plugin_name.startswith("__") or plugin_name.startswith("_"):
-                    print ('INSTALLING ALL MODULES', plugin_name)
-            except:
-                pass
 
 import glob
 
