@@ -36,7 +36,7 @@ async def safety(event):
   if not event.is_reply:
     return await event.edit('please tag a file')
   tag = await event.get_reply_message()
-  file = await bot.download_media(tag, "ULTRA/plugins")
+  file = await bot.download_media(tag, "Extre/plugins")
   X = ""
   for word in danger:
     f = open(file, "r")
