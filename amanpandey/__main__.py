@@ -76,7 +76,7 @@ if addons == "True" or addons is None:
                     )
                 else:
                     load_module(plugin_name.replace(".py", ""))
-                    if not plugin_name.startswith("__") or plugin_name.startswith("_"):
+                    if not plugin_name.startswith("") or plugin_name.startswith(""):
                         LOGS.info(f"ExtremePro - Addons - Installed - {plugin_name}")
             except Exception as e:
                 LOGS.info(f"ExtremePro - Addons - ERROR - {plugin_name}")
