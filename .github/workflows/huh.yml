@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "from userbot"
+          find: "DYNAMIC.plugins.sql_helper"
 
-          replace: "from amanpandey"
+          replace: "sql_helper"
 
       - name: Create Pull Request
 
