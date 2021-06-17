@@ -1,5 +1,5 @@
 try:
-    from DYNAMIC.plugins.sql_helper import BASE, SESSION
+    from sql_helper import BASE, SESSION
 except ImportError:
     raise AttributeError
 
