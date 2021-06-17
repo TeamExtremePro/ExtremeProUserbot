@@ -54,7 +54,7 @@ for name in files:
         path1 = Path(f.name)
         shortname = path1.stem
         start_assistant(shortname.replace(".py", ""))   
-
+BOT_MODE = os.environ.get("BOT_MODE", False)
 addons = os.environ.get("addons", True)
 if addons == "True" or addons is None:
     try:
