@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "from .. import CMD_HELP"
+          find: "..utils import"
 
-          replace: "from plugins import CMD_HELP"
+          replace: "Extre.utils import"
 
       - name: Create Pull Request
 
