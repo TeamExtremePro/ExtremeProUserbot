@@ -10,7 +10,7 @@ async def startgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("Putting Dick🍆 💦 In Son mouth!!")
+        await event.edit("Ab Chup Reh Le!!")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -31,7 +31,7 @@ async def startgmute(event):
     except Exception as e:
         await event.edit("Error occured!\nError is " + str(e))
     else:
-        await event.edit("Son Can't speek now.... Filled His Mouth With Cum😉")
+        await event.edit("Son You Cant")
 
 #@command(outgoing=True, pattern=r"^.ungmute ?(\d+)?")
 @borg.on(admin_cmd(pattern=r"ungmute ?(\d+)?"))
@@ -40,7 +40,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("Taking Out Dick from Son mouth....\n\n       Today Sex Done😁 ")
+        await event.edit("NOw Speak....\n\n       Granting another chance ")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -60,11 +60,11 @@ async def endgmute(event):
     except Exception as e:
         await event.edit("Error occured!\nError is " + str(e))
     else:
-        await event.edit("Son Feeling Good..... Now speak🍆🍆")
+        await event.edit("Speak")
         
 @command(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
 CMD_HELP.update({
-    "gmute":"ye plug-in se aap kisi ke bhi muh me deke chup krwa skte h"})
+    "gmute":"Used To Globally Mute"})
