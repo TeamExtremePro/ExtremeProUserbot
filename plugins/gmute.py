@@ -1,4 +1,4 @@
-from Extre.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
 from Extre import CMD_HELP
 from Extre.utils import admin_cmd
