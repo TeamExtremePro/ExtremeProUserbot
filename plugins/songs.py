@@ -1,5 +1,5 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from amanpandey import extremepro_cmd as admin_cmd, amanpandey_cmd as sudo_cmd
+from Extre.utils import admin_cmd
 import asyncio
 
  
@@ -77,7 +77,7 @@ from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
 from Extre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
-from plugins import CMD_HELP
+from Extre import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
 from youtube_dl import YoutubeDL
@@ -99,7 +99,6 @@ except:
 
 
 @borg.on(admin_cmd(pattern="song(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="song", allow_sudo=True))
 async def download_video(v_url):  
 
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
@@ -342,9 +341,8 @@ async def download_video(v_url):
 
 from telethon import events
 import asyncio
-from amanpandey import register 
-from plugins import CMD_HELP
-from amanpandey import bot
+from Extre.events import register 
+from Extre import bot, CMD_HELP
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
@@ -395,10 +393,9 @@ async def getmusic(so):
 
 from telethon import events
 import asyncio
-#from DYNAMIC.utils import admin_cmd
-from amanpandey import register 
-from amanpandey import bot
-from plugins import CMD_HELP
+#from Extre.utils import admin_cmd
+from Extre.events import register 
+from Extre import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 try:

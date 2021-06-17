@@ -3,7 +3,7 @@
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 """
-   Heroku manager for your DYNAMIC
+   Heroku manager for your Extre
 """
 
 import heroku3
@@ -11,9 +11,9 @@ import asyncio
 import os
 import requests
 import math
-from amanpandey import extremepro_cmd
-from plugins import CMD_HELP
-from amanpandey import Config
+from Extre.utils import admin_cmd
+from Extre import CMD_HELP
+from Extre.config import Config
 
 # ================= 
 
@@ -27,7 +27,7 @@ Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@borg.on(extremepro_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
+@borg.on(admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
 async def variable(var):
     """
         Manage most of ConfigVars setting, set new var, get current var,
@@ -104,7 +104,7 @@ async def variable(var):
             return await var.edit(f"**{variable}**  `is not exists`")
 
 
-@borg.on(extremepro_cmd(pattern="usage(?: |$)", outgoing=True))
+@borg.on(admin_cmd(pattern="usage(?: |$)", outgoing=True))
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
@@ -161,7 +161,7 @@ async def dyno_usage(dyno):
                            f"**|**  [`{percentage}`**%**]"
                            )
 
-@borg.on(extremepro_cmd(pattern="logs$", outgoing=True))
+@borg.on(admin_cmd(pattern="logs$", outgoing=True))
 async def _(dyno):        
         try:
              Heroku = heroku3.from_key(HEROKU_API_KEY)                         
@@ -176,7 +176,7 @@ async def _(dyno):
             dyno.chat_id,
             "logs.txt",
             reply_to=dyno.id,
-            caption="EXTREME PRO USERBOT 𝙻𝙾𝙶𝚂 𝚘𝙵 100+ lines",
+            caption="Extre X 𝙻𝙾𝙶𝚂 𝚘𝙵 100+ lines",
         )
         
         await asyncio.sleep(5)
