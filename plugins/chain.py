@@ -4,7 +4,7 @@
 from telethon.tl.functions.messages import SaveDraftRequest
 
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="chain$"))

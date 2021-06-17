@@ -4,7 +4,7 @@ import asyncio
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Extre.utils import admin_cmd
+from ExtrExtre.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="gbun"))

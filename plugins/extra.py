@@ -9,7 +9,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest, CreateChannelReq
 from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 from Extre.events import register
-from Extre.utils import admin_cmd
+from ExtrExtre.utils import admin_cmd
 
 
 @borg.on(admin_cmd(";__;$"))

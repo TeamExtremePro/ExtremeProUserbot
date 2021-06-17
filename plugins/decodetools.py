@@ -5,7 +5,7 @@ from subprocess import run as runapp
 import pybase64
 from plugins import CMD_HELP
 from Extre.events import register
-from Extre.utils import errors_handler
+from ExtrExtre.utils import errors_handler
 
 
 @register(outgoing=True, pattern="^.hash (.*)")

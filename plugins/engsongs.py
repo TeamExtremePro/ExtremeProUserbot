@@ -16,7 +16,7 @@ import sys
 
 import random
 
-from Extre.utils import admin_cmd
+from ExtrExtre.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern=r"engsongs", outgoing=True))
 

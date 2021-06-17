@@ -7,7 +7,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import sql_helper.pmpermit_sql as pmpermit_sql
 from Extre import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from Extre.utils import admin_cmd
+from ExtrExtre.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (

@@ -10,7 +10,7 @@ import math
 from datetime import datetime
 from telethon import events
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, progress
+from ExtrExtre.utils import admin_cmd, progress
 #
 from googleapiclient.discovery import build
 from apiclient.http import MediaFileUpload
