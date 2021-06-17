@@ -2,7 +2,7 @@ from telethon import events, utils
 from telethon.tl import types
 
 from Extre import bot
-from Extre.ExtreConfig import Config
+from amanpandey import Config
 from sql_helper.snips_sql import (
     add_snip,
     get_all_snips,
