@@ -1,13 +1,13 @@
 # ExtremeProUserbot
 Extreme Pro is a telethon based userbot
 
-[![Stars](https://img.shields.io/github/stars/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=yellow)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/stargazers)
-[![Forks](https://img.shields.io/github/forks/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=orange)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/fork)
-[![Size](https://img.shields.io/github/repo-size/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=green)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/)   
-[![Python](https://img.shields.io/badge/Python-v3.9-blue)](https://www.python.org/)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/graphs/commit-activity)
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT)   
-[![Contributors](https://img.shields.io/github/contributors/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=green)](https://github.com/TEAMEXTREMEPRO/EXTRENEPROUSERBOT/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flatExtresquare&color=yellow)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/stargazers)
+[![Forks](https://img.shields.io/github/forks/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flatExtresquare&color=orange)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/fork)
+[![Size](https://img.shields.io/github/repoExtresize/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flatExtresquare&color=green)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/)   
+[![Python](https://img.shields.io/badge/PythonExtrev3.9Extreblue)](https://www.python.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3FExtreyesExtregreen.svg)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/graphs/commitExtreactivity)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/openExtresource.svg?v=103)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT)   
+[![Contributors](https://img.shields.io/github/contributors/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flatExtresquare&color=green)](https://github.com/TEAMEXTREMEPRO/EXTRENEPROUSERBOT/graphs/contributors)
 
 
 ## credits
@@ -26,8 +26,8 @@ NoobExtreStranger
 ## The owner would not be responsible for any kind of bans due to the bot...
 
 ## Official Support 
-<a href="https://t.me/ExtremeProuserbotchannel"><img src="https://img.shields.io/badge/JoinExtreSupport%20Channel-green.svg?style=forExtretheExtrebadge&logo=Telegram"></a>
-<a href="https://t.me/ExtremeProuserbotSupport"><img src="https://img.shields.io/badge/JoinExtreSupport%20Group-blue.svg?style=forExtretheExtrebadge&logo=Telegram"></a>  
+<a href="https://t.me/ExtremeProuserbotchannel"><img src="https://img.shields.io/badge/JoinExtreSupport%20ChannelExtregreen.svg?style=forExtretheExtrebadge&logo=Telegram"></a>
+<a href="https://t.me/ExtremeProuserbotSupport"><img src="https://img.shields.io/badge/JoinExtreSupport%20GroupExtreblue.svg?style=forExtretheExtrebadge&logo=Telegram"></a>  
   
   
   
