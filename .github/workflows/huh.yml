@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "ultra_cmd"
+          find: "from userbot"
 
-          replace: "extremepro_cmd"
+          replace: "from amanpandey"
 
       - name: Create Pull Request
 
