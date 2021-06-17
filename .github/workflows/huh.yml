@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "Extre.plugins.sql_helper"
+          find: "from .. import CMD_HELP"
 
-          replace: "sql_helper"
+          replace: "from plugins import CMD_HELP"
 
       - name: Create Pull Request
 
