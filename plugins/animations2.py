@@ -1,7 +1,7 @@
 import asyncio
 from collections import deque
 
-from ExtrExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"

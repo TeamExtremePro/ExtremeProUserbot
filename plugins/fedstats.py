@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from Extre import ALIVE_NAME
 from Extre import CMD_HELP
 from Extre import bot
-from ExtrExtrExtrExtre.utils import admin_cmd
+from ExtrExtre.utils import admin_cmd
 
 bot = "@MissRose_bot"
 

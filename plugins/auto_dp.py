@@ -16,7 +16,7 @@ import re
 import urllib
 import requests
 from telethon.tl import functions
-from ExtrExtrExtrExtre.utils import admin_cmd
+from ExtrExtre.utils import admin_cmd
 from Extre import CMD_HELP
 
 COLLECTION_STRING1 = [
