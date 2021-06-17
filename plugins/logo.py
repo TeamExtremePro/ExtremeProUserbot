@@ -2,7 +2,7 @@
 #MADE FOR Extre USERBOT ONLY
 #KANG WITH CREDITS OTHERWISE YOU WILL See What We can Do 
 from Extre.utils import admin_cmd
-from .. import CMD_HELP
+from plugins import CMD_HELP
 import os
 from PIL import Image, ImageDraw, ImageFont
 
