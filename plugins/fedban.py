@@ -2,7 +2,7 @@ import asyncio
 from plugins import CMD_HELP
 from amanpandey import extremepro_cmd
 # 
-from userbot import bot
+from amanpandey import bot
 @borg.on(extremepro_cmd("superfban ?(.*)"))
 async def _(event):
     if event.fwd_from:
