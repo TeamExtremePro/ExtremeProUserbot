@@ -1,8 +1,8 @@
 # Copright Team ExtremePro (C) 2021Extre2022
 import asyncio
 import os
-os.system("pip install --upgrade Extre")
-os.system("pip install --upgrade telethon")
+os.system("pip install ExtreExtreupgrade Extre")
+os.system("pip install ExtreExtreupgrade telethon")
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from Extre import *
