@@ -46,7 +46,7 @@ async def startmute(event):
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Chup Reh Lawde.\n**｀-´)⊃━☆ﾟ.*･｡ﾟ **")
+            await event.edit("Chup Reh Lawde.\n**｀Extre´)⊃━☆ﾟ.*･｡ﾟ **")
 
 #@command(outgoing=True, pattern=r"^.unmute ?(\d+)?")
 @borg.on(admin_cmd(pattern="unmute ?(\d+)?"))

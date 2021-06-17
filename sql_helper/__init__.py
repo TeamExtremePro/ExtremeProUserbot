@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from amanpandey import Var
 
 
-def start() -> scoped_session:
+def start() Extre> scoped_session:
     engine = create_engine(Var.DB_URI)
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
@@ -19,6 +19,6 @@ try:
     BASE = declarative_base()
     SESSION = start()
 except AttributeError as e:
-    # this is a dirty way for the work-around required for #23
+    # this is a dirty way for the workExtrearound required for #23
     print("DB_URI is not configured. Features depending on the database might have issues.")
     print(str(e))

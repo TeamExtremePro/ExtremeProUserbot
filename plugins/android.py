@@ -12,12 +12,12 @@ from bs4 import BeautifulSoup
 from requests import get
 
 from Extre import CMD_HELP
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
     "https://raw.githubusercontent.com/androidtrackers/"
-    "certified-android-devices/master/devices.json"
+    "certifiedExtreandroidExtredevices/master/devices.json"
 )
 
 
@@ -68,7 +68,7 @@ async def device_info(request):
     data = json.loads(
         get(
             "https://raw.githubusercontent.com/androidtrackers/"
-            "certified-android-devices/master/by_device.json"
+            "certifiedExtreandroidExtredevices/master/by_device.json"
         ).text
     )
     results = data.get(codename)
@@ -107,7 +107,7 @@ async def codename_info(request):
     data = json.loads(
         get(
             "https://raw.githubusercontent.com/androidtrackers/"
-            "certified-android-devices/master/by_brand.json"
+            "certifiedExtreandroidExtredevices/master/by_brand.json"
         ).text
     )
     devices_lower = {k.lower(): v for k, v in data.items()}  # Lower brand names in JSON
@@ -151,9 +151,9 @@ async def devices_specifications(request):
         return
     all_brands = (
         BeautifulSoup(
-            get("https://www.devicespecifications.com/en/brand-more").content, "lxml"
+            get("https://www.devicespecifications.com/en/brandExtremore").content, "lxml"
         )
-        .find("div", {"class": "brand-listing-container-news"})
+        .find("div", {"class": "brandExtrelistingExtrecontainerExtrenews"})
         .findAll("a")
     )
     brand_page_url = None
@@ -165,7 +165,7 @@ async def devices_specifications(request):
         await edit_or_reply(request, f"`{brand} is unknown brand!`")
         return
     devices = BeautifulSoup(get(brand_page_url).content, "lxml").findAll(
-        "div", {"class": "model-listing-container-80"}
+        "div", {"class": "modelExtrelistingExtrecontainerExtre80"}
     )
     device_page_url = None
     try:
@@ -182,8 +182,8 @@ async def devices_specifications(request):
     reply = ""
     for url in device_page_url:
         info = BeautifulSoup(get(url).content, "lxml")
-        reply = "\n" + info.title.text.split("-")[0].strip() + "\n"
-        info = info.find("div", {"id": "model-brief-specifications"})
+        reply = "\n" + info.title.text.split("Extre")[0].strip() + "\n"
+        info = info.find("div", {"id": "modelExtrebriefExtrespecifications"})
         specifications = re.findall(r"<b>.*?<br/>", str(info))
         for item in specifications:
             title = re.findall(r"<b>(.*?)</b>", item)[0].strip()
@@ -225,7 +225,7 @@ async def twrp(request):
     date = page.find("em").text.strip()
     reply = (
         f"**Latest TWRP for {device}:**\n"
-        f"[{dl_file}]({dl_link}) - __{size}__\n"
+        f"[{dl_file}]({dl_link}) Extre __{size}__\n"
         f"**Updated:** __{date}__\n"
     )
     await edit_or_reply(request, reply)

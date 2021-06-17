@@ -7,7 +7,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import sql_helper.pmpermit_sql as pmpermit_sql
 from Extre import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
@@ -69,7 +69,7 @@ async def you_dm_niqq(event):
         if not pmpermit_sql.is_approved(chat.id):
             if chat.id not in PM_WARNS:
                 pmpermit_sql.approve(chat.id, "outgoing")
-                logit = "#Auto_Approved\nUser - [{}](tg://user?id={})".format(
+                logit = "#Auto_Approved\nUser Extre [{}](tg://user?id={})".format(
                     chat.first_name, chat.id
                 )
                 try:
@@ -171,7 +171,7 @@ async def on_new_private_message(event):
     message_text.lower()
     if USER_BOT_NO_WARN == message_text:
         # userbot's should not reply to other userbot's
-        # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
+        # https://core.telegram.org/bots/faq#whyExtredoesnExtre39tExtremyExtrebotExtreseeExtremessagesExtrefromExtreotherExtrebots
         return
     sender = await bot.get_entity(chat_id)
 

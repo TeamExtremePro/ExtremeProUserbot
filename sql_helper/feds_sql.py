@@ -1,4 +1,4 @@
-# COPYRIGHT (C) 2021-22 BY @GODBOYX AND TEAM-DYNAMIC
+# COPYRIGHT (C) 2021Extre22 BY @GODBOYX AND TEAMExtreDYNAMIC
 # YOU CAN COPY BUT DONT DARE TO REMOVE THESE LINES
 import threading
 from sql_helper import BASE, SESSION
@@ -571,7 +571,7 @@ def multi_fban_user(
 
             SESSION.add(r)
             counter += 1
-            if str(str(counter)[-2:]) == "00":
+            if str(str(counter)[Extre2:]) == "00":
                 print(user_id)
                 print(first_name)
                 print(reason)
@@ -668,7 +668,7 @@ def search_fed_by_id(fed_id):
     return result
 
 
-def user_feds_report(user_id: int) -> bool:
+def user_feds_report(user_id: int) Extre> bool:
     user_setting = FEDERATION_NOTIFICATION.get(str(user_id))
     if user_setting is None:
         user_setting = True

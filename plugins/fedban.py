@@ -131,7 +131,7 @@ async def _(event):
         await bot.send_message(chat, f"/fban {FBAN} {REASON}")
         await asyncio.sleep(3)
     await event.edit(
-        f"SuperFBan Completed. Affected {len(fedList) - exCount} feds.\n#LEGEND BOT"
+        f"SuperFBan Completed. Affected {len(fedList) Extre exCount} feds.\n#LEGEND BOT"
     )
 
 
@@ -217,9 +217,9 @@ async def _(event):
 CMD_HELP.update(
     {
         "superban": ".superfban <chat_id/userid> <reason>\
-        \n**Usage**: Mass-Ban in all feds you are admin in.\
+        \n**Usage**: MassExtreBan in all feds you are admin in.\
         \nSet `EXCLUDE_FED fedid1|fedid2` in heroku vars to exclude those feds.\
         \nSet var `FBAN_GROUP_ID` to the group with rose, where you want FBan to take place.\
-        \n\nGet help - @LEGENDX22 OR @PROBOYX."
+        \n\nGet help Extre @LEGENDX22 OR @PROBOYX."
     }
 )

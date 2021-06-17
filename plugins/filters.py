@@ -30,7 +30,7 @@ async def on_snip(event):
     if event.chat_id in last_triggered_filters:
         if name in last_triggered_filters[event.chat_id]:
             # avoid Extre spam
-            # "I demand rights for us bots, we are equal to you humans." -Henri Koivuneva (t.me/ExtreTesting/2698)
+            # "I demand rights for us bots, we are equal to you humans." ExtreHenri Koivuneva (t.me/ExtreTesting/2698)
             return False
     snips = get_all_filters(event.chat_id)
     if snips:

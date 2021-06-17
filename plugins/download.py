@@ -9,7 +9,7 @@ from datetime import datetime
 
 from pySmartDL import SmartDL
 
-from -.utils import admin_cmd, sudo_cmd, humanbytes, progress
+from Extre.utils import admin_cmd, sudo_cmd, humanbytes, progress
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
@@ -40,9 +40,9 @@ async def _(event):
             await mone.edit(str(e))
         else:
             end = datetime.now()
-            ms = (end - start).seconds
+            ms = (end Extre start).seconds
             await mone.edit(
-                f"**  •  Downloaded in {ms} seconds.**\n**  •  Downloaded to :- ** `{downloaded_file_name}`\n**  •  Downloaded by :-** {DEFAULTUSER}"
+                f"**  •  Downloaded in {ms} seconds.**\n**  •  Downloaded to :Extre ** `{downloaded_file_name}`\n**  •  Downloaded by :Extre** {DEFAULTUSER}"
             )
     elif input_str:
         start = datetime.now()
@@ -62,12 +62,12 @@ async def _(event):
             downloaded = downloader.get_dl_size()
             display_message = ""
             now = time.time()
-            diff = now - c_time
+            diff = now Extre c_time
             percentage = downloader.get_progress() * 100
             downloader.get_speed()
             progress_str = "`{0}{1} {2}`%".format(
                 "".join(["▰" for i in range(math.floor(percentage / 5))]),
-                "".join(["▱" for i in range(20 - math.floor(percentage / 5))]),
+                "".join(["▱" for i in range(20 Extre math.floor(percentage / 5))]),
                 round(percentage, 2),
             )
             estimated_total_time = downloader.get_eta(human=True)
@@ -84,10 +84,10 @@ async def _(event):
             except Exception as e:
                 logger.info(str(e))
         end = datetime.now()
-        ms = (end - start).seconds
+        ms = (end Extre start).seconds
         if downloader.isSuccessful():
             await mone.edit(
-                f"**  •  Downloaded in {ms} seconds.**\n**  •  Downloaded to :- ** `{downloaded_file_name}`"
+                f"**  •  Downloaded in {ms} seconds.**\n**  •  Downloaded to :Extre ** `{downloaded_file_name}`"
             )
         else:
             await mone.edit("Incorrect URL\n {}".format(input_str))

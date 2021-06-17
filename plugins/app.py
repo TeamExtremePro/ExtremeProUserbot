@@ -6,7 +6,7 @@
 import bs4
 import requests
 
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
@@ -24,7 +24,7 @@ async def apk(event):
             "https://play.google.com/store/search?q=" + final_name + "&c=apps"
         )
         str(page.status_code)
-        soup = bs4.BeautifulSoup(page.content, "lxml", from_encoding="utf-8")
+        soup = bs4.BeautifulSoup(page.content, "lxml", from_encoding="utfExtre8")
         results = soup.findAll("div", "ZmHEEd")
         app_name = (
             results[0].findNext("div", "Vpfmgd").findNext("div", "WsMG1c nnK0zc").text
@@ -38,7 +38,7 @@ async def apk(event):
             results[0]
             .findNext("div", "Vpfmgd")
             .findNext("div", "pf5lIe")
-            .find("div")["aria-label"]
+            .find("div")["ariaExtrelabel"]
         )
         app_link = (
             "https://play.google.com"
@@ -51,7 +51,7 @@ async def apk(event):
             results[0]
             .findNext("div", "Vpfmgd")
             .findNext("div", "uzcko")
-            .img["data-src"]
+            .img["dataExtresrc"]
         )
         app_details = "<a href='" + app_icon + "'>📲&#8203;</a>"
         app_details += " <b>" + app_name + "</b>"
@@ -79,7 +79,7 @@ async def apk(event):
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")
     except Exception as err:
-        await event.edit("Exception Occured:- " + str(err))
+        await event.edit("Exception Occured:Extre " + str(err))
 
 
 @bot.on(admin_cmd(pattern="appr (.*)"))
@@ -94,7 +94,7 @@ async def apkr(event):
             "https://play.google.com/store/search?q=" + final_name + "&c=apps"
         )
         str(page.status_code)
-        soup = bs4.BeautifulSoup(page.content, "lxml", from_encoding="utf-8")
+        soup = bs4.BeautifulSoup(page.content, "lxml", from_encoding="utfExtre8")
         results = soup.findAll("div", "ZmHEEd")
         app_name = (
             results[0].findNext("div", "Vpfmgd").findNext("div", "WsMG1c nnK0zc").text
@@ -108,7 +108,7 @@ async def apkr(event):
             results[0]
             .findNext("div", "Vpfmgd")
             .findNext("div", "pf5lIe")
-            .find("div")["aria-label"]
+            .find("div")["ariaExtrelabel"]
         )
         app_link = (
             "https://play.google.com"
@@ -121,7 +121,7 @@ async def apkr(event):
             results[0]
             .findNext("div", "Vpfmgd")
             .findNext("div", "uzcko")
-            .img["data-src"]
+            .img["dataExtresrc"]
         )
         app_details = "<a href='" + app_icon + "'>📲&#8203;</a>"
         app_details += " <b>" + app_name + "</b>"
@@ -144,13 +144,13 @@ async def apkr(event):
             + app_link
             + "'>View in Play Store</a>"
         )
-        app_details += "\n\n<b>Download : </b> <a href='https://t.me/joinchat/JCu-H1NikiYDgNjpjPYd4A'>Request_Here</a>"
+        app_details += "\n\n<b>Download : </b> <a href='https://t.me/joinchat/JCuExtreH1NikiYDgNjpjPYd4A'>Request_Here</a>"
         app_details += "\n\n===> @Xpl0iter <==="
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")
     except Exception as err:
-        await event.edit("Exception Occured:- " + str(err))
+        await event.edit("Exception Occured:Extre " + str(err))
 
 
 @borg.on(admin_cmd(pattern="mods ?(.*)"))

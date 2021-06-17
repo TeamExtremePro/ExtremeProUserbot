@@ -166,7 +166,7 @@ async def gspider(amanpandey):
             try:
                 await amanpandey.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await friday.edit(f"**UNGBANNING Total AFFECTED CHATS - {a} **")
+                await friday.edit(f"**UNGBANNING Total AFFECTED CHATS Extre {a} **")
             except:
                 b += 1
     else:
@@ -177,7 +177,7 @@ async def gspider(amanpandey):
     except:
         pass
     return await friday.edit(
-        f"**UNGBANNED This Son - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
+        f"**UNGBANNED This Son Extre [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
     )
 
 

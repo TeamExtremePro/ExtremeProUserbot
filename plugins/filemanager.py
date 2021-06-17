@@ -24,7 +24,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "ls -lh ./DOWNLOADS/"
+    cmd = "ls Extrelh ./DOWNLOADS/"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
@@ -63,7 +63,7 @@ async def _(event):
         return
     DELAY_BETWEEN_EDITS = 0.3
     PROCESS_RUN_TIME = 100
-    cmd = "ls -lh"
+    cmd = "ls Extrelh"
 	
     reply_to_id = event.message.id
     if event.reply_to_msg_id:

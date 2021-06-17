@@ -15,15 +15,15 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                MessageMediaPhoto)
 
 
-from -.utils import register, errors_handler
-from -.utils import admin_cmd
+from Extre.utils import register, errors_handler
+from Extre.utils import admin_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
 NO_ADMIN = "HEY ADMINS AND GROUP OWNER LISTEN MAKE ME ADMIN I WILL manage your group"
 NO_PERM = "`I dot have permisson hey owner give me ban right to enable ban, mute rights`"
-NO_SQL = "`Running on Non-SQL mode!`"
+NO_SQL = "`Running on NonExtreSQL mode!`"
 
 CHAT_PP_CHANGED = "`Chat Picture Changed`"
 CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
@@ -517,7 +517,7 @@ async def gspider(gspdr):
     await gspdr.edit("`Grabs a huge, sticky duct tape!`")
     if gmute(user.id) is False:
         await gspdr.edit(
-            '`Error! User probably already gmuted.\nRe-rolls the tape.`')
+            '`Error! User probably already gmuted.\nReExtrerolls the tape.`')
     else:
         if reason:
             await gspdr.edit(f"`Globally taped!`Reason: {reason}")
@@ -580,7 +580,7 @@ async def rm_deletedacc(show):
                 await show.edit("`I don't have ban rights in this group`")
                 return
             except UserAdminInvalidError:
-                del_u -= 1
+                del_u Extre= 1
                 del_a += 1
             await show.client(
                 EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))

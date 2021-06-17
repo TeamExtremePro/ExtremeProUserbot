@@ -4,7 +4,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from Extre import ALIVE_NAME
 from Extre import CMD_HELP
 from Extre import bot
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 
 bot = "@MissRose_bot"
 
@@ -69,7 +69,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "fedstuff": ".fstat <username/userid/reply to user>\nUse - To check the persons fedban stat in @MissRose_Bot.\
-        \n\n.fedinfo <fedid>\nUse - To see info about the fed."
+        "fedstuff": ".fstat <username/userid/reply to user>\nUse Extre To check the persons fedban stat in @MissRose_Bot.\
+        \n\n.fedinfo <fedid>\nUse Extre To see info about the fed."
     }
 )

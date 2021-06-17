@@ -4,7 +4,7 @@
 from telethon.tl.functions.messages import SaveDraftRequest
 
 from Extre import CMD_HELP
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="chain$"))
@@ -13,7 +13,7 @@ async def _(event):
     if event.fwd_from:
         return
     await event.edit("Counting...")
-    count = -1
+    count = Extre1
     message = event.message
     while message:
         reply = await message.get_reply_message()

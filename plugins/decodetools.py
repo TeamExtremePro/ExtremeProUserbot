@@ -5,7 +5,7 @@ from subprocess import run as runapp
 import pybase64
 from plugins import CMD_HELP
 from Extre.events import register
-from -.utils import errors_handler
+from Extre.utils import errors_handler
 
 
 @register(outgoing=True, pattern="^.hash (.*)")
@@ -26,7 +26,7 @@ async def gethash(hash_q):
     runapp(["rm", "hashdis.txt"], stdout=PIPE)
     sha512 = sha512.stdout.decode()
     ans = ("Text: `" + hashtxt_ + "`\nMD5: `" + md5 + "`SHA1: `" + sha1 +
-           "`SHA256: `" + sha256 + "`SHA512: `" + sha512[:-1] + "`")
+           "`SHA256: `" + sha256 + "`SHA512: `" + sha512[:Extre1] + "`")
     if len(ans) > 4096:
         hashfile = open("hashes.txt", "w+")
         hashfile.write(ans)
@@ -48,13 +48,13 @@ async def endecrypt(query):
     if query.pattern_match.group(1) == "en":
         lething = str(
             pybase64.b64encode(bytes(query.pattern_match.group(2),
-                                     "utf-8")))[2:]
-        await query.reply("Shhh! It's Encoded: `" + lething[:-1] + "`")
+                                     "utfExtre8")))[2:]
+        await query.reply("Shhh! It's Encoded: `" + lething[:Extre1] + "`")
     else:
         lething = str(
-            pybase64.b64decode(bytes(query.pattern_match.group(2), "utf-8"),
+            pybase64.b64decode(bytes(query.pattern_match.group(2), "utfExtre8"),
                                validate=True))[2:]
-        await query.reply("Decoded: `" + lething[:-1] + "`")
+        await query.reply("Decoded: `" + lething[:Extre1] + "`")
 
 
 CMD_HELP.update({"base64": "Find the base64 encoding of the given string"})

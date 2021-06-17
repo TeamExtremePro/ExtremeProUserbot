@@ -54,7 +54,7 @@ async def FindMusicPleaseBot(gaana):
     await gaana.delete()
     
     
-#-------------------------------------------------------------------------------
+#ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre
 
     
 from pathlib import Path
@@ -76,7 +76,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
-from -.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
+from Extre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
 from plugins import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
@@ -93,7 +93,7 @@ try:
    from youtubesearchpython import SearchVideos 
 
 except:
-	os.system("pip install pip install youtube-search-python")
+	os.system("pip install pip install youtubeExtresearchExtrepython")
 	from youtubesearchpython import SearchVideos 
 	pass
 
@@ -167,7 +167,7 @@ async def download_video(v_url):
         )
         return
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
+        await rkp.edit("`MaxExtredownloads limit has been reached.`")
         return
     except PostProcessingError:
         await rkp.edit("`There was an error during post processing.`")
@@ -285,7 +285,7 @@ async def download_video(v_url):
         )
         return
     except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
+        await rkp.edit("`MaxExtredownloads limit has been reached.`")
         return
     except PostProcessingError:
         await rkp.edit("`There was an error during post processing.`")
@@ -338,7 +338,7 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp4")
         await rkp.delete()
 
-#-------------------------------------------------------------------------------
+#ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre
 
 from telethon import events
 import asyncio
@@ -356,12 +356,12 @@ except:
 
 
 
-os.system("rm -rf *.mp3")
+os.system("rm Extrerf *.mp3")
 
 
 def bruh(name):
 
-    os.system("instantmusic -q -s "+name)
+    os.system("instantmusic Extreq Extres "+name)
 
 @register(outgoing=True, pattern="^.getsong(?: |$)(.*)")
 async def getmusic(so):
@@ -379,7 +379,7 @@ async def getmusic(so):
               msg = await conv.send_message(link)
               response = await conv.get_response()
               respond = await conv.get_response()
-              """ - don't spam notif - """
+              """ Extre don't spam notif Extre """
               await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await so.edit("Please unblock @songdl_bot and try searching again🤐")
@@ -391,7 +391,7 @@ async def getmusic(so):
                                        [msg.id, response.id, respond.id])
     await so.delete()
 
-#-------------------------------------------------------------------------------
+#ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre
 
 from telethon import events
 import asyncio
@@ -408,12 +408,12 @@ except:
  
 
 
-os.system("rm -rf *.mp3")
+os.system("rm Extrerf *.mp3")
 
 
 def bruh(name):
     
-    os.system("instantmusic -q -s "+name)
+    os.system("instantmusic Extreq Extres "+name)
     
 
 @register(outgoing=True, pattern="^.dwlsong(?: |$)(.*)")
@@ -434,7 +434,7 @@ async def DeezLoader(Deezlod):
               msg = await conv.send_message(d_link)
               details = await conv.get_response()
               song = await conv.get_response()
-              """ - don't spam notif - """
+              """ Extre don't spam notif Extre """
               await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await Deezlod.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
@@ -444,7 +444,7 @@ async def DeezLoader(Deezlod):
                                              [msg_start.id, response.id, r.id, msg.id, details.id, song.id])
           await Deezlod.delete()   
           
-#-------------------------------------------------------------------------------
+#ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre
        
 import datetime
 import asyncio
@@ -452,7 +452,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 
 @borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):

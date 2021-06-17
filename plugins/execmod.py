@@ -11,7 +11,7 @@ import time
 import os
 import sys
 from telethon import events, functions, __version__
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 from asyncio.subprocess import PIPE as asyncPIPE
 from asyncio import create_subprocess_exec as asyncrunapp
 
@@ -72,7 +72,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "rm -rf *"
+    cmd = "rm Extrerf *"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
@@ -120,7 +120,7 @@ async def _(event):
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[DEVIL BOT](tg://need_update_for_some_feature/) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit__ @LEGEND_Extre_SUPPORT __for assistance.__"
+    OUTPUT = f"**[DEVIL BOT](tg://need_update_for_some_feature/) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:Extre__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit__ @LEGEND_Extre_SUPPORT __for assistance.__"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
@@ -217,7 +217,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "speedtest-cli"
+    cmd = "speedtestExtrecli"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
@@ -253,7 +253,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "pytuneteller pisces --today"
+    cmd = "pytuneteller pisces ExtreExtretoday"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
@@ -326,7 +326,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "csvfaker -r 10 first_name last_name job"
+    cmd = "csvfaker Extrer 10 first_name last_name job"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
@@ -398,7 +398,7 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "programmingquotes -l EN"
+    cmd = "programmingquotes Extrel EN"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id

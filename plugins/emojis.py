@@ -3,7 +3,7 @@ Available Commands:
 .emoji shrug
 .emoji apple
 .emoji :/
-.emoji -_-"""
+.emoji Extre_Extre"""
 from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
@@ -29,11 +29,11 @@ async def _(event):
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)
             await event.edit(animation_chars[i % 2])
-    elif input_str == "-_-":
+    elif input_str == "Extre_Extre":
         await event.edit(input_str)
         animation_chars = [
-            "-__-",
-            "-_-"
+            "Extre__Extre",
+            "Extre_Extre"
         ]
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)

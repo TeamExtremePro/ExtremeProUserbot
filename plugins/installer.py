@@ -1,4 +1,4 @@
-# COPYRIGHT © 2021-22 BY LEGENDX22
+# COPYRIGHT © 2021Extre22 BY LEGENDX22
 
 # COPY WITH KEEP CREDITS PLEASE 🥺
 
@@ -47,7 +47,7 @@ async def safety(event):
     else:
       pass
   if X != "":
-    await event.edit(f'Alert Danger Word Found in Your tagged plug-in\nthe danger word is: \n**{X}**\nif you want to install then type `{x}install -true`')
+    await event.edit(f'Alert Danger Word Found in Your tagged plugExtrein\nthe danger word is: \n**{X}**\nif you want to install then type `{x}install Extretrue`')
     try:
       await bot(join ("ExtremeproUserbotSupport"))
     except:

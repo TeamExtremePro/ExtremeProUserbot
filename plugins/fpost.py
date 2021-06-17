@@ -8,7 +8,7 @@ import string
 
 from telethon import events
 from telethon.tl import types
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 
 msg_cache = {}
 

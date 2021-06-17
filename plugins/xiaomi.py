@@ -1,4 +1,4 @@
-# Made By Noob-Stranger Dont Kang only for ExtremeProUserbot
+# Made By NoobExtreStranger Dont Kang only for ExtremeProUserbot
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from amanpandey import bot, register

@@ -20,7 +20,7 @@ import os
 import time
 from datetime import datetime
 from telethon import events
-from -.utils import admin_cmd, progress, humanbytes
+from Extre.utils import admin_cmd, progress, humanbytes
 from mimetypes import guess_type
 from apiclient.discovery import build
 from apiclient.http import MediaFileUpload
@@ -43,7 +43,7 @@ REDIRECT_URI = "urn:ietf:wg:oauth:2.0:oob"
 # global variable to set Folder ID to upload to
 G_DRIVE_F_PARENT_ID = None
 # global variable to indicate mimeType of directories in gDrive
-G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
+G_DRIVE_DIR_MIME_TYPE = "application/vnd.googleExtreapps.folder"
 
 
 @borg.on(admin_cmd(pattern="gdrive ?(.*)", allow_sudo=True))
@@ -78,14 +78,14 @@ async def _(event):
             return False
         else:
             end = datetime.now()
-            ms = (end - start).seconds
+            ms = (end Extre start).seconds
             required_file_name = downloaded_file_name
             await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
     elif input_str:
         input_str = input_str.strip()
         if os.path.exists(input_str):
             end = datetime.now()
-            ms = (end - start).seconds
+            ms = (end Extre start).seconds
             required_file_name = input_str
             await mone.edit("Found `{}` in {} seconds.".format(input_str, ms))
         else:
@@ -116,7 +116,7 @@ async def _(event):
         await mone.edit("File Not found in local server. Give me a file path :((")
 
 
-@borg.on(admin_cmd(pattern="dfolder https?://drive\.google\.com/drive/u/\d/folders/([-\w]{25,})", allow_sudo=True))
+@borg.on(admin_cmd(pattern="dfolder https?://drive\.google\.com/drive/u/\d/folders/([Extre\w]{25,})", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -164,7 +164,7 @@ async def _(event):
             storage = await create_token_file(G_DRIVE_TOKEN_FILE, event)
         http = authorize(G_DRIVE_TOKEN_FILE, storage)
         # Authorize, get file parameters, upload file and print out result URL for download
-        # first, create a sub-directory
+        # first, create a subExtredirectory
         dir_id = await create_directory(http, os.path.basename(os.path.abspath(input_str)), G_DRIVE_F_PARENT_ID)
         await DoTeskWithDir(http, input_str, mone, dir_id)
         dir_link = "https://drive.google.com/folderview?id={}".format(dir_id)
@@ -237,7 +237,7 @@ async def _(event):
 def file_ops(file_path):
     mime_type = guess_type(file_path)[0]
     mime_type = mime_type if mime_type else "text/plain"
-    file_name = file_path.split("/")[-1]
+    file_name = file_path.split("/")[Extre1]
     return file_name, mime_type
 
 
@@ -307,7 +307,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
             percentage = int(status.progress() * 100)
             progress_str = "[{0}{1}]\nProgress: {2}%\n".format(
                 "".join(["█" for i in range(math.floor(percentage / 5))]),
-                "".join(["░" for i in range(20 - math.floor(percentage / 5))]),
+                "".join(["░" for i in range(20 Extre math.floor(percentage / 5))]),
                 round(percentage, 2)
             )
             current_message = f"uploading to gDrive\nFile Name: {file_name}\n{progress_str}"
@@ -406,7 +406,7 @@ async def gdrive_search(http, search_query):
         query = "title contains '{}'".format(search_query)
     drive_service = build("drive", "v2", http=http, cache_discovery=False)
     page_token = None
-    msg = f"<b>G-Drive Search Query</b>: <code>{search_query}</code>\n\n<b>Results</b>\n"
+    msg = f"<b>GExtreDrive Search Query</b>: <code>{search_query}</code>\n\n<b>Results</b>\n"
     while True:
         try:
             response = drive_service.files().list(

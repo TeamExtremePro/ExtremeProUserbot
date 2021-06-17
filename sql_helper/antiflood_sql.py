@@ -45,7 +45,7 @@ def set_flood(chat_id, amount):
         SESSION.commit()
 
 
-def update_flood(chat_id: str, user_id) -> bool:
+def update_flood(chat_id: str, user_id) Extre> bool:
     if str(chat_id) in CHAT_FLOOD:
         curr_user_id, count, limit = CHAT_FLOOD.get(str(chat_id), DEF_OBJ)
 
@@ -61,7 +61,7 @@ def update_flood(chat_id: str, user_id) -> bool:
             CHAT_FLOOD[str(chat_id)] = (None, DEF_COUNT, limit)
             return True
 
-        # default -> update
+        # default Extre> update
         CHAT_FLOOD[str(chat_id)] = (user_id, count, limit)
         return False
 

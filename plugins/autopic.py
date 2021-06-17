@@ -24,7 +24,7 @@ async def autopic(event):
     photo = "userbot/photo_pfp.png"
     while not downloader.isFinished():
         place_holder = None
-    counter = -60
+    counter = Extre60
     while True:
         shutil.copy(downloaded_file_name, photo)
         im = Image.open(photo)
@@ -41,7 +41,7 @@ async def autopic(event):
                 file
             ))
             os.remove(photo)
-            counter -= 60
+            counter Extre= 60
             await asyncio.sleep(60)
         except:
             return

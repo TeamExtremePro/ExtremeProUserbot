@@ -5,7 +5,7 @@
 # Card Generator
 ##############################
 from faker import Faker as dc
-from -.utils import admin_cmd as hehe
+from Extre.utils import admin_cmd as hehe
 from Extre import bot as cobra
 @cobra.on(hehe("cc"))
 async def _cobra(dark):
@@ -13,4 +13,4 @@ async def _cobra(dark):
     killer = cyber.name()
     kali = cyber.address()
     danish = cyber.credit_card_full()
-    await dark.edit(f"ℕ𝕒𝕞𝕖:-\n`{killer}`\n\n𝔸𝕕𝕕𝕣𝕖𝕤𝕤:-\n`{kali}`\n\nℂ𝕒𝕣𝕕:-\n`{danish}`")
+    await dark.edit(f"ℕ𝕒𝕞𝕖:Extre\n`{killer}`\n\n𝔸𝕕𝕕𝕣𝕖𝕤𝕤:Extre\n`{kali}`\n\nℂ𝕒𝕣𝕕:Extre\n`{danish}`")

@@ -23,7 +23,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 async def _(event):
     await event.edit(f"Auto Name has been started by my Master ") 
     while True:
-        DM = time.strftime("%d-%m-%y")
+        DM = time.strftime("%dExtre%mExtre%y")
         HM = time.strftime("%H:%M")
         name = f"⌚️ {HM}||›  {DEFAULTUSER} ‹||📅 {DM}"
         logger.info(name)

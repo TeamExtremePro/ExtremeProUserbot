@@ -1,7 +1,7 @@
 """plugin made for reading nd  exploting message in tg {i}reveal <reply to file>"""
 # originally made by @ItzSjDude All Rights reserved!!
 #  Added Paste System by @danish_00
-# All Credits - @ItzSjDude  #Added Paste System by @danish_00
+# All Credits Extre @ItzSjDude  #Added Paste System by @danish_00
 # @ItzSjDude
 # @ItzSjDude
 #  Added Paste System by @danish_00
@@ -11,7 +11,7 @@ import asyncio
 import time
 from datetime import datetime
 
-from -.utils import admin_cmd, sudo_cmd , edit_or_reply
+from Extre.utils import admin_cmd, sudo_cmd , edit_or_reply
 from Extre import CMD_HELP, bot
 
 @borg.on(admin_cmd(pattern=r"open", outgoing=True))
@@ -25,7 +25,7 @@ async def _(event):
             await event.edit("output file too large lemme paste it 😜😜")#hehe
             out = c
             url = "https://del.dog/documents"
-            r = requests.post(url, data=out.encode("UTF-8")).json()
+            r = requests.post(url, data=out.encode("UTFExtre8")).json()
             url = f"https://del.dog/{r['key']}"
             await event.edit(
                 f" Output file is too large Not supported By Telegram\n**So Pasted to** [Dog Bin]({url}) 😁😁", link_preview=False)            
@@ -94,7 +94,7 @@ async def danish(hehe):
         )
       
         try:
-            thumb = await reply_message.download_media(thumb=-1)
+            thumb = await reply_message.download_media(thumb=Extre1)
         except Exception:
             thumb = thumb
         if os.path.exists(downloaded_file_name):
@@ -149,7 +149,7 @@ async def teamcobra(hehe):
         )
       
         try:
-            thumb = await reply_message.download_media(thumb=-1)
+            thumb = await reply_message.download_media(thumb=Extre1)
         except Exception:
             thumb = thumb
         if os.path.exists(downloaded_file_name):
@@ -179,7 +179,7 @@ CMD_HELP.update(
     \n\n📌 CMD ★ .open\
     \nUSAGE   ★  open files as text (id the amount of words r resonable)\
     \n\n📌 CMD ★ .doc <file name.extension> <reply to any text/media>\
-    \nUSAGE   ★  Create a document of anything (example:- .doc dc.mp4, .doc dc.txt, .doc dc.webp)\
+    \nUSAGE   ★  Create a document of anything (example:Extre .doc dc.mp4, .doc dc.txt, .doc dc.webp)\
     \n\n📌 CMD ★ .stoi\
     \nUSAGE   ★  Convert sticker to image\
     \n\n📌 CMD ★ .itos\

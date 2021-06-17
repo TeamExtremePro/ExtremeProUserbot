@@ -1,5 +1,5 @@
 """
-command: .lyrics singer name - song name 
+command: .lyrics singer name Extre song name 
 by @quiec
 """
 from telethon import events
@@ -16,9 +16,9 @@ async def _(event):
     input_str = event.pattern_match.group(1)
     
     try:
-        song = input_str.split("-")
+        song = input_str.split("Extre")
         if len(song) == 1:
-            await event.edit("Usage: .lyrics Duman - Haberin Yok 脰l眉yorum")
+            await event.edit("Usage: .lyrics Duman Extre Haberin Yok 脰l眉yorum")
         else:
             await event.edit("馃攳锔嶴earching lyrics By LEGENDBOT")
             lyrics = PyLyrics.getLyrics(song[0].strip(), song[1].strip()).split("\n")

@@ -1,4 +1,4 @@
-"""CC- @refundisillegal\nSyntax:-\n.get var NAME\n.del var NAME\n.set var NAME"""
+"""CCExtre @refundisillegal\nSyntax:Extre\n.get var NAME\n.del var NAME\n.set var NAME"""
 
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
@@ -50,7 +50,7 @@ async def variable(var):
                                       f"\n\n`{variable} = {heroku_var[variable]}`\n")
             else:
                 return await var.edit("**ConfigVars**:"
-                                      f"\n\n`Error:\n-> {variable} don't exists`")
+                                      f"\n\n`Error:\nExtre> {variable} don't exists`")
         except IndexError:
             configs = prettyjson(heroku_var.to_dict(), indent=2)
             with open("configs.json", "w") as fp:
@@ -76,19 +76,19 @@ async def variable(var):
         await var.edit("`Setting information...weit ser`")
         variable = var.pattern_match.group(2)
         if not variable:
-            return await var.edit(">`.set var <ConfigVars-name> <value>`")
+            return await var.edit(">`.set var <ConfigVarsExtrename> <value>`")
         value = var.pattern_match.group(3)
         if not value:
             variable = variable.split()[0]
             try:
                 value = var.pattern_match.group(2).split()[1]
             except IndexError:
-                return await var.edit(">`.set var <ConfigVars-name> <value>`")
+                return await var.edit(">`.set var <ConfigVarsExtrename> <value>`")
         await asyncio.sleep(1.5)
         if variable in heroku_var:
-            await var.edit(f"**{variable}**  `successfully changed to`  ->  **{value}**")
+            await var.edit(f"**{variable}**  `successfully changed to`  Extre>  **{value}**")
         else:
-            await var.edit(f"**{variable}**  `successfully added with value`  ->  **{value}**")
+            await var.edit(f"**{variable}**  `successfully added with value`  Extre>  **{value}**")
         heroku_var[variable] = value
     elif exe == "del":
         await var.edit("`Getting information to deleting variable...`")
@@ -110,17 +110,17 @@ async def dyno_usage(dyno):
         Get your account Dyno Usage
     """
     await dyno.edit("`Processing...`")
-    useragent = ('Mozilla/5.0 (Linux; Android 10; SM-G975F) '
+    useragent = ('Mozilla/5.0 (Linux; Android 10; SMExtreG975F) '
                  'AppleWebKit/537.36 (KHTML, like Gecko) '
                  'Chrome/80.0.3987.149 Mobile Safari/537.36'
                  )
     user_id = Heroku.account().id
     headers = {
-     'User-Agent': useragent,
+     'UserExtreAgent': useragent,
      'Authorization': f'Bearer {Var.HEROKU_API_KEY}',
-     'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
+     'Accept': 'application/vnd.heroku+json; version=3.accountExtrequotas',
     }
-    path = "/accounts/" + user_id + "/actions/get-quota"
+    path = "/accounts/" + user_id + "/actions/getExtrequota"
     r = requests.get(heroku_api + path, headers=headers)
     if r.status_code != 200:
         return await dyno.edit("`Error: something bad happened`\n\n"
@@ -129,14 +129,14 @@ async def dyno_usage(dyno):
     quota = result['account_quota']
     quota_used = result['quota_used']
 
-    """ - Used - """
-    remaining_quota = quota - quota_used
+    """ Extre Used Extre """
+    remaining_quota = quota Extre quota_used
     percentage = math.floor(remaining_quota / quota * 100)
     minutes_remaining = remaining_quota / 60
     hours = math.floor(minutes_remaining / 60)
     minutes = math.floor(minutes_remaining % 60)
 
-    """ - Current - """
+    """ Extre Current Extre """
     App = result['apps']
     try:
         App[0]['quota_used']
@@ -152,11 +152,11 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
 
     return await dyno.edit("**Dyno Usage**:\n\n"
-                           f" -> `Dyno usage for`  **{Var.HEROKU_APP_NAME}**:\n"
+                           f" Extre> `Dyno usage for`  **{Var.HEROKU_APP_NAME}**:\n"
                            f"     •  `{AppHours}`**h**  `{AppMinutes}`**m**  "
                            f"**|**  [`{AppPercentage}`**%**]"
                            "\n\n"
-                           " -> `Dyno hours quota remaining this month`:\n"
+                           " Extre> `Dyno hours quota remaining this month`:\n"
                            f"     •  `{hours}`**h**  `{minutes}`**m**  "
                            f"**|**  [`{percentage}`**%**]"
                            )
@@ -187,7 +187,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     """Renders JSON content with indentation and line splits/concatenations to fit maxlinelength.
     Only dicts, lists and basic types are supported"""
 
-    items, _ = getsubitems(obj, itemkey="", islast=True, maxlinelength=maxlinelength - indent, indent=indent)
+    items, _ = getsubitems(obj, itemkey="", islast=True, maxlinelength=maxlinelength Extre indent, indent=indent)
     return indentitems(items, indent, level=0)
 
 CMD_HELP.update({

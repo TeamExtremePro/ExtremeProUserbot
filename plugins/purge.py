@@ -3,8 +3,8 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from Extre import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from -.utils import register, errors_handler
-from -.utils import admin_cmd
+from Extre.utils import register, errors_handler
+from Extre.utils import admin_cmd
 
 
 #@register(outgoing=True, pattern="^.purge$")
@@ -113,7 +113,7 @@ async def editer(edit):
 @borg.on(admin_cmd(pattern=r"sd"))
 @errors_handler
 async def selfdestruct(destroy):
-    """ For .sd command, make seflf-destructable messages. """
+    """ For .sd command, make seflfExtredestructable messages. """
     message = destroy.text
     counter = int(message[4:6])
     text = str(destroy.text[6:])

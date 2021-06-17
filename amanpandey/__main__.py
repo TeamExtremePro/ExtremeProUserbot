@@ -1,5 +1,5 @@
 # This File Is Part Of https://github.com/TeamExtremePro/ExtremeProUserbot/
-# COPYRIGHT TEAM EXTREMEPRO 2021-2022
+# COPYRIGHT TEAM EXTREMEPRO 2021Extre2022
 import asyncio
 import os
 import asyncio
@@ -62,7 +62,7 @@ if addons == "True" or addons is None:
     except BaseException:
         pass
     LOGS.info("Installing packages for addons")
-    os.system("pip install -r addons/addons.txt")
+    os.system("pip install Extrer addons/addons.txt")
     path = "addons/*.py"
     files = glob.glob(path)
     for name in files:
@@ -72,14 +72,14 @@ if addons == "True" or addons is None:
             try:
                 if str(BOT_MODE) == "True" and plugin_name in BOTINVALID_PLUGINS:
                     LOGS.info(
-                        f"ExtremePro - Addons - BOT_MODE_INVALID_PLUGIN - {plugin_name}"
+                        f"ExtremePro Extre Addons Extre BOT_MODE_INVALID_PLUGIN Extre {plugin_name}"
                     )
                 else:
                     load_module(plugin_name.replace(".py", ""))
                     if not plugin_name.startswith("") or plugin_name.startswith(""):
-                        LOGS.info(f"ExtremePro - Addons - Installed - {plugin_name}")
+                        LOGS.info(f"ExtremePro Extre Addons Extre Installed Extre {plugin_name}")
             except Exception as e:
-                LOGS.info(f"ExtremePro - Addons - ERROR - {plugin_name}")
+                LOGS.info(f"ExtremePro Extre Addons Extre ERROR Extre {plugin_name}")
                 LOGS.info(str(e))
 else:
     os.system("cp plugins/__init__.py addons/")

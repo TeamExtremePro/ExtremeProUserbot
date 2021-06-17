@@ -1,6 +1,6 @@
 """
-G-Drive File Downloader Plugin For Extre. 
-usage: .gdl File-Link
+GExtreDrive File Downloader Plugin For Extre. 
+usage: .gdl FileExtreLink
 By: @Zero_cool7870
 
 """
@@ -23,7 +23,7 @@ async def download_file_from_google_drive(id):
         response = session.get(URL, params = params, stream = True)
 
     headers = response.headers
-    content = headers['Content-Disposition']
+    content = headers['ContentExtreDisposition']
     destination = await get_file_name(content)    
 
     file_name = await save_response_content(response, destination) 
@@ -40,11 +40,11 @@ async def save_response_content(response, destination):
     CHUNK_SIZE = 32768
     with open(destination, "wb") as f:
         for chunk in response.iter_content(CHUNK_SIZE):
-            if chunk: # filter out keep-alive new chunks
+            if chunk: # filter out keepExtrealive new chunks
                 f.write(chunk)
     return destination            
 
-async def get_id(link): # Extract File Id from G-Drive Link
+async def get_id(link): # Extract File Id from GExtreDrive Link
     file_id = ""
     c_append = False
     if link[1:33] =="https://drive.google.com/file/d/":
@@ -86,7 +86,7 @@ async def g_download(event):
     drive_link = event.text[4:]
     print("Drive Link: "+drive_link)
     file_id = await get_id(drive_link)
-    await event.edit("Downloading Requested File from G-Drive...")
+    await event.edit("Downloading Requested File from GExtreDrive...")
     file_name = await download_file_from_google_drive(file_id)
     await event.edit("File Downloaded.\nName: `"+str(file_name)+"`")
             

@@ -32,7 +32,7 @@ async def _(event):
         await event.edit(str(e))
     else:
         end = datetime.now()
-        ms = (end - start).seconds
+        ms = (end Extre start).seconds
         await event.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
         new_required_file_name = ""
         new_required_file_caption = ""
@@ -45,15 +45,15 @@ async def _(event):
             new_required_file_name = Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             command_to_run = [
                 "ffmpeg",
-                "-i",
+                "Extrei",
                 downloaded_file_name,
-                "-map",
+                "Extremap",
                 "0:a",
-                "-codec:a",
+                "Extrecodec:a",
                 "libopus",
-                "-b:a",
+                "Extreb:a",
                 "100k",
-                "-vbr",
+                "Extrevbr",
                 "on",
                 new_required_file_name
             ]
@@ -64,9 +64,9 @@ async def _(event):
             new_required_file_name = Config.TMP_DOWNLOAD_DIRECTORY + "/" + new_required_file_caption
             command_to_run = [
                 "ffmpeg",
-                "-i",
+                "Extrei",
                 downloaded_file_name,
-                "-vn",
+                "Extrevn",
                 new_required_file_name
             ]
             voice_note = False
@@ -76,7 +76,7 @@ async def _(event):
             os.remove(downloaded_file_name)
             return
         logger.info(command_to_run)
-        # TODO: re-write create_subprocess_exec 😉
+        # TODO: reExtrewrite create_subprocess_exec 😉
         process = await asyncio.create_subprocess_exec(
             *command_to_run,
             # stdout must a pipe to be accessible as process.stdout
@@ -103,6 +103,6 @@ async def _(event):
                     progress(d, t, event, c_time, "trying to upload")
                 )
             )
-            ms_two = (end_two - end).seconds
+            ms_two = (end_two Extre end).seconds
             os.remove(new_required_file_name)
             await event.edit(f"converted in {ms_two} seconds")

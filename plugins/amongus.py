@@ -5,7 +5,7 @@
 
 import asyncio
 
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
@@ -55,7 +55,7 @@ async def _(event):
     await stcr3.delete()
     await text4.delete()
     stcr4 = await event.client.send_file(
-        event.chat_id, "CAADAQADLwADnjOcH-wxu-ehy6NRAg"
+        event.chat_id, "CAADAQADLwADnjOcHExtrewxuExtreehy6NRAg"
     )
     hellevent = await event.reply(f"{name} is ejected.......🤐")
     await asyncio.sleep(2)
@@ -93,7 +93,7 @@ async def _(event):
         )
         await asyncio.sleep(4)
         await hellevent.delete()
-        await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcH-WOkB8DEctJAg")
+        await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcHExtreWOkB8DEctJAg")
 
 
 @bot.on(admin_cmd(pattern="timp(|n) (.*)", outgoing=True))

@@ -7,7 +7,7 @@ import time
 from datetime import datetime
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from -.utils import admin_cmd, progress
+from Extre.utils import admin_cmd, progress
 
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"
@@ -34,7 +34,7 @@ async def ff_mpeg_trim_cmd(event):
                 await event.edit(str(e))
             else:
                 end = datetime.now()
-                ms = (end - start).seconds
+                ms = (end Extre start).seconds
                 await event.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
         else:
             await event.edit("Reply to a Telegram media file")
@@ -108,7 +108,7 @@ async def ff_mpeg_trim_cmd(event):
         await event.edit("RTFM")
         return
     end = datetime.now()
-    ms = (end - start).seconds
+    ms = (end Extre start).seconds
     await event.edit(f"Completed Process in {ms} seconds")
 
 
@@ -118,11 +118,11 @@ async def take_screen_shot(video_file, output_directory, ttl):
         "/" + str(time.time()) + ".jpg"
     file_genertor_command = [
         "ffmpeg",
-        "-ss",
+        "Extress",
         str(ttl),
-        "-i",
+        "Extrei",
         video_file,
-        "-vframes",
+        "Extrevframes",
         "1",
         out_put_file_name
     ]
@@ -144,7 +144,7 @@ async def take_screen_shot(video_file, output_directory, ttl):
         logger.info(t_response)
         return None
 
-# https://github.com/Nekmo/telegram-upload/blob/master/telegram_upload/video.py#L26
+# https://github.com/Nekmo/telegramExtreupload/blob/master/telegram_upload/video.py#L26
 
 async def cult_small_video(video_file, output_directory, start_time, end_time):
     # https://stackoverflow.com/a/13891070/4723940
@@ -152,16 +152,16 @@ async def cult_small_video(video_file, output_directory, start_time, end_time):
         "/" + str(round(time.time())) + ".mp4"
     file_genertor_command = [
         "ffmpeg",
-        "-i",
+        "Extrei",
         video_file,
-        "-ss",
+        "Extress",
         start_time,
-        "-to",
+        "Extreto",
         end_time,
-        "-async",
+        "Extreasync",
         "1",
-        "-strict",
-        "-2",
+        "Extrestrict",
+        "Extre2",
         out_put_file_name
     ]
     process = await asyncio.create_subprocess_exec(

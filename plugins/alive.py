@@ -14,7 +14,7 @@ pm_caption += "●● PYTHON : 3.9.5 ●●\n\n"
 pm_caption += "●● PIP : 21.1.2 ●●\n\n"
 pm_caption += "●● TELETHON : 1.21.1 ●●\n\n"
 pm_caption += "●● DATABASE : SQL == MONGODB ●●\n\n"
-pm_caption += "●● Copyright Team ExtremePro ●● :2021-2022 \n\n"
+pm_caption += "●● Copyright Team ExtremePro ●● :2021Extre2022 \n\n"
 pm_caption += "●● Extreme Branch ●● :Main \n\n"
 
 @borg.on(extremepro_cmd(pattern=r"alive"))

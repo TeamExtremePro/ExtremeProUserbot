@@ -14,7 +14,7 @@ document
 cancel"""
 
 import asyncio
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 from Extre import CMD_HELP
 
  

@@ -9,7 +9,7 @@ import asyncio
 import os
 import subprocess
 import sys
-from -.utils import admin_cmd, humanbytes, progress, time_formatter
+from Extre.utils import admin_cmd, humanbytes, progress, time_formatter
 from Extre import CMD_HELP
 
 @borg.on(admin_cmd(pattern=r"getc"))
@@ -22,7 +22,7 @@ async def get_media(event):
     except:
     	pass
     channel_username= event.text
-    command = ['ls','temp','|','wc','-l' ]
+    command = ['ls','temp','|','wc','Extrel' ]
     limit = channel_username[6:9]
     print(limit)
     channel_username = channel_username[11: ]
@@ -36,7 +36,7 @@ async def get_media(event):
 	        await borg.download_media(
                 msg,dir)
     ps = subprocess.Popen(('ls', 'temp'), stdout=subprocess.PIPE)
-    output = subprocess.check_output(('wc', '-l'), stdin=ps.stdout)
+    output = subprocess.check_output(('wc', 'Extrel'), stdin=ps.stdout)
     ps.wait()
     output = str(output)
     output = output.replace("b'","")
@@ -58,7 +58,7 @@ async def get_media(event):
     except:
     	pass
     channel_username= event.text
-    command = ['ls','temp','|','wc','-l' ]
+    command = ['ls','temp','|','wc','Extrel' ]
     channel_username = channel_username[7:]
 
 
@@ -72,7 +72,7 @@ async def get_media(event):
 	        await borg.download_media(
                 msg,dir)          
     ps = subprocess.Popen(('ls', 'temp'), stdout=subprocess.PIPE)
-    output = subprocess.check_output(('wc', '-l'), stdin=ps.stdout)
+    output = subprocess.check_output(('wc', 'Extrel'), stdin=ps.stdout)
     ps.wait()
     output = str(output)
     output = output.replace("b'","")

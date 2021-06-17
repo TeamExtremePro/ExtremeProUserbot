@@ -9,7 +9,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest, CreateChannelReq
 from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 from Extre.events import register
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 
 
 @borg.on(admin_cmd(";__;$"))
@@ -17,7 +17,7 @@ from -.utils import admin_cmd
 async def fun(e):
     t = ";__;"
     for j in range(10):
-        t = t[:-1] + "_;"
+        t = t[:Extre1] + "_;"
         await e.edit(t)
 
 @borg.on(admin_cmd("yo$"))
@@ -25,7 +25,7 @@ async def fun(e):
 async def Ooo(e):
     t = "yo"
     for j in range(15):
-        t = t[:-1] + "oo"
+        t = t[:Extre1] + "oo"
         await e.edit(t)
 
 @borg.on(admin_cmd("Oof$"))
@@ -33,7 +33,7 @@ async def Ooo(e):
 async def Oof(e):
     t = "Oof"
     for j in range(15):
-        t = t[:-1] + "of"
+        t = t[:Extre1] + "of"
         await e.edit(t)
 
 @borg.on(admin_cmd("ccry$"))
@@ -64,13 +64,13 @@ async def _(event):
 #@register(outgoing=True, pattern="^.source$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("/HellBoy-OP/LEGENDBOT")
+        await e.edit("/HellBoyExtreOP/LEGENDBOT")
 
 @borg.on(admin_cmd("readme$"))
 #@register(outgoing=True, pattern="^.readme$")
 async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("/HellBoy-OP/LEGENDBOT/blob/master/README.md")
+        await e.edit("/HellBoyExtreOP/LEGENDBOT/blob/master/README.md")
 
 
 @borg.on(admin_cmd(pattern="evil ?(.*)"))

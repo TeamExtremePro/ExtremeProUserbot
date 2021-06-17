@@ -2,7 +2,7 @@
 import asyncio
 import io
 
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 from Extre import CMD_HELP
 
 
@@ -22,7 +22,7 @@ async def install(event):
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"**List of Plugins:**\n - {o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All modules might not work directly. Visit__ @devilExtre __for assistance.__"
+    OUTPUT = f"**List of Plugins:**\n Extre {o}\n\n**HELP:** __If you want to know the commands for a plugin, do:Extre__ \n `.help <plugin name>` **without the < > brackets.**\n__All modules might not work directly. Visit__ @devilExtre __for assistance.__"
     if len(OUTPUT) > 69:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"
@@ -39,5 +39,5 @@ async def install(event):
 
 
 CMD_HELP.update(
-    {"command_list": ".cmds\nUsage - Extracts all the plugins of this Extre in a link.."}
+    {"command_list": ".cmds\nUsage Extre Extracts all the plugins of this Extre in a link.."}
 )

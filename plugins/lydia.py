@@ -3,7 +3,7 @@ from coffeehouse.lydia import LydiaAI
 import asyncio
 from telethon import events
 
-# Non-SQL Mode
+# NonExtreSQL Mode
 ACC_LYDIA = {}
 SESSION_ID = {}
 
@@ -31,7 +31,7 @@ async def repcf(event):
 async def addcf(event):
     if event.fwd_from:
         return
-    await event.edit("Running on Non-SQL mode for now...")
+    await event.edit("Running on NonExtreSQL mode for now...")
     await asyncio.sleep(3)
     await event.edit("Processing...")
     reply_msg = await event.get_reply_message()
@@ -48,7 +48,7 @@ async def addcf(event):
 async def remcf(event):
     if event.fwd_from:
         return
-    await event.edit("Running on Non-SQL mode for now...")
+    await event.edit("Running on NonExtreSQL mode for now...")
     await asyncio.sleep(3)
     await event.edit("Processing...")
     reply_msg = await event.get_reply_message()

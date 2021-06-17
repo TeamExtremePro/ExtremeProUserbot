@@ -1,7 +1,7 @@
 import asyncio
 from collections import deque
 
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
@@ -42,14 +42,14 @@ async def _(event):
     animation_ttl = range(12)
     event = await edit_or_reply(event, "`Deploying...`")
     animation_chars = [
-     "**Heroku Connecting To Latest [Github Build](HellBoy-OP/LEGENDBOT)**",
+     "**Heroku Connecting To Latest [Github Build](HellBoyExtreOP/LEGENDBOT)**",
             f"**Build started by user** {DEFAULTUSER}",
             f"**Deploy** `535a74f0` **by user** **{DEFAULTUSER}**",
             "**Restarting Heroku Server...**",
             "**State changed from up to starting**",    
             "**Stopping all processes with SIGTERM**",
             "**Process exited with** `status 143`",
-            "**Starting process with command** `python3 -m stdborg`",
+            "**Starting process with command** `python3 Extrem stdborg`",
             "**State changed from starting to up**",
             "__INFO:Hêllẞø†:Logged in as 557667062__",
             "__INFO:Hêllẞø†:Successfully loaded all plugins__",
@@ -185,20 +185,20 @@ async def _(event):
     if event.fwd_from:
         return
     event = await edit_or_reply(event, "Wait for plane...")
-    await event.edit("✈-------------")
-    await event.edit("-✈------------")
-    await event.edit("--✈-----------")
-    await event.edit("---✈----------")
-    await event.edit("----✈---------")
-    await event.edit("-----✈--------")
-    await event.edit("------✈-------")
-    await event.edit("-------✈------")
-    await event.edit("--------✈-----")
-    await event.edit("---------✈----")
-    await event.edit("----------✈---")
-    await event.edit("-----------✈--")
-    await event.edit("------------✈-")
-    await event.edit("-------------✈")
+    await event.edit("✈ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("Extre✈ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtre✈ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtre✈ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtre✈ExtreExtreExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtre✈ExtreExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtre✈ExtreExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtre✈ExtreExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtreExtre✈ExtreExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtreExtreExtre✈ExtreExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre✈ExtreExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre✈ExtreExtre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre✈Extre")
+    await event.edit("ExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtreExtre✈")
     await asyncio.sleep(3)
 
 

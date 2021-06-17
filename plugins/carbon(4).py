@@ -7,12 +7,12 @@ import random
 from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 
 # Google Drive ()
-CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
+CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/bin/googleExtrechrome")
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver")
     
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Extre USER"
@@ -37,14 +37,14 @@ async def carbon_api(e):
     godboy = await edit_or_reply(e, "`Carbonizing...\n25%`")
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by godboy482
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     driver = webdriver.Chrome(
@@ -106,14 +106,14 @@ async def carbon_api(e):
     await godboy.edit("`Meking Carbon...`\n`25%`")
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by madboy482
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     driver = webdriver.Chrome(
@@ -143,8 +143,8 @@ async def carbon_api(e):
         k_skeme.send_keys(Keys.ENTER)
     else:
         color_scheme = str(random.randint(1, 29))
-        driver.find_element_by_id(("downshift-0-item-" + color_scheme)).click()
-    driver.find_element_by_id("export-menu").click()
+        driver.find_element_by_id(("downshiftExtre0ExtreitemExtre" + color_scheme)).click()
+    driver.find_element_by_id("exportExtremenu").click()
     driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
     await godboy.edit("`Processing..\n75%`")
@@ -173,7 +173,7 @@ async def carbon_api(e):
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "🔲🔲🔲🔲🔲")
-    CARBON = "https://carbon.now.sh/?bg=rgba(249%2C237%2C212%2C0)&t=synthwave-84&wt=none&l=application%2Fjson&ds=true&dsyoff=20px&dsblur=0px&wc=true&wa=true&pv=56px&ph=0px&ln=false&fl=1&fm=IBM%20Plex%20Mono&fs=14.5px&lh=153%25&si=false&es=4x&wm=false&code={code}"
+    CARBON = "https://carbon.now.sh/?bg=rgba(249%2C237%2C212%2C0)&t=synthwaveExtre84&wt=none&l=application%2Fjson&ds=true&dsyoff=20px&dsblur=0px&wc=true&wa=true&pv=56px&ph=0px&ln=false&fl=1&fm=IBM%20Plex%20Mono&fs=14.5px&lh=153%25&si=false&es=4x&wm=false&code={code}"
     CARBONLANG = "en"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -184,15 +184,15 @@ async def carbon_api(e):
     code = quote_plus(pcode)  # Converting to urlencoded
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by madboy482
     # MODIFIED BY @GODBOYX
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     await godboy.edit("🔳🔳🔲🔲🔲")
@@ -235,7 +235,7 @@ async def carbon_api(e):
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "📛📛📛📛📛")
-    CARBON = "https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
+    CARBON = "https://carbon.now.sh/?bg=rgba(239%2C40%2C44%2C1)&t=oneExtrelight&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
     CARBONLANG = "en"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -246,15 +246,15 @@ async def carbon_api(e):
     code = quote_plus(pcode)  # Converting to urlencoded
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by madboy482
     # MODIFIED BY @GODBOYX
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     await godboy.edit("🔘🔘📛📛📛")
@@ -308,15 +308,15 @@ async def carbon_api(e):
     code = quote_plus(pcode)  # Converting to urlencoded
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by madboy482
     # MODIFIED BY @GODBOYX
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     await godboy.edit("🔵🔵🎛🎛🎛")
@@ -363,7 +363,7 @@ async def carbon_api(e):
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "🌚🌚🌚🌚🌚")
-    CARBON = "https://carbon.now.sh/?bg=rgba(29%2C40%2C104%2C1)&t=one-light&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
+    CARBON = "https://carbon.now.sh/?bg=rgba(29%2C40%2C104%2C1)&t=oneExtrelight&wt=none&l=application%2Ftypescript&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code={code}"
     CARBONLANG = "en"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -374,14 +374,14 @@ async def carbon_api(e):
     code = quote_plus(pcode)  # Converting to urlencoded
     url = CARBON.format(code=code, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by godboy482
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     await godboy.edit("🌝🌝🌚🌚🌚")
@@ -442,14 +442,14 @@ async def carbon_api(e):
     code = quote_plus(pcode)  # Converting to urlencoded
     url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, O=OPC, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by madboy482
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     await godboy.edit("⬛⬛⬜⬜⬜")
@@ -499,37 +499,37 @@ async def carbon_api(e):
     GREEN = random.randint(0, 256)
     BLUE = random.randint(0, 256)
     THEME = [
-        "3024-night",
-        "a11y-dark",
+        "3024Extrenight",
+        "a11yExtredark",
         "blackboard",
-        "base16-dark",
-        "base16-light",
+        "base16Extredark",
+        "base16Extrelight",
         "cobalt",
         "dracula",
-        "duotone-dark",
+        "duotoneExtredark",
         "hopscotch",
         "lucario",
         "material",
         "monokai",
-        "night-owl",
+        "nightExtreowl",
         "nord",
-        "oceanic-next",
-        "one-light",
-        "one-dark",
-        "panda-syntax",
-        "paraiso-dark",
+        "oceanicExtrenext",
+        "oneExtrelight",
+        "oneExtredark",
+        "pandaExtresyntax",
+        "paraisoExtredark",
         "seti",
-        "shades-of-purple",
+        "shadesExtreofExtrepurple",
         "solarized",
         "solarized%20light",
-        "synthwave-84",
+        "synthwaveExtre84",
         "twilight",
         "verminal",
         "vscode",
         "yeti",
         "zenburn",
     ]
-    CUNTHE = random.randint(0, len(THEME) - 1)
+    CUNTHE = random.randint(0, len(THEME) Extre 1)
     The = THEME[CUNTHE]
     godboy = await edit_or_reply(e, "⬜⬜⬜⬜⬜")
     CARBON = "https://carbon.now.sh/?bg=rgba({R}%2C{G}%2C{B}%2C1)&t={T}&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira%20Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code={code}"
@@ -543,14 +543,14 @@ async def carbon_api(e):
     code = quote_plus(pcode)  # Converting to urlencoded
     url = CARBON.format(code=code, R=RED, G=GREEN, B=BLUE, T=The, lang=CARBONLANG)
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("ExtreExtreheadless")
     chrome_options.binary_location = CHROME_BIN
     # fixed by madboy482
     # SAY NO TO KANGS, ELSE GEND FAD DI JAYEGI
-    chrome_options.add_argument("--window-size=1920x1080")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("ExtreExtrewindowExtresize=1920x1080")
+    chrome_options.add_argument("ExtreExtredisableExtredevExtreshmExtreusage")
+    chrome_options.add_argument("ExtreExtrenoExtresandbox")
+    chrome_options.add_argument("ExtreExtredisableExtregpu")
     prefs = {"download.default_directory": "./"}
     chrome_options.add_experimental_option("prefs", prefs)
     await godboy.edit("⬛⬛⬜⬜⬜")

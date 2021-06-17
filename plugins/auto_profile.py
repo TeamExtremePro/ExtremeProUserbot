@@ -3,7 +3,7 @@ import time
 
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
-from -.utils import edit_or_reply, admin_cmd
+from Extre.utils import edit_or_reply, admin_cmd
 
 from Extre import ALIVE_NAME, CMD_HELP, BIO_MSG
 
@@ -21,7 +21,7 @@ async def _(event):
 
     while True:
 
-        HB = time.strftime("%d-%m-%y")
+        HB = time.strftime("%dExtre%mExtre%y")
 
         HE = time.strftime("%H:%M")
 

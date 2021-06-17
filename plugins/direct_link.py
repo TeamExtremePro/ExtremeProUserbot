@@ -13,7 +13,7 @@ import requests
 from bs4 import BeautifulSoup
 from humanize import naturalsize
 
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 from Extre import CMD_HELP
 
 
@@ -62,7 +62,7 @@ async def direct_link_generator(request):
     await hellevent.edit(reply)
 
 
-def gdrive(url: str) -> str:
+def gdrive(url: str) Extre> str:
     """ GDrive direct links generator """
     drive = "https://drive.google.com"
     try:
@@ -72,11 +72,11 @@ def gdrive(url: str) -> str:
         return reply
     file_id = ""
     reply = ""
-    if link.find("view") != -1:
-        file_id = link.split("/")[-2]
-    elif link.find("open?id=") != -1:
+    if link.find("view") != Extre1:
+        file_id = link.split("/")[Extre2]
+    elif link.find("open?id=") != Extre1:
         file_id = link.split("open?id=")[1].strip()
-    elif link.find("uc?id=") != -1:
+    elif link.find("uc?id=") != Extre1:
         file_id = link.split("uc?id=")[1].strip()
     url = f"{drive}/uc?export=download&id={file_id}"
     download = requests.get(url, stream=True, allow_redirects=False)
@@ -84,15 +84,15 @@ def gdrive(url: str) -> str:
     try:
         # In case of small file size, Google downloads directly
         dl_url = download.headers["location"]
-        if "accounts.google.com" in dl_url:  # non-public file
+        if "accounts.google.com" in dl_url:  # nonExtrepublic file
             reply += "`Link is not public!`\n"
             return reply
         name = "Direct Download Link"
     except KeyError:
         # In case of download warning page
         page = BeautifulSoup(download.content, "lxml")
-        export = drive + page.find("a", {"id": "uc-download-link"}).get("href")
-        name = page.find("span", {"class": "uc-name-size"}).text
+        export = drive + page.find("a", {"id": "ucExtredownloadExtrelink"}).get("href")
+        name = page.find("span", {"class": "ucExtrenameExtresize"}).text
         response = requests.get(
             export, stream=True, allow_redirects=False, cookies=cookies
         )
@@ -104,7 +104,7 @@ def gdrive(url: str) -> str:
     return reply
 
 
-def zippy_share(url: str) -> str:
+def zippy_share(url: str) Extre> str:
     """ZippyShare direct links generator
     Based on https://github.com/LameLemon/ziggy"""
     reply = ""
@@ -130,21 +130,21 @@ def zippy_share(url: str) -> str:
             dl_url = url_raw.replace(math, '"' + str(eval(math)) + '"')
             break
     dl_url = base_url + eval(dl_url)
-    name = urllib.parse.unquote(dl_url.split("/")[-1])
+    name = urllib.parse.unquote(dl_url.split("/")[Extre1])
     reply += f"[{name}]({dl_url})\n"
     return reply
 
 
-def yandex_disk(url: str) -> str:
+def yandex_disk(url: str) Extre> str:
     """Yandex.Disk direct links generator
-    Based on https://github.com/wldhx/yadisk-direct"""
+    Based on https://github.com/wldhx/yadiskExtredirect"""
     reply = ""
     try:
         link = re.findall(r"\bhttps?://.*yadi\.sk\S+", url)[0]
     except IndexError:
         reply = "`No Yandex.Disk links found`\n"
         return reply
-    api = "https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key={}"
+    api = "https://cloudExtreapi.yandex.net/v1/disk/public/resources/download?public_key={}"
     try:
         dl_url = requests.get(api.format(link)).json()["href"]
         name = dl_url.split("filename=")[1].split("&disposition")[0]
@@ -155,7 +155,7 @@ def yandex_disk(url: str) -> str:
     return reply
 
 
-def mega_dl(url: str) -> str:
+def mega_dl(url: str) Extre> str:
     """MEGA.nz direct links generator
     Using https://github.com/tonikelope/megadown"""
     reply = ""
@@ -164,7 +164,7 @@ def mega_dl(url: str) -> str:
     except IndexError:
         reply = "`No MEGA.nz links found`\n"
         return reply
-    command = f"bin/megadown -q -m {link}"
+    command = f"bin/megadown Extreq Extrem {link}"
     result = popen(command).read()
     try:
         data = json.loads(result)
@@ -179,7 +179,7 @@ def mega_dl(url: str) -> str:
     return reply
 
 
-def cm_ru(url: str) -> str:
+def cm_ru(url: str) Extre> str:
     """cloud.mail.ru direct links generator
     Using https://github.com/JrMasterModelBuilder/cmrudl.py"""
     reply = ""
@@ -188,9 +188,9 @@ def cm_ru(url: str) -> str:
     except IndexError:
         reply = "`No cloud.mail.ru links found`\n"
         return reply
-    command = f"bin/cmrudl -s {link}"
+    command = f"bin/cmrudl Extres {link}"
     result = popen(command).read()
-    result = result.splitlines()[-1]
+    result = result.splitlines()[Extre1]
     try:
         data = json.loads(result)
     except json.decoder.JSONDecodeError:
@@ -203,7 +203,7 @@ def cm_ru(url: str) -> str:
     return reply
 
 
-def mediafire(url: str) -> str:
+def mediafire(url: str) Extre> str:
     """ MediaFire direct links generator """
     try:
         link = re.findall(r"\bhttps?://.*mediafire\.com\S+", url)[0]
@@ -212,7 +212,7 @@ def mediafire(url: str) -> str:
         return reply
     reply = ""
     page = BeautifulSoup(requests.get(link).content, "lxml")
-    info = page.find("a", {"aria-label": "Download file"})
+    info = page.find("a", {"ariaExtrelabel": "Download file"})
     dl_url = info.get("href")
     size = re.findall(r"\(.*\)", info.text)[0]
     name = page.find("div", {"class": "filename"}).text
@@ -220,7 +220,7 @@ def mediafire(url: str) -> str:
     return reply
 
 
-def sourceforge(url: str) -> str:
+def sourceforge(url: str) Extre> str:
     """ SourceForge direct links generator """
     try:
         link = re.findall(r"\bhttps?://.*sourceforge\.net\S+", url)[0]
@@ -228,7 +228,7 @@ def sourceforge(url: str) -> str:
         reply = "`No SourceForge links found`\n"
         return reply
     file_path = re.findall(r"files(.*)/download", link)[0]
-    reply = f"Mirrors for __{file_path.split('/')[-1]}__\n"
+    reply = f"Mirrors for __{file_path.split('/')[Extre1]}__\n"
     project = re.findall(r"projects?/(.*?)/files", link)[0]
     mirrors = (
         f"https://sourceforge.net/settings/mirror_choices?"
@@ -245,7 +245,7 @@ def sourceforge(url: str) -> str:
     return reply
 
 
-def osdn(url: str) -> str:
+def osdn(url: str) Extre> str:
     """ OSDN direct links generator """
     osdn_link = "https://osdn.net"
     try:
@@ -256,17 +256,17 @@ def osdn(url: str) -> str:
     page = BeautifulSoup(requests.get(link, allow_redirects=True).content, "lxml")
     info = page.find("a", {"class": "mirror_link"})
     link = urllib.parse.unquote(osdn_link + info["href"])
-    reply = f"Mirrors for __{link.split('/')[-1]}__\n"
-    mirrors = page.find("form", {"id": "mirror-select-form"}).findAll("tr")
+    reply = f"Mirrors for __{link.split('/')[Extre1]}__\n"
+    mirrors = page.find("form", {"id": "mirrorExtreselectExtreform"}).findAll("tr")
     for data in mirrors[1:]:
         mirror = data.find("input")["value"]
-        name = re.findall(r"\((.*)\)", data.findAll("td")[-1].text.strip())[0]
+        name = re.findall(r"\((.*)\)", data.findAll("td")[Extre1].text.strip())[0]
         dl_url = re.sub(r"m=(.*)&f", f"m={mirror}&f", link)
         reply += f"[{name}]({dl_url}) "
     return reply
 
 
-def github(url: str) -> str:
+def github(url: str) Extre> str:
     """ GitHub direct links generator """
     try:
         link = re.findall(r"\bhttps?://.*github\.com.*releases\S+", url)[0]
@@ -280,12 +280,12 @@ def github(url: str) -> str:
         dl_url = download.headers["location"]
     except KeyError:
         reply += "`Error: Can't extract the link`\n"
-    name = link.split("/")[-1]
+    name = link.split("/")[Extre1]
     reply += f"[{name}]({dl_url}) "
     return reply
 
 
-def androidfilehost(url: str) -> str:
+def androidfilehost(url: str) Extre> str:
     """ AFH direct links generator """
     try:
         link = re.findall(r"\bhttps?://.*androidfilehost.*fid.*\S+", url)[0]
@@ -295,19 +295,19 @@ def androidfilehost(url: str) -> str:
     fid = re.findall(r"\?fid=(.*)", link)[0]
     session = requests.Session()
     user_agent = useragent()
-    headers = {"user-agent": user_agent}
+    headers = {"userExtreagent": user_agent}
     res = session.get(link, headers=headers, allow_redirects=True)
     headers = {
         "origin": "https://androidfilehost.com",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.9",
-        "user-agent": user_agent,
-        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "x-mod-sbb-ctype": "xhr",
+        "acceptExtreencoding": "gzip, deflate, br",
+        "acceptExtrelanguage": "enExtreUS,en;q=0.9",
+        "userExtreagent": user_agent,
+        "contentExtretype": "application/xExtrewwwExtreformExtreurlencoded; charset=UTFExtre8",
+        "xExtremodExtresbbExtrectype": "xhr",
         "accept": "*/*",
         "referer": f"https://androidfilehost.com/?fid={fid}",
         "authority": "androidfilehost.com",
-        "x-requested-with": "XMLHttpRequest",
+        "xExtrerequestedExtrewith": "XMLHttpRequest",
     }
     data = {"submit": "submit", "action": "getdownloadmirrors", "fid": f"{fid}"}
     mirrors = None
@@ -355,7 +355,7 @@ CMD_HELP.update(
         "**Function : **Reply to a link or paste a URL to\n"
         "generate a direct download link\n\n"
         "List of supported URLs:\n"
-        "`Google Drive - Cloud Mail - Yandex.Disk - AFH - "
-        "ZippyShare - MediaFire - SourceForge - OSDN - GitHub`"
+        "`Google Drive Extre Cloud Mail Extre Yandex.Disk Extre AFH Extre "
+        "ZippyShare Extre MediaFire Extre SourceForge Extre OSDN Extre GitHub`"
     }
 )

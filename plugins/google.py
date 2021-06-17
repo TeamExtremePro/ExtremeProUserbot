@@ -10,7 +10,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from google_images_download import google_images_download
-from -.utils import admin_cmd
+from Extre.utils import admin_cmd
 
 
 def progress(current, total):
@@ -24,9 +24,9 @@ async def _(event):
     start = datetime.now()
     await event.edit("Processing ...")
     # SHOW_DESCRIPTION = False
-    input_str = event.pattern_match.group(1) # + " -inurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
+    input_str = event.pattern_match.group(1) # + " Extreinurl:(htm|html|php|pls|txt) intitle:index.of \"last modified\" (mkv|mp4|avi|epub|pdf|mp3)"
     input_url = "https://bots.shrimadhavuk.me/search/?q={}".format(input_str)
-    headers = {"USER-AGENT": "UniBorg"}
+    headers = {"USERExtreAGENT": "UniBorg"}
     response = requests.get(input_url, headers=headers).json()
     output_str = " "
     for result in response["results"]:
@@ -36,7 +36,7 @@ async def _(event):
         image = result.get("image")
         output_str += " 👉🏻  [{}]({}) \n\n".format(text, url)
     end = datetime.now()
-    ms = (end - start).seconds
+    ms = (end Extre start).seconds
     await event.edit("searched Google for {} in {} seconds. \n{}".format(input_str, ms, output_str), link_preview=False)
     await asyncio.sleep(5)
     await event.edit("Google: {}\n{}".format(input_str, output_str), link_preview=False)
@@ -77,7 +77,7 @@ async def _(event):
     for each_file in lst:
         os.remove(each_file)
     end = datetime.now()
-    ms = (end - start).seconds
+    ms = (end Extre start).seconds
     await event.edit("searched Google for {} in {} seconds.".format(input_str, ms), link_preview=False)
     await asyncio.sleep(5)
     await event.delete()
@@ -116,7 +116,7 @@ async def _(event):
             the_location = google_rs_response.headers.get("Location")
         await event.edit("Found Google Result. Pouring some soup on it!")
         headers = {
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
+            "UserExtreAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0"
         }
         response = requests.get(the_location, headers=headers)
         soup = BeautifulSoup(response.text, "html.parser")
@@ -129,7 +129,7 @@ async def _(event):
         img_size_div = soup.find(id="jHnbRc")
         img_size = img_size_div.find_all("div")
         end = datetime.now()
-        ms = (end - start).seconds
+        ms = (end Extre start).seconds
         OUTPUT_STR = """{img_size}
 **Possible Related Search**: <a href="{prs_url}">{prs_text}</a>
 

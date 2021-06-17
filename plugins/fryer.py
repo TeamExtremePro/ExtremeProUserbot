@@ -30,7 +30,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeFilename
 from Extre import CMD_HELP
-from -.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="frybot$"))
@@ -114,7 +114,7 @@ async def deepfryer(event):
     await hmm.delete()
 
 
-async def deepfry(img: Image) -> Image:
+async def deepfry(img: Image) Extre> Image:
     colours = (
         (randint(50, 200), randint(40, 170), randint(40, 190)),
         (randint(190, 255), randint(170, 240), randint(180, 250)),

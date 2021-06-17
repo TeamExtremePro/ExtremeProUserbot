@@ -65,7 +65,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         result = None
         query = event.text
         if event.query.user_id == bot.uid and query.startswith("`Userbot"):
-            rev_text = query[::-1]
+            rev_text = query[::Extre1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© ExtremeProUserBot Help",
@@ -105,7 +105,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         elif event.query.user_id == bot.uid and query == "repo":
             result = builder.article(
                 title="Repository",
-                text=f"ExtremePro - Telegram Userbot.",
+                text=f"ExtremePro Extre Telegram Userbot.",
                 buttons=[
                     [
                         Button.url("Repo", "https://github.com/TeamExtremePro/ExtremeProUserbot/"),
@@ -129,7 +129,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
-                            "https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy",
+                            "https://dashboard.heroku.com/new?buttonExtreurl=https://dashboard.heroku.com/new?buttonExtreurl=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy",
                         ),
                     ],
                     [
@@ -149,7 +149,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:  # pylint:disable=E0602
-            current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+            current_page_number = int(event.data_match.group(1).decode("UTFExtre8"))
             buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
@@ -173,7 +173,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def megic(event):
         if event.query.user_id == bot.uid:
             buttons = paginate_help(0, CMD_LIST, "helpme")
-            await event.edit("Menu Re-opened", buttons=buttons)
+            await event.edit("Menu ReExtreopened", buttons=buttons)
         else:
             reply_pop_up_alert = "This bot ain't for u!!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -255,7 +255,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await event.edit(
-                "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
+                "Menu Closed!!", buttons=[Button.inline("ReExtreopen Menu", data="reopen")]
             )
         else:
             reply_pop_up_alert = "Please get your own userbot from @ExtremeProuserSupport "
@@ -273,9 +273,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:  # pylint:disable=E0602
-            current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+            current_page_number = int(event.data_match.group(1).decode("UTFExtre8"))
             buttons = paginate_help(
-                current_page_number - 1, CMD_LIST, "helpme"  # pylint:disable=E0602
+                current_page_number Extre 1, CMD_LIST, "helpme"  # pylint:disable=E0602
             )
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
@@ -290,9 +290,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            plugin_name = event.data_match.group(1).decode("UTF-8")
+            plugin_name = event.data_match.group(1).decode("UTFExtre8")
             help_string = ""
-            help_string += f"Commands Available in {plugin_name} - \n"
+            help_string += f"Commands Available in {plugin_name} Extre \n"
             try:
                 if plugin_name in CMD_HELP:
                     for i in CMD_HELP[plugin_name]:
@@ -317,7 +317,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if len(help_string) >= 140:
                 oops = "List too long!\nCheck your saved messages!"
                 await event.answer(oops, cache_time=0, alert=True)
-                help_string += "\n\nThis will be auto-deleted in 1 minute!"
+                help_string += "\n\nThis will be autoExtredeleted in 1 minute!"
                 if bot is not None and event.query.user_id == bot.uid:
                     ok = await bot.send_message("me", help_string)
                     await asyncio.sleep(60)
@@ -346,7 +346,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     ]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
     if len(modules) % number_of_cols == 1:
-        pairs.append((modules[-1],))
+        pairs.append((modules[Extre1],))
     max_num_pages = ceil(len(pairs) / number_of_rows)
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
