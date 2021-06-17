@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "ExtrExtrExtre.utils"
+          find: "ExtrExtre"
 
-          replace: "Extre.utils"
+          replace: "-"
 
       - name: Create Pull Request
 
