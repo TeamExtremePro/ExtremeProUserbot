@@ -10,6 +10,7 @@ from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd,
 from Extre.config import Config
 from Extre.variables import Var
 from Extre import bot
+EXTRA_PLUGS = os.environ.get("EXTRA_PLUGS", True)
 from sys import argv
 import sys
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
@@ -54,7 +55,15 @@ for name in files:
         shortname = path1.stem
         start_assistant(shortname.replace(".py", ""))   
 
-
+import glob
+os.system("git clone https://github.com/TeamExtremePro/MODULES")
+path = '*.py'
+files = glob.glob(path)
+for name in files:
+    with open(name) as f:
+        path1 = Path(f.name)
+        shortname = path1.stem
+        load_module(shortname.replace(".py", ""))
 
 import glob
 
