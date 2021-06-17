@@ -281,10 +281,3 @@ if NEEDIT == "on":
             await borg(functions.contacts.BlockRequest(chat_id))
 
 
-CMD_HELP.update(
-    {
-        "pmsecurity": ".approve/.a\nUse - Approve PM\
-        \n\n.disapprove/.da\nUse - DisApprove PM\
-        \n\n.listapproved\nUse - Get all approved PMs.\
-        \n\nSet var PMPERMIT_PIC for custom PMPic, CUSTOM_PMPERMIT for custom text, PMSECURITY <on/off> to enable/disable, INSTANT_BLOCK <on/off>.\
-        \nGet help from EXTREMEPROBotHelpBot."}
