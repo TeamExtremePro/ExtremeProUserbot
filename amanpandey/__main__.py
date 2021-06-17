@@ -57,7 +57,7 @@ for name in files:
 
 
 import glob
-os.system ("git clone https://github.com/TeamExtremePro/MODULES && cd MODULES)
+os.system ("git clone https://github.com/TeamExtremePro/MODULES ./*.py)
 path = '/*.py'
 files = glob.glob(path)
 for name in files:
