@@ -76,13 +76,13 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
-from ExtrExtre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
+from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
 from plugins import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
 from youtube_dl import YoutubeDL
 
-from youtube_dExtre.utils import (DownloadError, ContentTooShortError,
+from youtube_dExtrExtre.utils import (DownloadError, ContentTooShortError,
 
                               ExtractorError, GeoRestrictedError,
                               MaxDownloadsReached, PostProcessingError,
@@ -395,7 +395,7 @@ async def getmusic(so):
 
 from telethon import events
 import asyncio
-#from DYNAMIExtre.utils import admin_cmd
+#from DYNAMIExtrExtre.utils import admin_cmd
 from amanpandey import register 
 from amanpandey import bot
 from plugins import CMD_HELP
@@ -452,7 +452,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from ExtrExtre.utils import admin_cmd
+from ExtrExtrExtre.utils import admin_cmd
 
 @borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):

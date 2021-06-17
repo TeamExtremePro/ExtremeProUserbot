@@ -15,8 +15,8 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                MessageMediaPhoto)
 
 
-from ExtrExtre.utils import register, errors_handler
-from ExtrExtre.utils import admin_cmd
+from ExtrExtrExtre.utils import register, errors_handler
+from ExtrExtrExtre.utils import admin_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"

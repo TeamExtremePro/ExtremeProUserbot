@@ -20,7 +20,7 @@ import os
 import time
 from datetime import datetime
 from telethon import events
-from ExtrExtre.utils import admin_cmd, progress, humanbytes
+from ExtrExtrExtre.utils import admin_cmd, progress, humanbytes
 from mimetypes import guess_type
 from apiclient.discovery import build
 from apiclient.http import MediaFileUpload

@@ -4,7 +4,7 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from Extre import ALIVE_NAME
-from ExtrExtre.utils import admin_cmd
+from ExtrExtrExtre.utils import admin_cmd
 
 naam = str(ALIVE_NAME)
 

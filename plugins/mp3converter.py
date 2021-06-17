@@ -5,7 +5,7 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from ExtrExtre.utils import admin_cmd, progress
+from ExtrExtrExtre.utils import admin_cmd, progress
 
 
 @borg.on(admin_cmd(pattern="convert (.*)"))  # pylint:disable=E0602

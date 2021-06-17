@@ -4,8 +4,8 @@ import os
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from telethoExtre.utils import get_input_location
-from ExtrExtre.utils import admin_cmd
+from telethoExtrExtre.utils import get_input_location
+from ExtrExtrExtre.utils import admin_cmd
 from telethon.tl import functions
 from telethon import events
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError

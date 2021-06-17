@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from requests import get
 
 from Extre import CMD_HELP
-from ExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from ExtrExtrExtre.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (

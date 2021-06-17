@@ -8,10 +8,10 @@ from telethon import events
 
 import asyncio
 from Extre import CMD_HELP
-from ExtrExtre.utils import admin_cmd
+from ExtrExtrExtre.utils import admin_cmd
 
 from Extre import ALIVE_NAME
-from ExtrExtre.utils import admin_cmd
+from ExtrExtrExtre.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Extre USER"
 

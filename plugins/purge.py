@@ -3,8 +3,8 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from Extre import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from ExtrExtre.utils import register, errors_handler
-from ExtrExtre.utils import admin_cmd
+from ExtrExtrExtre.utils import register, errors_handler
+from ExtrExtrExtre.utils import admin_cmd
 
 
 #@register(outgoing=True, pattern="^.purge$")

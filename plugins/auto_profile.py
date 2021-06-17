@@ -3,7 +3,7 @@ import time
 
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
-from ExtrExtre.utils import edit_or_reply, admin_cmd
+from ExtrExtrExtre.utils import edit_or_reply, admin_cmd
 
 from Extre import ALIVE_NAME, CMD_HELP, BIO_MSG
 

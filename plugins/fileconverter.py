@@ -11,7 +11,7 @@ import asyncio
 import time
 from datetime import datetime
 
-from ExtrExtre.utils import admin_cmd, sudo_cmd , edit_or_reply
+from ExtrExtrExtre.utils import admin_cmd, sudo_cmd , edit_or_reply
 from Extre import CMD_HELP, bot
 
 @borg.on(admin_cmd(pattern=r"open", outgoing=True))
