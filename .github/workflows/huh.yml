@@ -19,9 +19,9 @@ jobs:
 
         with:
 
-          find: "from var import Var"
+          find: "Extre.plugins.sql_helper"
 
-          replace: "from amanpandey import Var"
+          replace: "sql_helper"
 
       - name: Create Pull Request
 
