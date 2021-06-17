@@ -19,7 +19,7 @@ jobs:
 
         with:
 
-          find: "-"
+          find: "ULTRA"
 
           replace: "Extre"
 
