@@ -75,7 +75,7 @@ if addons == "True" or addons is None:
                         f"ExtremePro - Addons - BOT_MODE_INVALID_PLUGIN - {plugin_name}"
                     )
                 else:
-                    load_addons(plugin_name.replace(".py", ""))
+                    load_module(plugin_name.replace(".py", ""))
                     if not plugin_name.startswith("__") or plugin_name.startswith("_"):
                         LOGS.info(f"ExtremePro - Addons - Installed - {plugin_name}")
             except Exception as e:
