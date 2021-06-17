@@ -58,7 +58,7 @@ for name in files:
 addons = os.environ.get("addons", True)
 if addons == "True" or addons is None:
     try:
-        os.system("git clone https://github.com/TeamExtremePro/ExtremeProUserbot.git addons/")
+        os.system("git clone https://github.com/TeamExtremePro/MODULES.git addons/")
     except BaseException:
         pass
     LOGS.info("Installing packages for addons")
