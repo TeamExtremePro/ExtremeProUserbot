@@ -18,7 +18,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
 @borg.on(extremepro_cmd(pattern="autopic$"))
 async def autopic(event):
     await event.edit(f"Autopic has been started by my Master") 
-    downloaded_file_name = "userbot/original_pic.png"
+    downloaded_file_name = "amanpandey/original_pic.png"
     downloader = SmartDL(Var.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
     photo = "userbot/photo_pfp.png"
