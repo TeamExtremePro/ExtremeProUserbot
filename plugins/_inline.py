@@ -120,7 +120,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "Source Code",
-                EXTREMEPRO_PIC = os.environ.get("EXTREMEPRO_PIC", None) or "https://telegra.ph/file/75520b56df7b9159438cb.jpg",
                 text="**Welcome to ExtremeProUserbot**\n\n`This is working as pmsecurity wait untill my master approves you`",
                 buttons=[
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/useropbolte")],
