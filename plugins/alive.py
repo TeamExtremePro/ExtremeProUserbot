@@ -3,7 +3,7 @@ import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 from amanpandey import ALIVE_NAME
-from amanpandey import admin_cmd
+from amanpandey import extremepro_cmd, amanpandey_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba"
 
