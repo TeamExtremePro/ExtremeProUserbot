@@ -19,4 +19,4 @@ EXTREMEPRO += "[ExtremeProUserBot](https://github.com/TeamExtremePro/ExtremeProU
 @borg.on(extremepro_cmd(pattern=r"alive"))
 @borg.on(amanpandey_cmd(pattern=r"alive", allow_sudo=True))
 async def amanpandey(alive):
-    await borg.send_file(event.chat_id, AMANPANDEY, caption=EXTREMEPRO)
+    await borg.send_file(AMANPANDEY, caption=EXTREMEPRO)
