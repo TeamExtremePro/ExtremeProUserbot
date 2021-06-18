@@ -18,5 +18,12 @@ EXTREMEPRO += f"`Owner`: {DEFAULTUSER}\n"
 EXTREMEPRO += "[ExtremeProUserBot](https://github.com/TeamExtremePro/ExtremeProUserbot)"
 @borg.on(extremepro_cmd(pattern=r"alive"))
 @borg.on(amanpandey_cmd(pattern=r"alive", allow_sudo=True))
-async def amanpandey(alive):
-    await borg.send_file(AMANPANDEY, caption=EXTREMEPRO)
+async def repo(event):
+    if event.fwd_from:
+        return
+    amanpandey = Var.TG_BOT_USER_NAME_BF_HER
+    if event.reply_to_msg_id:
+        await event.get_reply_message()
+    response = await bot.inline_query(amanpandey, "alive")
+    await response[0].click(event.chat_id)
+    await event.delete()
