@@ -20,4 +20,4 @@ pm_caption += "⚡ Extreme Branch ⚡ :DEV \n\n"
 @borg.on(extremepro_cmd(pattern=r"alive"))
 @borg.on(amanpandey_cmd(pattern=r"alive", allow_sudo=True))
 async def amanpandey(event):
-    await borg.send_file(event.chat_id, PM_IMG, caption=pm_caption)
+    await event.edit(event.chat_id, PM_IMG, caption=pm_caption)
