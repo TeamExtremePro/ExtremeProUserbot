@@ -54,35 +54,7 @@ for name in files:
         path1 = Path(f.name)
         shortname = path1.stem
         start_assistant(shortname.replace(".py", ""))   
-BOT_MODE = os.environ.get("BOT_MODE", False)
-addons = os.environ.get("addons", True)
-if addons == "True" or addons is None:
-    try:
-        os.system("git clone https://github.com/TeamExtremePro/MODULES.git addons/")
-    except BaseException:
-        pass
-    LOGS.info("Installing packages for addons")
-    os.system("pip install -r addons/addons.txt")
-    path = "addons/*.py"
-    files = glob.glob(path)
-    for name in files:
-        with open(name) as a:
-            patt = Path(a.name)
-            plugin_name = patt.stem
-            try:
-                if str(BOT_MODE) == "True" and plugin_name in BOTINVALID_PLUGINS:
-                    LOGS.info(
-                        f"ExtremePro - Addons - BOT_MODE_INVALID_PLUGIN - {plugin_name}"
-                    )
-                else:
-                    load_module(plugin_name.replace(".py", ""))
-                    if not plugin_name.startswith("") or plugin_name.startswith(""):
-                        LOGS.info(f"ExtremePro - Addons - Installed - {plugin_name}")
-            except Exception as e:
-                LOGS.info(f"ExtremePro - Addons - ERROR - {plugin_name}")
-                LOGS.info(str(e))
-else:
-    os.system("cp plugins/__init__.py addons/")
+
 
 import glob
 
