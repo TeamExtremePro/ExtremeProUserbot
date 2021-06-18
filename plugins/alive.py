@@ -1,6 +1,7 @@
-import os
 import asyncio
-from telethon import events
+import random
+from telethon import events, TelegramClient
+from amanpandey import extremepro_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 from amanpandey import ALIVE_NAME
 from amanpandey import extremepro_cmd, amanpandey_cmd
@@ -17,4 +18,4 @@ EXTREMEPRO = "[ExtremeProUserBot](https://github.com/TeamExtremePro/ExtremeProUs
 @borg.on(extremepro_cmd(pattern=r"alive"))
 @borg.on(amanpandey_cmd(pattern=r"alive", allow_sudo=True))
 async def amanpandey(alive):
-    await borg.send_file(event.chat_id, AMANPANDEY, EXTREMEPRO)
+    await borg.send_file(event.chat_id, AMANPANDEY, caption=EXTREMEPRO)
