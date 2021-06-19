@@ -19,7 +19,7 @@ from amanpandey import extremepro_cmd, amanpandey_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba"
 """ =======================CONSTANTS====================== """
 EXTREMEPRO_PIC = os.environ.get("EXTREMEPRO_PIC", None) or "https://telegra.ph/file/75520b56df7b9159438cb.jpg"
-EXTREMEPRO = += f"`Owner`: {DEFAULTUSER} \n"\n"
+EXTREMEPRO = f"**`Owner`: {DEFAULTUSER}`**\n\n"
 EXTREMEPRO = f" ┏━━━━━━━━━━━━━━━━━━━\n"
 EXTREMEPRO += f"┣•➳➠ `Telethon Version :` `1.21.1` \n"
 EXTREMEPRO += f"┣•➳➠ `ExtremePro Version :` `0.0.1`\n"
