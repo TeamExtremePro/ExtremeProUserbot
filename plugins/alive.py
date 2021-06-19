@@ -16,8 +16,8 @@ EXTREMEPRO += "**✅Python: 3.9.5\n\n"
 EXTREMEPRO += "**✅Database Status: Databases functioning normally!**\nSQL\n"
 EXTREMEPRO += f"`Owner`: {DEFAULTUSER}\n"
 EXTREMEPRO += "[ExtremeProUserBot](https://github.com/TeamExtremePro/ExtremeProUserbot)"
-@borg.on(extremepro_cmd(outgoing=True, pattern="alive$"))
-@borg.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+@extreme_cmd(extremepro_cmd(outgoing=True, pattern="alive$"))
+@extreme_cmd(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def up(op):
     if op.fwd_from:
         return
