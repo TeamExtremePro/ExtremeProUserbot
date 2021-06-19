@@ -13,6 +13,7 @@ import os
 import random
 from telethon import events
 from amanpandey import extremepro_cmd, amanpandey_cmd
+from Extre import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
