@@ -4,7 +4,7 @@ Extreme Pro is a telethon based userbot
 
 [![Stars](https://img.shields.io/github/stars/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=yellow)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/stargazers)
 [![Forks](https://img.shields.io/github/forks/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=orange)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/fork)
-[![Size](https://img.shields.io/github/repo-size/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=green)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/)   
+[![Size](https://img.shields.io/github/repo-size/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=green)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT)   
 [![Python](https://img.shields.io/badge/Python-v3.9-blue)](https://www.python.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/graphs/commit-activity)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT)   
