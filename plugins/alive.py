@@ -12,8 +12,8 @@ import asyncio
 import os
 import random
 from telethon import events
-from amanpandey import extremepro_cmd, amanpandey_cmd
-from Extre import ALIVE_NAME
+from userbot.utils import admin_cmd, sudo_cmd
+from userbot import ALIVE_NAME
 from telethon.tl.types import ChannelParticipantsAdmins
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
@@ -21,7 +21,6 @@ edit_time = 5
 PHOTO = os.environ.get("EXTREMEPRO_PIC", None) or "https://telegra.ph/file/75520b56df7b9159438cb.jpg"
 """ =======================CONSTANTS====================== """
  
-pm_caption += = f"`Owner`: {DEFAULTUSER}\n"
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `Telethon Version :` `1.21.1` \n"
 pm_caption += f"┣•➳➠ `ExtremePro Version :` `0.0.1`\n"
