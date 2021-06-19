@@ -49,8 +49,8 @@ async def get_user_sender_id(user, event):
         return None
     return user_obj
 
-@borg.on(extremepro_cmd(pattern="gban ?(.*)"))
-@borg.on(amanpandey_cmd("gban ?(.*)", allow_sudo=True))
+@extreme_cmd(extremepro_cmd(pattern="gban ?(.*)"))
+@extreme_cmd(amanpandey_cmd("gban ?(.*)", allow_sudo=True))
 async def gspider(amanpandey):
     lol = amanpandey
     sender = await lol.get_sender()
@@ -116,8 +116,8 @@ async def gspider(amanpandey):
     )
 
 
-@borg.on(extremepro_cmd(pattern="ungban ?(.*)"))
-@borg.on(amanpandey_cmd("ungban ?(.*)", allow_sudo=True))
+@extreme_cmd(extremepro_cmd(pattern="ungban ?(.*)"))
+@extreme_cmd(amanpandey_cmd("ungban ?(.*)", allow_sudo=True))
 async def gspider(amanpandey):
     lol = amanpandey
     sender = await lol.get_sender()
@@ -183,7 +183,7 @@ async def gspider(amanpandey):
 
 
 
-@borg.on(ChatAction)
+@extreme_cmd(ChatAction)
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
