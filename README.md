@@ -41,6 +41,11 @@ The easiest way to deploy this Bot
 
 
 
+## String Session
+[![Run on Repl.it](https://repl.it/badge/github/TeamExtremePro/ExtremeProUserbot)](https://replit.com/@amanpandey7647/Extreme-Pro-Userbot-String-Session#main.py)
+
+
+
 An example `local_config.py` file could be:
 
 **Not All of the variables are mandatory**
