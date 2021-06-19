@@ -11,7 +11,7 @@ from telethon.tl.types import (ChannelParticipantsAdmins,
                                      MessageEntityMentionName,
                                        MessageMediaPhoto)
 from userbot.utils import register, errors_handler
-from userbot.utils import extremepro_cmd
+from amanpandey import extremepro_cmd
 from userbot import CMD_HELP
 async def get_full_user(event):  
     args = event.pattern_match.group(1).split(':', 1)
