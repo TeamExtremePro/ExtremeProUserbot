@@ -17,6 +17,13 @@ AMAN PANDEY
 NoobExtreStranger
 
 
+## String Session
+[![Run on Repl.it](https://repl.it/badge/github/TeamExtremePro/ExtremeProUserbot)](https://replit.com/@amanpandey7647/Extreme-Pro-Userbot-String-Session#main.py)
+
+
+## Deploy
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy)
+
 
 [![Extreme Pro вσт ℓσgσ](https://telegra.ph/file/75520b56df7b9159438cb.jpg)](https://t.me/ExtremeProuserbotSupport)
 
@@ -34,15 +41,9 @@ NoobExtreStranger
 ## FORK AT YOUR OWN RISK
 ## Installing
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/TeamExtremePro/ExtremeProUserbot"> <img src="https://img.shields.io/badge/Deploy%20To%20HerokuExtrecyan?style=forExtretheExtrebadge&logo=heroku" width="220" height="38.45"/></a></p>
-## FOR DEPLOY BOT 
-The easiest way to deploy this Bot
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/TeamExtremePro/ExtremeProUserbot"> <img src="https://img.shields.io/badge/Deploy%20To%20HerokuExtrecyan?style=forExtretheExtrebadge&logo=heroku" width="220" height="38.45"/></a></p>
+  
+  
 
-
-
-## String Session
-[![Run on Repl.it](https://repl.it/badge/github/TeamExtremePro/ExtremeProUserbot)](https://replit.com/@amanpandey7647/Extreme-Pro-Userbot-String-Session#main.py)
 
 
 
