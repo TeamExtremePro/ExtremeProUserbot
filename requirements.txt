@@ -1,2 +1,4 @@
 PyGithub
 Extre
+pip
+telethon
