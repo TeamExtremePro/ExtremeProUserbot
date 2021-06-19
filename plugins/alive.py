@@ -21,9 +21,7 @@ edit_time = 5
 PHOTO = os.environ.get("EXTREMEPRO_PIC", None) or "https://telegra.ph/file/75520b56df7b9159438cb.jpg"
 """ =======================CONSTANTS====================== """
  
-pm_caption += (
-    f"                 MY🔥MASTER\n  **『{DEFAULTUSER}』**\n\n"
-)
+pm_caption += = f"`Owner`: {DEFAULTUSER}\n"
 pm_caption += f"┏━━━━━━━━━━━━━━━━━━━\n"
 pm_caption += f"┣•➳➠ `Telethon Version :` `1.21.1` \n"
 pm_caption += f"┣•➳➠ `ExtremePro Version :` `0.0.1`\n"
