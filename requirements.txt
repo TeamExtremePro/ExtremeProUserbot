@@ -1,5 +1,4 @@
-PyGithub
 Extre
 pip
-telethon
 pymongo
+telethon
