@@ -1,4 +1,4 @@
 PyGithub
-Extre==0.8
+Extre
 pip
 telethon
