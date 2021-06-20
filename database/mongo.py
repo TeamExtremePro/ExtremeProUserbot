@@ -1,5 +1,5 @@
 from pymongo import MongoClient
 
-from Extre.variables import Var
+from Extre.config import Config
 
-cli = MongoClient(Var.MONGO_DB_URI)
+cli = MongoClient(Config.DB_URI)
