@@ -1,5 +1,5 @@
+import logging
 from pymongo import MongoClient
+from Extre.config import MONGO_URI
 
-from Extre.config import Config
-
-cli = MongoClient(Config.DB_URI)
+cli = MongoClient(MONGO_URI)
