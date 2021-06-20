@@ -1,6 +1,7 @@
 import heroku3
 import re, os
-from amanpandey import extremepro_cmd, Var
+from Extre.variables import Var
+from Extre.utils import extremepro_cmd
 EXTREMEPRO = Var.HEROKU_APP_NAME
 AMANPANDEY = Var.HEROKU_API_KEY
 sudolist = os.environ.get("SUDO_USERS", None)
