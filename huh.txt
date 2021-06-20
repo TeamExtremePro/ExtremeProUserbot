@@ -1,1 +1,1 @@
-Extre
+Extre==0.6
