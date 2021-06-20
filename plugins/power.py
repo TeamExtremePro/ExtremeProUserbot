@@ -9,7 +9,7 @@ from telethon import events
 import asyncio
 import os
 import sys
-from amanpandey import extremepro_cmd
+from Extre.utils import extremepro_cmd
 
 
 @borg.on(extremepro_cmd(pattern="shutdown"))
