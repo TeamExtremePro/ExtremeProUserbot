@@ -11,10 +11,10 @@ import asyncio
 import os
 import random
 from telethon import events, TelegramClient
-from amanpandey import extremepro_cmd
+from Extre.utils import extremepro_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
-from amanpandey import ALIVE_NAME
-from amanpandey import extremepro_cmd, amanpandey_cmd
+from Extre import ALIVE_NAME
+from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba"
 """ =======================CONSTANTS====================== """
