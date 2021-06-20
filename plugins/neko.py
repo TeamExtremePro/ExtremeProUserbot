@@ -1,5 +1,5 @@
 # pastebin for catuserbot
-from Extre.utils import admin_cmd, sudo_cmd
+from Extre.utils import extremepro_cmd, sudo_cmd
 import os
 from Extre import CMD_HELP
 import pygments
@@ -17,9 +17,9 @@ def progress(current, total):
             current, total, (current / total) * 100
         )
     )
-from Extre.utils import admin_cmd, sudo_cmd
+from Extre.utils import extremepro_cmd, sudo_cmd
 
-@bot.on(admin_cmd(pattern="neko(?: |$)(.*)", outgoing=True))
+@bot.on(extremepro_cmd(pattern="neko(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="neko(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -76,7 +76,7 @@ async def _(event):
     reply_text = f"**Pasted to Nekobin :** [Neko]({url})\n**Raw url :** [Raw](https://nekobin.com/raw/{key})\n\n**𝑷𝒂𝒔𝒕𝒆𝒅 𝒂𝒏𝒅 𝑼𝒑𝒍𝒐𝒂𝒅𝒆𝒅 𝒕𝒐 𝑵𝒆𝒌𝒐𝑩𝒊𝒏 𝒃𝒚 υℓтяα χ**"
     await catevent.edit(reply_text)
 
-@bot.on(admin_cmd(pattern="pcode(?: |$)(.*)"))
+@bot.on(extremepro_cmd(pattern="pcode(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="pcode(?: |$)(.*)"))
 async def code_print(event):
     if event.fwd_from:

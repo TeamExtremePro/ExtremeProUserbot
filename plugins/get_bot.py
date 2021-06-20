@@ -3,10 +3,10 @@ Syntax: .get_bot"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
-@borg.on(admin_cmd("get_bot ?(.*)"))
+@borg.on(extremepro_cmd("get_bot ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

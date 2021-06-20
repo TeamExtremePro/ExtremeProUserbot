@@ -3,11 +3,11 @@ import time
 from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 from Extre import CMD_HELP
 
 
-@bot.on(admin_cmd(pattern="stats$"))
+@bot.on(extremepro_cmd(pattern="stats$"))
 @bot.on(sudo_cmd(pattern="stats$", allow_sudo=True))
 async def stats(
     event: NewMessage.Event,

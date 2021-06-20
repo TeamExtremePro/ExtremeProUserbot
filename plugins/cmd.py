@@ -2,12 +2,12 @@
 import asyncio
 import io
 
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 from Extre import CMD_HELP
 
 
 # @command(pattern="^.cmds", outgoing=True)
-@borg.on(admin_cmd(pattern=r"cmds"))
+@borg.on(extremepro_cmd(pattern=r"cmds"))
 async def install(event):
     if event.fwd_from:
         return

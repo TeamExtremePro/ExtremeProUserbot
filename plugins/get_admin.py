@@ -2,10 +2,10 @@
 Syntax: .get_admin"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
-@borg.on(admin_cmd("get_ad?(m)in ?(.*)"))
+@borg.on(extremepro_cmd("get_ad?(m)in ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

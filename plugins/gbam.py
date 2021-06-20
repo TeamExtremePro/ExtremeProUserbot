@@ -4,10 +4,10 @@ from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
-@borg.on(admin_cmd("gbam"))
+@borg.on(extremepro_cmd("gbam"))
 async def gbun(event):
     if event.fwd_from:
         return

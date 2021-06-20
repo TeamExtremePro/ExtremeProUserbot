@@ -9,13 +9,13 @@ from datetime import datetime
 
 from pySmartDL import SmartDL
 
-from Extre.utils import admin_cmd, sudo_cmd, humanbytes, progress
+from Extre.utils import extremepro_cmd, sudo_cmd, humanbytes, progress
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 
 
-@bot.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@bot.on(extremepro_cmd(pattern="download(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

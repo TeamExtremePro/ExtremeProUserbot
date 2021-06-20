@@ -3,9 +3,9 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
-@borg.on(admin_cmd("frybot ?(.*)"))
+@borg.on(extremepro_cmd("frybot ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 

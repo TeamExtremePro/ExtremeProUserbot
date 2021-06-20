@@ -8,15 +8,15 @@ from telethon import events
 
 import asyncio
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 from Extre import ALIVE_NAME
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Extre USER"
 
 
-@borg.on(admin_cmd(pattern=f"padmin", outgoing=True))
+@borg.on(extremepro_cmd(pattern=f"padmin", outgoing=True))
 
 async def _(event):
 

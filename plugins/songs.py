@@ -1,10 +1,10 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 import asyncio
 
  
 
-@borg.on(admin_cmd(pattern="gaana ?(.*)"))
+@borg.on(extremepro_cmd(pattern="gaana ?(.*)"))
 async def FindMusicPleaseBot(gaana):
 
     song = gaana.pattern_match.group(1)
@@ -76,7 +76,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
-from Extre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
+from Extre.utils import extremepro_cmd, edit_or_reply, progress, humanbytes, time_formatter
 from Extre import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
@@ -98,7 +98,7 @@ except:
 	pass
 
 
-@borg.on(admin_cmd(pattern="song(?: |$)(.*)"))
+@borg.on(extremepro_cmd(pattern="song(?: |$)(.*)"))
 async def download_video(v_url):  
 
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
@@ -221,7 +221,7 @@ async def download_video(v_url):
         
         
         
-@borg.on(admin_cmd(pattern="vsong(?: |$)(.*)"))
+@borg.on(extremepro_cmd(pattern="vsong(?: |$)(.*)"))
 async def download_video(v_url):  
     lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
     if not sender.id == me.id:
@@ -393,7 +393,7 @@ async def getmusic(so):
 
 from telethon import events
 import asyncio
-#from Extre.utils import admin_cmd
+#from Extre.utils import extremepro_cmd
 from Extre.events import register 
 from Extre import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -449,9 +449,9 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
-@borg.on(admin_cmd("sdd ?(.*)"))
+@borg.on(extremepro_cmd("sdd ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

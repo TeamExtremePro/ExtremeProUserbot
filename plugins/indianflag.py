@@ -4,9 +4,9 @@
 
 from telethon import events
 import asyncio
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
-@borg.on(admin_cmd("inflag"))
+@borg.on(extremepro_cmd("inflag"))
 async def _(event):
     if event.fwd_from:
         return

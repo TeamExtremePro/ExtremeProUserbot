@@ -6,11 +6,11 @@ Userbot module to help you dm msg
 from telethon import *
 
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
 # Fixed by LEGDND X
-@borg.on(admin_cmd(pattern="dm ?(.*)"))
+@borg.on(extremepro_cmd(pattern="dm ?(.*)"))
 async def _(dc):
 
     d = dc.pattern_match.group(1)

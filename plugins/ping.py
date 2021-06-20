@@ -1,10 +1,10 @@
 import asyncio
 from datetime import datetime
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 
 # COPYRIGHT TEAM Extre
 
-@borg.on(admin_cmd(pattern=f"hbping$", outgoing=True))
+@borg.on(extremepro_cmd(pattern=f"hbping$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -52,7 +52,7 @@ async def _(event):
     )
 
 
-@borg.on(admin_cmd(pattern="ping$"))
+@borg.on(extremepro_cmd(pattern="ping$"))
 async def _(event):
     if event.fwd_from:
         return

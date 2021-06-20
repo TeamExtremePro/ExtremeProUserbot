@@ -1,9 +1,9 @@
 
 from telethon import events
-from uniborg.util import admin_cmd
+from uniborg.util import extremepro_cmd
 from Extre import CMD_HELP
 
-@borg.on(admin_cmd(pattern="copy"))
+@borg.on(extremepro_cmd(pattern="copy"))
 async def _(event):
     if event.fwd_from:
         return

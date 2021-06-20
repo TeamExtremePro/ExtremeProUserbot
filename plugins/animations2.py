@@ -1,13 +1,13 @@
 import asyncio
 from collections import deque
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 
 
-@bot.on(admin_cmd(pattern=r"boxs$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"boxs$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"boxs$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -20,7 +20,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(admin_cmd(pattern=r"rain$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"rain$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"rain$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -33,7 +33,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(admin_cmd(pattern=r"deploy$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"deploy$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"deploy$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -60,7 +60,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@bot.on(admin_cmd(pattern=r"dump$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"dump$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"dump$", allow_sudo=True))
 async def _(message):
     if event.fwd_from:
@@ -103,7 +103,7 @@ async def _(message):
                 return
 
 
-@bot.on(admin_cmd(pattern=r"fleaveme$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"fleaveme$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"fleaveme$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -129,7 +129,7 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@bot.on(admin_cmd(pattern=r"loveu$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"loveu$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"loveu$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -179,7 +179,7 @@ async def _(event):
         await event.edit(animation_chars[i % 35])
 
 
-@bot.on(admin_cmd(pattern=r"plane$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"plane$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"plane$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -202,7 +202,7 @@ async def _(event):
     await asyncio.sleep(3)
 
 
-@bot.on(admin_cmd(pattern=r"police$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"police$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"police$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -228,7 +228,7 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@bot.on(admin_cmd(pattern=r"jio$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"jio$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"jio$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -262,7 +262,7 @@ async def _(event):
         await event.edit(animation_chars[i % 19])
 
 
-@bot.on(admin_cmd(pattern=r"solarsystem$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"solarsystem$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"solarsystem$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

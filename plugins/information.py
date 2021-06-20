@@ -7,10 +7,10 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
-@borg.on(admin_cmd("info ?(.*)"))
+@borg.on(extremepro_cmd("info ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

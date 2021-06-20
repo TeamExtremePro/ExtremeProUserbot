@@ -1,12 +1,12 @@
 import asyncio
 
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro user"
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="kiler( (.*)|$)"))
+@bot.on(extremepro_cmd(outgoing=True, pattern="kiler( (.*)|$)"))
 @bot.on(sudo_cmd(pattern="kiler( (.*)|$)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -32,7 +32,7 @@ async def _(event):
         await event.edit(animation_chars[i % 8])
 
 
-@bot.on(admin_cmd(pattern="eye$"))
+@bot.on(extremepro_cmd(pattern="eye$"))
 @bot.on(sudo_cmd(pattern="eye$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -59,7 +59,7 @@ async def _(event):
     await event.delete()
 
 
-@bot.on(admin_cmd(pattern="thinking$"))
+@bot.on(extremepro_cmd(pattern="thinking$"))
 @bot.on(sudo_cmd(pattern="thinking$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -110,7 +110,7 @@ async def _(event):
         await event.edit(animation_chars[i % 36])
 
 
-@bot.on(admin_cmd(pattern=f"snake$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"snake$", outgoing=True))
 @bot.on(sudo_cmd(pattern="snake$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -152,7 +152,7 @@ async def _(event):
         await event.edit(animation_chars[i % 27])
 
 
-@bot.on(admin_cmd(pattern=f"human$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"human$", outgoing=True))
 @bot.on(sudo_cmd(pattern="human$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -183,7 +183,7 @@ async def _(event):
         await event.edit(animation_chars[i % 16])
 
 
-@bot.on(admin_cmd(pattern=f"mc$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"mc$", outgoing=True))
 @bot.on(sudo_cmd(pattern="mc$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -226,7 +226,7 @@ async def _(event):
         await event.edit(animation_chars[i % 28])
 
 
-@bot.on(admin_cmd(pattern="virus$"))
+@bot.on(extremepro_cmd(pattern="virus$"))
 @bot.on(sudo_cmd(pattern="virus$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -271,7 +271,7 @@ async def _(event):
         await event.edit(animation_chars[i % 30])
 
 
-@bot.on(admin_cmd(pattern=r"repe$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=r"repe$", outgoing=True))
 @bot.on(sudo_cmd(pattern="repe$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -316,7 +316,7 @@ async def _(event):
         await event.edit(animation_chars[i % 30])
 
 
-@bot.on(admin_cmd(pattern=f"nikal$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"nikal$", outgoing=True))
 @bot.on(sudo_cmd(pattern="nikal$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -337,7 +337,7 @@ async def _(event):
         await event.edit(animation_chars[i % 6])
 
 
-@bot.on(admin_cmd(pattern=f"music$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"music$", outgoing=True))
 @bot.on(sudo_cmd(pattern="music$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -363,7 +363,7 @@ async def _(event):
         await event.edit(animation_chars[i % 11])
 
 
-@bot.on(admin_cmd(pattern=f"squ$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"squ$", outgoing=True))
 @bot.on(sudo_cmd(pattern="squ$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

@@ -2,7 +2,7 @@
 # Ported from saitama i guess
 
 from telethon import events
-from Extre.utils import admin_cmd, edit_or_reply
+from Extre.utils import extremepro_cmd, edit_or_reply
 
 normiefont = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 weebyfont = ['卂','乃','匚','刀','乇','下','厶','卄','工','丁','长','乚','从','𠘨','口','尸','㔿','尺','丂','丅','凵','リ','山','乂','丫','乙']
@@ -12,7 +12,7 @@ boxtextfont = ['🄰','🄱','🄲','🄳','🄴','🄵','🄶','🄷','🄸','�
 bubbletextfont = ['Ⓐ','Ⓑ','Ⓒ','Ⓓ','Ⓔ','Ⓕ','Ⓖ','Ⓗ','Ⓘ','Ⓙ','Ⓚ','Ⓛ','Ⓜ','Ⓝ','Ⓞ','Ⓟ','Ⓠ','Ⓡ','Ⓢ','Ⓣ','Ⓤ','Ⓥ','Ⓦ','Ⓧ','Ⓨ','Ⓩ']
 
 
-@borg.on(admin_cmd(pattern="weeb ?(.*)"))
+@borg.on(extremepro_cmd(pattern="weeb ?(.*)"))
 async def weebify(event):
 
     args = event.pattern_match.group(1)
@@ -30,7 +30,7 @@ async def weebify(event):
     await event.edit(string)
     
 
-@borg.on(admin_cmd(pattern="tantext ?(.*)"))
+@borg.on(extremepro_cmd(pattern="tantext ?(.*)"))
 async def tantxt(event):
 
     args = event.pattern_match.group(1)
@@ -48,7 +48,7 @@ async def tantxt(event):
     await event.edit(string)
 
 
-@borg.on(admin_cmd(pattern="linetext ?(.*)"))
+@borg.on(extremepro_cmd(pattern="linetext ?(.*)"))
 async def linetxt(event):
 
     args = event.pattern_match.group(1)
@@ -66,7 +66,7 @@ async def linetxt(event):
     await event.edit(string)
 
 
-@borg.on(admin_cmd(pattern="boxtext ?(.*)"))
+@borg.on(extremepro_cmd(pattern="boxtext ?(.*)"))
 async def boxtxt(event):
 
     args = event.pattern_match.group(1)
@@ -84,7 +84,7 @@ async def boxtxt(event):
     await event.edit(string)
 
 
-@borg.on(admin_cmd(pattern="bubbletext ?(.*)"))
+@borg.on(extremepro_cmd(pattern="bubbletext ?(.*)"))
 async def bubbletxt(event):
 
     args = event.pattern_match.group(1)

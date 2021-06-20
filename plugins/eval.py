@@ -8,10 +8,10 @@ import asyncio
 import sys
 import io
 from Extre import CMD_HELP
-from uniborg.util import admin_cmd
+from uniborg.util import extremepro_cmd
 
 
-@borg.on(admin_cmd("eval"))
+@borg.on(extremepro_cmd("eval"))
 async def _(event):
     if event.fwd_from:
         return

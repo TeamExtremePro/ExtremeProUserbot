@@ -4,10 +4,10 @@ from telethon import events
 import requests
 from bs4 import BeautifulSoup
 from Extre import CMD_HELP
-from uniborg.util import admin_cmd
+from uniborg.util import extremepro_cmd
 
 
-@borg.on(admin_cmd(pattern="filext (.*)"))
+@borg.on(extremepro_cmd(pattern="filext (.*)"))
 async def _(event):
     if event.fwd_from:
         return

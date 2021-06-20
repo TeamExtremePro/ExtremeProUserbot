@@ -1,8 +1,8 @@
 import pyfiglet
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 #@command(pattern="^.figlet ?(.*)", outgoing=True)
-@borg.on(admin_cmd(pattern=r"figlet ?(.*)"))
+@borg.on(extremepro_cmd(pattern=r"figlet ?(.*)"))
 async def figlet(event):
     if event.fwd_from:
         return

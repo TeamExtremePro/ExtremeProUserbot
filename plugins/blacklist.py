@@ -12,7 +12,7 @@ from telethon import events
 import sql_helper.blacklist_sql as sql
 
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -31,7 +31,7 @@ async def on_new_message(event):
             break
 
 
-@bot.on(admin_cmd(pattern="addblacklist ((.|\n)*)"))
+@bot.on(extremepro_cmd(pattern="addblacklist ((.|\n)*)"))
 @bot.on(sudo_cmd(pattern="addblacklist ((.|\n)*)", allow_sudo=True))
 async def on_add_black_list(event):
     text = event.pattern_match.group(1)
@@ -49,7 +49,7 @@ async def on_add_black_list(event):
     )
 
 
-@bot.on(admin_cmd(pattern="rmblacklist ((.|\n)*)"))
+@bot.on(extremepro_cmd(pattern="rmblacklist ((.|\n)*)"))
 @bot.on(sudo_cmd(pattern="rmblacklist ((.|\n)*)", allow_sudo=True))
 async def on_delete_blacklist(event):
     text = event.pattern_match.group(1)
@@ -68,7 +68,7 @@ async def on_delete_blacklist(event):
     )
 
 
-@bot.on(admin_cmd(pattern="listblacklist$"))
+@bot.on(extremepro_cmd(pattern="listblacklist$"))
 @bot.on(sudo_cmd(pattern="listblacklist$", allow_sudo=True))
 async def on_view_blacklist(event):
     all_blacklisted = sql.get_chat_blacklist(event.chat_id)

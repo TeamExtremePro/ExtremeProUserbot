@@ -16,7 +16,7 @@ import re
 import urllib
 import requests
 from telethon.tl import functions
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 from Extre import CMD_HELP
 
 COLLECTION_STRING1 = [
@@ -225,7 +225,7 @@ async def animeppwall():
         )
     urllib.request.urlretrieve(fy, "donottouch.jpg")
 
-@bot.on(admin_cmd(pattern="batmandp$"))
+@bot.on(extremepro_cmd(pattern="batmandp$"))
 async def main(event):
     await event.edit("Actibated Batman Dp\nEnjoy 💜") 
     while True:
@@ -241,7 +241,7 @@ async def main(event):
         await asyncio.sleep(600)  # Edit this to your required needs
 
 
-@bot.on(admin_cmd(pattern="thordp$"))
+@bot.on(extremepro_cmd(pattern="thordp$"))
 async def main(event):
     await event.edit("Activated Thor Dp\nEnjoy 💜") 
     while True:
@@ -256,7 +256,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600)  # Edit this to your required needs
 
-@bot.on(admin_cmd(pattern="actressdp$"))
+@bot.on(extremepro_cmd(pattern="actressdp$"))
 async def main(event):
     await event.edit("Activated Actress Dp\nEnjoy 💜")
     while True:
@@ -271,7 +271,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600) 
 
-@bot.on(admin_cmd(pattern="animedp$"))
+@bot.on(extremepro_cmd(pattern="animedp$"))
 async def main(event):
     await event.edit("Activated Anime Dp\nEnjoy 💜")
     while True:
@@ -286,7 +286,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600) 
 
-@bot.on(admin_cmd(pattern="avengersdp$"))
+@bot.on(extremepro_cmd(pattern="avengersdp$"))
 async def main(event):
     await event.edit("Activated Avengers Dp\nEnjoy 💜")
     while True:
@@ -301,7 +301,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600) 
 
-@bot.on(admin_cmd(pattern="gamerdp$"))
+@bot.on(extremepro_cmd(pattern="gamerdp$"))
 async def main(event):
     await event.edit("Activated Gamers Dp\nEnjoy 💜")
     while True:
@@ -316,7 +316,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600) 
 
-@bot.on(admin_cmd(pattern="hackerdp$"))
+@bot.on(extremepro_cmd(pattern="hackerdp$"))
 async def main(event):
     await event.edit("Activated Hackers Dp\nEnjoy 💜")
     while True:
@@ -331,7 +331,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600) 
 
-@bot.on(admin_cmd(pattern="spacedp$"))
+@bot.on(extremepro_cmd(pattern="spacedp$"))
 async def main(event):
     await event.edit("Activated Space Dp\nEnjoy 💜")
     while True:
@@ -346,7 +346,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
         await asyncio.sleep(600) 
 
-@bot.on(admin_cmd(pattern="wallpapers$"))
+@bot.on(extremepro_cmd(pattern="wallpapers$"))
 async def main(event):
     await event.edit("Activated Wallappers on your DP\nEnjoy 💜")
     while True:

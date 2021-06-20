@@ -4,13 +4,13 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from Extre import ALIVE_NAME
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 naam = str(ALIVE_NAME)
 
 bot = "@Carol5_bot"
 
-@borg.on(admin_cmd("au ?(.*)"))
+@borg.on(extremepro_cmd("au ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -49,7 +49,7 @@ async def _(event):
             except YouBlockedUserError:
                 await event.edit("Error: unblock @Carol5_bot `and try again!")
 #made by LEGENDX22
-@borg.on(admin_cmd("ch ?(.*)"))
+@borg.on(extremepro_cmd("ch ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -89,7 +89,7 @@ async def _(event):
                 await event.edit("Error: unblock @Carol5_bot `and try again!")
 
 
-@borg.on(admin_cmd("stripe ?(.*)"))
+@borg.on(extremepro_cmd("stripe ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -129,7 +129,7 @@ async def _(event):
                 await event.edit("Error: unblock @Carol5_bot `and try again!")
 
 
-@borg.on(admin_cmd("vbv ?(.*)"))
+@borg.on(extremepro_cmd("vbv ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -169,7 +169,7 @@ async def _(event):
                 await event.edit("Error: unblock @Carol5_bot `and try again!")
 
 
-@borg.on(admin_cmd("bin ?(.*)"))
+@borg.on(extremepro_cmd("bin ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -207,7 +207,7 @@ async def _(event):
                 await event.delete()
             except YouBlockedUserError:
                 await event.edit("Error: unblock @Carol5_bot `and try again!")
-@borg.on(admin_cmd("key ?(.*)"))
+@borg.on(extremepro_cmd("key ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

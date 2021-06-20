@@ -5,13 +5,13 @@
 
 import asyncio
 
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 
 
-@bot.on(admin_cmd(pattern="imp(|n) (.*)", outgoing=True))
+@bot.on(extremepro_cmd(pattern="imp(|n) (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="imp(|n) (.*)", allow_sudo=True))
 async def _(event):
     GODBOY = bot.uid
@@ -96,7 +96,7 @@ async def _(event):
         await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcH-WOkB8DEctJAg")
 
 
-@bot.on(admin_cmd(pattern="timp(|n) (.*)", outgoing=True))
+@bot.on(extremepro_cmd(pattern="timp(|n) (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="timp(|n) (.*)", allow_sudo=True))
 async def _(event):
     name = event.pattern_match.group(2)

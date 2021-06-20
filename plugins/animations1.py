@@ -2,13 +2,13 @@ import asyncio
 from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon import events
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 
 
-@bot.on(admin_cmd(pattern="stupid$"))
+@bot.on(extremepro_cmd(pattern="stupid$"))
 @bot.on(sudo_cmd(pattern="stupid$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -37,7 +37,7 @@ async def _(event):
         await event.edit(animation_chars[i % 14])
 
 
-@bot.on(admin_cmd(pattern=f"bombs$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"bombs$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"bombs$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -65,7 +65,7 @@ async def _(event):
     await asyncio.sleep(2)
 
 
-@bot.on(admin_cmd(pattern=r"call$"))
+@bot.on(extremepro_cmd(pattern=r"call$"))
 @bot.on(sudo_cmd(pattern=r"call$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -95,7 +95,7 @@ async def _(event):
         await event.edit(animation_chars[i % 18])
 
 
-@bot.on(admin_cmd(pattern=r"kill$"))
+@bot.on(extremepro_cmd(pattern=r"kill$"))
 @bot.on(sudo_cmd(pattern=r"kill$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -138,7 +138,7 @@ async def _(event):
 
 
 
-@bot.on(admin_cmd(pattern="wtf$"))
+@bot.on(extremepro_cmd(pattern="wtf$"))
 @bot.on(sudo_cmd(pattern="wtf$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -158,7 +158,7 @@ async def _(event):
         await event.edit(animation_chars[i % 5], link_preview=True)
 
 
-@bot.on(admin_cmd(pattern="ding$"))
+@bot.on(extremepro_cmd(pattern="ding$"))
 @bot.on(sudo_cmd(pattern="ding$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -183,7 +183,7 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@bot.on(admin_cmd(pattern=f"hypno$", outgoing=True))
+@bot.on(extremepro_cmd(pattern=f"hypno$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"hypno$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -213,7 +213,7 @@ async def _(event):
         await event.edit(animation_chars[i % 15])
 
 
-@bot.on(admin_cmd(pattern=r"candy$"))
+@bot.on(extremepro_cmd(pattern=r"candy$"))
 @bot.on(sudo_cmd(pattern=r"candy$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -226,7 +226,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(admin_cmd(pattern="gangasta$"))
+@bot.on(extremepro_cmd(pattern="gangasta$"))
 @bot.on(sudo_cmd(pattern="gangasta$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -249,7 +249,7 @@ async def _(event):
     await event.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
 
 
-@bot.on(admin_cmd(pattern=f"charging$"))
+@bot.on(extremepro_cmd(pattern=f"charging$"))
 @bot.on(sudo_cmd(pattern=f"charging$", allow_sudo=True))
 async def timer_blankx(e):
     if e.fwd_from:

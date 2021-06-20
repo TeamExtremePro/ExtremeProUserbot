@@ -12,14 +12,14 @@ from telethon.errors import PhotoInvalidDimensionsError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from Extre.utils import admin_cmd, progress
+from Extre.utils import extremepro_cmd, progress
 
 
 if not os.path.isdir("./temp"):
     os.makedirs("./temp")
 
 
-@borg.on(admin_cmd(pattern="dox ?(.*)"))
+@borg.on(extremepro_cmd(pattern="dox ?(.*)"))
 async def get(event):
     name = event.text[5:]
     if name is None:

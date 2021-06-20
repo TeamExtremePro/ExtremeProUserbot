@@ -11,7 +11,7 @@ import asyncio
 import os
 import requests
 import math
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 from Extre import CMD_HELP
 from Extre.config import Config
 
@@ -27,7 +27,7 @@ Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@borg.on(admin_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
+@borg.on(extremepro_cmd(pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)", outgoing=True))
 async def variable(var):
     """
         Manage most of ConfigVars setting, set new var, get current var,
@@ -104,7 +104,7 @@ async def variable(var):
             return await var.edit(f"**{variable}**  `is not exists`")
 
 
-@borg.on(admin_cmd(pattern="usage(?: |$)", outgoing=True))
+@borg.on(extremepro_cmd(pattern="usage(?: |$)", outgoing=True))
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
@@ -161,7 +161,7 @@ async def dyno_usage(dyno):
                            f"**|**  [`{percentage}`**%**]"
                            )
 
-@borg.on(admin_cmd(pattern="logs$", outgoing=True))
+@borg.on(extremepro_cmd(pattern="logs$", outgoing=True))
 async def _(dyno):        
         try:
              Heroku = heroku3.from_key(HEROKU_API_KEY)                         

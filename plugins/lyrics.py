@@ -3,11 +3,11 @@ command: .lyrics singer name - song name
 by @quiec
 """
 from telethon import events
-from uniborg.util import admin_cmd
+from uniborg.util import extremepro_cmd
 import asyncio
 from PyLyrics import *
 
-@borg.on(admin_cmd(pattern="lyrics (.*)"))
+@borg.on(extremepro_cmd(pattern="lyrics (.*)"))
 async def _(event):
     if event.fwd_from:
         return

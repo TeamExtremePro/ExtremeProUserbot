@@ -8,7 +8,7 @@ import logging
 
 
 
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
 
@@ -38,7 +38,7 @@ if 1 == 1:
 
 
 
-    @borg.on(admin_cmd(pattern="poto(.*)"))
+    @borg.on(extremepro_cmd(pattern="poto(.*)"))
 
     async def potocmd(event):
 

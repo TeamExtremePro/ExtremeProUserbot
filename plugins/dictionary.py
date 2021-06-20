@@ -7,10 +7,10 @@ import asyncurban
 from PyDictionary import PyDictionary
 
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(admin_cmd(pattern="ud (.*)"))
+@bot.on(extremepro_cmd(pattern="ud (.*)"))
 @bot.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -29,7 +29,7 @@ async def _(event):
         await edit_or_reply(event, "No result found for **" + word + "**")
 
 
-@bot.on(admin_cmd(pattern="meaning (.*)"))
+@bot.on(extremepro_cmd(pattern="meaning (.*)"))
 @bot.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

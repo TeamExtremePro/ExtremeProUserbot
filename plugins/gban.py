@@ -1,6 +1,6 @@
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd
+from Extre.utils import extremepro_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest

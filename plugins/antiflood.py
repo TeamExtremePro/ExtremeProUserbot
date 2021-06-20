@@ -5,7 +5,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 import sql_helper.antiflood_sql as sql
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 
 CHAT_FLOOD = sql.__load_flood_settings()
 # warn mode for anti flood
@@ -14,7 +14,7 @@ ANTI_FLOOD_WARN_MODE = ChatBannedRights(
 )
 
 
-@bot.on(admin_cmd(incoming=True))
+@bot.on(extremepro_cmd(incoming=True))
 async def _(event):
     if not CHAT_FLOOD:
         return
@@ -55,7 +55,7 @@ because he reached the defined flood limit.""".format(
         )
 
 
-@bot.on(admin_cmd(pattern="setflood(?: |$)(.*)"))
+@bot.on(extremepro_cmd(pattern="setflood(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="setflood(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:

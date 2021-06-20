@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from requests import get
 
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
@@ -21,7 +21,7 @@ DEVICES_DATA = (
 )
 
 
-@bot.on(admin_cmd(pattern=r"magisk"))
+@bot.on(extremepro_cmd(pattern=r"magisk"))
 @bot.on(sudo_cmd(pattern=r"magisk", allow_sudo=True))
 async def kakashi(magisk):
     if magisk.fwd_from:
@@ -50,7 +50,7 @@ async def kakashi(magisk):
     await edit_or_reply(magisk, releases)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
+@bot.on(extremepro_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
 @bot.on(sudo_cmd(pattern=r"device(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
     if request.fwd_from:
@@ -85,7 +85,7 @@ async def device_info(request):
     await edit_or_reply(request, reply)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
+@bot.on(extremepro_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
 @bot.on(sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
     if request.fwd_from:
@@ -132,7 +132,7 @@ async def codename_info(request):
     await edit_or_reply(request, reply)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
+@bot.on(extremepro_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
 @bot.on(sudo_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     if request.fwd_from:
@@ -197,7 +197,7 @@ async def devices_specifications(request):
     await edit_or_reply(request, reply)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
+@bot.on(extremepro_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
 @bot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     if request.fwd_from:

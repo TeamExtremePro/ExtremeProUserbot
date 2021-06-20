@@ -4,12 +4,12 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from Extre import ALIVE_NAME
 from Extre import CMD_HELP
 from Extre import bot
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 bot = "@MissRose_bot"
 
 
-@borg.on(admin_cmd("fstat ?(.*)"))
+@borg.on(extremepro_cmd("fstat ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -50,7 +50,7 @@ async def _(event):
 
 
 
-@borg.on(admin_cmd(pattern="fedinfo ?(.*)"))
+@borg.on(extremepro_cmd(pattern="fedinfo ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

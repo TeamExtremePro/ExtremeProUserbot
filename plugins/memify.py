@@ -6,7 +6,7 @@ import asyncio
 import time
 from datetime import datetime
 from telethon.tl.types import DocumentAttributeVideo
-from Extre.utils import progress, humanbytes, time_formatter, admin_cmd
+from Extre.utils import progress, humanbytes, time_formatter, extremepro_cmd
 import datetime
 from collections import defaultdict
 import math
@@ -29,7 +29,7 @@ MessageMediaPhoto
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 
 
-@borg.on(admin_cmd(pattern="mmf ?(.*)"))
+@borg.on(extremepro_cmd(pattern="mmf ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 

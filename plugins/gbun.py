@@ -4,10 +4,10 @@ import asyncio
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
-@borg.on(admin_cmd(pattern="gbun"))
+@borg.on(extremepro_cmd(pattern="gbun"))
 async def gbun(event):
     if event.fwd_from:
         return

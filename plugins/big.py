@@ -9,7 +9,7 @@ Credits to @TeleBotHelp
 # He Worked Very Hard to do this, So Please Respect Him!!
 
 import asyncio
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 from Extre import CMD_HELP
 from telethon import events
 import random
@@ -27,7 +27,7 @@ async def _(event):
                      r == 1            
                      await event.edit("╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯")
 
-@borg.on(admin_cmd("bigoof"))
+@borg.on(extremepro_cmd("bigoof"))
 async def _(event):
     if event.fwd_from:
         return

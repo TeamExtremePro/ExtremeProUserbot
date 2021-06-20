@@ -2,10 +2,10 @@
 Syntax: .cpin [LOUD]"""
 from telethon import events
 from telethon.tl import functions, types
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 
 
-@borg.on(admin_cmd("cpin ?(.*)"))
+@borg.on(extremepro_cmd("cpin ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

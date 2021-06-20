@@ -5,7 +5,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from Extre.utils import admin_cmd
+from Extre.utils import extremepro_cmd
 from telethon.tl import functions
 from telethon import events
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
@@ -20,7 +20,7 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
 
 
-@borg.on(admin_cmd(pattern="clone ?(.*)"))
+@borg.on(extremepro_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -72,7 +72,7 @@ async def _(event):
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, f"#CLONED\nSuccesfulley cloned [{first_name}](tg://user?id={user_id })")
     
-@borg.on(admin_cmd(pattern="revert$"))
+@borg.on(extremepro_cmd(pattern="revert$"))
 async def _(event):
     if event.fwd_from:
         return

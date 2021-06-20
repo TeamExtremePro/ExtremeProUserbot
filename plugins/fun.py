@@ -1,6 +1,6 @@
 from telethon import events
 import random, re
-from uniborg.util import admin_cmd
+from uniborg.util import extremepro_cmd
 
 METOOSTR = [
     "`Me too thanks`",
@@ -87,7 +87,7 @@ INSULT_STRINGS = [
 # ===========================================
                           
 
-@borg.on(admin_cmd(pattern="run ?(.*)"))
+@borg.on(extremepro_cmd(pattern="run ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
@@ -97,7 +97,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd(pattern="metoo ?(.*)"))
+@borg.on(extremepro_cmd(pattern="metoo ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
@@ -107,7 +107,7 @@ async def _(event):
     await event.edit(reply_text)
 
 
-@borg.on(admin_cmd(pattern="rapee ?(.*)"))
+@borg.on(extremepro_cmd(pattern="rapee ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
@@ -117,7 +117,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
                           
-@borg.on(admin_cmd(pattern="insultt ?(.*)"))
+@borg.on(extremepro_cmd(pattern="insultt ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
@@ -127,7 +127,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd(pattern="proo ?(.*)"))
+@borg.on(extremepro_cmd(pattern="proo ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
@@ -137,7 +137,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd(pattern="abusee ?(.*)"))
+@borg.on(extremepro_cmd(pattern="abusee ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
@@ -147,7 +147,7 @@ async def _(event):
     await event.edit(reply_text)
 			  
 			  
-@borg.on(admin_cmd(pattern="geyy ?(.*)"))
+@borg.on(extremepro_cmd(pattern="geyy ?(.*)"))
 async def _(event):
     if event.fwd_from:
          return
