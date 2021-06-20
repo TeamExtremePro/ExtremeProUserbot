@@ -2,7 +2,7 @@ import os
 
 from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST
 from Extre.config import Config
-from amanpandey import extremepro_cmd
+from Extre.utils import extremepro_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 CMD_HNDLR = os.environ.get("CMD_HNDLR", None)
