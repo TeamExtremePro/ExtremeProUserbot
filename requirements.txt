@@ -2,3 +2,4 @@ PyGithub
 Extre
 pip
 telethon
+pymongo
