@@ -6,9 +6,9 @@ from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
 import sql_helper.pmpermit_sql as pmpermit_sql
-from amanpandey import ALIVE_NAME, CUSTOM_PMPERMIT
-from amanpandey import Config
-from amanpandey import extremepro_cmd
+from Extre import ALIVE_NAME, CUSTOM_PMPERMIT
+from Extre.config import Config
+from Extre.utils import extremepro_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if not PMPERMIT_PIC:
