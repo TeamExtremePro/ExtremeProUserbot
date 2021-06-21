@@ -28,7 +28,7 @@ BLOCKED = (
 
 @bot.on(extremepro_cmd(pattern='antipm (.*)', outgoing=True))
 async def antipmxxx(message):
-    switch = get_arg(message).lower()
+    switch = get_argv(message).lower()
     if switch == "on":
         await nicedb.delete("AntiPM")
         await nicedb.set_antipm(True)
@@ -46,7 +46,7 @@ async def antipmxxx(message):
 async def approvexxx(message):
     """Allows that person to PM you, you can either reply to user,
 type their username or use this in their chat"""
-    id = None if not get_arg(message) else (await message.client.get_entity(get_arg(message))).id
+    id = None if not get_argv(message) else (await message.client.get_entity(get_argv(message))).id
     reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
     chat = None if not hasattr(
         message.to_id, "user_id") else message.chat_id
@@ -71,7 +71,7 @@ type their username or use this in their chat"""
 async def disapprovexxx(message):
     """Prevents that person to PM you, you can either reply to user,
 type their username or use this in their chat"""
-    id = None if not get_arg(message) else (await message.client.get_entity(get_arg(message))).id
+    id = None if not get_argv(message) else (await message.client.get_entity(get_argv(message))).id
     reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
     chat = None if not hasattr(
         message.to_id, "user_id") else message.chat_id
@@ -95,7 +95,7 @@ type their username or use this in their chat"""
 @bot.on(extremepro_cmd(pattern='blockpm (.*)', outgoing=True))
 async def blockxxx(message):
     """Simply blocks the person..duh!!"""
-    id = None if not get_arg(message) else (await message.client.get_entity(get_arg(message))).id
+    id = None if not get_argv(message) else (await message.client.get_entity(get_argv(message))).id
     reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
     chat = None if not hasattr(
         message.to_id, "user_id") else message.chat_id
@@ -117,7 +117,7 @@ async def blockxxx(message):
 @bot.on(extremepro_cmd(pattern='unblockpm (.*)', outgoing=True))
 async def unblockxxx(message):
     """Simply unblocks the person..duh!!"""
-    id = None if not get_arg(message) else (await message.client.get_entity(get_arg(message))).id
+    id = None if not get_argv(message) else (await message.client.get_entity(get_argv(message))).id
     reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
     chat = None if not hasattr(
         message.to_id, "user_id") else message.chat_id
@@ -139,7 +139,7 @@ async def notifsxxx(message):
     """Ah this one again...It turns on/off tag notification
 sounds from unwanted PMs. It auto-sends a
 a message in your name until that user gets blocked or approved"""
-    val = get_arg(message)
+    val = get_argv(message)
     if not val:
         await message.edit("<i>Please type on/off</i>")
         return
@@ -157,7 +157,7 @@ a message in your name until that user gets blocked or approved"""
 async def setlimitxxx(message):
     """This one sets a max. message limit for unwanted
 PMs and when they go beyond it, bamm!"""
-    limit = int(get_arg(message))
+    limit = int(get_argv(message))
     if not limit or not str(limit).isdigit():
         await message.edit("<i>Please type a number</i>")
         return
@@ -171,7 +171,7 @@ PMs and when they go beyond it, bamm!"""
 async def superblockxxx(message):
     """If unwanted users spams your chat, the chat
 will be deleted when the idiot passes the message limit"""
-    val = get_arg(message)
+    val = get_argv(message)
     if not val:
         await message.edit("<i>Please type on/off</i>")
         return
