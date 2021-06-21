@@ -3,7 +3,7 @@ import time
 
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
-from Extre.utils import edit_or_reply, admin_cmd
+from Extre.utils import edit_or_reply, extremepro_cmd
 
 from Extre import ALIVE_NAME, CMD_HELP, BIO_MSG
 
@@ -13,7 +13,7 @@ DEL_TIME_OUT = 60
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremeProUser"
 
 
-@bot.on(admin_cmd(pattern="autoname"))  # pylint:disable=E0602
+@bot.on(extremepro_cmd(pattern="autoname"))  # pylint:disable=E0602
 async def _(event):
     hell = await edit_or_reply(event, "`Starting AutoName Please Wait`")
     if event.fwd_from:
@@ -60,7 +60,7 @@ async def _(event):
     await hell.edit(f"Auto Name has been started my Master")
 
 
-@bot.on(admin_cmd(pattern="autobio"))  # pylint:disable=E0602
+@bot.on(extremepro_cmd(pattern="autobio"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
