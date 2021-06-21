@@ -61,7 +61,7 @@ async def gspider(Extre):
     else:
         ExtremePro = await lol.edit("Wait Processing.....")
     me = await Extre.client.get_me()
-    await ExtremePro.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
+    await ExtremePro.edit(f"Global Ban Is Coming")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await Extre.get_chat()
@@ -81,7 +81,7 @@ async def gspider(Extre):
     except:
         return await ExtremePro.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1037581197:
+        if user.id == 1819992624:
             return await ExtremePro.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
             )
@@ -102,7 +102,7 @@ async def gspider(Extre):
             try:
                 await Extre.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await ExtremePro.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
+                await ExtremePro.edit(f"**GBANNED This User // Total Affected Chats **: `{a}`")
             except:
                 b += 1
     else:
@@ -166,7 +166,7 @@ async def gspider(Extre):
             try:
                 await Extre.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await ExtremePro.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
+                await ExtremePro.edit(f"**UNGBANNING This User// AFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
