@@ -13,7 +13,7 @@ from Extre import CMD_HELP
 
 
 
-@register(pattern="^.install", outgoing=True)
+@register(pattern="^?install", outgoing=True)
 async def install(event):
     a = "Installing."
     b = 1
