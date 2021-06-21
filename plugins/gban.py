@@ -1,7 +1,7 @@
 
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from Extre import CMD_HELP
-from Extre.utils import admin_cmd, sudo_cmd
+from Extre.utils import extremepro_cmd, sudo_cmd
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -50,7 +50,7 @@ async def get_user_sender_id(user, event):
         return None
     return user_obj
 
-@borg.on(admin_cmd(pattern="gban ?(.*)"))
+@borg.on(extremepro_cmd(pattern="gban ?(.*)"))
 @borg.on(sudo_cmd("gban ?(.*)", allow_sudo=True))
 async def gspider(Extre):
     lol = Extre
@@ -117,7 +117,7 @@ async def gspider(Extre):
     )
 
 
-@borg.on(admin_cmd(pattern="ungban ?(.*)"))
+@borg.on(extremepro_cmd(pattern="ungban ?(.*)"))
 async def gspider(Extre):
     lol = Extre
     sender = await lol.get_sender()
