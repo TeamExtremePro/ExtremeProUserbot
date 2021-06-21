@@ -7,7 +7,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import telebot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from telebot import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
-from telebot.utils import admin_cmd
+from telebot.utils import extremepro_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 TELEPIC = (
@@ -33,8 +33,8 @@ USER_BOT_NO_WARN = (
 )
 
 
-@bot.on(admin_cmd(pattern="a ?(.*)"))
-@bot.on(admin_cmd(pattern="approve ?(.*)"))
+@bot.on(extremepro_cmd(pattern="a ?(.*)"))
+@bot.on(extremepro_cmd(pattern="approve ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -78,7 +78,7 @@ async def you_dm_niqq(event):
                     pass
 
 
-@bot.on(admin_cmd(pattern="block ?(.*)"))
+@bot.on(extremepro_cmd(pattern="block ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -102,8 +102,8 @@ async def approve_p_m(event):
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
 
-@bot.on(admin_cmd(pattern="da ?(.*)"))
-@bot.on(admin_cmd(pattern="disapprove ?(.*)"))
+@bot.on(extremepro_cmd(pattern="da ?(.*)"))
+@bot.on(extremepro_cmd(pattern="disapprove ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -124,7 +124,7 @@ async def approve_p_m(event):
                 )
 
 
-@bot.on(admin_cmd(pattern="listapproved"))
+@bot.on(extremepro_cmd(pattern="listapproved"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
