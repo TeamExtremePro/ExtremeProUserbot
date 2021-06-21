@@ -200,3 +200,10 @@ will be deleted when the idiot passes the message limit"""
             if await extremedb.check_sblock():
                 await message.client.delete_dialog(entity=message.chat_id, revoke=True)
             AntiPM.USERS_AND_WARNS.update({user: 0})
+CMD_HELP.update(
+    {
+        "Antipm": "antipm\
+\nUsage: antipm.\
+"
+    }
+)
