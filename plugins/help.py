@@ -1,6 +1,6 @@
 import asyncio
 
-from pyrogram import Filters, Message
+from pyrogram import Message
 
 from Extre import  bot, CMD_HELP
 
