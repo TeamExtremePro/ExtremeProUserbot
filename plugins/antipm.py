@@ -213,9 +213,9 @@ async def watchout(message):
                  await msg.delete()
              await message.reply(AntiPM.WARNING)
              return
-         await message.reply(AntiPM.BLOCKED)
-         await message.client(functions.messages.ReportSpamRequest(peer=message.sender_id))
-         await message.client(functions.contacts.BlockRequest(id=message.sender_id))
-         if await nicedb.check_sblock():
-             await message.client.delete_dialog(entity=message.chat_id, revoke=True)
-         AntiPM.USERS_AND_WARNS.update({user: 0})
+        await message.reply(AntiPM.BLOCKED)
+        await message.client(functions.messages.ReportSpamRequest(peer=message.sender_id))
+        await message.client(functions.contacts.BlockRequest(id=message.sender_id))
+        if await nicedb.check_sblock():
+          await message.client.delete_dialog(entity=message.chat_id, revoke=True)
+        AntiPM.USERS_AND_WARNS.update({user: 0})
