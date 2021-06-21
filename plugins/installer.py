@@ -1,19 +1,20 @@
-from Extre import bot, CMD_HELP, CMD_LIST
+from Extre import bot
+from plugins import CMD_HELP, CMD_LIST
 from telethon import events
 from Extre.utils import remove_plugin, load_module, register
 from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
 from pathlib import Path
-from Extre import LOAD_PLUG
+from plugins import LOAD_PLUG
 from datetime import datetime
 DELETE_TIMEOUT = 5
 import sys, asyncio, traceback, os, importlib
 import Extre.utils
-from Extre import CMD_HELP
+from plugins import CMD_HELP
 
 
 
-@register(pattern="^?install", outgoing=True)
+@register(pattern="^.install", outgoing=True)
 async def install(event):
     a = "Installing."
     b = 1
@@ -24,7 +25,7 @@ async def install(event):
         try:
             downloaded_file_name = await event.client.download_media(  # pylint:disable=E0602
                 await event.get_reply_message(),
-                "./LEGENDX/plugins/"  # pylint:disable=E0602
+                "./plugins/"  # pylint:disable=E0602
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
