@@ -1,4 +1,5 @@
-from huh import bot, PM_PERMIT, PM_LIMIT
+from huh import PM_PERMIT, PM_LIMIT
+from Extre import bot
 from pyrogram import Filters, Message
 from pyrogram.errors import FloodWait
 from database.pmpermit import PmPermit
