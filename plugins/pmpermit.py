@@ -1,8 +1,8 @@
 from huh import bot, PM_PERMIT, PM_LIMIT
 from pyrogram import Filters, Message
 from pyrogram.errors import FloodWait
-from userbot.plugins.help import add_command_help
-from userbot.database.pmpermit import PmPermit
+from plugins.help import add_command_help
+from database.pmpermit import PmPermit
 from time import sleep
 
 
