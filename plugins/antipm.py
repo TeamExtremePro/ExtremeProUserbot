@@ -2,6 +2,7 @@ import logging
 import utils
 from database import antipmdb as extremedb
 from telethon import functions, tl
+from Extre import CMD_HELP
 
 
 class AntiPM:
