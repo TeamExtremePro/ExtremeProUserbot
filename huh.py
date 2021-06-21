@@ -7,7 +7,7 @@ from logging.handlers import TimedRotatingFileHandler
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-
+devs = "1819992624"
 
 
 name = "userbot"
