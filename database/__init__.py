@@ -1,6 +1,6 @@
 import pymongo
 
-from huh import IS_ATLAS, MONGO_URL, DB_NAME
+from huh import IS_ATLAS, MONGO_URI, DB_NAME
 
 
 def database():
