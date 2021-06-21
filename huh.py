@@ -44,8 +44,8 @@ if bool(os.environ.get("ENV", False)):
     SPOTIFY_CLIENT_SECRET = os.environ.get("SPOTIFY_CLIENT_SECRET", None)
 
     # Get the Values from our .env
-    PM_PERMIT = os.environ.get("PM_PERMIT", True))
-    PM_LIMIT = os.environ.get("PM_LIMIT", 5))
+    PM_PERMIT = os.environ.get("PM_PERMIT", True)
+    PM_LIMIT = os.environ.get("PM_LIMIT", 5)
     LOG_GROUP = os.environ.get(
         "LOG_GROUP",
     )
