@@ -3,6 +3,8 @@ import logging
 
 from telethon import functions, tl
 
+from sys import argv
+
 from database import antipmdb as nicedb
  
 
