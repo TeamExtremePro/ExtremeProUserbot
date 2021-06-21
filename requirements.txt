@@ -2,3 +2,4 @@ Extre==0.10
 pip
 pymongo
 telethon
+pyrogram
