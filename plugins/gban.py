@@ -1,6 +1,7 @@
+
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd
+from Extre.utils import admin_cmd, sudo_cmd
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -49,135 +50,134 @@ async def get_user_sender_id(user, event):
         return None
     return user_obj
 
-@borg.on(extremepro_cmd(pattern="gban ?(.*)"))
-@borg.on(amanpandey_cmd("gban ?(.*)", allow_sudo=True))
-async def gspider(amanpandey):
-    lol = amanpandey
+@borg.on(admin_cmd(pattern="gban ?(.*)"))
+@borg.on(sudo_cmd("gban ?(.*)", allow_sudo=True))
+async def gspider(Extre):
+    lol = Extre
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("Gbanning This User")
+        ExtremePro = await lol.reply("Gbanning This User")
     else:
-        friday = await lol.edit("Wait Processing.....")
-    me = await amanpandey.client.get_me()
-    await friday.edit(f"Global Ban Is Coming ! Wait And Watch")
+        ExtremePro = await lol.edit("Wait Processing.....")
+    me = await Extre.client.get_me()
+    await ExtremePro.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
-    f"@{me.chat_id}" if me.chat_id else my_mention
-    await amanpandey.get_chat()
+    f"@{me.username}" if me.username else my_mention
+    await Extre.get_chat()
     a = b = 0
-    if amanpandey.is_private:
-        user = amanpandey.chat
-        reason = amanpandey.pattern_match.group(1)
+    if Extre.is_private:
+        user = Extre.chat
+        reason = Extre.pattern_match.group(1)
     else:
-        amanpandey.chat.title
+        Extre.chat.title
     try:
-        user, reason = await get_full_user(amanpandey)
+        user, reason = await get_full_user(Extre)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit(f"**Try Again Some Error Occoured**")
+        return await ExtremePro.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1821319906:
-            return await friday.edit(
-                f"**AUKAT ME REH LE BAAP HAI WOH TERA JITNI AUKAT H UTNE ME HI REH BADA AAYA NIKAL AB**"
+        if user.id == 1037581197:
+            return await ExtremePro.edit(
+                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
             )
         try:
-            from amanpandey.modules.sql_helper.gmute_sql import gmute
+            from Extre.modules.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
-            await amanpandey.client(BlockRequest(user))
+            await Extre.client(BlockRequest(user))
         except:
             pass
-        testamanpandey = [
+        testExtre = [
             d.entity.id
-            for d in await amanpandey.client.get_dialogs()
+            for d in await Extre.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testamanpandey:
+        for i in testExtre:
             try:
-                await amanpandey.client.edit_permissions(i, user, view_messages=False)
+                await Extre.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await friday.edit(f"**GBANNED This User Total Affected Chats **: `{a}`")
+                await ExtremePro.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
             except:
                 b += 1
     else:
-        await friday.edit(f"**Reply to a user !!**")
+        await ExtremePro.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
-            return await friday.edit(f"**Error! User probably already gbanned.**")
+            return await ExtremePro.edit(f"**Error! User probably already gbanned.**")
     except:
         pass
-    return await friday.edit(
+    return await ExtremePro.edit(
         f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
     )
 
 
-@borg.on(extremepro_cmd(pattern="ungban ?(.*)"))
-@borg.on(amanpandey_cmd("ungban ?(.*)", allow_sudo=True))
-async def gspider(amanpandey):
-    lol = amanpandey
+@borg.on(admin_cmd(pattern="ungban ?(.*)"))
+async def gspider(Extre):
+    lol = Extre
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("`Wait Let Me Process`")
+        ExtremePro = await lol.reply("`Wait Let Me Process`")
     else:
-        friday = await lol.edit("Just a Second ")
-    me = await amanpandey.client.get_me()
-    await friday.edit(f"Trying To Ungban User !")
+        ExtremePro = await lol.edit("Just a Second ")
+    me = await Extre.client.get_me()
+    await ExtremePro.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
-    f"@{me.chat_id}" if me.chat_id else my_mention
-    await amanpandey.get_chat()
+    f"@{me.username}" if me.username else my_mention
+    await Extre.get_chat()
     a = b = 0
-    if amanpandey.is_private:
-        user = amanpandey.chat
-        reason = amanpandey.pattern_match.group(1)
+    if Extre.is_private:
+        user = Extre.chat
+        reason = Extre.pattern_match.group(1)
     else:
-        amanpandey.chat.title
+        Extre.chat.title
     try:
-        user, reason = await get_full_user(amanpandey)
+        user, reason = await get_full_user(Extre)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await friday.edit("Someting Is Wrong Try Again")
+        return await ExtremePro.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1821319906:
-            return await friday.edit("**TU USKO GBAN NAHI DE SAKTA TOH UNGBAN KAHE KAR RAHA HAI YAAD RAKH WOH TERA BAAP H**")
+        if user.id == 1100231654:
+            return await ExtremePro.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
         try:
-            from amanpandey.modules.sql_helper.gmute_sql import ungmute
+            from Extre.modules.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
-            await amanpandey.client(UnblockRequest(user))
+            await Extre.client(UnblockRequest(user))
         except:
             pass
-        testamanpandey = [
+        testExtre = [
             d.entity.id
-            for d in await amanpandey.client.get_dialogs()
+            for d in await Extre.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testamanpandey:
+        for i in testExtre:
             try:
-                await amanpandey.client.edit_permissions(i, user, send_messages=True)
+                await Extre.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await friday.edit(f"**UNGBANNING Total AFFECTED CHATS - {a} **")
+                await ExtremePro.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
-        await friday.edit("**Reply to a user !!**")
+        await ExtremePro.edit("**Reply to a user !!**")
     try:
         if ungmute(user.id) is False:
-            return await friday.edit("**Error! User probably already ungbanned.**")
+            return await ExtremePro.edit("**Error! User probably already ungbanned.**")
     except:
         pass
-    return await friday.edit(
-        f"**UNGBANNED This Son - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
+    return await ExtremePro.edit(
+        f"**UNGBANNED // USER - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
     )
 
 
@@ -187,7 +187,7 @@ async def gspider(amanpandey):
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
-         from amanpandey.modules.sql_helper.gmute_sql import is_gmuted
+         from Extre.modules.sql_helper.gmute_sql import is_gmuted
          guser = await rkG.get_user()      
          gmuted = is_gmuted(guser.id)             
        except:      
@@ -209,4 +209,4 @@ async def handler(rkG):
                     rkG.reply("`No Permission To Ban`")                   
                     return 
 CMD_HELP.update({
-    "gban":"gban any user using chat_id or tag dont use id "})
+    "gban":".gban and .ungban any user using username or tag dont use id "})
