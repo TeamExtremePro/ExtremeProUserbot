@@ -218,4 +218,4 @@ async def watchout(message):
         await message.client(functions.contacts.BlockRequest(id=message.sender_id))
         if await nicedb.check_sblock():
           await message.client.delete_dialog(entity=message.chat_id, revoke=True)
-        AntiPM.USERS_AND_WARNS.update({user: 0})
+        AntiPM.USERS_AND_WARNS.update({user: 0})
