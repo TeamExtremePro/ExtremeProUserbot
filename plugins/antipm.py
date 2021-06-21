@@ -194,11 +194,11 @@ async def watchout(message):
         user = (await message.get_sender()).id
         if await nicedb.check_approved(user):
              return
-         if not await nicedb.check_notifs():
+        if not await nicedb.check_notifs():
              await message.client.send_read_acknowledge(message.chat_id)
-         user_warns = 0 if user not in AntiPM.USERS_AND_WARNS else AntiPM.USERS_AND_WARNS[
+        user_warns = 0 if user not in AntiPM.USERS_AND_WARNS else AntiPM.USERS_AND_WARNS[
              user]
-         if user_warns <= await nicedb.check_limit() - 2:
+        if user_warns <= await nicedb.check_limit() - 2:
              user_warns += 1
              AntiPM.USERS_AND_WARNS.update({user: user_warns})
              if not AntiPM.FLOOD_CTRL > 0:
