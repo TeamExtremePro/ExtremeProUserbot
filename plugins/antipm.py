@@ -26,7 +26,7 @@ BLOCKED = (
     "<b>as spam. Good luck!</b>")
 
 
-@bot.on( extremepro_cmd(pattern='antipm (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='antipm (.*)', outgoing=True))
 async def antipmxxx(message):
     switch = get_arg(message).lower()
     if switch == "on":
@@ -42,7 +42,7 @@ async def antipmxxx(message):
         return
 
 
-@bot.on( extremepro_cmd(pattern='aprovepm (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='aprovepm (.*)', outgoing=True))
 async def approvexxx(message):
     """Allows that person to PM you, you can either reply to user,
 type their username or use this in their chat"""
@@ -67,7 +67,7 @@ type their username or use this in their chat"""
             .format(pick, (await message.client.get_entity(pick)).first_name))
 
 
-@bot.on( extremepro_cmd(pattern='disaprovepm (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='disaprovepm (.*)', outgoing=True))
 async def disapprovexxx(message):
     """Prevents that person to PM you, you can either reply to user,
 type their username or use this in their chat"""
@@ -92,7 +92,7 @@ type their username or use this in their chat"""
             .format(pick, (await message.client.get_entity(pick)).first_name))
 
 
-@bot.on( extremepro_cmd(pattern='blockpm (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='blockpm (.*)', outgoing=True))
 async def blockxxx(message):
     """Simply blocks the person..duh!!"""
     id = None if not get_arg(message) else (await message.client.get_entity(get_arg(message))).id
@@ -114,7 +114,7 @@ async def blockxxx(message):
         .format(pick, (await message.client.get_entity(pick)).first_name))
 
 
-@bot.on( extremepro_cmd(pattern='unblockpm (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='unblockpm (.*)', outgoing=True))
 async def unblockxxx(message):
     """Simply unblocks the person..duh!!"""
     id = None if not get_arg(message) else (await message.client.get_entity(get_arg(message))).id
@@ -134,7 +134,7 @@ async def unblockxxx(message):
         .format(pick, (await message.client.get_entity(pick)).first_name))
 
 
-@bot.on( extremepro_cmd(pattern='notifs (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='notifs (.*)', outgoing=True))
 async def notifsxxx(message):
     """Ah this one again...It turns on/off tag notification
 sounds from unwanted PMs. It auto-sends a
@@ -153,7 +153,7 @@ a message in your name until that user gets blocked or approved"""
         await message.edit("<i>Notifications from unapproved PMs unmuted</i>")
 
 
-@bot.on( extremepro_cmd(pattern='setlimits (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='setlimits (.*)', outgoing=True))
 async def setlimitxxx(message):
     """This one sets a max. message limit for unwanted
 PMs and when they go beyond it, bamm!"""
@@ -167,7 +167,7 @@ PMs and when they go beyond it, bamm!"""
         await message.edit("<i>Max. PM message limit successfully updated</i>")
 
 
-@bot.on( extremepro_cmd(pattern='superblocks (.*)', outgoing=True))
+@bot.on(extremepro_cmd(pattern='superblocks (.*)', outgoing=True))
 async def superblockxxx(message):
     """If unwanted users spams your chat, the chat
 will be deleted when the idiot passes the message limit"""
@@ -186,7 +186,7 @@ will be deleted when the idiot passes the message limit"""
     setPM(command)
 
 
-@bot.on( extremepro_cmd(incoming=True))
+@bot.on(extremepro_cmd(incoming=True))
 async def watchout(message):
     if message.sender_id != (await message.client.get_me()).id and isinstance(message.to_id, tl.types.PeerUser):
         if getattr(message.sender, "bot", None) or not await nicedb.check_antipm():
