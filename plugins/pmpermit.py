@@ -5,7 +5,7 @@ import os
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-import Extre.sql_helper.pmpermit_sql as pmpermit_sql
+import sql_helper.pmpermit_sql as pmpermit_sql
 from Extre import ALIVE_NAME, CMD_HELP, CUSTOM_PMPERMIT, bot
 from Extre.utils import extremepro_cmd
 
