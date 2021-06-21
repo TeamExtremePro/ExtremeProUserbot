@@ -4,3 +4,4 @@ pymongo
 telethon
 pyrogram
 apscheduler
+configparser
