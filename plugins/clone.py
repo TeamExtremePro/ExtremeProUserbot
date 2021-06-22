@@ -18,7 +18,7 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-
+ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 @borg.on(extremepro_cmd(pattern="clone ?(.*)"))
 async def _(event):
@@ -76,8 +76,8 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    name = f"Dynamic Userbot User"
-    bio = f"Dynamic Userbot User Uses Dynamic bot"
+    name = f"{ALIVE_NAME}"
+    bio = f"{ALIVE_NAME} Uses eXTREMEpROuSERBOT bot"
     n = 1
     await borg(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit= n)))    
     await borg(functions.account.UpdateProfileRequest(about=f"{bio}"))
