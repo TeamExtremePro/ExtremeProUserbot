@@ -30,11 +30,11 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeFilename
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 
 @bot.on(extremepro_cmd(pattern="frybot$"))
-@bot.on(sudo_cmd(pattern="frybot$", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="frybot$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -79,7 +79,7 @@ async def _(event):
 
 
 @bot.on(extremepro_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))

@@ -14,7 +14,7 @@ from telethon import events, TelegramClient
 from Extre.utils import extremepro_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
 from Extre import ALIVE_NAME
-from Extre.utils import extremepro_cmd as extremepro_cmd, sudo_cmd as amanpandey_cmd
+from Extre.utils import extremepro_cmd as extremepro_cmd, amanpandey_cmd as amanpandey_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba"
 """ =======================CONSTANTS====================== """
@@ -29,7 +29,7 @@ EXTREMEPRO += f"┣•➳➠ `Repo🔥 :` [Repo🔥](https://github.com/TeamExtr
 EXTREMEPRO += f"┣•➳➠ `Deploy⚡ :` [Deploy⚡Me](https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy)\n"
 EXTREMEPRO += f"┗━━━━━━━━━━━━━━━━━━━\n"
 @borg.on(extremepro_cmd(outgoing=True, pattern="alive$"))
-@borg.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="alive$", allow_sudo=True))
 async def up(op):
     if op.fwd_from:
         return

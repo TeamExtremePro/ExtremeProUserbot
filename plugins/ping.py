@@ -1,6 +1,6 @@
 import asyncio
 from datetime import datetime
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 # COPYRIGHT TEAM Extre
 

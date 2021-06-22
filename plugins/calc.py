@@ -7,11 +7,11 @@ import sys
 import traceback
 
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 
 @bot.on(extremepro_cmd(pattern="calc (.*)"))
-@bot.on(sudo_cmd(pattern="calc (.*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="calc (.*)", allow_sudo=True))
 async def _(car):
     cmd = car.text.split(" ", maxsplit=1)[1]
     event = await edit_or_reply(car, "Calculating ...")

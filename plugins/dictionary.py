@@ -7,11 +7,11 @@ import asyncurban
 from PyDictionary import PyDictionary
 
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 
 @bot.on(extremepro_cmd(pattern="ud (.*)"))
-@bot.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="ud (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -30,7 +30,7 @@ async def _(event):
 
 
 @bot.on(extremepro_cmd(pattern="meaning (.*)"))
-@bot.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="meaning (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

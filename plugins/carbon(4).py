@@ -7,7 +7,7 @@ import random
 from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 from Extre import ALIVE_NAME, CMD_HELP
 
 
@@ -21,7 +21,7 @@ CARBONLANG = "auto"
 LANG = "en"
 
 @borg.on(extremepro_cmd(outgoing=True, pattern="carbon(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="carbon(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="carbon(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -85,7 +85,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(outgoing=True, pattern="krb"))
-@borg.on(sudo_cmd(pattern="krb", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="krb", allow_sudo=True))
 async def carbon_api(e):
     godboy = await edit_or_reply(e, "`Processing....`")
     CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
@@ -169,7 +169,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(pattern=f"kar1(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="kar1(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="kar1(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "🔲🔲🔲🔲🔲")
@@ -231,7 +231,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(pattern=f"kar2(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="kar2(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="kar2(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "📛📛📛📛📛")
@@ -293,7 +293,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(pattern=f"kar3(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="kar3(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="kar3(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "🎛🎛🎛🎛🎛")
@@ -359,7 +359,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(pattern=f"kar4(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="kar4(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="kar4(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     godboy = await edit_or_reply(e, "🌚🌚🌚🌚🌚")
@@ -424,7 +424,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(pattern=f"rgbk2(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="rgbk2(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="rgbk2(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     RED = random.randint(0, 256)
     GREEN = random.randint(0, 256)
@@ -493,7 +493,7 @@ async def carbon_api(e):
 
 
 @borg.on(extremepro_cmd(pattern=f"kargb(?: |$)(.*)", outgoing=True))
-@borg.on(sudo_cmd(pattern="kargb(?: |$)(.*)", allow_sudo=True))
+@borg.on(amanpandey_cmd(pattern="kargb(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     RED = random.randint(0, 256)
     GREEN = random.randint(0, 256)

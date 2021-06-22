@@ -9,7 +9,7 @@ import re
 import json
 import asyncio
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 async def callAPI(search_str):
     query = '''
@@ -76,7 +76,7 @@ async def formatJSON(outData):
         return msg
         
 @bot.on(extremepro_cmd(pattern="anilist (.*)"))
-@bot.on(sudo_cmd(pattern="anilist (.*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="anilist (.*)", allow_sudo=True))
 async def anilist(event):
     if event.fwd_from:
         return

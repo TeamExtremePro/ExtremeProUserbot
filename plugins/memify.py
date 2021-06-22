@@ -2,7 +2,7 @@ from PIL import Image, ImageFont, ImageDraw
 import textwrap
 import os
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, sudo_cmd
+from Extre.utils import extremepro_cmd, amanpandey_cmd
 from var import Var
 # how a lazy guy ports.
 client = borg

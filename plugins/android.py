@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from requests import get
 
 from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, sudo_cmd
+from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 GITHUB = "https://github.com"
 DEVICES_DATA = (
@@ -22,7 +22,7 @@ DEVICES_DATA = (
 
 
 @bot.on(extremepro_cmd(pattern=r"magisk"))
-@bot.on(sudo_cmd(pattern=r"magisk", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern=r"magisk", allow_sudo=True))
 async def kakashi(magisk):
     if magisk.fwd_from:
         return
@@ -51,7 +51,7 @@ async def kakashi(magisk):
 
 
 @bot.on(extremepro_cmd(outgoing=True, pattern=r"device(?: |$)(\S*)"))
-@bot.on(sudo_cmd(pattern=r"device(?: |$)(\S*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern=r"device(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
     if request.fwd_from:
         return
@@ -86,7 +86,7 @@ async def device_info(request):
 
 
 @bot.on(extremepro_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
-@bot.on(sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
     if request.fwd_from:
         return
@@ -133,7 +133,7 @@ async def codename_info(request):
 
 
 @bot.on(extremepro_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
-@bot.on(sudo_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     if request.fwd_from:
         return
@@ -198,7 +198,7 @@ async def devices_specifications(request):
 
 
 @bot.on(extremepro_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
-@bot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     if request.fwd_from:
         return

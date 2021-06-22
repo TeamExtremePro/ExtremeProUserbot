@@ -1,5 +1,5 @@
 # pastebin for catuserbot
-from Extre.utils import extremepro_cmd, sudo_cmd
+from Extre.utils import extremepro_cmd, amanpandey_cmd
 import os
 from Extre import CMD_HELP
 import pygments
@@ -17,10 +17,10 @@ def progress(current, total):
             current, total, (current / total) * 100
         )
     )
-from Extre.utils import extremepro_cmd, sudo_cmd
+from Extre.utils import extremepro_cmd, amanpandey_cmd
 
 @bot.on(extremepro_cmd(pattern="neko(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="neko(?: |$)(.*)", allow_sudo=True))
+@bot.on(amanpandey_cmd(pattern="neko(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -77,7 +77,7 @@ async def _(event):
     await catevent.edit(reply_text)
 
 @bot.on(extremepro_cmd(pattern="pcode(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="pcode(?: |$)(.*)"))
+@bot.on(amanpandey_cmd(pattern="pcode(?: |$)(.*)"))
 async def code_print(event):
     if event.fwd_from:
         return
