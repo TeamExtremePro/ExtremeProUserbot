@@ -10,7 +10,7 @@ def database():
             MONGO_URL,
         )
     else:
-        from userbot import DB_USERNAME, DB_PASSWORD
+        from huh import DB_USERNAME, DB_PASSWORD
 
         client = pymongo.MongoClient(
             MONGO_URL, username=DB_USERNAME, password=DB_PASSWORD
