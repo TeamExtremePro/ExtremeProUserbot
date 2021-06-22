@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "admin_cmd"
+          find: "@borg.on(extremepro_cmd(outgoing=True, pattern="alive$"))"
 
-          replace: "extremepro_cmd"
+          replace: "@borg.on(extremepro_cmd(outgoing=True, pattern="alive$, allow_sudo=True))"
 
       - name: Create Pull Request
 
