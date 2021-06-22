@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "admin_cmd"
+          find: "sudo_cmd"
 
-          replace: "extremepro_cmd"
+          replace: "amanpandey_cmd"
 
       - name: Create Pull Request
 
