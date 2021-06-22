@@ -19,7 +19,7 @@ from database.mongo import cli
 import logging
 
 
-cli = cli["NiceGrill"]["AntiPM"]
+cli = cli["ExtremePro"]["AntiPM"]
 
 
 async def set_antipm(opt):
