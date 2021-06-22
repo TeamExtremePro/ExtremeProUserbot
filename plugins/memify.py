@@ -3,7 +3,7 @@ import textwrap
 import os
 from Extre import CMD_HELP
 from Extre.utils import extremepro_cmd, amanpandey_cmd
-from var import Var
+from Extre.variables import Var
 # how a lazy guy ports.
 client = borg
 @borg.on(extremepro_cmd("mmf ?(.*)"))
