@@ -120,7 +120,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "Source Code",
-                text="**Welcome to ExtremeProUserbot**\n\n`This is working as pmsecurity wait untill my master approves you`",
+                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity of my master wait untill my master approves you`",
                 buttons=[
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/useropbolte")],
                     [
@@ -292,7 +292,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             plugin_name = event.data_match.group(1).decode("UTF-8")
             help_string = ""
-            help_string += f"Commands Available in {plugin_name} - \n"
+            help_string += f"𝕮𝖔𝖒𝖒𝖆𝖓𝖉𝖘 𝕬𝖛𝖆𝖎𝖑𝖆𝖇𝖑𝖊 𝖎𝖓 {plugin_name} - \n"
             try:
                 if plugin_name in CMD_HELP:
                     for i in CMD_HELP[plugin_name]:
@@ -355,11 +355,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⫷ Previous", data="{}_prev({})".format(prefix, modulo_page)
+                    "𝕻𝖗𝖊𝖛𝖎𝖔𝖚𝖘", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("║ Close ║", data="close"),
+                custom.Button.inline("𝕮𝖑𝖔𝖘𝖊", data="close"),
                 custom.Button.inline(
-                    "Next ⫸", data="{}_next({})".format(prefix, modulo_page)
+                    "𝕹𝖊𝖝𝖙", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
