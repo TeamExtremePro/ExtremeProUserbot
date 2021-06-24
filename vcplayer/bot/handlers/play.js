@@ -1,10 +1,10 @@
 const { Composer, InputFile } = require("grammy");
 const { escape } = require("html-escaper");
-const ffmpeg = require("../../ffmpeg");
-const connections = require("../../connections");
+const ffmpeg = require("vcplayer/ffmpeg");
+const connections = require("vclayer/connections");
 const queues = require("vcplayer/queues");
 const { createImage } = require("vcplayer/image");
-const { link, getFile } = require("../helpers");
+const { link, getFile } = require("vcplayer/helpers");
 
 const composer = new Composer();
 
