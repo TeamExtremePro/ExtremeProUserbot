@@ -1,61 +1,6 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from Extre.utils import extremepro_cmd
 import asyncio
-
- 
-
-@borg.on(extremepro_cmd(pattern="gaana ?(.*)"))
-async def FindMusicPleaseBot(gaana):
-
-    song = gaana.pattern_match.group(1)
-
-    chat = "@songdl_bot"
-
-    if not song:
-
-        return await gaana.edit("```what should i search```")
-
-    await gaana.edit("```Getting Your Music```")
-
-    await asyncio.sleep(2)
-
-    async with bot.conversation(chat) as conv:
-
-        await gaana.edit("`Downloading...Please wait`")
-
-        try:
-
-            msg = await conv.send_message(song)
-
-            response = await conv.get_response()
-
-            if response.text.startswith("Sorry"):
-
-                await bot.send_read_acknowledge(conv.chat_id)
-
-                return await gaana.edit(f"Sorry, can't find {song}")
-
-            respond = await conv.get_response()
-
-            cobra = await conv.get_response()
-
-        except YouBlockedUserError:
-
-            await gaana.edit("```Please unblock``` @songdl_bot``` and try again```")
-
-            return
-
-        await gaana.edit("`Sending Your Music...wait!!! 😉😎`")
-
-        await bot.send_file(gaana.chat_id, cobra)
-
-        await bot.send_read_acknowledge(conv.chat_id)
-
-    await gaana.delete()
-    
-    
-#-------------------------------------------------------------------------------
-
     
 from pathlib import Path
 import asyncio, time, io, math, os, logging, asyncio, shutil, re, subprocess, json
@@ -221,237 +166,150 @@ async def download_video(v_url):
         
         
         
-@borg.on(extremepro_cmd(pattern="vsong(?: |$)(.*)"))
-async def download_video(v_url):  
-    lazy = v_url ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
-    if not sender.id == me.id:
-        rkp = await lazy.reply("`processing...`")
-    else:
-    	rkp = await lazy.edit("`processing...`")   
-    url = v_url.pattern_match.group(1)
-    if not url:
-         return await rkp.edit("`Error \nusage song <song name>`")
-    search = SearchVideos(url, offset = 1, mode = "json", max_results = 1)
-    test = search.result()
-    p = json.loads(test)
-    q = p.get('search_result')
-    try:
-       url = q[0]['link']
-    except:
-    	return await rkp.edit("`failed to find`")
-    type = "audio"
-    await rkp.edit("`Preparing to download...`")
-    if type == "audio":
-        opts = {
-            'format':
-            'best',
-            'addmetadata':
-            True,
-            'key':
-            'FFmpegMetadata',
-            'prefer_ffmpeg':
-            True,
-            'geo_bypass':
-            True,
-            'nocheckcertificate':
-            True,
-            'postprocessors': [{
-                'key': 'FFmpegVideoConvertor',
-                'preferedformat': 'mp4'
-            }],
-            'outtmpl':
-            '%(id)s.mp4',
-            'logtostderr':
-            False,
-            'quiet':
-            True
-        }
-        song = False
-        video = True
-    try:
-        await rkp.edit("`Fetching data, please wait..`")
-        with YoutubeDL(opts) as rip:
-            rip_data = rip.extract_info(url)
-    except DownloadError as DE:
-        await rkp.edit(f"`{str(DE)}`")
+import asyncio
+import logging
+from asyncio.exceptions import TimeoutError
+
+from telethon import events
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+
+from userbot import bot
+from userbot.util import admin_cmd, humanbytes
+
+logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
+                    level=logging.WARNING)
+logger = logging.getLogger(__name__)
+
+
+@bot.on(admin_cmd(pattern="music ?(.*)"))  # pylint:disable=E0602
+async def music_find(event):
+    if event.fwd_from:
         return
-    except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
-        return
-    except GeoRestrictedError:
-        await rkp.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+
+    music_name = event.pattern_match.group(1)
+    msg = await event.get_reply_message()
+    if music_name:
+        await event.delete()
+        song_result = await event.client.inline_query("deezermusicbot", music_name)
+
+        await song_result[0].click(
+            event.chat_id,
+            reply_to=event.reply_to_msg_id,
+            hide_via=True
         )
+    elif msg:
+        await event.delete()
+        song_result = await event.client.inline_query("deezermusicbot", msg.message)
+
+        await song_result[0].click(
+            event.chat_id,
+            reply_to=event.reply_to_msg_id,
+            hide_via=True
+        )
+
+
+@bot.on(admin_cmd(pattern="spotbot ?(.*)"))  # pylint:disable=E0602
+async def _(event):
+    if event.fwd_from:
         return
-    except MaxDownloadsReached:
-        await rkp.edit("`Max-downloads limit has been reached.`")
+    msg = await event.get_reply_message()
+    await event.delete()
+
+    music_name = event.pattern_match.group(1)
+    msg = await event.get_reply_message()
+    if music_name:
+        await event.delete()
+        song_result = await event.client.inline_query("spotify_to_mp3_bot", music_name)
+
+        for item_ in song_result:
+
+            if (
+                "(FLAC)" in item_.title
+                or "(MP3_320)" in item_.title
+                or "(MP3_128)" in item_.title
+            ):
+
+                j = await item_.click(
+                    event.chat_id,
+                    reply_to=event.reply_to_msg_id,
+                    hide_via=True,
+                )
+
+                k = await event.respond(j)
+                await j.delete()
+                await k.edit("Channel Link:\nhttps://t.me/joinchat/AAAAAE8NqbV48l7ls-pFtQ")
+
+    elif msg:
+
+        await event.delete()
+        song_result = await event.client.inline_query("spotify_to_mp3_bot", msg.message)
+        for item in song_result:
+
+            if (
+                "(FLAC)" in item.title
+                or "(MP3_320)" in item.title
+                or "(MP3_128)" in item.title
+            ):
+
+                j = await item.click(
+                    event.chat_id,
+                    reply_to=event.reply_to_msg_id,
+                    hide_via=True,
+                )
+
+                k = await event.respond(j)
+                await j.delete()
+                await k.edit("Channel Link:\nhttps://t.me/joinchat/AAAAAE8NqbV48l7ls-pFtQ")
+
+
+@bot.on(admin_cmd(pattern="audioyt ?(.*)", outgoing=True))
+async def _(event):
+    if event.fwd_from:
         return
-    except PostProcessingError:
-        await rkp.edit("`There was an error during post processing.`")
-        return
-    except UnavailableVideoError:
-        await rkp.edit("`Media is not available in the requested format.`")
-        return
-    except XAttrMetadataError as XAME:
-        await rkp.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
-        return
-    except ExtractorError:
-        await rkp.edit("`There was an error during info extraction.`")
-        return
-    except Exception as e:
-        await rkp.edit(f"{str(type(e)): {str(e)}}")
-        return
-    c_time = time.time()
-    if song:
-        await rkp.edit(f"`Preparing to upload song `\
-        \n**{rip_data['title']}**\
-        \nby *{rip_data['uploader']}*")
-        await v_url.client.send_file(
-            v_url.chat_id,
-            f"{rip_data['id']}.mp3",
-            supports_streaming=True,
-            attributes=[
-                DocumentAttributeAudio(duration=int(rip_data['duration']),
-                                       title=str(rip_data['title']),
-                                       performer=str(rip_data['uploader']))
-            ],
-            progress_callback=lambda d, t: asyncio.get_event_loop(
-            ).create_task(
-                progress(d, t, v_url, c_time, "Uploading..",
-                         f"{rip_data['title']}.mp3")))
-        os.remove(f"{rip_data['id']}.mp3")
-        await v_url.delete()
-    elif video:
-        await rkp.edit(f"`Preparing to upload video song :`\
-        \n**{rip_data['title']}**\
-        \nby *{rip_data['uploader']}*")
-        await v_url.client.send_file(
-            v_url.chat_id,
-            f"{rip_data['id']}.mp4",
-            supports_streaming=True,
-            caption=rip_data['title'],
-            progress_callback=lambda d, t: asyncio.get_event_loop(
-            ).create_task(
-                progress(d, t, v_url, c_time, "Uploading..",
-                         f"{rip_data['title']}.mp4")))
-        os.remove(f"{rip_data['id']}.mp4")
-        await rkp.delete()
-
-#-------------------------------------------------------------------------------
-
-from telethon import events
-import asyncio
-from Extre.events import register 
-from Extre import bot, CMD_HELP
-from telethon.tl.functions.channels import JoinChannelRequest
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-import os
-
-try:
- import subprocess
-except:
- os.system("pip install instantmusic")
-
-
-
-os.system("rm -rf *.mp3")
-
-
-def bruh(name):
-
-    os.system("instantmusic -q -s "+name)
-
-@register(outgoing=True, pattern="^.getsong(?: |$)(.*)")
-async def getmusic(so):
-    if so.fwd_from:
-        return
-    await so.client(JoinChannelRequest("t.me/sjprojects"))
-    song = so.pattern_match.group(1)
-    chat = "@songdl_bot"
-    link = f"/song {song}"
-    await so.edit("🔹Ok wait... 📡Searching your song🔸")
-    async with bot.conversation(chat) as conv:
-          await asyncio.sleep(2)
-          await so.edit("📥Downloading...Please wait🤙")
-          try:
-              msg = await conv.send_message(link)
-              response = await conv.get_response()
-              respond = await conv.get_response()
-              """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.chat_id)
-          except YouBlockedUserError:
-              await so.edit("Please unblock @songdl_bot and try searching again🤐")
-              return
-          await so.edit("Ohh.. I got something!! Wait sending😋🤙")
-          await asyncio.sleep(3)
-          await bot.send_file(so.chat_id, respond)
-    await so.client.delete_messages(conv.chat_id,
-                                       [msg.id, response.id, respond.id])
-    await so.delete()
-
-#-------------------------------------------------------------------------------
-
-from telethon import events
-import asyncio
-#from Extre.utils import extremepro_cmd
-from Extre.events import register 
-from Extre import bot, CMD_HELP
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-import os
-try:
- import subprocess
-except:
- os.system("pip install instantmusic")
- 
-
-
-os.system("rm -rf *.mp3")
-
-
-def bruh(name):
-    
-    os.system("instantmusic -q -s "+name)
-    
-
-@register(outgoing=True, pattern="^.dwlsong(?: |$)(.*)")
-async def DeezLoader(Deezlod):
-    if Deezlod.fwd_from:
-        return
-    d_link = Deezlod.pattern_match.group(1)
-    if ".com" not in d_link:
-        await Deezlod.edit("` I need a link to download something pro.`**(._.)**")
+    music_link = event.pattern_match.group(1)
+    if music_link:
+        chat = "@YTAudioBot"
+        async with event.client.conversation(chat) as conv:
+            await conv.send_message(music_link)
+            await asyncio.sleep(2)
+            response = conv.wait_event(events.NewMessage(
+                incoming=True, from_users=507379365))
+            await event.client.send_message(chat, music_link)
+            response = await response
+        await event.delete()
+        if response.message.media:
+            await event.client.send_message(event.chat_id, response)
     else:
-        await Deezlod.edit("**Initiating Download!**")
-    chat = "@DeezLoadBot"
-    async with bot.conversation(chat) as conv:
-          try:
-              msg_start = await conv.send_message("/start")
-              response = await conv.get_response()
-              r = await conv.get_response()
-              msg = await conv.send_message(d_link)
-              details = await conv.get_response()
-              song = await conv.get_response()
-              """ - don't spam notif - """
-              await bot.send_read_acknowledge(conv.chat_id)
-          except YouBlockedUserError:
-              await Deezlod.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
-              return
-          await bot.send_file(Deezlod.chat_id, song, caption=details.text)
-          await Deezlod.client.delete_messages(conv.chat_id,
-                                             [msg_start.id, response.id, r.id, msg.id, details.id, song.id])
-          await Deezlod.delete()   
-          
-#-------------------------------------------------------------------------------
-       
-import datetime
-import asyncio
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
-from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from telethon.tl.functions.messages import ImportChatInviteRequest
-from Extre.utils import extremepro_cmd
+        reply_message = await event.get_reply_message()
+        chat = "@YTAudioBot"
+        sender = reply_message.sender
+        await event.edit("```Processing```")
+        async with event.client.conversation(chat) as conv:
+            response = conv.wait_event(events.NewMessage(
+                incoming=True, from_users=507379365))
+            await event.client.send_message(chat, reply_message)
+            response = await response
+            await event.delete()
+            if response.message.media:
+                await event.client.send_file(event.chat_id, response.message.media)
 
-@borg.on(extremepro_cmd("sdd ?(.*)"))
+
+@bot.on(admin_cmd(pattern="fm ?(.*)"))  # pylint:disable=E0602
+async def _(event):
+    msg = await event.get_reply_message()
+    await event.delete()
+    if msg:
+        msj = f"[{msg.file.name}](https://t.me/joinchat/AAAAAE8NqbV48l7ls-pFtQ)\n`{humanbytes(msg.file.size)}`"
+        await event.client.send_message(
+            entity=await event.client.get_entity(-1001326295477),
+            file=msg.media,
+            message=msj
+        )
+    else:
+        await event.edit("`mesajı yanıtla`")
+
+
+@bot.on(admin_cmd(pattern="sdown ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -459,40 +317,42 @@ async def _(event):
     if ".com" not in d_link:
         await event.edit("` I need a link to download something pro.`**(._.)**")
     else:
-        await event.edit("🎶**Initiating Download!**🎶")
-    bot = "@songdl_bot"
-    
-    async with borg.conversation("@songdl_bot") as conv:
-          try:
-              await conv.send_message("/start")
-              response = await conv.get_response()
-              try:
-                  await borg(ImportChatInviteRequest('AAAAAFZPuYvdW1A8mrT8Pg'))
-              except UserAlreadyParticipantError:
-                  await asyncio.sleep(0.00000069420)
-              await conv.send_message(d_link)
-              details = await conv.get_response()
-              await borg.send_message(event.chat_id, details)
-              await conv.get_response()
-              songh = await conv.get_response()
-              await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆\n`Check out` [LEGENDBOT](https://t.me/LEGENDBOT_Official)")
-              await event.delete()
-          except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @songdl_bot `and retry!`")
-    
-    
+        msg = await event.edit("🎶**Downloading and sending music..!**🎶")
+        bot = "@spotify_to_mp3_bot"
+
+        async with event.client.conversation(bot) as conv:
+            try:
+                await conv.send_message(d_link)
+                details = await conv.get_response()
+                for row in details.buttons:
+                    for button in row:
+                        if button.text == "📲🎵Download this Song!":
+                            await button.click()
+                            first = await conv.get_response()
+                            if first.media:
+                                msj = f"[{first.media.document.attributes[1].file_name}](https://t.me/joinchat/AAAAAE8NqbV48l7ls-pFtQ)\n`{humanbytes(first.media.document.size)}`"
+                                await event.client.send_file(event.chat_id, first, caption=msj)
+                                await msg.delete()
+                            resp = await conv.get_response()
+                            if resp.media:
+                                msj = f"[{resp.media.document.attributes[1].file_name}](https://t.me/joinchat/AAAAAE8NqbV48l7ls-pFtQ)\n`{humanbytes(resp.media.document.size)}`"
+                                await event.client.send_file(event.chat_id, resp, caption=msj)
+                                await msg.delete()
+            except YouBlockedUserError:
+                await event.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
+            except TimeoutError:
+                return
 {
         "songs":
         "`.song song name`\
             \nUsage:For searching songs from youtube\
-            \n\n`/getsong` Song Title\
-            \nUsage:Download song from @SongsForYouBot\
-            \n\n`.gaana` Song name\
+            \n\nsong` Song Title\
+            \n\n`.spotbot` Song name\
             \nUsage:Download song from @FindmusicpleaseBot\
-            \n\n`.vsong` Song title\
-            \nUsage:Downloads video song from youtube\
-            \n\n`.sdd` song name\
+            \n\n`.audioyt` Song title\
+            \nUsage: song from youtube\
+            \n\n`.fm` song name\
             \nUsage:Download song from @DeezLoadBot\
-            \n\n`.dwlsong` <Spotify/Deezer Link>\
+            \n\n`.sdown` <Spotify/Deezer Link>\
             \nUsage:Download music from Spotify or Deezer."
 }
