@@ -6,3 +6,4 @@ apscheduler
 configparser
 ast
 npm
+motor
