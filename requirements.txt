@@ -5,5 +5,3 @@ telethon
 apscheduler
 configparser
 ast
-npm
-motor
