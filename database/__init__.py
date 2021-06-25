@@ -3,7 +3,7 @@ import sys
 import pymongo
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
-
+import motor
 from huh import IS_ATLAS, MONGO_URI, DB_NAME
 from motor import motor_asyncio
 
