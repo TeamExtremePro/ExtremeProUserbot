@@ -23,7 +23,7 @@ except:
     os.system("pip install pip install youtube-search-python")
     from youtubesearchpython import SearchVideos
 
-from Extre import bot
+from Extre import bot, CMD_HELP
 from Extre.utils import amanpandey_cmd, extremepro_cmd
 
 @bot.on(extremepro_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
@@ -288,7 +288,7 @@ async def download_video(v_url):
         await rkp.delete()
 
 
-CmdHelp("songs").add_command(
+CMD_HELP("songs").add_command(
 	"song", "<song name>", "Downloads the song from YouTube."
 ).add_command(
 	"vsong", "<song name>", "Downloads the Video Song from YouTube."
