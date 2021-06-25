@@ -20,7 +20,7 @@ async def add_sudo(event):
     if op:
       await event.edit(f"THE {name} IS ALREADY ON SUDO LIST")
       return
-    else
+    else:
       pass
     if not sudolist:
        await event.edit(f"𝔒ᴋᴀʏ **{Name}** ɪ𝔰 𝔄ᴅᴅᴇᴅ 𝔒ɴ 𝔰ᴜᴅᴏ ʟɪ𝔰ᴛ (ᴘʟᴇᴀ𝔰ᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇ𝔰ᴛᴀʀᴛɪɴɢ)")
