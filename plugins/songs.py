@@ -288,14 +288,3 @@ async def download_video(v_url):
         await rkp.delete()
 
 
-CMD_HELP("songs").add_command(
-	"song", "<song name>", "Downloads the song from YouTube."
-).add_command(
-	"vsong", "<song name>", "Downloads the Video Song from YouTube."
-).add_command(
-	"lyrics", "<song name>", "Gives the lyrics of that song.."
-).add_info(
-	"Songs & Lyrics."
-).add_warning(
-	"✅ Harmless Module."
-).add()
