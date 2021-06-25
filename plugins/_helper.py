@@ -13,6 +13,7 @@ if CMD_HNDLR is None:
 
 
 @bot.on(extremepro_cmd(pattern="help ?(.*)"))
+@bot.on(amanpandey_cmd(pattern="help ?(.*)", allow_sudo=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
