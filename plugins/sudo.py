@@ -20,10 +20,10 @@ async def add_sudo(event):
     if op:
       await event.edit(f"THE {name} IS ALREADY ON SUDO LIST")
       return
-    else:
+    else
       pass
     if not sudolist:
-       await event.edit(f"Oᴋᴀʏ **{name}** ɪs Aᴅᴅᴇᴅ Oɴ sᴜᴅᴏ ʟɪsᴛ (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
+       await event.edit(f"𝔒ᴋᴀʏ **{Name}** ɪ𝔰 𝔄ᴅᴅᴇᴅ 𝔒ɴ 𝔰ᴜᴅᴏ ʟɪ𝔰ᴛ (ᴘʟᴇᴀ𝔰ᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇ𝔰ᴛᴀʀᴛɪɴɢ)")
        heroku_var["SUDO_USERS"] = id
     else:
        sudousers = f'{sudolist} {id}'
@@ -55,15 +55,15 @@ async def remove_sudo(event):
       xxx = xx.replace(",", "")
       done = xxx.replace("'", "")
       heroku_var["SUDO_USERS"] = done
-      await event.edit(f"Tʜᴇ **{name}** ɪs ʀᴇᴍᴏᴠᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
+      await event.edit(f"𝔗ʜᴇ **{name}** ɪ𝔰 ʀᴇᴍᴏᴠᴇᴅ 𝔰ᴜᴄᴄᴇ𝔰𝔰ғᴜʟʟʏ (ᴘʟᴇᴀ𝔰ᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇ𝔰ᴛᴀʀᴛɪɴɢ)")
     else:
-      await event.edit(f"ᴛʜᴇ {name} ɪs ɴᴏᴛ ɪɴ sᴜᴅᴏ 😑😑")
+      await event.edit(f"ᴛʜᴇ {name} ɪ𝔰 ɴᴏᴛ ɪɴ 𝔰ᴜᴅᴏ 😑😑")
     if heroku_var["SUDO_USERS"] == None:
        await event.edit(f"ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ ɪs ᴇᴍᴘʏᴛʏ 😑😑")
 @borg.on(extremepro_cmd("sudo"))
 async def sudos(event):
   if sudolist:
-    await event.edit("sᴜᴅᴏ ɪs ᴇɴᴇᴀʙʟᴇᴅ ᴛʏᴘᴇ `.listsudo` ғᴏʀ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ")
+    await event.edit("𝔰ᴜᴅᴏ ɪ𝔰 ᴇɴᴇᴀʙʟᴇᴅ")
   else:
      await event.edit("sᴜᴅᴏ ɪs ᴏғғ")            
 @borg.on(extremepro_cmd("listsudo"))
