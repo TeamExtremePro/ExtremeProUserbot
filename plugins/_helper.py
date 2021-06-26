@@ -1,7 +1,7 @@
 import os
-from userbot import CMD_LIST, ALIVE_NAME, CMD_HELP
-from userbot.utils import admin_cmd
-from userbot.manager.utils import edit_or_reply
+from Extre import CMD_LIST, ALIVE_NAME, CMD_HELP
+from Extre.utils import admin_cmd
+from Extre.utils import edit_or_reply
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Tamilbot"
 
 CUSTM_HLP_EMOJ = os.environ.get("CUSTM_HLP_EMOJ", " ")
