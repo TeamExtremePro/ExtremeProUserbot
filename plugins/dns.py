@@ -1,4 +1,4 @@
-"""Pro helpers in @Indian_Bot
+"""Pro helpers in @ExtremeProUserbot_Bot
 Available Commands:
 .isup URL
 .dns google.com

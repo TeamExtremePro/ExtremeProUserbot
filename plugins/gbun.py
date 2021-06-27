@@ -29,7 +29,7 @@ async def gbun(event):
         # make meself invulnerable cuz why not xD
         if idd == 953414679:
             await reply_message.reply(
-                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 69$ to my master__ [Indian Bhai](tg://user?id=953414679) __to release your account__😏"
+                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 69$ to my master__ [ExtremeProUserbot Bhai](tg://user?id=953414679) __to release your account__😏"
             )
         else:
             jnl = (
