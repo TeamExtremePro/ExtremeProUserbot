@@ -1,11 +1,15 @@
 """Get Administrators of any Chat*
 Syntax: .get_admin"""
-from telethon import events
-from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
-from Extre.utils import extremepro_cmd
+from telethon.tl.types import (
+    ChannelParticipantAdmin,
+    ChannelParticipantCreator,
+    ChannelParticipantsAdmins,
+)
+
+from userbot.utils import admin_cmd
 
 
-@borg.on(extremepro_cmd("get_ad?(m)in ?(.*)"))
+@borg.on(admin_cmd("get_ad?(m)in ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -34,12 +38,16 @@ async def _(event):
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantCreator):
-                    mentions += "\n 🔱 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "\n 👑 [{}](tg://user?id={}) `{}`".format(
+                        x.first_name, x.id, x.id
+                    )
         mentions += "\n"
         async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
             if not x.deleted:
                 if isinstance(x.participant, ChannelParticipantAdmin):
-                    mentions += "\n 🥇 [{}](tg://user?id={}) `{}`".format(x.first_name, x.id, x.id)
+                    mentions += "\n ⚜️ [{}](tg://user?id={}) `{}`".format(
+                        x.first_name, x.id, x.id
+                    )
             else:
                 mentions += "\n `{}`".format(x.id)
     except Exception as e:

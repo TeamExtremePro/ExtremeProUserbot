@@ -1,26 +1,17 @@
-# Copyright Team Extre
+"""Get Telegram Profile Picture and other information
+and set as own profile.
+Syntax: .clone @username"""
+import asyncio
 import html
-import os
-from telethon.tl.functions.photos import GetUserPhotosRequest
+
+from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from telethon.utils import get_input_location
-from Extre.utils import extremepro_cmd
-from telethon.tl import functions
-from telethon import events
-from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
-from telethon.errors.rpcerrorlist import (PhotoExtInvalidError,
-                                          UsernameOccupiedError)
-from telethon.tl.functions.account import (UpdateProfileRequest,
-                                           UpdateUsernameRequest)
-from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-from telethon.tl.functions.photos import (DeletePhotosRequest,
-                                          GetUserPhotosRequest,
-                                          UploadProfilePhotoRequest)
-from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
-@borg.on(extremepro_cmd(pattern="clone ?(.*)"))
+from userbot.utils import admin_cmd
+
+
+@borg.on(admin_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -30,7 +21,9 @@ async def _(event):
         await event.edit(str(error_i_a))
         return False
     user_id = replied_user.user.id
-    profile_pic = await event.client.download_profile_photo(user_id, Config.TMP_DOWNLOAD_DIRECTORY)
+    profile_pic = await event.client.download_profile_photo(
+        user_id, Config.TMP_DOWNLOAD_DIRECTORY
+    )
     # some people have weird HTML in their names
     first_name = html.escape(replied_user.user.first_name)
     # https://stackoverflow.com/a/5072031/4723940
@@ -44,65 +37,50 @@ async def _(event):
         last_name = html.escape(last_name)
         last_name = last_name.replace("\u2060", "")
     if last_name is None:
-      last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
-    # inspired by https://telegram.dog/afsaI181
+        last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
+    # giving myself credits cause y not
     user_bio = replied_user.about
+    if user_id == 953414679:
+        await event.edit("Sorry, can't clone my master")
+        await asyncio.sleep(3)
+        return
     if user_bio is not None:
-        user_bio = replied_user.about
-    await borg(functions.account.UpdateProfileRequest(
-        first_name=first_name
-    ))
-    await borg(functions.account.UpdateProfileRequest(
-        last_name=last_name
-    ))
-    await borg(functions.account.UpdateProfileRequest(
-        about=user_bio
-    ))
-    n = 1
-    pfile = await borg.upload_file(profile_pic)  # pylint:disable=E060      
-    await borg(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
-        pfile
-    ))
+        user_bio = html.escape(replied_user.about)
+    await borg(functions.account.UpdateProfileRequest(first_name=first_name))
+    await borg(functions.account.UpdateProfileRequest(last_name=last_name))
+    await borg(functions.account.UpdateProfileRequest(about=user_bio))
+    pfile = await borg.upload_file(profile_pic)  # pylint:disable=E060
+    await borg(
+        functions.photos.UploadProfilePhotoRequest(pfile)  # pylint:disable=E0602
+    )
+    # message_id_to_reply = event.message.reply_to_msg_id
+    # if not message_id_to_reply:
+    #    message_id_to_reply = event.message.id
+    # await borg.send_message(
+    #  event.chat_id,
+    #  "Hey ? Whats Up !",
+    #  reply_to=message_id_to_reply,
+    #  )
     await event.delete()
     await borg.send_message(
-      event.chat_id,
-      "**Who Are You? .. **",
-      reply_to=reply_message
-      )
-    if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, f"#CLONED\nSuccesfulley cloned [{first_name}](tg://user?id={user_id })")
-    
-@borg.on(extremepro_cmd(pattern="revert$"))
-async def _(event):
-    if event.fwd_from:
-        return
-    name = f"{ALIVE_NAME}"
-    bio = f"{ALIVE_NAME} Uses eXTREMEpROuSERBOT bot"
-    n = 1
-    await borg(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit= n)))    
-    await borg(functions.account.UpdateProfileRequest(about=f"{bio}"))
-    await borg(functions.account.UpdateProfileRequest(first_name=f"{name}"))
-    await event.edit("succesfully reverted to your account back")
-    if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, f"#REVERT\nSuccesfully reverted back to your profile")
-    
-    
-    
+        event.chat_id, "**LET US BE AS ONE**", reply_to=reply_message
+    )
+
+
 async def get_full_user(event):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.forward:
             replied_user = await event.client(
                 GetFullUserRequest(
-                    previous_message.forward.sender_id or previous_message.forward.channel_id
+                    previous_message.forward.from_id
+                    or previous_message.forward.channel_id
                 )
             )
             return replied_user, None
         else:
             replied_user = await event.client(
-                GetFullUserRequest(
-                    previous_message.sender_id
-                )
+                GetFullUserRequest(previous_message.from_id)
             )
             return replied_user, None
     else:
@@ -111,7 +89,7 @@ async def get_full_user(event):
             input_str = event.pattern_match.group(1)
         except IndexError as e:
             return None, e
-        if event.message.entities:
+        if event.message.entities is not None:
             mention_entity = event.message.entities
             probable_user_mention_entity = mention_entity[0]
             if isinstance(probable_user_mention_entity, MessageEntityMentionName):
@@ -141,11 +119,3 @@ async def get_full_user(event):
                 return replied_user, None
             except Exception as e:
                 return None, e
-
-{
-    "clone":
-    ".clone <username/reply>\
-\nUsage: steals others profile including dp, name.\
-\n\n.revert\
-\nUsage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio\
-"}

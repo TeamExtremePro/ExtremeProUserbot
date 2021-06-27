@@ -1,7 +1,9 @@
-
 # Copyright (C) 2019 The Raphielscape Company LLC.
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+#
+# Licensed under the Raphielscape Public License, Version 1.b (the "License");
 # you may not use this file except in compliance with the License.
+#
+""" Userbot module containing various sites direct links generators"""
 
 import json
 import re
@@ -12,16 +14,14 @@ from random import choice
 import requests
 from bs4 import BeautifulSoup
 from humanize import naturalsize
-
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
-from Extre import CMD_HELP
+from uniborg.util import admin_cmd
 
 
-@bot.on(extremepro_cmd(outgoing=True, pattern=r"direct(?: |$)([\s\S]*)"))
-@bot.on(amanpandey_cmd(allow_sudo=True, pattern=r"direct(?: |$)([\s\S]*)"))
+# @borg.on(events.NewMessage(pattern=r"^.direct(?: |$)([\s\S]*)", outgoing=True))
+@borg.on(admin_cmd(pattern=r"direct(?: |$)([\s\S]*)"))
 async def direct_link_generator(request):
     """ direct links generator """
-    ExtremeProevent = await edit_or_reply(request, "`Processing...`")
+    await request.edit("`Processing...`")
     textx = await request.get_reply_message()
     message = request.pattern_match.group(1)
     if message:
@@ -29,13 +29,13 @@ async def direct_link_generator(request):
     elif textx:
         message = textx.text
     else:
-        await ExtremeProevent.edit("`Usage: .direct <url>`")
+        await request.edit("`Usage: .direct <url>`")
         return
     reply = ""
     links = re.findall(r"\bhttps?://.*\.\S+", message)
     if not links:
         reply = "`No links found!`"
-        await ExtremeProevent.edit(reply)
+        await request.edit(reply)
     for link in links:
         if "drive.google.com" in link:
             reply += gdrive(link)
@@ -58,8 +58,12 @@ async def direct_link_generator(request):
         elif "androidfilehost.com" in link:
             reply += androidfilehost(link)
         else:
-            reply += re.findall(r"\bhttps?://(.*?[^/]+)", link)[0] + "is not supported"
-    await ExtremeProevent.edit(reply)
+            reply += (
+                "`"
+                + re.findall(r"\bhttps?://(.*?[^/]+)", link)[0]
+                + "is not supported`\n"
+            )
+    await request.edit(reply)
 
 
 def gdrive(url: str) -> str:
@@ -98,7 +102,7 @@ def gdrive(url: str) -> str:
         )
         dl_url = response.headers["location"]
         if "accounts.google.com" in dl_url:
-            reply += "Link is not public!"
+            reply += "`Link is not public!`\n"
             return reply
     reply += f"[{name}]({dl_url})\n"
     return reply
@@ -144,7 +148,8 @@ def yandex_disk(url: str) -> str:
     except IndexError:
         reply = "`No Yandex.Disk links found`\n"
         return reply
-    api = "https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key={}"
+    api = "https://cloud-api.yandex.net/v1/disk/"
+    api += "public/resources/download?public_key={}"
     try:
         dl_url = requests.get(api.format(link)).json()["href"]
         name = dl_url.split("filename=")[1].split("&disposition")[0]
@@ -168,7 +173,6 @@ def mega_dl(url: str) -> str:
     result = popen(command).read()
     try:
         data = json.loads(result)
-        print(data)
     except json.JSONDecodeError:
         reply += "`Error: Can't extract the link`\n"
         return reply
@@ -346,16 +350,3 @@ def useragent():
     ).findAll("td", {"class": "useragent"})
     user_agent = choice(useragents)
     return user_agent.text
-
-
-CMD_HELP.update(
-    {
-        "direct_links": "**Plugin : **`direct`\
-        \n\n**Syntax : **`.direct <url>`\n"
-        "**Function : **Reply to a link or paste a URL to\n"
-        "generate a direct download link\n\n"
-        "List of supported URLs:\n"
-        "`Google Drive - Cloud Mail - Yandex.Disk - AFH - "
-        "ZippyShare - MediaFire - SourceForge - OSDN - GitHub`"
-    }
-)

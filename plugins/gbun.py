@@ -1,22 +1,21 @@
-# This is a troll indeed ffs *facepalm*
 import asyncio
 
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from Extre.utils import extremepro_cmd
+from userbot.utils import admin_cmd
 
 
-@borg.on(extremepro_cmd(pattern="gbun"))
+@borg.on(admin_cmd("gbun"))
 async def gbun(event):
     if event.fwd_from:
         return
     gbunVar = event.text
     gbunVar = gbunVar[6:]
     mentions = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\n`"
-    no_reason = "__Reason: Potential spammer. __"
+    no_reason = "__Reason: Not given __"
     await event.edit("**Summoning out le Gungnir ❗️⚜️☠️**")
-    await asyncio.sleep(3.5)
+    asyncio.sleep(3.5)
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f""
@@ -28,19 +27,19 @@ async def gbun(event):
         usname = replied_user.user.username
         idd = reply_message.from_id
         # make meself invulnerable cuz why not xD
-        if idd == 1118936839:
+        if idd == 953414679:
             await reply_message.reply(
-                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 69$ to my master__ [Krish1303y](tg://user?id=1311769691) __to release your account__😏"
+                "`Wait a second, This is my master!`\n**How dare you threaten to ban my master nigger!**\n\n__Your account has been hacked! Pay 69$ to my master__ [Indian Bhai](tg://user?id=953414679) __to release your account__😏"
             )
         else:
             jnl = (
                 "`Warning!! `"
                 "[{}](tg://user?id={})"
                 "` 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\n\n`"
-                "**user's Name: ** __{}__\n"
+                "**Person's Name: ** __{}__\n"
                 "**ID : ** `{}`\n"
             ).format(firstname, idd, firstname, idd)
-            if usname == None:
+            if usname is None:
                 jnl += "**Victim Nigga's username: ** `Doesn't own a username!`\n"
             elif usname != "None":
                 jnl += "**Victim Nigga's username** : @{}\n".format(usname)
@@ -52,6 +51,6 @@ async def gbun(event):
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
-        mention = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential spammer. `"
+        mention = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Not Given `"
         await event.reply(mention)
     await event.delete()
