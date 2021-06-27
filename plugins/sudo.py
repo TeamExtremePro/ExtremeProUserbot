@@ -27,7 +27,7 @@ async def add_sudo(event):
        heroku_var["SUDO_USERS"] = id
     else:
        sudousers = f'{sudolist} {id}'
-       await event.edit(f"Oᴋᴀʏ **{name}** ɪs ᴀᴅᴅᴇᴅ ᴏɴ sᴜᴅᴏ ᴜsᴇʀs (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
+       await event.edit(f"Oᴋᴀʏ **{name}** ɪ𝔰 𝔄ᴅᴅᴇᴅ 𝔒ɴ 𝔰ᴜᴅᴏ ʟɪ𝔰ᴛ (ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪ ᴀᴍ ʀᴇsᴛᴀʀᴛɪɴɢ)")
        heroku_var["SUDO_USERS"] = sudousers
   else:
     await event.edit("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴘʟᴇᴀsᴇ")                              
