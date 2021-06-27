@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "https://www.github.com/indianbhaiya/IndianBot"
+          find: "IndianBot"
 
-          replace: "https://github.com/TeamExtremePro/ExtremeProUserbot"
+          replace: "ExtremeProUserbot"
 
       - name: Create Pull Request
 
