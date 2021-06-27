@@ -7,7 +7,7 @@ import re
 
 from telethon import events
 
-import userbot.plugins.sql_helper.blacklist_sql as sql
+import sql_helper.blacklist_sql as sql
 from userbot.utils import admin_cmd
 
 

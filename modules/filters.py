@@ -20,7 +20,7 @@ import re
 from telethon import utils
 from telethon.tl import types
 
-from userbot.plugins.sql_helper.filter_sql import (
+from sql_helper.filter_sql import (
     add_filter,
     get_all_filters,
     remove_all_filters,

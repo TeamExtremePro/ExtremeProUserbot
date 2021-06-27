@@ -4,7 +4,7 @@ added speciality for sudos if u kang give me credits
 """
 import asyncio
 
-from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from sql_helper.mute_sql import is_muted, mute, unmute
 from userbot.utils import admin_cmd
 
 
