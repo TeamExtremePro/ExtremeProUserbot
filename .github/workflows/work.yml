@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "userbot.plugins.sql_helper"
+          find: "Raphielscape Company LLC"
 
-          replace: "sql_helper"
+          replace: "Aman Pandey"
 
       - name: Create Pull Request
 
