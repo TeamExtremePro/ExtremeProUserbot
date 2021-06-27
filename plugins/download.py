@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+# Copyright (C) 2019 The Aman Pandey.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 
 import asyncio
