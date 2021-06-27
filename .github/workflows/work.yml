@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "Raphielscape Company LLC"
+          find: "https://www.github.com/indianbhaiya/IndianBot"
 
-          replace: "Aman Pandey"
+          replace: "https://github.com/TeamExtremePro/ExtremeProUserbot"
 
       - name: Create Pull Request
 
