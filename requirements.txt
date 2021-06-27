@@ -4,3 +4,4 @@ pymongo
 apscheduler
 configparser
 ast
+covid
