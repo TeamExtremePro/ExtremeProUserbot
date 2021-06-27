@@ -1,4 +1,4 @@
-""" Userbot module for frying stuff. ported by @IndianBot """
+""" Userbot module for frying stuff. ported by @ExtremeProUserbot """
 import io
 from random import randint, uniform
 

@@ -11,7 +11,7 @@ from uniborg.util import admin_cmd
 
 from userbot import AUTONAME
 
-DEFAULTUSER = str(AUTONAME) if AUTONAME else "IndianBot"
+DEFAULTUSER = str(AUTONAME) if AUTONAME else "ExtremeProUserbot"
 
 
 @borg.on(admin_cmd(pattern=r"deploy"))
@@ -30,7 +30,7 @@ async def _(event):
     await event.edit("Typing...")
 
     animation_chars = [
-        "**Heroku Connecting To Latest Github Build (indianbhaiya/IndianBot)**",
+        "**Heroku Connecting To Latest Github Build (indianbhaiya/ExtremeProUserbot)**",
         "**Build started by user** **{DEFAULTUSER}**",
         "**Deploy** `535a74f0` **by user** **{DEFAULTUSER}**",
         "**Restarting Heroku Server...**",
@@ -39,8 +39,8 @@ async def _(event):
         "**Process exited with** `status 143`",
         "**Starting process with command** `python3 -m stdborg`",
         "**State changed from starting to up**",
-        "__INFO:IndianBot:Logged in as 557667062__",
-        "__INFO:IndianBot:Successfully loaded all plugins__",
+        "__INFO:ExtremeProUserbot:Logged in as 557667062__",
+        "__INFO:ExtremeProUserbot:Successfully loaded all plugins__",
         "**Build Succeeded**",
     ]
 

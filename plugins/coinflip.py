@@ -1,4 +1,4 @@
-"""CoinFlip for @IndianBot
+"""CoinFlip for @ExtremeProUserbot
 Syntax: .coinflip [optional_choice]"""
 import random
 

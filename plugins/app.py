@@ -94,7 +94,7 @@ async def apk(e):
             + "'>View in Play Store</a>"
         )
 
-        app_details += "\n\n===> @IndianBot_Official <==="
+        app_details += "\n\n===> @ExtremeProUserbot_Official <==="
 
         await e.edit(app_details, link_preview=True, parse_mode="HTML")
 
@@ -187,9 +187,9 @@ async def apkr(e):
             + "'>View in Play Store</a>"
         )
 
-        app_details += "\n\n<b>Download : </b> <a href='https://t.me/IndianBot_Official'>Request_Here by typing #request</a>"
+        app_details += "\n\n<b>Download : </b> <a href='https://t.me/ExtremeProUserbot_Official'>Request_Here by typing #request</a>"
 
-        app_details += "\n\n===> @IndianBot_Official <==="
+        app_details += "\n\n===> @ExtremeProUserbot_Official <==="
 
         await e.edit(app_details, link_preview=True, parse_mode="HTML")
 

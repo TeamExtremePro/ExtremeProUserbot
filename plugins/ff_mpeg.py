@@ -1,4 +1,4 @@
-"""FFMpeg for @IndianBot
+"""FFMpeg for @ExtremeProUserbot
 """
 import asyncio
 import os

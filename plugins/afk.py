@@ -1,4 +1,4 @@
-"""AFK Plugin for IndianBot
+"""AFK Plugin for ExtremeProUserbot
 Syntax: .afk REASON"""
 import asyncio
 import datetime

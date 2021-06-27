@@ -69,13 +69,13 @@ async def _(event):
 @borg.on(admin_cmd("source$"))
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("https://github.com/indianbhaiya/IndianBot")
+        await e.edit("https://github.com/indianbhaiya/ExtremeProUserbot")
 
 
 @borg.on(admin_cmd("readme$"))
 async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("https://github.com/indianbhaiya/IndianBot/blob/master/README.md")
+        await e.edit("https://github.com/indianbhaiya/ExtremeProUserbot/blob/master/README.md")
 
 
 @borg.on(admin_cmd("heart$"))

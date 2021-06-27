@@ -101,7 +101,7 @@ async def carbon_api(mytext):
         await mytext.client.send_file(
             mytext.chat_id,
             file,
-            caption="<< Here's Your Carbon Boi,\n  Carbonised By [IndianBot](https://github.com/TeamExtremePro/ExtremeProUserbot)>>",
+            caption="<< Here's Your Carbon Boi,\n  Carbonised By [ExtremeProUserbot](https://github.com/TeamExtremePro/ExtremeProUserbot)>>",
             force_document=True,
             reply_to=mytext.message.reply_to_msg_id,
         )
