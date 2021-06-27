@@ -1,7 +1,6 @@
-Extre==0.12
+Extre==0.13
 pip
 pymongo
-telethon
 apscheduler
 configparser
 ast
