@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "Indian"
+          find: "userbot.plugins.sql_helper"
 
-          replace: "ExtremeProUserbot"
+          replace: "sql_helper"
 
       - name: Create Pull Request
 
