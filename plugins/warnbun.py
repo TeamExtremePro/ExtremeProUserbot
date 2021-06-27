@@ -22,7 +22,7 @@ async def _(event):
     await event.delete()
 
 
-""".admin Plugin for @IndianBot"""
+""".admin Plugin for @ExtremeProUserbotBot"""
 
 
 @borg.on(admin_cmd("warn2"))
@@ -44,7 +44,7 @@ async def _(event):
     await event.delete()
 
 
-""".admin Plugin for @IndianBot"""
+""".admin Plugin for @ExtremeProUserbotBot"""
 
 
 @borg.on(admin_cmd("warn3"))
@@ -64,7 +64,7 @@ async def _(event):
     await event.delete()
 
 
-""".admin Plugin for @IndianBot"""
+""".admin Plugin for @ExtremeProUserbotBot"""
 
 
 @borg.on(admin_cmd("warn0"))
@@ -84,7 +84,7 @@ async def _(event):
     await event.delete()
 
 
-""".admin Plugin for @IndianBot"""
+""".admin Plugin for @ExtremeProUserbotBot"""
 
 
 @borg.on(admin_cmd("ocb"))

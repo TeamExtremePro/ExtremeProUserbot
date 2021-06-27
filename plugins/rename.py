@@ -180,7 +180,7 @@ async def _(event):
                     event.chat_id,
                     downloaded_file_name,
                     thumb=thumb,
-                    caption="reuploaded by [IndianBot](https://www.github.com/indianbhaiya/IndianBot",
+                    caption="reuploaded by [ExtremeProUserbotBot](https://www.github.com/indianbhaiya/ExtremeProUserbotBot",
                     force_document=False,
                     allow_cache=False,
                     reply_to=event.message.id,

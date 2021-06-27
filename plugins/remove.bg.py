@@ -42,7 +42,7 @@ async def _(event):
         reply_message = await event.get_reply_message()
         # check if media message
         await event.edit(
-            "Connecting to official IndianBot server and analysing that img ..."
+            "Connecting to official ExtremeProUserbotBot server and analysing that img ..."
         )
         try:
             downloaded_file_name = await borg.download_media(
@@ -64,7 +64,7 @@ async def _(event):
     contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
         with io.BytesIO(output_file_name.content) as remove_bg_image:
-            remove_bg_image.name = "@IndianArMyGiveaway.png"
+            remove_bg_image.name = "@ExtremeProUserbotArMyGiveaway.png"
             await borg.send_file(
                 event.chat_id,
                 remove_bg_image,
@@ -76,13 +76,13 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.edit(
-            "Removed dat annoying Backgroup in {} seconds, powered by @IndianArMyGiveaway".format(
+            "Removed dat annoying Backgroup in {} seconds, powered by @ExtremeProUserbotArMyGiveaway".format(
                 ms
             )
         )
     else:
         await event.edit(
-            "ReMove.BG API returned Errors. Please report to @IndianArMyGiveaway\n`{}".format(
+            "ReMove.BG API returned Errors. Please report to @ExtremeProUserbotArMyGiveaway\n`{}".format(
                 output_file_name.content.decode("UTF-8")
             )
         )

@@ -1,5 +1,5 @@
-# © By StarkGang™ And IndianBot™
-# For F.r.i.d.a.y And Indianbot
+# © By StarkGang™ And ExtremeProUserbotBot™
+# For F.r.i.d.a.y And ExtremeProUserbotbot
 """ Userbot module which contains everything related to \
     downloading/uploading from/to the server. """
 

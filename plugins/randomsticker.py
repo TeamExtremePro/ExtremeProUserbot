@@ -35,10 +35,10 @@ def choser(cmd, pack, blacklist={}):
         await event.respond(file=random.choice(docs))
 
 
-choser("rndm", "IndianBhai_ke_locker_me")
+choser("rndm", "ExtremeProUserbotBhai_ke_locker_me")
 choser(
     "animestkr",
-    "IndianBhai_ke_Animated",
+    "ExtremeProUserbotBhai_ke_Animated",
     {
         1653974154589768377,
         1653974154589768312,
