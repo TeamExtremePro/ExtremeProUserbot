@@ -1,4 +1,4 @@
-Extre==0.11
+Extre
 pip
 pymongo
 telethon
