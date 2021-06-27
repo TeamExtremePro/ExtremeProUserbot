@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "sudo_cmd"
+          find: "userbot.plugins.sql_helper"
 
-          replace: "amanpandey_cmd"
+          replace: "sql_helper"
 
       - name: Create Pull Request
 
