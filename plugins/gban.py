@@ -80,7 +80,7 @@ async def gspider(Extre):
     except:
         return await ExtremePro.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1037581197:
+        if user.id == 1725374070:
             return await ExtremePro.edit(
                 f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
             )
@@ -146,8 +146,8 @@ async def gspider(Extre):
     except:
         return await ExtremePro.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1100231654:
-            return await ExtremePro.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
+        if user.id == 1725374070:
+            return await ExtremePro.edit("**You Cant gban him... as a result you can not ungban him...He is Your Father And He is My Creator!**")
         try:
             from Extre.modules.sql_helper.gmute_sql import ungmute
         except:
