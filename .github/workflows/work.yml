@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "userbot.plugins.sql_helper"
+          find: "https://github.com/indianbhaiya/ExtremeProUserbot"
 
-          replace: "sql_helper"
+          replace: "https://github.com/TeamExtremePro/ExtremeProUserbot"
 
       - name: Create Pull Request
 
