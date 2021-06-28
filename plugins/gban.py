@@ -60,7 +60,7 @@ async def gspider(Extre):
     else:
         ExtremePro = await lol.edit("Wait Processing.....")
     me = await Extre.client.get_me()
-    await ExtremePro.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
+    await ExtremePro.edit(f"Global Ban Is Coming By {DEFUALTUSER}")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await Extre.get_chat()
@@ -82,7 +82,7 @@ async def gspider(Extre):
     if user:
         if user.id == 1725374070:
             return await ExtremePro.edit(
-                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
+                f"**Didn't , Your Teacher Taught You ? That You Cant Gban your Father😑😑🖕**"
             )
         try:
             from Extre.modules.sql_helper.gmute_sql import gmute
