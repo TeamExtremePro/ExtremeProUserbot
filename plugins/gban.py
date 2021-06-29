@@ -1,5 +1,5 @@
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from Extre import CMD_HELP
+from Extre import CMD_HELP, ALIVE_NAME
 from Extre.utils import extremepro_cmd, amanpandey_cmd
 import html
 from telethon import events
@@ -60,7 +60,7 @@ async def gspider(Extre):
     else:
         ExtremePro = await lol.edit("Wait Processing.....")
     me = await Extre.client.get_me()
-    await ExtremePro.edit(f"Global Ban Is Coming By {DEFUALTUSER}")
+    await ExtremePro.edit(f"Global Ban Is Coming By {ALIVE_NAME}")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await Extre.get_chat()
