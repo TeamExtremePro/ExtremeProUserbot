@@ -5,7 +5,11 @@ I_AM_DEVELOPER = os.environ.get("I_AM_DEVELOPER", None)
 
 @command(pattern="^.bash ?(.*)")
 async def _(event):
-    if I_AM_DEVELOPER("I_DEV") != "True":
+    if I_AM_DEVELOPER("I_AM_DEVELOPER") != "True":
+        return await eor(
+            event,
+            f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_DEV True`\n\nThis Might Be Dangerous.",
+          )
     if event.fwd_from:
         return
     PROCESS_RUN_TIME = 100
