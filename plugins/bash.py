@@ -1,6 +1,7 @@
 import asyncio
 import io
 import time
+import os
 I_AM_DEVELOPER = os.environ.get("I_AM_DEVELOPER", None)
 
 @command(pattern="^.bash ?(.*)")
