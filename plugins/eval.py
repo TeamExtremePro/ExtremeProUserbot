@@ -11,7 +11,7 @@ from uniborg.util import admin_cmd
 @borg.on(admin_cmd("eval"))
 async def _(event):
     if str("Dev") == "True":
-        pass
+        pass:
     if event.fwd_from:
         return
     await event.edit("Processing ...")
