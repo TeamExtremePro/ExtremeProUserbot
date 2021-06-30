@@ -1,0 +1,7 @@
+Extre
+pip
+pymongo
+apscheduler
+configparser
+ast
+covid
