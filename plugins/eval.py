@@ -9,6 +9,11 @@ from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd("eval"))
 async def _(event):
+    if I_AM_DEVELOPER("I_AM_DEVELOPER") != "True":
+        return await eor(
+            event,
+            f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_DEV True`\n\nThis Might Be Dangerous.",
+        )
     if event.fwd_from:
         return
     await event.edit("Processing ...")
