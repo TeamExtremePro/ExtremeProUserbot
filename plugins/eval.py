@@ -9,11 +9,10 @@ from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("eval"))
-async def _(event):
-    if str("Dev") == "False":
-        await bot.send_message(event.chat_id, f"This is Developers Can use if you know about python or other languages tthen only use by doing '.set var I_AM_DEVELOPER True' Else Dont Because This can Hack Your Account Also")
+if str("Dev") == "False":
+    await bot.send_message(event.chat_id, f"This is Developers Can use if you know about python or other languages tthen only use by doing '.set var I_AM_DEVELOPER True' Else Dont Because This can Hack Your Account Also")
     else:
-        pass
+async def _(event):
     if event.fwd_from:
         return
     await event.edit("Processing ...")
