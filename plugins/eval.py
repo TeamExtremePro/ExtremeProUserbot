@@ -3,7 +3,8 @@ Syntax: .eval PythonCode"""
 import io
 import sys
 import traceback
-
+import os
+I_AM_DEVELOPER = os.environ.get("I_AM_DEVELOPER", None)
 from uniborg.util import admin_cmd
 
 
