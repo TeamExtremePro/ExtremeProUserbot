@@ -11,9 +11,6 @@ from uniborg.util import admin_cmd
 @borg.on(admin_cmd("eval"))
 async def _(event):
     if str("Dev") == "True":
-        pass
-    else:
-        await bot.send_message(event.chat_id, f"This is Developers Can use if you know about python or other languages tthen only use by doing '.set var I_AM_DEVELOPER True' Else Dont Because This can Hack Your Account Also")
     if event.fwd_from:
         return
     await event.edit("Processing ...")
@@ -63,3 +60,5 @@ async def _(event):
 async def aexec(code, event):
     exec(f"async def __aexec(event): " + "".join(f"\n {l}" for l in code.split("\n")))
     return await locals()["__aexec"](event)
+    else:
+        await bot.send_message(event.chat_id, f"This is Developers Can use if you know about python or other languages tthen only use by doing '.set var I_AM_DEVELOPER True' Else Dont Because This can Hack Your Account Also")
