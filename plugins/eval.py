@@ -10,7 +10,7 @@ from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd("eval"))
 async def _(event):
-    if str("DEV") = "True":
+    if str("DEV") == "True":
         pass
     else
         return await eor(
