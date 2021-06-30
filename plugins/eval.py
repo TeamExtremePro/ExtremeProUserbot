@@ -13,7 +13,7 @@ async def _(event):
     if str("Dev") == "True":
         pass
     else:
-        return await eor(
+        return await bot(
             event,
             f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_AM_DEVELOPER True`\n\nThis Might Be Dangerous.",
         )
