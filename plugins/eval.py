@@ -12,7 +12,7 @@ from uniborg.util import admin_cmd
 async def _(event):
     if str("Dev") == "True":
         pass
-    else
+    else:
         return await eor(
             event,
             f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_AM_DEVELOPER True`\n\nThis Might Be Dangerous.",
