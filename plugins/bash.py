@@ -1,10 +1,11 @@
 import asyncio
 import io
 import time
-
+I_AM_DEVELOPER = os.environ.get("I_AM_DEVELOPER", None)
 
 @command(pattern="^.bash ?(.*)")
 async def _(event):
+    if I_AM_DEVELOPER("I_DEV") != "True":
     if event.fwd_from:
         return
     PROCESS_RUN_TIME = 100
