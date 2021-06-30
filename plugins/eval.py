@@ -13,7 +13,7 @@ async def _(event):
     if str("Dev") == "True":
         pass
         if event.fwd_from:
-        return
+            return
     await event.edit("Processing ...")
     cmd = event.text.split(" ", maxsplit=1)[1]
     reply_to_id = event.message.id
