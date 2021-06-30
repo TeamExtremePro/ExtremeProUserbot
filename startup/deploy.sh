@@ -27,7 +27,7 @@ echo '
 '
 pip install --upgrade pip setuptools wheel
 pip install search-engine-parser
-pip install -r https://github.com/TeamExtremePro/ExtremeProUserbot/blob/master/requirements.txt
+pip3 install -U -r requirements.txt
 
 echo "
 			      ┏┳┓╋┏┓╋╋╋╋┏┓┏┓
