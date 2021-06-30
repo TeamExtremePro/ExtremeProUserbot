@@ -13,10 +13,7 @@ async def _(event):
     if str("Dev") == "True":
         pass
     else:
-        return await bot(
-            event,
-            f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_AM_DEVELOPER True`\n\nThis Might Be Dangerous.",
-        )
+        await bot.send_message(event.chat_id, f"This is Developers Can use if you know about python or other languages tthen only use by doing '.set var I_AM_DEVELOPER True' Else Dont Because This can Hack Your Account Also")
     if event.fwd_from:
         return
     await event.edit("Processing ...")
