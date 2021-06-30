@@ -4,16 +4,18 @@ import io
 import sys
 import traceback
 import os
-I_AM_DEVELOPER = os.environ.get("I_AM_DEVELOPER", None)
+Dev = os.environ.get("I_AM_DEVELOPER", None)
 from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("eval"))
 async def _(event):
-    if I_AM_DEVELOPER("I_AM_DEVELOPER") != "True":
+    if Dev("I_AM_DEVELOPER") = "True":
+        pass
+    else
         return await eor(
             event,
-            f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_DEV True`\n\nThis Might Be Dangerous.",
+            f"Developer Restricted!\nIf you know what this does, and want to proceed\n\n`.setvar I_AM_DEVELOPER True`\n\nThis Might Be Dangerous.",
         )
     if event.fwd_from:
         return
