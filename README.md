@@ -16,7 +16,7 @@ Extreme Pro is a telethon based userbot
 
 ## Special Note
 WE Respect To Authors.
-Whe Havnt kanged Whatever We Have Taken From Other USERBOTS Given Credits So No Mean To Say Kang. Copying But Giving Credits isnt Called a Kang. If You Are A Intellegent Person Then You Will Not Say This Is a Kangged Bot Thank You.
+Whe Havnt kanged Whatever We Have Taken/ Imported From Other USERBOTS Given Credits So No Mean To Say Kang. Copying But Giving Credits isnt Called a Kang. If You Are A Intellegent Person Then You Will Not Say This Is a Kangged Bot Thank You.
 Anyone Intrested To Join our Team THen Join We Are Waiting
 
 ## TEAM EXTREMEPRO
