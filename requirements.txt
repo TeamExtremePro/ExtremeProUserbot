@@ -6,3 +6,4 @@ configparser
 ast
 covid
 redis
+dill
