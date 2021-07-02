@@ -11,11 +11,22 @@ Extreme Pro is a telethon based userbot
 [![Contributors](https://img.shields.io/github/contributors/TEAMEXTREMEPRO/EXTREMEPROUSERBOT?style=flat-square&color=green)](https://github.com/TEAMEXTREMEPRO/EXTREMEPROUSERBOT/graphs/contributors)
 
 
-## credits
-#Team EXTREMEPRO
+# DO NOT KANG WITHOUT PERMISSON ELSE GET COPYRIGHT STRIKE
 
-AMAN PANDEY
-NoobExtreStranger
+WE Respect To Authors
+Whe Havnt kanged Whatever We Have Taken Given Credits So no Mean To Say KAng
+
+# A STABLE USERBOT BASED ON TELETHON
+## DEVS
+# Aman Pandey
+# Noob Stranger
+# GODBOYX
+# MAYANK RAJPUT 
+
+## SPEICAL THANKS ++ CREDITS
+# EXTREMEPRO USERBOT
+# LEGEND BOT
+# RAPHAIEL GANG
 
 
 ## String Session
