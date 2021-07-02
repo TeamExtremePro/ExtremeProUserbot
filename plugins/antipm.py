@@ -1,202 +1,241 @@
-import logging
-import utils
-from database import antipmdb as nicedb
-from telethon import functions, tl
+""" Userbot module for keeping control on who can PM you. """
+
+from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
+from telethon.tl.functions.messages import ReportSpamRequest
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.types import User
+
+from extreme import (BOTLOG, BOTLOG_CHATID, CMD_HELP, COUNT_PM, LASTMSG, LOGS,
+                     PM_AUTO_BAN, is_mongo_alive)
+from userbot.events import register, grp_exclude
+from database.dbhelper import (approval, approve, block_pm, notif_off,
+                                      notif_on, notif_state)
+
+# ========================= CONSTANTS ============================
+UNAPPROVED_MSG = (
+    "`Bleep blop! This is ExtremeProUserBot. Don't fret.\n\n`"
+    "`My master hasn't approved you to PM.`"
+    "`Please wait for my master to look in, he mostly approves PMs.\n\n`"
+    "`As far as I know, he doesn't usually approve retards though.`")
+# =================================================================
 
 
-class AntiPM:
-
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.ERROR)
-
-    FLOOD_CTRL = 0
-    ALLOWED = []
-    USERS_AND_WARNS = {}
-
-    WARNING = (
-        "<b>I have not allowed you to PM, please ask or say whatever</b>"
-        "<b> it is in a group chat or at least ask for my permission to PM</b>\n\n"
-        "<b>I'm letting you off the hook for this time but be warned that </b>"
-        "<b>you will be blocked & reported spam if you continue.</b>")
-
-    BLOCKED = (
-        "<b>I have warned you several times now. However, you did not stop </b>"
-        "<b>spamming my chat. Therefore, you have been blocked and reported </b>"
-        "<b>as spam. Good luck!</b>")
-
-    async def antipmxxx(message):
-        switch = utils.get_arg(message).lower()
-        if switch == "on":
-            await nicedb.delete("AntiPM")
-            await nicedb.set_antipm(True)
-            await message.edit("<i>AntiPM turned on</i>")
-        elif switch == "off":
-            await nicedb.delete("AntiPM")
-            await nicedb.set_antipm(False)
-            await message.edit("<i>AntiPM turned off</i>")
-        else:
-            await message.edit("<i>It's either on or off, pick one</i>")
-            return
-
-    async def approvexxx(message):
-        """Allows that person to PM you, you can either reply to user,
-type their username or use this in their chat"""
-        id = None if not utils.get_arg(message) else (await message.client.get_entity(utils.get_arg(message))).id
-        reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
-        chat = None if not hasattr(
-            message.to_id, "user_id") else message.chat_id
-        if not reply and not id and not chat:
-            await message.edit("<b>No user found</b>")
-            return
-        pick = reply or id or chat
-        if pick == (await message.client.get_me()).id:
-            await message.edit("<b>Why would you wanna approve yourself?</b>")
-            return
-        if await nicedb.check_approved(pick):
-            await message.edit("<i>User is already approved</i>")
-            return
-        else:
-            await nicedb.approve(pick)
-            await message.edit(
-                "<a href=tg://user?id={}>{}</a> <b>is approved to PM you now</b>"
-                .format(pick, (await message.client.get_entity(pick)).first_name))
-
-    async def disapprovexxx(message):
-        """Prevents that person to PM you, you can either reply to user,
-type their username or use this in their chat"""
-        id = None if not utils.get_arg(message) else (await message.client.get_entity(utils.get_arg(message))).id
-        reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
-        chat = None if not hasattr(
-            message.to_id, "user_id") else message.chat_id
-        if not reply and not id and not chat:
-            await message.edit("<b>No user found</b>")
-            return
-        pick = reply if not id and not chat else id or chat
-        if pick == (await message.client.get_me()).id:
-            await message.edit("<b>Why would you wanna disapprove yourself?</b>")
-            return
-        if not await nicedb.check_approved(pick):
-            await message.edit("<i>User is not approved</i>")
-            return
-        else:
-            await nicedb.disapprove(pick)
-            await message.edit(
-                "<a href=tg://user?id={}>{}</a> <b>is disapproved to PM you now</b>"
-                .format(pick, (await message.client.get_entity(pick)).first_name))
-
-    async def blockxxx(message):
-        """Simply blocks the person..duh!!"""
-        id = None if not utils.get_arg(message) else (await message.client.get_entity(utils.get_arg(message))).id
-        reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
-        chat = None if not hasattr(
-            message.to_id, "user_id") else message.chat_id
-        if not reply and not id and not chat:
-            await message.edit("<i>No user found</i>")
-            return
-        pick = reply or id or chat
-        if pick == (await message.client.get_me()).id:
-            await message.edit("<i>Why would you wanna block yourself?</i>")
-            return
-        await message.client(functions.contacts.BlockRequest(id=pick))
-        if await nicedb.check_approved(pick):
-            await nicedb.disapprove(pick)
-        await message.edit(
-            "<a href=tg://user?id={}>{}</a> <i>has been blocked</i>"
-            .format(pick, (await message.client.get_entity(pick)).first_name))
-
-    async def unblockxxx(message):
-        """Simply unblocks the person..duh!!"""
-        id = None if not utils.get_arg(message) else (await message.client.get_entity(utils.get_arg(message))).id
-        reply = None if not message.is_reply else (await message.get_reply_message()).sender_id
-        chat = None if not hasattr(
-            message.to_id, "user_id") else message.chat_id
-        if not reply and not id and not chat:
-            await message.edit("<i>No user found</i>")
-            return
-        pick = reply or id or chat
-        if pick == (await message.client.get_me()).id:
-            await message.edit("<i>Why would you wanna unblock yourself?</i>")
-            return
-        await message.client(functions.contacts.UnblockRequest(id=pick))
-        await message.edit(
-            "<a href=tg://user?id={}>{}</a> <i>has been unblocked</i>"
-            .format(pick, (await message.client.get_entity(pick)).first_name))
-
-    async def notifsxxx(message):
-        """Ah this one again...It turns on/off tag notification
-sounds from unwanted PMs. It auto-sends a
-a message in your name until that user gets blocked or approved"""
-        val = utils.get_arg(message)
-        if not val:
-            await message.edit("<i>Please type on/off</i>")
-            return
-        if val == "off":
-            await nicedb.delete("Notifications")
-            await nicedb.set_notif(False)
-            await message.edit("<i>Notifications from unapproved PMs muted</i>")
-        if val == "on":
-            await nicedb.delete("Notifications")
-            await nicedb.set_notif(True)
-            await message.edit("<i>Notifications from unapproved PMs unmuted</i>")
-
-    async def setlimitxxx(message):
-        """This one sets a max. message limit for unwanted
-PMs and when they go beyond it, bamm!"""
-        limit = int(utils.get_arg(message))
-        if not limit or not str(limit).isdigit():
-            await message.edit("<i>Please type a number</i>")
-            return
-        if limit > 0:
-            await nicedb.delete("Limit")
-            await nicedb.set_limit(limit)
-            await message.edit("<i>Max. PM message limit successfully updated</i>")
-
-    async def superblockxxx(message):
-        """If unwanted users spams your chat, the chat
-will be deleted when the idiot passes the message limit"""
-        val = utils.get_arg(message)
-        if not val:
-            await message.edit("<i>Please type on/off</i>")
-            return
-        if val == "on":
-            await nicedb.delete("SuperBlock")
-            await nicedb.set_sblock(True)
-            await message.edit("<i>Chats from unapproved PMs will be removed</i>")
-        if val == "off":
-            await nicedb.delete("SuperBlock")
-            await nicedb.set_sblock(False)
-            await message.edit("<i>Chats from unapproved PMs will not be removed anymore</i>")
-        setPM(command)
-
-    async def watchout(message):
-        if message.sender_id != (await message.client.get_me()).id and isinstance(message.to_id, tl.types.PeerUser):
-            if getattr(message.sender, "bot", None) or not await nicedb.check_antipm():
+@register(incoming=True, disable_edited=True, disable_errors=True)
+@grp_exclude()
+async def permitpm(event):
+    """ Permits people from PMing you without approval. \
+        Will block retarded nibbas automatically. """
+    if PM_AUTO_BAN:
+        if event.is_private and not (await event.get_sender()).bot:
+            if not is_mongo_alive():
                 return
-            user = (await message.get_sender()).id
-            if await nicedb.check_approved(user):
-                return
-            if not await nicedb.check_notifs():
-                await message.client.send_read_acknowledge(message.chat_id)
-            user_warns = 0 if user not in AntiPM.USERS_AND_WARNS else AntiPM.USERS_AND_WARNS[
-                user]
-            if user_warns <= await nicedb.check_limit() - 2:
-                user_warns += 1
-                AntiPM.USERS_AND_WARNS.update({user: user_warns})
-                if not AntiPM.FLOOD_CTRL > 0:
-                    AntiPM.FLOOD_CTRL += 1
+            apprv = await approval(event.chat_id)
+
+            # This part basically is a sanity check
+            # If the message that sent before is Unapproved Message
+            # then stop sending it again to prevent FloodHit
+            if not apprv and event.text != UNAPPROVED_MSG:
+                if event.chat_id in LASTMSG:
+                    prevmsg = LASTMSG[event.chat_id]
+                    # If the message doesn't same as previous one
+                    # Send the Unapproved Message again
+                    if event.text != prevmsg:
+                        # Searches for previously sent UNAPPROVED_MSGs
+                        async for message in event.client.iter_messages(
+                                event.chat_id,
+                                from_user='me',
+                                search=UNAPPROVED_MSG):
+                            # ... and deletes them !!
+                            await message.delete()
+                        await event.reply(UNAPPROVED_MSG)
+                    LASTMSG.update({event.chat_id: event.text})
                 else:
-                    AntiPM.FLOOD_CTRL = 0
-                    return
-                async for msg in message.client.iter_messages(entity=message.chat_id,
-                                                             from_user='me',
-                                                             search="I have not allowed you to PM",
-                                                             limit=1):
-                    await msg.delete()
-                await message.reply(AntiPM.WARNING)
+                    await event.reply(UNAPPROVED_MSG)
+                    LASTMSG.update({event.chat_id: event.text})
+
+                if await notif_state() is False:
+                    await event.client.send_read_acknowledge(event.chat_id)
+                if event.chat_id not in COUNT_PM:
+                    COUNT_PM.update({event.chat_id: 1})
+                else:
+                    COUNT_PM[event.chat_id] = COUNT_PM[event.chat_id] + 1
+
+                if COUNT_PM[event.chat_id] > 4:
+                    await event.respond("`You were spamming my master's PM, "
+                                        " which I don't like.`"
+                                        " `I'mma Report Spam.`")
+
+                    try:
+                        del COUNT_PM[event.chat_id]
+                        del LASTMSG[event.chat_id]
+                    except KeyError:
+                        if BOTLOG:
+                            await event.client.send_message(
+                                BOTLOG_CHATID,
+                                "Count PM is seemingly going retard, "
+                                "plis restart bot!",
+                            )
+                        LOGS.info("CountPM wen't rarted boi")
+                        return
+
+                    await event.client(BlockRequest(event.chat_id))
+                    await event.client(ReportSpamRequest(peer=event.chat_id))
+
+                    if BOTLOG:
+                        name = await event.client.get_entity(event.chat_id)
+                        name0 = str(name.first_name)
+                        await event.client.send_message(
+                            BOTLOG_CHATID,
+                            "[" + name0 + "](tg://user?id=" +
+                            str(event.chat_id) + ")" +
+                            " was just another retarded nibba",
+                        )
+
+
+@register(disable_edited=True, outgoing=True, disable_errors=True)
+@grp_exclude()
+async def auto_accept(event):
+    """ Will approve automatically if you texted them first. """
+    if event.is_private:
+        chat = await event.get_chat()
+        if not is_mongo_alive():
+            return
+        if isinstance(chat, User):
+            if await approval(event.chat_id) or chat.bot:
                 return
-            await message.reply(AntiPM.BLOCKED)
-            await message.client(functions.messages.ReportSpamRequest(peer=message.sender_id))
-            await message.client(functions.contacts.BlockRequest(id=message.sender_id))
-            if await nicedb.check_sblock():
-                await message.client.delete_dialog(entity=message.chat_id, revoke=True)
-            AntiPM.USERS_AND_WARNS.update({user: 0})
+            async for message in event.client.iter_messages(chat.id,
+                                                            reverse=True,
+                                                            limit=1):
+                if message.from_id == (await event.client.get_me()).id:
+                    await approve(chat.id)
+                    if BOTLOG:
+                        await event.client.send_message(
+                            BOTLOG_CHATID,
+                            "#AUTO-APPROVED\n" + "User: " +
+                            f"[{chat.first_name}](tg://user?id={chat.id})",
+                        )
+
+
+@register(outgoing=True, pattern="^.notifoff$")
+@grp_exclude()
+async def notifoff(noff_event):
+    """ For .notifoff command, stop getting
+        notifications from unapproved PMs. """
+    if await notif_off() is False:
+        return await noff_event.edit('`Notifications already silenced!`')
+    else:
+        return await noff_event.edit("`Notifications silenced!`")
+
+
+@register(outgoing=True, pattern="^.notifon$")
+@grp_exclude()
+async def notifon(non_event):
+    """ For .notifoff command, get notifications from unapproved PMs. """
+    if await notif_on() is False:
+        return await non_event.edit("`Notifications ain't muted!")
+    else:
+        return await non_event.edit("`Notifications unmuted!`")
+
+
+@register(outgoing=True, pattern="^.approve$")
+@grp_exclude()
+async def approvepm(apprvpm):
+    """ For .approve command, give someone the permissions to PM you. """
+    if not is_mongo_alive():
+        await apprvpm.edit("`Database connections failing!`")
+        return
+
+    if await approve(apprvpm.chat_id) is False:
+        return await apprvpm.edit("`User was already approved!`")
+    else:
+        if apprvpm.reply_to_msg_id:
+            reply = await apprvpm.get_reply_message()
+            replied_user = await apprvpm.client(
+                GetFullUserRequest(reply.from_id))
+            aname = replied_user.user.id
+            name0 = str(replied_user.user.first_name)
+            uid = replied_user.user.id
+
+        else:
+            aname = await apprvpm.client.get_entity(apprvpm.chat_id)
+            name0 = str(aname.first_name)
+            uid = apprvpm.chat_id
+
+        await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM!`")
+
+        if BOTLOG:
+            await apprvpm.client.send_message(
+                BOTLOG_CHATID,
+                "#APPROVED\n" + "User: " + f"[{name0}](tg://user?id={uid})",
+            )
+
+
+@register(outgoing=True, pattern="^.block$")
+@grp_exclude()
+async def blockpm(block):
+    """ For .block command, block people from PMing you! """
+    if not is_mongo_alive():
+        await block.edit("`Database connections failing!`")
+        return
+
+    if await block_pm(block.chat_id) is False:
+        return await block.edit("`First approve, before blocc'ing`")
+    else:
+        await block.edit("`You are gonna be blocked from PM-ing my Master!`")
+
+        if block.reply_to_msg_id:
+            reply = await block.get_reply_message()
+            replied_user = await block.client(GetFullUserRequest(reply.from_id)
+                                              )
+            aname = replied_user.user.id
+            name0 = str(replied_user.user.first_name)
+            await block.client(BlockRequest(replied_user.user.id))
+            uid = replied_user.user.id
+        else:
+            await block.client(BlockRequest(block.chat_id))
+            aname = await block.client.get_entity(block.chat_id)
+            name0 = str(aname.first_name)
+            uid = block.chat_id
+
+        await block.edit("`Blocked.`")
+
+        if BOTLOG:
+            await block.client.send_message(
+                BOTLOG_CHATID,
+                "#BLOCKED\n" + "User: " + f"[{name0}](tg://user?id={uid})",
+            )
+
+
+@register(outgoing=True, pattern="^.unblock$")
+@grp_exclude()
+async def unblockpm(unblock):
+    """ For .unblock command, let people PMing you again! """
+    if unblock.reply_to_msg_id:
+        reply = await unblock.get_reply_message()
+        replied_user = await unblock.client(GetFullUserRequest(reply.from_id))
+        name0 = str(replied_user.user.first_name)
+        if await approve(reply.from_id) is False:
+            return await unblock.edit("`You haven't blocked this user yet!`")
+        else:
+            return await unblock.edit("`My Master has forgiven you to PM now`")
+
+        await unblock.client(UnblockRequest(replied_user.user.id))
+
+    if BOTLOG:
+        await unblock.client.send_message(
+            BOTLOG_CHATID,
+            f"[{name0}](tg://user?id={replied_user.user.id})"
+            " was unblocc'd!.",
+        )
+
+
+CMD_HELP.update({
+    "pmpermit": [
+        "PMPermit",
+        " - `.approve`: Approve the mentioned/replied person to PM.\n"
+        " - `.block`: Blocks the person from PMing you.\n"
+        " - `.unblock`: Unblocks the person, so they can PM you again.\n"
+        " - `.notifoff`: Stop any notifications coming from unapproved PMs.\n"
+        " - `.notifon`: Allow notifications coming from unapproved PMs.\n"
+    ]
+})
