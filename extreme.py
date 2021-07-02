@@ -1,3 +1,4 @@
+from config import MONGO_URI
 from pymongo import MongoClient
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 
