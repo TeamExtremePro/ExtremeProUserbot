@@ -1,3 +1,4 @@
+from pymongo import MongoClient
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 
 BOTLOG = (os.environ.get("BOTLOG") == 'True')
