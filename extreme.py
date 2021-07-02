@@ -1,6 +1,7 @@
 import os
 from config import MONGO_URI
 from pymongo import MongoClient
+bot = "ExtremeProuserbot"
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 
 BOTLOG = (os.environ.get("BOTLOG") == 'True')
