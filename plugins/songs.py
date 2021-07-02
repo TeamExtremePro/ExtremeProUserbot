@@ -1,5 +1,12 @@
+#Originally made by @rkpavi for @javes05
+#porting to LEGEND BOT...
+#first userbot to port javes song module...
+#keep credit if u wanna kang...
+#else u are a gay...no doubt in that....
+
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from Extre.utils import admin_cmd
+from userbot.utils import admin_cmd
 import asyncio
 
  
@@ -9,7 +16,7 @@ async def FindMusicPleaseBot(gaana):
 
     song = gaana.pattern_match.group(1)
 
-    chat = "@songdl_bot"
+    chat = "@FindMusicPleaseBot"
 
     if not song:
 
@@ -41,7 +48,7 @@ async def FindMusicPleaseBot(gaana):
 
         except YouBlockedUserError:
 
-            await gaana.edit("```Please unblock``` @songdl_bot``` and try again```")
+            await gaana.edit("```Please unblock``` @FindmusicpleaseBot``` and try again```")
 
             return
 
@@ -76,8 +83,8 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
-from Extre.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
-from Extre import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
+from userbot import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
 from youtube_dl import YoutubeDL
@@ -341,8 +348,8 @@ async def download_video(v_url):
 
 from telethon import events
 import asyncio
-from Extre.events import register 
-from Extre import bot, CMD_HELP
+from userbot.events import register 
+from userbot import bot, CMD_HELP
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
@@ -365,9 +372,9 @@ def bruh(name):
 async def getmusic(so):
     if so.fwd_from:
         return
-    await so.client(JoinChannelRequest("t.me/sjprojects"))
+    await so.client(JoinChannelRequest("t.me/anitimeofficial"))
     song = so.pattern_match.group(1)
-    chat = "@songdl_bot"
+    chat = "@SongsForYouBot"
     link = f"/song {song}"
     await so.edit("🔹Ok wait... 📡Searching your song🔸")
     async with bot.conversation(chat) as conv:
@@ -380,7 +387,7 @@ async def getmusic(so):
               """ - don't spam notif - """
               await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
-              await so.edit("Please unblock @songdl_bot and try searching again🤐")
+              await so.edit("Please unblock @SongsForYouBot and try searching again🤐")
               return
           await so.edit("Ohh.. I got something!! Wait sending😋🤙")
           await asyncio.sleep(3)
@@ -393,9 +400,9 @@ async def getmusic(so):
 
 from telethon import events
 import asyncio
-#from Extre.utils import admin_cmd
-from Extre.events import register 
-from Extre import bot, CMD_HELP
+#from userbot.utils import admin_cmd
+from userbot.events import register 
+from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 try:
@@ -449,7 +456,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from Extre.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):
@@ -460,9 +467,9 @@ async def _(event):
         await event.edit("` I need a link to download something pro.`**(._.)**")
     else:
         await event.edit("🎶**Initiating Download!**🎶")
-    bot = "@songdl_bot"
+    bot = "@DeezLoadBot"
     
-    async with borg.conversation("@songdl_bot") as conv:
+    async with borg.conversation("@DeezLoadBot") as conv:
           try:
               await conv.send_message("/start")
               response = await conv.get_response()
@@ -478,14 +485,14 @@ async def _(event):
               await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆\n`Check out` [LEGENDBOT](https://t.me/LEGENDBOT_Official)")
               await event.delete()
           except YouBlockedUserError:
-              await event.edit("**Error:** `unblock` @songdl_bot `and retry!`")
+              await event.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
     
     
-{
+CMD_HELP.update({
         "songs":
         "`.song song name`\
             \nUsage:For searching songs from youtube\
-            \n\n`/getsong` Song Title\
+            \n\n`.getsong` Song Title\
             \nUsage:Download song from @SongsForYouBot\
             \n\n`.gaana` Song name\
             \nUsage:Download song from @FindmusicpleaseBot\
@@ -495,4 +502,4 @@ async def _(event):
             \nUsage:Download song from @DeezLoadBot\
             \n\n`.dwlsong` <Spotify/Deezer Link>\
             \nUsage:Download music from Spotify or Deezer."
-}
+})

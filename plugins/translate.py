@@ -5,11 +5,13 @@ Available Commands:
 
 import emoji
 from googletrans import Translator
-
 from userbot.utils import admin_cmd
+from telethon import events
 
 
-@borg.on(admin_cmd("tr ?(.*)"))
+
+@borg.on(admin_cmd(pattern="tr ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.tr ?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -34,9 +36,13 @@ async def _(event):
         after_tr_text = translated.text
         # TODO: emojify the :
         # either here, or before translation
-        output_str = """**TRANSLATED** from {} to {}
-{}""".format(
-            translated.src, lan, after_tr_text
+        output_str = """**Translated By LEGEND BOT** 
+         Source **( {} )**
+         Translation **( {} )**
+         {}""".format(
+            translated.src,
+            lan,
+            after_tr_text
         )
         await event.edit(output_str)
     except Exception as exc:

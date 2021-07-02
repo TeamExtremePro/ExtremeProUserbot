@@ -1,3 +1,4 @@
+# For @UniBorg
 # courtesy Yasir siddiqui
 """Self Destruct Plugin
 .sd <time in seconds> <text>
@@ -6,10 +7,13 @@
 
 import time
 
+from telethon.errors import rpcbaseerrors
 from userbot.utils import admin_cmd
+import importlib.util
 
 
-@borg.on(admin_cmd("sd", outgoing=True))
+
+@borg.on(admin_cmd("sd", outgoing=True  ))
 async def selfdestruct(destroy):
     """ For .sd command, make seflf-destructable messages. """
     if not destroy.text[0].isalpha() and destroy.text[0] not in ("/", "#", "@", "!"):

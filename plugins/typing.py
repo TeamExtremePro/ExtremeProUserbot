@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 import asyncio
-
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="typewriter (.*)"))
+@borg.on(admin_cmd(pattern="type (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -31,9 +30,11 @@ async def _(event):
             await event.edit(typing_text)
         except Exception as e:
             logger.warn(str(e))
+            pass
         await asyncio.sleep(DELAY_BETWEEN_EDITS)
         try:
             await event.edit(previous_text)
         except Exception as e:
             logger.warn(str(e))
+            pass
         await asyncio.sleep(DELAY_BETWEEN_EDITS)

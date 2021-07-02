@@ -1,10 +1,14 @@
+# By LEGENDX22 🔥 
+
+#credits dc
+# Kang with credits..
 
 import asyncio
 from asyncio import wait
-from Extre import CMD_HELP
+from userbot import CMD_HELP
 
 
-from Extre.events import register
+from userbot.events import register
 
 @register(outgoing=True, pattern="^.tspam")
 async def tmeme(e):

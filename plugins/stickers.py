@@ -1,4 +1,8 @@
-# Copyright (C) 2021 - 2022 ExtremePro USERBOT  
+# Copyright (C) 2019 The Raphielscape Company LLC.
+#
+# Licensed under the Raphielscape Public License, Version 1.c (the "License");
+# you may not use this file except in compliance with the License.
+#
 """ Userbot module for kanging stickers or making new ones. Thanks @rupansh"""
 
 import io
@@ -8,23 +12,23 @@ from os import remove
 from PIL import Image
 import random
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
-from Extre import bot, CMD_HELP
-from Extre.utils import register
+from userbot import bot, CMD_HELP
+from userbot.utils import register
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
+    "Udhar Dekh Bc.... Mujhe tera sticker churane de😁😁",
+    "Dekh tera pant ka chain khula hai...",
+    "Be gand naa phulao sticker chori kar lenge tumhari...",
+    "Kyaa sticker hai yaar 😋😋...",
+    "Andi Mandi Sandi... Sticker dede mujhe nhi to teri _-_-_-_-_-_-_-_😁..",
     "hehe me stel ur stikér\nhehe.",
     "Ay look over there (☉｡☉)!→\nWhile I kang this...",
     "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
-    "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ",
+    "Dill Chori sada ho gaya.... Sticker chori tera hoo gya🤣😁",
+    "Aree bc upar dekh!!! UFO ",
 ]
 
 
