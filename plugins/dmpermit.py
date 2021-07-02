@@ -6,7 +6,7 @@ from typing import Dict, List
 
 from telethon.tl import functions, types
 
-from .. import client
+from client import client
 from utils.helpers import get_chat_link
 from utils.events import NewMessage
 
