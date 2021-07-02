@@ -30,7 +30,7 @@ Anyone Intrested To Join our Team THen Join We Are Waiting
 
 ## SPEICAL THANKS ++ CREDITS
 ### EXTREMEPRO USERBOT
-### LEGEND BOT
+### Extreme Pro userbot
 ### RAPHAIEL GANG
 
 
