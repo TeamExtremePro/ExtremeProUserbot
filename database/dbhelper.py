@@ -1,4 +1,4 @@
-from userbot import MONGO
+from extreme import MONGO
 
 
 # Mutes
