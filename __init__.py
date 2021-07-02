@@ -21,3 +21,6 @@ if REDIS_URI and REDIS_PASSWORD:
     if not sql_session.exists():
         LOGGER.debug("Using Redis session!")
         session = RedisSession("userbot", redis_connection)
+
+        
+client.database = redis_db
