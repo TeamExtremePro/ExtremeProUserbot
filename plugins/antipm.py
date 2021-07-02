@@ -7,7 +7,7 @@ from telethon.tl.types import User
 
 from extreme import BOTLOG, BOTLOG_CHATID, CMD_HELP, COUNT_PM, LASTMSG, PM_AUTO_BAN, is_mongo_alive
 from userbot import LOGS
-from userbot.events import register, grp_exclude
+from events import register, grp_exclude
 from database.dbhelper import (approval, approve, block_pm, notif_off,
                                       notif_on, notif_state)
 
