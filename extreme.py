@@ -4,6 +4,8 @@ from pymongo import MongoClient
 bot = "ExtremeProuserbot"
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
 
+MONGO = MONGOCLIENT.userbot
+
 BOTLOG = (os.environ.get("BOTLOG") == 'True')
 
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID")) if BOTLOG else 0
