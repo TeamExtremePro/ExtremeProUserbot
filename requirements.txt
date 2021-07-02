@@ -5,3 +5,4 @@ apscheduler
 configparser
 ast
 covid
+redis
