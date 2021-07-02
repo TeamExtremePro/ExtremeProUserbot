@@ -1,12 +1,16 @@
+# For The-TG-Bot-3.0
+# By Priyam Kalra
+# Parts of the code below is taken from other sources, the links to the sources is commented above the taken code
+
 from PIL import Image, ImageFont, ImageDraw
 import textwrap
 import os
-from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, amanpandey_cmd
-from Extre.variables import Var
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd, sudo_cmd
+from var import Var
 # how a lazy guy ports.
 client = borg
-@borg.on(extremepro_cmd("mmf ?(.*)"))
+@borg.on(admin_cmd("memify ?(.*)"))
 async def handler(event):
     if event.fwd_from:
         return
@@ -93,8 +97,10 @@ async def drawText(image_path, text):
     return webp_file
 CMD_HELP.update(
     {
-        "memify": ".mmf (text)\
+        "memify": ".memify (text)\
 \nUsage: print your text on photo or sticker.\
 "
     }
 )
+
+

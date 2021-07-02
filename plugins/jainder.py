@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from telethon import events
 import random
-
+import asyncio
 from uniborg.util import admin_cmd
-
 
 @borg.on(admin_cmd(pattern=r"jainder(.*)"))
 async def _(event):
@@ -18,7 +21,13 @@ async def _(event):
             "u is chakka",
         ]
     elif input_str in "thinking":
-        emoticons = ["(҂⌣̀_⌣́)", "（；¬＿¬)", "(-｡-;", "┌[ O ʖ̯ O ]┐", "〳 ͡° Ĺ̯ ͡° 〵"]
+        emoticons = [
+            "(҂⌣̀_⌣́)",
+            "（；¬＿¬)",
+            "(-｡-;",
+            "┌[ O ʖ̯ O ]┐",
+            "〳 ͡° Ĺ̯ ͡° 〵",
+        ]
     elif input_str in "waving":
         emoticons = [
             "(ノ^∇^)",
@@ -39,7 +48,13 @@ async def _(event):
             "( ＾◡＾)っ (‿|‿)",
         ]
     elif input_str in "love":
-        emoticons = ["乂❤‿❤乂", "(｡♥‿♥｡)", "( ͡~ ͜ʖ ͡°)", "໒( ♥ ◡ ♥ )७", "༼♥ل͜♥༽"]
+        emoticons = [
+            "乂❤‿❤乂",
+            "(｡♥‿♥｡)",
+            "( ͡~ ͜ʖ ͡°)",
+            "໒( ♥ ◡ ♥ )७",
+            "༼♥ل͜♥༽",
+        ]
     elif input_str in "confused":
         emoticons = [
             "(・_・ヾ",
@@ -50,12 +65,28 @@ async def _(event):
             "(-_-)ゞ゛",
         ]
     elif input_str in "dead":
-        emoticons = ["(✖╭╮✖)", "✖‿✖", "(+_+)", "(✖﹏✖)", "∑(✘Д✘๑)"]
+        emoticons = [
+            "(✖╭╮✖)",
+            "✖‿✖",
+            "(+_+)",
+            "(✖﹏✖)",
+            "∑(✘Д✘๑)",
+        ]
     elif input_str in "sad":
-        emoticons = ["(＠´＿｀＠)", "⊙︿⊙", "(▰˘︹˘▰)", "●︿●", "(　´_ﾉ` )", "彡(-_-;)彡"]
+        emoticons = [
+            "(＠´＿｀＠)",
+            "⊙︿⊙",
+            "(▰˘︹˘▰)",
+            "●︿●",
+            "(　´_ﾉ` )",
+            "彡(-_-;)彡",
+        ]
     elif input_str in "dog":
-        emoticons = ["-ᄒᴥᄒ-", "◖⚆ᴥ⚆◗"]
-    else:
+        emoticons = [
+            "-ᄒᴥᄒ-",
+            "◖⚆ᴥ⚆◗",
+        ]
+    else:    
         emoticons = [
             "( ͡° ͜ʖ ͡°)",
             "¯\_(ツ)_/¯",
