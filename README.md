@@ -16,7 +16,8 @@ Extreme Pro is a telethon based userbot
 
 ## Special Note
 WE Respect To Authors.
-Whe Havnt kanged Whatever We Have Taken From Other USERBOTS Given Credits So No Mean To Say Kang. Copying But Giving Credits isnt Called a Kang. If You Are A Intellegent Person Then You Will Not Say This Is a Kangged Bot Thank You 
+Whe Havnt kanged Whatever We Have Taken From Other USERBOTS Given Credits So No Mean To Say Kang. Copying But Giving Credits isnt Called a Kang. If You Are A Intellegent Person Then You Will Not Say This Is a Kangged Bot Thank You.
+Anyone Intrested To Join our Team THen Join We Are Waiting
 
 ## TEAM EXTREMEPRO
 
@@ -33,11 +34,11 @@ Whe Havnt kanged Whatever We Have Taken From Other USERBOTS Given Credits So No 
 ### RAPHAIEL GANG
 
 
-## String Session
+# String Session
 [![Run on Repl.it](https://repl.it/badge/github/TeamExtremePro/ExtremeProUserbot)](https://replit.com/@amanpandey7647/Extreme-Pro-Userbot-String-Session#main.py)
 
 
-## Deploy
+# Deploy
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy)
 
 
