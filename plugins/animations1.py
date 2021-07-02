@@ -2,14 +2,14 @@ import asyncio
 from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon import events
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
-from Extre import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, CMD_HELP
+from LEGENDX import NAME
+DEFAULTUSER = NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 
-
-@bot.on(extremepro_cmd(pattern="stupid$"))
-@bot.on(amanpandey_cmd(pattern="stupid$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="stupid$"))
+@bot.on(sudo_cmd(pattern="stupid$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -37,8 +37,8 @@ async def _(event):
         await event.edit(animation_chars[i % 14])
 
 
-@bot.on(extremepro_cmd(pattern=f"bombs$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"bombs$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"bombs$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"bombs$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -65,8 +65,8 @@ async def _(event):
     await asyncio.sleep(2)
 
 
-@bot.on(extremepro_cmd(pattern=r"call$"))
-@bot.on(amanpandey_cmd(pattern=r"call$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"call$"))
+@bot.on(sudo_cmd(pattern=r"call$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -76,12 +76,12 @@ async def _(event):
     animation_chars = [
        "`Connecting To Raj Bhawan`",
             "`Call Connected.`",
-            "`Secretary: ExtremeProo This is Raj Bhawan. Who is this?`",
-            f"`Me: ExtremeProo this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
+            "`Secretary: Hello This is Raj Bhawan. Who is this?`",
+            f"`Me: Hello this is` `{DEFAULUSER}` .Please connect me to Prime Minister",
             "`User Authorised.`",
             "`Calling`  `At +9189*#*#*#56`",
             "`Private  Call Connected...`",
-            "`Me: ExtremeProo Sir, How are you!!`",    
+            "`Me: Hello Sir, How are you!!`",    
             "`Prime Minister: May I Know Who Is This?`",
             f"`Me: Yes sur, itz me` `{DEFAULTUSER}`",
             "`Prime Minister: OMG!!! Long time no see, Wassup Brother...\nI'm fine btw... how are you?`",
@@ -95,8 +95,8 @@ async def _(event):
         await event.edit(animation_chars[i % 18])
 
 
-@bot.on(extremepro_cmd(pattern=r"kill$"))
-@bot.on(amanpandey_cmd(pattern=r"kill$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"kill$"))
+@bot.on(sudo_cmd(pattern=r"kill$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -108,8 +108,8 @@ async def _(event):
         firstname = replied_user.user.first_name
         usname = replied_user.user.username
         idd = reply_message.sender_id
-        if idd==1037581197:
-            await event.edit("This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [Devil](https://t.me/lucifeermorningstar) __to release your account__😏")
+        if idd==1100231654:
+            await event.edit("This is My Master\n**How dare you trying to tell me to kill master nigger!**\n\n__Your account is on hold! Pay 99$ to my master__ [LEGENDX](https://t.me/legendx22) __to release your account__😏")
         else:
             await event.edit("`K i l l i n g . . . . . . .`")
             animation_chars = [
@@ -138,8 +138,8 @@ async def _(event):
 
 
 
-@bot.on(extremepro_cmd(pattern="wtf$"))
-@bot.on(amanpandey_cmd(pattern="wtf$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="wtf$"))
+@bot.on(sudo_cmd(pattern="wtf$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -158,8 +158,8 @@ async def _(event):
         await event.edit(animation_chars[i % 5], link_preview=True)
 
 
-@bot.on(extremepro_cmd(pattern="ding$"))
-@bot.on(amanpandey_cmd(pattern="ding$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="ding$"))
+@bot.on(sudo_cmd(pattern="ding$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -183,8 +183,8 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@bot.on(extremepro_cmd(pattern=f"hypno$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"hypno$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"hypno$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"hypno$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -213,8 +213,8 @@ async def _(event):
         await event.edit(animation_chars[i % 15])
 
 
-@bot.on(extremepro_cmd(pattern=r"candy$"))
-@bot.on(amanpandey_cmd(pattern=r"candy$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"candy$"))
+@bot.on(sudo_cmd(pattern=r"candy$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -226,8 +226,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern="gangasta$"))
-@bot.on(amanpandey_cmd(pattern="gangasta$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="gangasta$"))
+@bot.on(sudo_cmd(pattern="gangasta$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -249,8 +249,8 @@ async def _(event):
     await event.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
 
 
-@bot.on(extremepro_cmd(pattern=f"charging$"))
-@bot.on(amanpandey_cmd(pattern=f"charging$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"charging$"))
+@bot.on(sudo_cmd(pattern=f"charging$", allow_sudo=True))
 async def timer_blankx(e):
     if e.fwd_from:
         return

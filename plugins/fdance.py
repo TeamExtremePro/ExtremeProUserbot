@@ -10,12 +10,12 @@ from telethon import events
 
 import asyncio
 
-from uniborg.util import extremepro_cmd
+from uniborg.util import admin_cmd
 
 
 
 
-@borg.on(extremepro_cmd(pattern=r"fdance"))
+@borg.on(admin_cmd(pattern=r"fdance"))
 
 async def _(event):
 

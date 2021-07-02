@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The Aman Pandey.
+# Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 
 import asyncio
@@ -9,14 +9,14 @@ from datetime import datetime
 
 from pySmartDL import SmartDL
 
-from Extre.utils import extremepro_cmd, amanpandey_cmd, humanbytes, progress
-from Extre import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd, sudo_cmd, humanbytes, progress
+from userbot import ALIVE_NAME, CMD_HELP
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
 
-@bot.on(extremepro_cmd(pattern="download(?: |$)(.*)", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

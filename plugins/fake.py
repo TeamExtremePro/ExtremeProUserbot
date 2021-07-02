@@ -14,11 +14,11 @@ document
 cancel"""
 
 import asyncio
-from Extre.utils import extremepro_cmd
-from Extre import CMD_HELP
+from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
  
-@borg.on(extremepro_cmd(pattern="fake ?(.*)"))
+@borg.on(admin_cmd(pattern="fake ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

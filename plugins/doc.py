@@ -6,20 +6,20 @@ import time
 from datetime import datetime
 from io import BytesIO
 from pathlib import Path
-from Extre import bot as borg
+from userbot import bot as borg
 from telethon import functions, types
 from telethon.errors import PhotoInvalidDimensionsError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from Extre.utils import extremepro_cmd, progress
+from userbot.utils import admin_cmd, progress
 
 
 if not os.path.isdir("./temp"):
     os.makedirs("./temp")
 
 
-@borg.on(extremepro_cmd(pattern="dox ?(.*)"))
+@borg.on(admin_cmd(pattern="dox ?(.*)"))
 async def get(event):
     name = event.text[5:]
     if name is None:

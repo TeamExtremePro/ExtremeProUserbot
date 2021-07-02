@@ -3,12 +3,12 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(extremepro_cmd(pattern="chain$"))
-@bot.on(amanpandey_cmd(pattern="chain$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="chain$"))
+@bot.on(sudo_cmd(pattern="chain$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

@@ -5,17 +5,17 @@
 
 import asyncio
 
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
-from Extre import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, CMD_HELP
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
 
-@bot.on(extremepro_cmd(pattern="imp(|n) (.*)", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="imp(|n) (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="imp(|n) (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="imp(|n) (.*)", allow_sudo=True))
 async def _(event):
-    GODBOY = bot.uid
-    USERNAME = f"tg://user?id={GODBOY}"
+    legendx22 = bot.uid
+    USERNAME = f"tg://user?id={legendx22}"
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
     text1 = await edit_or_reply(event, "Hmm... Looks like Something is wrong here🤔🧐!!")
@@ -57,78 +57,78 @@ async def _(event):
     stcr4 = await event.client.send_file(
         event.chat_id, "CAADAQADLwADnjOcH-wxu-ehy6NRAg"
     )
-    ExtremeProevent = await event.reply(f"{name} is ejected.......🤐")
+    hellevent = await event.reply(f"{name} is ejected.......🤐")
     await asyncio.sleep(2)
-    await ExtremeProevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
+    await hellevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
+    await hellevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
     await asyncio.sleep(0.5)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
     await asyncio.sleep(0.2)
     await stcr4.delete()
     if cmd == "":
-        await ExtremeProevent.edit(
+        await hellevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
-        await ExtremeProevent.delete()
+        await hellevent.delete()
         await event.client.send_file(event.chat_id, "CAADAQADLQADnjOcH39IqwyR6Q_0Ag")
     elif cmd == "n":
-        await ExtremeProevent.edit(
+        await hellevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
-        await ExtremeProevent.delete()
+        await hellevent.delete()
         await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcH-WOkB8DEctJAg")
 
 
-@bot.on(extremepro_cmd(pattern="timp(|n) (.*)", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="timp(|n) (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="timp(|n) (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="timp(|n) (.*)", allow_sudo=True))
 async def _(event):
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
-    ExtremeProevent = await edit_or_reply(event, f"{name} is ejected.......")
+    hellevent = await edit_or_reply(event, f"{name} is ejected.......")
     await asyncio.sleep(2)
-    await ExtremeProevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
+    await hellevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
+    await hellevent.edit("ㅤඞㅤㅤㅤㅤ ㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤ ඞㅤㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤ ඞㅤㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤ ඞㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤ ඞㅤㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤ ඞㅤㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤㅤ ඞㅤ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ඞ")
     await asyncio.sleep(0.8)
-    await ExtremeProevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
+    await hellevent.edit("ㅤㅤㅤㅤㅤㅤㅤㅤ ㅤ")
     await asyncio.sleep(0.2)
     if cmd == "":
-        await ExtremeProevent.edit(
+        await hellevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
     elif cmd == "n":
-        await ExtremeProevent.edit(
+        await hellevent.edit(
             f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
 

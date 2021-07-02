@@ -2,11 +2,11 @@ from re import findall
 
 from search_engine_parser import GoogleSearch
 
-from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd
 
 
-@borg.on(extremepro_cmd(pattern=r"gs (.*)"))
+@borg.on(admin_cmd(pattern=r"gs (.*)"))
 async def gsearch(q_event):
     if q_event.fwd_from:
         return

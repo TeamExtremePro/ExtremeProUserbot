@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The Aman Pandey.
+# Copyright (C) 2019 The Raphielscape Company LLC.
 
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-""" Extre module for frying stuff. ported by @NeoMatrix90 """
+""" Userbot module for frying stuff. ported by @NeoMatrix90 """
 
 import io
 from random import randint, uniform
@@ -29,12 +29,12 @@ from PIL import Image, ImageEnhance, ImageOps
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeFilename
-from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(extremepro_cmd(pattern="frybot$"))
-@bot.on(amanpandey_cmd(pattern="frybot$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="frybot$"))
+@bot.on(sudo_cmd(pattern="frybot$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -78,8 +78,8 @@ async def _(event):
         await event.delete()
 
 
-@bot.on(extremepro_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
@@ -120,7 +120,7 @@ async def deepfry(img: Image) -> Image:
         (randint(190, 255), randint(170, 240), randint(180, 250)),
     )
     img = img.copy().convert("RGB")
-    # Crush image to ExtremePro and back
+    # Crush image to hell and back
     img = img.convert("RGB")
     width, height = img.width, img.height
     img = img.resize(
@@ -142,7 +142,7 @@ async def deepfry(img: Image) -> Image:
     overlay = ImageEnhance.Contrast(overlay).enhance(uniform(1.0, 2.0))
     overlay = ImageEnhance.Brightness(overlay).enhance(uniform(1.0, 2.0))
     overlay = ImageOps.colorize(overlay, colours[0], colours[1])
-    # Overlay red and yellow onto main image and sharpen the ExtremePro out of it
+    # Overlay red and yellow onto main image and sharpen the hell out of it
     img = Image.blend(img, overlay, uniform(0.1, 0.4))
     img = ImageEnhance.Sharpness(img).enhance(randint(5, 300))
     return img

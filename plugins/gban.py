@@ -1,6 +1,9 @@
+
+
+
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from Extre import CMD_HELP, ALIVE_NAME
-from Extre.utils import extremepro_cmd, amanpandey_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -49,133 +52,132 @@ async def get_user_sender_id(user, event):
         return None
     return user_obj
 
-@borg.on(extremepro_cmd(pattern="gban ?(.*)"))
-@borg.on(amanpandey_cmd("gban ?(.*)", allow_sudo=True))
-async def gspider(Extre):
-    lol = Extre
+@borg.on(admin_cmd(pattern="gban ?(.*)"))
+async def gspider(userbot):
+    lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        ExtremePro = await lol.reply("Gbanning This User")
+        friday = await lol.reply("Gbanning This Retard DumbAss😁😁")
     else:
-        ExtremePro = await lol.edit("Wait Processing.....")
-    me = await Extre.client.get_me()
-    await ExtremePro.edit(f"Global Ban Is Coming By {ALIVE_NAME}")
+        friday = await lol.edit("Wait Processing.....")
+    me = await userbot.client.get_me()
+    await friday.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await Extre.get_chat()
+    await userbot.get_chat()
     a = b = 0
-    if Extre.is_private:
-        user = Extre.chat
-        reason = Extre.pattern_match.group(1)
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
     else:
-        Extre.chat.title
+        userbot.chat.title
     try:
-        user, reason = await get_full_user(Extre)
+        user, reason = await get_full_user(userbot)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await ExtremePro.edit(f"**Something W3NT Wrong 🤔**")
+        return await friday.edit(f"**Something W3NT Wrong 🤔**")
     if user:
-        if user.id == 1725374070:
-            return await ExtremePro.edit(
-                f"**Didn't , Your Teacher Taught You ? That You Cant Gban your Father😑😑🖕**"
+        if user.id == 1100231654:
+            return await friday.edit(
+                f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
             )
         try:
-            from Extre.modules.sql_helper.gmute_sql import gmute
+            from userbot.modules.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
-            await Extre.client(BlockRequest(user))
+            await userbot.client(BlockRequest(user))
         except:
             pass
-        testExtre = [
+        testuserbot = [
             d.entity.id
-            for d in await Extre.client.get_dialogs()
+            for d in await userbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testExtre:
+        for i in testuserbot:
             try:
-                await Extre.client.edit_permissions(i, user, view_messages=False)
+                await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await ExtremePro.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
+                await friday.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
             except:
                 b += 1
     else:
-        await ExtremePro.edit(f"**Reply to a user !!**")
+        await friday.edit(f"**Reply to a user !!**")
     try:
         if gmute(user.id) is False:
-            return await ExtremePro.edit(f"**Error! User probably already gbanned.**")
+            return await friday.edit(f"**Error! User probably already gbanned.**")
     except:
         pass
-    return await ExtremePro.edit(
+    return await friday.edit(
         f"**Gbanned [{user.first_name}](tg://user?id={user.id}) Affected Chats : {a} **"
     )
 
 
-@borg.on(extremepro_cmd(pattern="ungban ?(.*)"))
-async def gspider(Extre):
-    lol = Extre
+@borg.on(admin_cmd(pattern="ungban ?(.*)"))
+async def gspider(userbot):
+    lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        ExtremePro = await lol.reply("`Wait Let Me Process`")
+        friday = await lol.reply("`Wait Let Me Process`")
     else:
-        ExtremePro = await lol.edit("Just a Second ")
-    me = await Extre.client.get_me()
-    await ExtremePro.edit(f"Trying To Ungban User !")
+        friday = await lol.edit("Just a Second ")
+    me = await userbot.client.get_me()
+    await friday.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await Extre.get_chat()
+    await userbot.get_chat()
     a = b = 0
-    if Extre.is_private:
-        user = Extre.chat
-        reason = Extre.pattern_match.group(1)
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
     else:
-        Extre.chat.title
+        userbot.chat.title
     try:
-        user, reason = await get_full_user(Extre)
+        user, reason = await get_full_user(userbot)
     except:
         pass
     try:
         if not reason:
             reason = "Private"
     except:
-        return await ExtremePro.edit("Someting Went Wrong 🤔")
+        return await friday.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 1725374070:
-            return await ExtremePro.edit("**You Cant gban him... as a result you can not ungban him...He is Your Father And He is My Creator!**")
+        if user.id == 1100231654:
+            return await friday.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
         try:
-            from Extre.modules.sql_helper.gmute_sql import ungmute
+            from userbot.modules.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
-            await Extre.client(UnblockRequest(user))
+            await userbot.client(UnblockRequest(user))
         except:
             pass
-        testExtre = [
+        testuserbot = [
             d.entity.id
-            for d in await Extre.client.get_dialogs()
+            for d in await userbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testExtre:
+        for i in testuserbot:
             try:
-                await Extre.client.edit_permissions(i, user, send_messages=True)
+                await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await ExtremePro.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
+                await friday.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
             except:
                 b += 1
     else:
-        await ExtremePro.edit("**Reply to a user !!**")
+        await friday.edit("**Reply to a user !!**")
     try:
         if ungmute(user.id) is False:
-            return await ExtremePro.edit("**Error! User probably already ungbanned.**")
+            return await friday.edit("**Error! User probably already ungbanned.**")
     except:
         pass
-    return await ExtremePro.edit(
+    return await friday.edit(
         f"**UNGBANNED // USER - [{user.first_name}](tg://user?id={user.id}) CHATS : {a} **"
     )
 
@@ -186,7 +188,7 @@ async def gspider(Extre):
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
-         from Extre.modules.sql_helper.gmute_sql import is_gmuted
+         from userbot.modules.sql_helper.gmute_sql import is_gmuted
          guser = await rkG.get_user()      
          gmuted = is_gmuted(guser.id)             
        except:      
@@ -208,4 +210,4 @@ async def handler(rkG):
                     rkG.reply("`No Permission To Ban`")                   
                     return 
 CMD_HELP.update({
-    "gban":".gban and .ungban any user using username or tag dont use id "})
+    "gban":"gban any user using username or tag dont use id "})

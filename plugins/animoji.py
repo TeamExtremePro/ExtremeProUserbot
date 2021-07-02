@@ -1,12 +1,12 @@
 import asyncio
 from collections import deque
 
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
-from Extre import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import CMD_HELP
 
 
-@bot.on(extremepro_cmd(pattern="think$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="think$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="think$", outgoing=True))
+@bot.on(sudo_cmd(pattern="think$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -18,8 +18,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern=r"lmao$"))
-@bot.on(amanpandey_cmd(pattern="lmao$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"lmao$"))
+@bot.on(sudo_cmd(pattern="lmao$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -31,8 +31,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern=r"nothappy$"))
-@bot.on(amanpandey_cmd(pattern="nothappy$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"nothappy$"))
+@bot.on(sudo_cmd(pattern="nothappy$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -44,8 +44,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(outgoing=True, pattern="clock$"))
-@bot.on(amanpandey_cmd(pattern="clock$", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern="clock$"))
+@bot.on(sudo_cmd(pattern="clock$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -57,8 +57,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern=r"muah$"))
-@bot.on(amanpandey_cmd(pattern="muah$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"muah$"))
+@bot.on(sudo_cmd(pattern="muah$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -70,8 +70,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern="heart$"))
-@bot.on(amanpandey_cmd(pattern="heart$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="heart$"))
+@bot.on(sudo_cmd(pattern="heart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -83,8 +83,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern="gym$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="gym$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="gym$", outgoing=True))
+@bot.on(sudo_cmd(pattern="gym$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -96,8 +96,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern=f"earth$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="earth$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"earth$", outgoing=True))
+@bot.on(sudo_cmd(pattern="earth$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -109,8 +109,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(outgoing=True, pattern="moon$"))
-@bot.on(amanpandey_cmd(pattern="moon$", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern="moon$"))
+@bot.on(sudo_cmd(pattern="moon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -122,8 +122,8 @@ async def _(event):
         deq.rotate(1)
 
 
-@bot.on(extremepro_cmd(pattern=f"smoon$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="smoon$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"smoon$", outgoing=True))
+@bot.on(sudo_cmd(pattern="smoon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -146,8 +146,8 @@ async def _(event):
         await event.edit(animation_chars[i % 8])
 
 
-@bot.on(extremepro_cmd(pattern=f"tmoon$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="tmoon$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"tmoon$", outgoing=True))
+@bot.on(sudo_cmd(pattern="tmoon$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -193,8 +193,8 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 32])
 
-@bot.on(extremepro_cmd(pattern=f"hart$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"hart$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"hart$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"hart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -207,8 +207,8 @@ async def _(event):
         await event.edit(animation_chars[i % 4])
 
 
-@bot.on(extremepro_cmd(pattern=f"anim$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"anim$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"anim$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"anim$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -230,8 +230,8 @@ async def _(event):
         await event.edit(animation_chars[i % 10])
 
 
-@bot.on(extremepro_cmd(pattern=f"fnl$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"fnl$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"fnl$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"fnl$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -244,8 +244,8 @@ async def _(event):
         await event.edit(animation_chars[i % 6])
 
 
-@bot.on(extremepro_cmd(pattern=f"monkey$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"monkey$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"monkey$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"monkey$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -257,8 +257,8 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 6])
 
-@bot.on(extremepro_cmd(pattern=f"hand$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"hand$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"hand$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"hand$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -285,8 +285,8 @@ async def _(event):
         await event.edit(animation_chars[i % 13])
 
 
-@bot.on(extremepro_cmd(pattern=f"gsg$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=f"gsg$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"gsg$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"gsg$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -312,8 +312,8 @@ async def _(event):
         await event.edit(animation_chars[i % 12])
 
 
-@bot.on(extremepro_cmd(pattern=r"theart$", outgoing=True))
-@bot.on(amanpandey_cmd(pattern=r"theart$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"theart$", outgoing=True))
+@bot.on(sudo_cmd(pattern=r"theart$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

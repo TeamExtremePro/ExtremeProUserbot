@@ -6,12 +6,12 @@ Syntax: .ud Query"""
 import asyncurban
 from PyDictionary import PyDictionary
 
-from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(extremepro_cmd(pattern="ud (.*)"))
-@bot.on(amanpandey_cmd(pattern="ud (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="ud (.*)"))
+@bot.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,17 +29,17 @@ async def _(event):
         await edit_or_reply(event, "No result found for **" + word + "**")
 
 
-@bot.on(extremepro_cmd(pattern="meaning (.*)"))
-@bot.on(amanpandey_cmd(pattern="meaning (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="meaning (.*)"))
+@bot.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     word = event.pattern_match.group(1)
     dictionary = PyDictionary()
-    ExtremePro = dictionary.meaning(word)
+    hell = dictionary.meaning(word)
     output = f"**Word :** __{word}__\n\n"
     try:
-        for a, b in ExtremePro.items():
+        for a, b in hell.items():
             output += f"**{a}**\n"
             for i in b:
                 output += f"☞__{i}__\n"

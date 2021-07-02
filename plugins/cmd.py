@@ -1,28 +1,28 @@
-# Made by AMAN PANDEY FOR DEVIL BOT
+# Made by @LEGENDX22 FOR LEGEND BOT
 import asyncio
 import io
 
-from Extre.utils import extremepro_cmd
-from Extre import CMD_HELP
+from userbot.utils import admin_cmd
+from userbot import CMD_HELP
 
 
 # @command(pattern="^.cmds", outgoing=True)
-@borg.on(extremepro_cmd(pattern=r"cmds"))
+@borg.on(admin_cmd(pattern=r"cmds"))
 async def install(event):
     if event.fwd_from:
         return
     reply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
-    cmd = "ls Extre/plugins"
-    process = await asyncio.create_subprocess_sExtremePro(
+    cmd = "ls userbot/plugins"
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
     _o = o.split("\n")
     o = "\n".join(_o)
-    OUTPUT = f"**List of Plugins:**\n - {o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All modules might not work directly. Visit__ @devilExtre __for assistance.__"
+    OUTPUT = f"**List of Plugins:**\n - {o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All modules might not work directly. Visit__ @teamishere __for assistance.__"
     if len(OUTPUT) > 69:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "cmd_list.text"
@@ -39,5 +39,5 @@ async def install(event):
 
 
 CMD_HELP.update(
-    {"command_list": ".cmds\nUsage - Extracts all the plugins of this Extre in a link.."}
+    {"command_list": ".cmds\nUsage - Extracts all the plugins of this userbot in a link.."}
 )

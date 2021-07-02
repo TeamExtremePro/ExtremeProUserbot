@@ -3,19 +3,19 @@ import asyncio
 from telethon import events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
-from Extre import CMD_HELP
-from Extre.utils import extremepro_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd
 
 
-@borg.on(extremepro_cmd("gbam"))
+@borg.on(admin_cmd("gbam"))
 async def gbun(event):
     if event.fwd_from:
         return
     gbunVar = event.text
     gbunVar = gbunVar[6:]
     mentions = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\n`"
-    no_reason = "__Reason: SPAMMER"
-    await event.edit("** Nikal ❗️⚜️☠️**")
+    no_reason = "__Reason: Madarchod Saala"
+    await event.edit("** Nikal Lawde❗️⚜️☠️**")
     asyncio.sleep(3.5)
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
@@ -33,7 +33,7 @@ async def gbun(event):
         else:
             jnl=("`Warning!! `"
                   "[{}](tg://user?id={})"
-                  "` 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By {DEFUALTUSER}...\n\n`"
+                  "` 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\n\n`"
                   "**Person's Name: ** __{}__\n"
                   "**ID : ** `{}`\n"
                 ).format(firstname, idd, firstname, idd)
@@ -57,6 +57,6 @@ CMD_HELP.update(
     {
         "gbam": "**Plugin : **`gbam`\
     \n\n**Syntax : **`.gbam`\
-    \n**Function : **fake gban for Extre"
+    \n**Function : **fake gban for userbot"
     }
 )

@@ -11,7 +11,7 @@ import time
 import os
 import sys
 from telethon import events, functions, __version__
-from Extre.utils import extremepro_cmd
+from userbot.utils import admin_cmd
 from asyncio.subprocess import PIPE as asyncPIPE
 from asyncio import create_subprocess_exec as asyncrunapp
 
@@ -21,7 +21,7 @@ if not os.path.isdir("./SAVED"):
 if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
      os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
 
-@borg.on(extremepro_cmd(outgoing=True, pattern="pips(?: |$)(.*)"))
+@borg.on(admin_cmd(outgoing=True, pattern="pips(?: |$)(.*)"))
 async def pipcheck(pip):
         pipmodule = pip.pattern_match.group(1)
         if pipmodule:
@@ -64,7 +64,7 @@ async def pipcheck(pip):
         else:
             await pip.edit("`Use .help system to see an example`")
 	
-@borg.on(extremepro_cmd(pattern="suicide$"))
+@borg.on(admin_cmd(pattern="suicide$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -79,12 +79,12 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[SUPER POWERFUL Extre USERBOT](tg://need_update_for_some_feature/) SUICIDE BOMB:**\n{o}"
+    OUTPUT = f"**[LEGEND BOT](tg://need_update_for_some_feature/) SUICIDE BOMB:**\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
@@ -100,7 +100,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 	
-@borg.on(extremepro_cmd(pattern="plugins$"))
+@borg.on(admin_cmd(pattern="plugins$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -108,19 +108,19 @@ async def _(event):
     PROCESS_RUN_TIME = 100
 #    dirname = event.pattern_match.group(1)
 #    tempdir = "localdir"
-    cmd = "ls Extre/plugins"
+    cmd = "ls userbot/plugins"
 #    if dirname == tempdir:
 	
     eply_to_id = event.message.id
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[DEVIL BOT](tg://need_update_for_some_feature/) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit__ @LEGEND_Extre_SUPPORT __for assistance.__"
+    OUTPUT = f"**[LEGEND BOT](tg://need_update_for_some_feature/) PLUGINS:**\n{o}\n\n**HELP:** __If you want to know the commands for a plugin, do:-__ \n `.help <plugin name>` **without the < > brackets.**\n__All plugins might not work directly. Visit__ @LEGEND_USERBOT_SUPPORT __for assistance.__"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
@@ -136,7 +136,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 
-@borg.on(extremepro_cmd(pattern="date$"))
+@borg.on(admin_cmd(pattern="date$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -151,7 +151,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
@@ -172,7 +172,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 
-@borg.on(extremepro_cmd(pattern="env$"))
+@borg.on(admin_cmd(pattern="env$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -187,7 +187,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
@@ -208,7 +208,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 
-@borg.on(extremepro_cmd(pattern="fast$"))
+@borg.on(admin_cmd(pattern="fast$"))
 async def _(event):
     await event.edit("calculating...")
     if event.fwd_from:
@@ -224,12 +224,12 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = f"**[DEVIL BOT](tg://need_update_for_some_feature/) , Server Speed Calculated:**\n{o}"
+    OUTPUT = f"**[LEGEND BOT](tg://need_update_for_some_feature/) , Server Speed Calculated:**\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
@@ -245,7 +245,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 
-@borg.on(extremepro_cmd(pattern="fortune$"))
+@borg.on(admin_cmd(pattern="fortune$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -260,7 +260,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
@@ -282,7 +282,7 @@ async def _(event):
         await event.edit(OUTPUT)
 
 
-@borg.on(extremepro_cmd(pattern="qquote$"))
+@borg.on(admin_cmd(pattern="qquote$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -297,7 +297,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
@@ -318,7 +318,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 	
-@borg.on(extremepro_cmd(pattern="fakeid$"))
+@borg.on(admin_cmd(pattern="fakeid$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -333,7 +333,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
@@ -354,7 +354,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 
-@borg.on(extremepro_cmd(pattern="kwot$"))
+@borg.on(admin_cmd(pattern="kwot$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -369,7 +369,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
@@ -390,7 +390,7 @@ async def _(event):
     else:
         await event.edit(OUTPUT)
 
-@borg.on(extremepro_cmd(pattern="qpro$"))
+@borg.on(admin_cmd(pattern="qpro$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -405,7 +405,7 @@ async def _(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     start_time = time.time() + PROCESS_RUN_TIME
-    process = await asyncio.create_subprocess_sExtremePro(
+    process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()

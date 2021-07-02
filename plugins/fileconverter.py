@@ -11,10 +11,10 @@ import asyncio
 import time
 from datetime import datetime
 
-from Extre.utils import extremepro_cmd, amanpandey_cmd , edit_or_reply
-from Extre import CMD_HELP, bot
+from userbot.utils import admin_cmd, sudo_cmd , edit_or_reply
+from userbot import CMD_HELP, bot
 
-@borg.on(extremepro_cmd(pattern=r"open", outgoing=True))
+@borg.on(admin_cmd(pattern=r"open", outgoing=True))
 async def _(event):
     b = await event.client.download_media(await event.get_reply_message())
     a = open(b, "r")
@@ -36,7 +36,7 @@ async def _(event):
     os.remove(b)
 
 
-@borg.on(extremepro_cmd(pattern="doc ?(.*)"))
+@borg.on(admin_cmd(pattern="doc ?(.*)"))
 async def get(event):
     name = event.text[5:]
     if name is None:
@@ -66,8 +66,8 @@ async def get(event):
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "thumb_image.jpg"
 
 
-@borg.on(extremepro_cmd(pattern="stoi"))
-@borg.on(amanpandey_cmd(pattern="stoi", allow_sudo=True))
+@borg.on(admin_cmd(pattern="stoi"))
+@borg.on(sudo_cmd(pattern="stoi", allow_sudo=True))
 async def danish(hehe):
     if hehe.fwd_from:
         return
@@ -121,8 +121,8 @@ async def danish(hehe):
   
   #hehe
   
-@borg.on(extremepro_cmd(pattern="itos"))
-@borg.on(amanpandey_cmd(pattern="itos", allow_sudo=True))
+@borg.on(admin_cmd(pattern="itos"))
+@borg.on(sudo_cmd(pattern="itos", allow_sudo=True))
 async def teamcobra(hehe):
     if hehe.fwd_from:
         return

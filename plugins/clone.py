@@ -1,11 +1,17 @@
-# Copyright Team Extre
+"""Get Telegram Profile Picture and other information
+and set as own profile.
+Syntax: .clone @username"""
+#Copy That Plugin by @ViperAdnan
+#modified by @LEGENDX22
+#Give credit if you are going to kang it.
+
 import html
 import os
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from Extre.utils import extremepro_cmd
+from userbot.utils import admin_cmd
 from telethon.tl import functions
 from telethon import events
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
@@ -18,9 +24,15 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
+from userbot import bot, CMD_HELP , AUTONAME , BIO_MSG , ALIVE_NAME
 
-@borg.on(extremepro_cmd(pattern="clone ?(.*)"))
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
+
+DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGEND USE ExtremeProUserbot"
+BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
+BOTLOG = True
+
+@borg.on(admin_cmd(pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -72,12 +84,12 @@ async def _(event):
     if BOTLOG:
         await event.client.send_message(BOTLOG_CHATID, f"#CLONED\nSuccesfulley cloned [{first_name}](tg://user?id={user_id })")
     
-@borg.on(extremepro_cmd(pattern="revert$"))
+@borg.on(admin_cmd(pattern="revert$"))
 async def _(event):
     if event.fwd_from:
         return
-    name = f"{ALIVE_NAME}"
-    bio = f"{ALIVE_NAME} Uses eXTREMEpROuSERBOT bot"
+    name = f"{DEFAULTUSER}"
+    bio = f"{DEFAULTUSERBIO}"
     n = 1
     await borg(functions.photos.DeletePhotosRequest(await event.client.get_profile_photos("me", limit= n)))    
     await borg(functions.account.UpdateProfileRequest(about=f"{bio}"))
@@ -142,10 +154,10 @@ async def get_full_user(event):
             except Exception as e:
                 return None, e
 
-{
+CMD_HELP.update({
     "clone":
     ".clone <username/reply>\
 \nUsage: steals others profile including dp, name.\
 \n\n.revert\
 \nUsage: To back to your profile but it'll show ALIVE_NAME instead of your current name and DEFAULT_BIO instead of your current bio\
-"}
+"})
