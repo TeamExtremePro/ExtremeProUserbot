@@ -10,7 +10,8 @@ from traceback import format_exc
 
 from telethon import events
 
-from extreme import bot, BOTLOG, BOTLOG_CHATID, LOGS
+from extreme import bot, BOTLOG, BOTLOG_CHATID
+from userbot import LOGS
 from database.dbhelper import get_exclude
 
 
