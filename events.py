@@ -2,7 +2,6 @@
  One of the main components of the userbot. """
 
 import sys
-from sys import args
 from asyncio import create_subprocess_shell as asyncsubshell
 from asyncio import subprocess as asyncsub
 from os import remove
