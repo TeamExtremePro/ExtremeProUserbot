@@ -5,6 +5,7 @@ import os
 import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
+from redisdatabase.connections import extreme_session, redis_connection
 from Extre import *
 from Extre.utils import extremepro_cmd, amanpandey_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
 from Extre.config import Config
@@ -69,3 +70,5 @@ async def extremepro_grps(event):
                 if entity.creator or entity.admin_rights:
                     a.append(entity.id)
     return len(a), a
+
+
