@@ -68,10 +68,10 @@ def redis_connection():
 def session_file():
     if os.path.exists("client-session.session"):
         _session = "client-session"
-    elif Var.SESSION:
-        _session = StringSession(Var.SESSION)
+    elif Var.STRING_SESSION:
+        _session = StringSession(Var.STRING_SESSION)
     else:
-        print("No String Session found. Quitting...")
+        print("No String Session found. Add Because Without String Session I Cant Run. I am Quitting...")
         exit(1)
     return _session
 
