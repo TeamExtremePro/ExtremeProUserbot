@@ -11,7 +11,7 @@ from telethon.errors.rpcerrorlist import (
 )
 from telethon.sessions import StringSession
 
-from redisdatabase.var import Var
+from redisdatabse.var import Var
 
 
 def connect_redis():
