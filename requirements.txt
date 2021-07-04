@@ -1,4 +1,4 @@
-Extre
+Extre==0.17
 pip
 pymongo
 apscheduler
