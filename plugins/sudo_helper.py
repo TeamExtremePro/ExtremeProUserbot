@@ -101,7 +101,7 @@ async def _(event):
     await edit_or_reply(event, """Telethon UserBot powered by EXTREMEPRO UserBot""")
 
 
-@bot.on(j_cmd(pattern="vsyntax (.*)", outgoing=True))
+@bot.on(admin_cmd(pattern="vsyntax (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="vsyntax (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
