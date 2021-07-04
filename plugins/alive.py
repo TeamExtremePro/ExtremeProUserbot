@@ -29,8 +29,8 @@ EXTREMEPRO += f"┣•➳➠ `𝔖𝔲𝔭𝔭𝔬𝔯𝔱 :` [𝔖𝔲𝔭𝔭�
 EXTREMEPRO += f"┣•➳➠ `яєρσ🔥 :` [яєρσ🔥](https://github.com/TeamExtremePro/ExtremeProUserbot)\n"
 EXTREMEPRO += f"┣•➳➠ `ɖɛքʟօʏ⚡ :` [ɖɛքʟօʏ⚡Me](https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy)\n"
 EXTREMEPRO += f"┗━━━━━━━━━━━━━━━━━━━\n"
-extremepro_bot(extremepro_cmd(outgoing=True, pattern="alive$"))
-extremepro_bot(amanpandey_cmd(pattern="alive$", allow_sudo=True))
+@extremepro_bot(extremepro_cmd(outgoing=True, pattern="alive$"))
+@extremepro_bot(amanpandey_cmd(pattern="alive$", allow_sudo=True))
 async def up(op):
     if op.fwd_from:
         return
