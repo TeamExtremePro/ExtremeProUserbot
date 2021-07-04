@@ -23,7 +23,7 @@ def connect_redis():
     if "/" in Var.REDIS_URI:
         op += "Your REDIS_URI should start with redis.xxx. Quitting...\n"
     if op is not "":
-        print(error seems redis url not configured correctly)
+        print("error seems redis url not configured correctly")
         exit(1)
     redis_info = Var.REDIS_URI.split(":")
     DB = StrictRedis(
