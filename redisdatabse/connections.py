@@ -1,4 +1,3 @@
-
 import os
 import time
 
@@ -15,15 +14,15 @@ from redisdatabse.var import Var
 
 
 def connect_redis():
-    op = ""
+    err = ""
     if ":" not in Var.REDIS_URI:
-        op += "\nWrong REDIS_URI. Quitting...\n"
+        err += "\nWrong REDIS_URI. Quitting...\n"
     if "http" in Var.REDIS_URI:
-        op += "Remove http or https from REDIS_URI. Quitting...\n"
+        err += "Remove http or https from REDIS_URI. Quitting...\n"
     if "/" in Var.REDIS_URI:
-        op += "Your REDIS_URI should start with redis.xxx. Quitting...\n"
-    if op is not "":
-        print("error seems redis url not configured correctly")
+        err += "Your REDIS_URI should start with redis.xxx. Quitting...\n"
+    if err is not "":
+        print(err)
         exit(1)
     redis_info = Var.REDIS_URI.split(":")
     DB = StrictRedis(
@@ -80,7 +79,7 @@ def client_connection():
     try:
         client = TelegramClient(session_file(), Var.API_ID, Var.API_HASH)
     except AuthKeyDuplicatedError:
-        print("String Session Expired or Invalid. Please Create New String Session. Quitting...")
+        print("String Session Expired. Please Create New String Session. Quitting...")
         exit(1)
     except Exception as ap:
         print(f"ERROR - {ap}")
