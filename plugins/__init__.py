@@ -2,8 +2,6 @@
 # THIS FILE IS PART OF https://github.com/TeamExtremePro/ExtremeProUserbot.git
 import asyncio
 import os
-from redisdatabse import *
-import asyncio
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from redisdatabse.connections import client_connection, redis_connection
@@ -17,6 +15,7 @@ from Extre import CMD_LIST, CMD_HELP, CMD_HELP_BOT, BRAIN_CHECKER, INT_PLUG, LOA
 AUTONAME = os.environ.get("AUTONAME", None)
 from telethon.tl.types import Channel
 
+from Extre import *
 from Extre import *
 from Extre import ALIVE_NAME, bot
 PMSECURITY = os.environ.get("PMSECURITY", None)
@@ -62,7 +61,7 @@ EXTREMEPRO_NAME = ALIVE_NAME
 OWNER_ID = os.environ.get("OWNER_ID", None)
 
 # count total number of groups
-
+from Extre import *
 
 async def extremepro_grps(event):
     a = []
