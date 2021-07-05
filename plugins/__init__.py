@@ -7,7 +7,14 @@ from telethon.sessions import StringSession
 from Extre.connections import client_connection, redis_connection
 from Extre import *
 from Extre import *
-from Extre.utils import extremepro_cmd, amanpandey_cmd, extremepiro_cmd, load_module, humanbytes, register, command, start_assistant, errors_handler, progress, human_to_bytes, time_formatter, is_admin
+from Extre.core import *
+
+from Extre.utils import *
+from Extre._wrappers import *
+from Extre.func import *
+from Extre.core import *
+from Extre.sudo import *
+from Extre.extremecmd import *
 from Extre.config import Config
 from Extre.var import Var
 from Extre.variables import Var
