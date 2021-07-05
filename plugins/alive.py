@@ -13,7 +13,7 @@ from telethon import events, TelegramClient
 from Extre import *
 from Extre.utils import extremepro_cmd
 from telethon.tl.types import ChannelParticipantsAdmins
-from Extre import ALIVE_NAME
+from Extre import ALIVE_NAME,. StartTime as uptm
 from Extre.utils import extremepro_cmd as extremepro_cmd, amanpandey_cmd as amanpandey_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet nibba"
