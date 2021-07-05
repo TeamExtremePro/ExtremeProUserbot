@@ -1,17 +1,8 @@
 
-"""
-✘ Commands Available -
-•`{i}gpromote <reply to user> <channel/group/all> <rank>`
-    globally promote user where you are admin.
-    You can also set where To promote only groups or only channels or in all.
-    Like. `gpromote group boss` ~ it promote repied user in all groups.
-    Or. `gpromote @username all sar` ~ it promote the users in all group and channel.
-•`{i}gdemote`
-    Same function as gpromote.
-"""
 
 import os
 
+from userbot import CMD_HELP
 from telethon import events
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
@@ -303,3 +294,10 @@ async def _(e):
                         pass
         return await eor(ev, f"Demoted {name.first_name} in Total : {c} {key} chats.")
 
+CMD_HELP.update(
+    {
+        "gpromote_gdemote": ".gpromote & .gdemote\
+\nUsage: globally promote a user or demote.\
+"
+    }
+)
