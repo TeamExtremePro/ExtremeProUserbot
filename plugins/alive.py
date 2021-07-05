@@ -26,7 +26,7 @@ EXTREMEPRO += f"┣•➳➠ `𝓣𝓮𝓵𝓮𝓽𝓱𝓸𝓷 𝓥𝓮𝓻𝓼�
 EXTREMEPRO += f"┣•➳➠ `𝐸𝓍𝓉𝓇𝑒𝓂𝑒𝒫𝓇𝑜 𝒱𝑒𝓇𝓈𝒾𝑜𝓃 :` `0.0.1`\n"
 EXTREMEPRO += f"┣•➳➠ `𝓟𝔂𝓽𝓱𝓸𝓷 𝓥𝓮𝓻𝓼𝓲𝓸𝓷 :` `3.9.5`\n"
 EXTREMEPRO += f"┣•➳➠ `𝔖𝔲𝔭𝔭𝔬𝔯𝔱 :` [𝔖𝔲𝔭𝔭𝔬𝔯𝔱](https://t.me/ExtremeProuserbotsupport)\n"
-EXTREMEPRO += f"┣•➳➠ `υρтιмє :` `{uptm}` \n"
+EXTREMEPRO += f"┣•➳➠ `υρтιмє :` `{StartTime}` \n"
 EXTREMEPRO += f"┣•➳➠ `яєρσ🔥 :` [яєρσ🔥](https://github.com/TeamExtremePro/ExtremeProUserbot)\n"
 EXTREMEPRO += f"┣•➳➠ `ɖɛքʟօʏ⚡ :` [ɖɛքʟօʏ⚡Me](https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy)\n"
 EXTREMEPRO += f"┗━━━━━━━━━━━━━━━━━━━\n"
