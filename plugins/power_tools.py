@@ -11,7 +11,7 @@ import os
 import sys
 from uniborg.util import admin_cmd
 
-
+from plugins import *
 
 
 @borg.on(admin_cmd(pattern="restart"))
