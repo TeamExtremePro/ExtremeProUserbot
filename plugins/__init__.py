@@ -72,3 +72,17 @@ async def extremepro_grps(event):
                 if entity.creator or entity.admin_rights:
                     a.append(entity.id)
     return len(a), a
+
+
+
+
+async def bash(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await process.communicate()
+    err = stderr.decode().strip()
+    out = stdout.decode().strip()
+    return out, err
