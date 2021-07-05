@@ -29,7 +29,7 @@ _gdemote_rights = ChatAdminRights(
 )
 
 
-@borg.on(extremepro_cmd(outgoing=True, pattern="alive$"))
+@borg.on(extremepro_cmd(outgoing=True, pattern="gpromote$"))
 async def _(e):
     if not e.out and not is_fullsudo(e.sender_id):
         return await eod(e, "`This Command Is Sudo Restricted.`")
@@ -162,7 +162,7 @@ async def _(e):
         return await eor(ev, f"Promoted {name.first_name} in Total : {c} {key} chats.")
 
 
-@borg.on(extremepro_cmd(outgoing=True, pattern="alive$"))
+@borg.on(extremepro_cmd(outgoing=True, pattern="gdemote$"))
 async def _(e):
     if not e.out and not is_fullsudo(e.sender_id):
         return await eod(e, "`This Command Is Sudo Restricted.`")
