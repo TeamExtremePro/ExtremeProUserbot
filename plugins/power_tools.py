@@ -11,13 +11,15 @@ import os
 import sys
 from uniborg.util import admin_cmd
 
+from var import Var
+
 from plugins import *
 
 
 @borg.on(admin_cmd(pattern="restart"))
 async def restartbt(ult):
     ok = await eor(ult, "ℜ𝔢𝔰𝔱𝔞𝔯𝔱𝔢𝔡 𝔜𝔬𝔲𝔯 𝔅𝔬𝔱✅ \n𝔇𝔬`.𝔞𝔩𝔦𝔳𝔢`  𝔬𝔯 `.𝔥𝔢𝔩𝔭𝔪𝔢` 𝔞𝔣𝔱𝔢𝔯 5 𝔪𝔦𝔫𝔲𝔱𝔢𝔰 𝔬𝔣 𝔯𝔢𝔰𝔱𝔞𝔯𝔱𝔦𝔫𝔤 𝔭𝔯𝔬𝔠𝔢𝔰𝔰 𝔱𝔬 𝔠𝔥𝔢𝔠𝔨 𝔦𝔣 ℑ 𝔞𝔪 𝔬𝔫𝔩𝔦𝔫𝔢")
-    if Var.HEROKU_API:
+    if Var.HEROKU_API_KEY:
         await restart(ok)
     else:
         await bash("pkill python3 && python3 -m Extre")
