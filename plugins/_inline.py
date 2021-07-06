@@ -7,7 +7,7 @@ from math import ceil
 from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
+from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, SUDO_LIST
 from plugins import extremeprostats
 from Extre.variables import Var
 
@@ -169,7 +169,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         )
     )
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == sudos:  # pylint:disable=E0602
+        if event.query.user_id == SUDO_LIST:  # pylint:disable=E0602
             current_page_number = int(event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
             # https://t.me/TelethonChat/115200
@@ -193,6 +193,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
     async def megic(event):
         if event.query.user_id == bot.uid:
+            buttons = paginate_help(0, CMD_LIST, "helpme")
+            await event.edit("Menu Re-opened", buttons=buttons)
+        else:
+            reply_pop_up_alert = "This bot ain't for u!!"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+ 
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
+    async def megic(event):
+        if event.query.user_id == SUDO_LIST:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             await event.edit("Menu Re-opened", buttons=buttons)
         else:
@@ -275,6 +284,17 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
+            await event.edit(
+                "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
+            )
+        else:
+            reply_pop_up_alert = "Please get your own userbot from @ExtremeProuserSupport "
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            
+
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    async def on_plug_in_callback_query_handler(event):
+        if event.query.user_id == SUDO_LIST:
             await event.edit(
                 "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
             )
