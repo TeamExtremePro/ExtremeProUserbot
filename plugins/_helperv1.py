@@ -10,7 +10,7 @@ from userbot.utils import sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
-@command(pattern="^.help ?(.*)")
+@command(pattern="^.shelp ?(.*)")
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -60,7 +60,7 @@ async def _(event):
 
 
 
-@borg.on(sudo_cmd(allow_sudo=True, pattern="help(?: |$)(.*)"))
+@borg.on(sudo_cmd(allow_sudo=True, pattern="shelp(?: |$)(.*)"))
 async def info(event):
     if event.fwd_from:
         return
