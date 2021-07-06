@@ -11,6 +11,10 @@ from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
 from plugins import extremeprostats
 from Extre.variables import Var
 
+
+sudos = os.environ.get("SUDO_USERS", None)
+
+
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 EXTREMEPROPIC = (
     PMPERMIT_PIC
@@ -149,6 +153,23 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     )
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:  # pylint:disable=E0602
+            current_page_number = int(event.data_match.group(1).decode("UTF-8"))
+            buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
+            # https://t.me/TelethonChat/115200
+            await event.edit(buttons=buttons)
+        else:
+            reply_pop_up_alert = (
+                "Please get your own Userbot from @ExtremeProUserbotSupport , and don't use mine!"
+            )
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            
+    @tgbot.on(
+        events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+            data=re.compile(rb"helpme_next\((.+?)\)")
+        )
+    )
+    async def on_plug_in_callback_query_handler(event):
+        if event.query.user_id == sudos:  # pylint:disable=E0602
             current_page_number = int(event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
             # https://t.me/TelethonChat/115200
