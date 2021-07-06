@@ -1,86 +1,72 @@
-from userbot import CMD_LIST, SUDO_LIST
-from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd, sudo_cmd
-from platform import uname
-import sys
-from telethon import events, functions, __version__
+import os
 
-from userbot import SUDO_LIST
-from userbot.utils import sudo_cmd
+from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST
+from Extre.config import Config
+from Extre.utils import extremepro_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
+CMD_HNDLR = os.environ.get("CMD_HNDLR", None)
+CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "⚡")
 
-@command(pattern="^.help ?(.*)")
+if CMD_HNDLR is None:
+    CMD_HNDLR = "."
+
+
+@bot.on(extremepro_cmd(pattern="help ?(.*)"))
+@bot.on(amanpandey_cmd(pattern="help ?(.*)", allow_sudo=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
         if tgbotusername is None or input_str == "text":
             string = ""
-            for i in CMD_LIST:
-                string += "👉 " + i + "\n"
-                for iter_list in CMD_LIST[i]:
+            for i in CMD_HELP:
+                string += CUSTOM_HELP_EMOJI + " " + i + " " + CUSTOM_HELP_EMOJI + "\n"
+                for iter_list in CMD_HELP[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
                 string += "\n"
             if len(string) > 4095:
-                await borg.send_message(event.chat_id, "Do .help cmd")
-                await asyncio.sleep(5)
+                with io.BytesIO(str.encode(string)) as out_file:
+                    out_file.name = "cmd.txt"
+                    await tgbot.send_file(
+                        event.chat_id,
+                        out_file,
+                        force_document=True,
+                        allow_cache=False,
+                        caption="**COMMANDS**",
+                        reply_to=reply_to_id,
+                    )
+                    await event.delete()
             else:
                 await event.edit(string)
         elif input_str:
             if input_str in CMD_LIST:
-                string = "Commands found in {}:\n".format(input_str)
-                for i in CMD_LIST[input_str]:
-                    string += "    " + i
-                    string += "\n"
-                await event.edit(string)
+                string = "**Cσɱɱαɳԃʂ αʋαιʅαႦʅҽ ιɳ {}** \n\n".format(input_str)
+                if input_str in CMD_HELP:
+                    for i in CMD_HELP[input_str]:
+                        string += i
+                    string += "\n\n**© @Extremepro_UserbotBotSupport**"
+                    await event.edit(string)
+                else:
+                    for i in CMD_LIST[input_str]:
+                        string += "    " + i
+                        string += "\n"
+                    string += "\n**© @EXTREMEPRO_USERBOT**"
+                    await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Userbot Helper.. Provided by {DEFAULTUSER} \n
-Userbot Helper to reveal all the commands\n__Do `.help` plugin_name for commands, in case popup doesn't appear.__\nDo `.info` plugin_name for usage"""
-            results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                help_string
-            )
-            await results[0].click(
-                event.chat_id,
-                reply_to=event.reply_to_msg_id,
-                hide_via=True
-            )
-            await event.delete()
-
-@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
-async def _(event):
-    if event.fwd_from:
-        return
-    result = await borg(functions.help.GetNearestDcRequest())  # pylint:disable=E0602
-    await event.edit(result.stringify())
-
-
-
-@borg.on(sudo_cmd(allow_sudo=True, pattern="help(?: |$)(.*)"))
-async def info(event):
-    if event.fwd_from:
-        return
-    """ For .info command,"""
-    args = event.pattern_match.group(1).lower()
-    input_str = event.pattern_match.group(1)
-    if args:
-        if args in SUDO_LIST:
-            if input_str in SUDO_LIST:
-                string = "Commands found in {}:\n".format(input_str)
-                for i in SUDO_LIST[input_str]:
-                    string += "    " + i
-                    string += "\n"
-                await event.reply(string)
-        else:
-                await event.reply(args + " is not a valid plugin!")
-    else:
-        string = "**Please specify which plugin do you want help for !!**\
-            \n**Usage:** `.info` <plugin name>\n\n"
-        for i in sorted(SUDO_LIST):
-            string += "◆`" + str(i)
-            string += "`   "
-        await event.reply(string)
+            help_string = f"""`Userbot Helper for {DEFAULTUSER} to reveal all the commands of `**[ExtremeProUSerbot](@EXTREMEPRO_USERBOT)**\n\n"""
+            try:
+                results = await bot.inline_query(  # pylint:disable=E0602
+                    tgbotusername, help_string
+                )
+                await results[0].click(
+                    event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                )
+                await event.delete()
+            except BaseException:
+                await event.edit(
+                    f"тнιѕ вσт нαѕ ιηℓιηє ∂ιѕαвℓє∂. ρℓєαѕє єηαвℓє ιт тσ υѕє `{CMD_HNDLR}help`.\nGet help from [here](t.me/EXTREMEPRO_USERBOT)"
+                )
