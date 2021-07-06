@@ -1,6 +1,7 @@
 import os
 
-from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, SUDO_USERS
+from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST
+SUDO_USERS = os.environ.get("SUDO_USERS", None)
 from Extre.config import Config
 from Extre.utils import extremepro_cmd, amanpandey_cmd
 
