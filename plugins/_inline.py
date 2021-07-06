@@ -38,7 +38,7 @@ MESAG = (
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
-LOAD_MYBOT = os.environ.get("LOAD_MYBOT", None)
+LOAD_MYBOT = os.environ.get("LOAD_MYBOT", True)
 
 if os.environ.get("LOAD_MYBOT", None) == "True":
     USER_BOT_NO_WARN = (
@@ -123,19 +123,27 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 ],
             )
         else:
-            event.query.user_id == bot.uid and query.startswith("**PM")
-            TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
-            result = builder.photo(
-                file=TELEPIC,
-                text=TELEBT,
+            result = builder.article(
+                "Source Code",
+                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity of my master wait untill my master approves you`",
                 buttons=[
+                    [custom.Button.url("Creator", "https://t.me/useropbolte")],
                     [
-                        custom.Button.inline("Request ", data="req"),
-                        custom.Button.inline("Chat 💭", data="chat"),
+                        custom.Button.url(
+                            "Source Code‍", "https://github.com/TeamExtremePro/ExtremeProUserbot"
+                        ),
+                        custom.Button.url(
+                            "Deploy",
+                            "https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy",
+                        ),
                     ],
-                    [custom.Button.inline("To spam 🚫", data="heheboi")],
-                    [custom.Button.inline("What is this ❓", data="pmclick")],
+                    [
+                        custom.Button.url(
+                            "Updates and Support Group", "https://t.me/ExtremePro_userbot"
+                        )
+                    ],
                 ],
+                link_preview=False,
             )
         await event.answer([result] if result else None)
 
