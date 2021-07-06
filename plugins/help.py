@@ -11,7 +11,7 @@ from userbot.utils import sudo_cmd
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "extremepro"
 
 
-@command(pattern="^.help ?(.*)")
+@command(pattern="^.shelp ?(.*)")
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -52,7 +52,7 @@ Userbot Helper to reveal all the commands\n__Do `.help` plugin_name for commands
             )
             await event.delete()
 
-@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="sdc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
