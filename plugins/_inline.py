@@ -121,29 +121,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [Button.url("Support", "https://t.me/ExtremeProuserbot")],
                 ],
             )
-      elif: event.query.user_id == bot.uid and query == "SourceCode":
-            result = builder.article(
-                "Source Code",
-                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity of my master wait untill my master approves you`",
-                buttons=[
-                    [custom.Button.url("Creator👨‍🦱", "https://t.me/useropbolte")],
-                    [
-                        custom.Button.url(
-                            "👨‍💻Source Code‍💻", "https://github.com/TeamExtremePro/ExtremeProUserbot"
-                        ),
-                        custom.Button.url(
-                            "Deploy 🌀",
-                            "https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy",
-                        ),
-                    ],
-                    [
-                        custom.Button.url(
-                            "Updates and Support Group↗️", "https://t.me/ExtremePro_userbot"
-                        )
-                    ],
-                ],
-                link_preview=False,
-            )
         else:
             event.query.user_id == bot.uid and query.startswith("**PM"):
             TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
