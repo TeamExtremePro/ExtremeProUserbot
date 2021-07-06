@@ -11,6 +11,7 @@ from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, SUDO_LIST
 from plugins import extremeprostats
 from Extre.variables import Var
 
+TELEPIC = os.environ.get("EXTREMEPRO_PIC", None)
 
 sudos = os.environ.get("SUDO_USERS", None)
 
