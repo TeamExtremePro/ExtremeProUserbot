@@ -125,7 +125,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "Source Code",
-                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity of my master wait untill my master approves you`\n\n" " You Have Only Time To Message If You Send More then 4 time.\n\n" "My Bot Will Block You Wait Until My Master Comes And Approves You\n\n",
+                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity of my master wait untill my master approves you`\n\n" " You Have Only Time To Message If You Send More then 4 time.\n\n" "My Bot Will Block You. To Avoid Spam ! Wait Until My Master Comes And Approves You\n\n",
                 buttons=[
                     [custom.Button.url("Creator", "https://t.me/useropbolte")],
                     [
