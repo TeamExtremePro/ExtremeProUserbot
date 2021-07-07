@@ -7,14 +7,9 @@ from math import ceil
 from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, SUDO_LIST
+from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
 from plugins import extremeprostats
 from Extre.variables import Var
-
-TELEPIC = os.environ.get("EXTREMEPRO_PIC", None)
-
-sudos = os.environ.get("SUDO_USERS", None)
-
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 EXTREMEPROPIC = (
@@ -38,7 +33,7 @@ MESAG = (
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremePro User"
 USER_BOT_WARN_ZERO = "`I had warned you not to spam. Now you have been blocked and reported until further notice.`\n\n**GoodBye!** "
-LOAD_MYBOT = os.environ.get("LOAD_MYBOT", True)
+LOAD_MYBOT = os.environ.get("LOAD_MYBOT", None)
 
 if os.environ.get("LOAD_MYBOT", None) == "True":
     USER_BOT_NO_WARN = (
@@ -125,21 +120,21 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "Source Code",
-                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity and source code of my master wait until my master approves you`\n\n" " You Have Only Time To Message If You Send More then 4 time.\n\n" "My Bot Will Block You. To Avoid Spam !So Wait Until My Master Comes And Approves You\n\n",
+                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity and sourcecode of my ExtremePro userbot wait untill my master approves you else you will be blocked if send more than 3 msg.`",
                 buttons=[
-                    [custom.Button.url("Creator", "https://t.me/useropbolte")],
+                    [custom.Button.url("Creator👨‍🦱", "https://t.me/useropbolte")],
                     [
                         custom.Button.url(
-                            "Source Code‍", "https://github.com/TeamExtremePro/ExtremeProUserbot"
+                            "👨‍💻Source Code‍💻", "https://github.com/TeamExtremePro/ExtremeProUserbot"
                         ),
                         custom.Button.url(
-                            "Deploy",
+                            "Deploy 🌀",
                             "https://dashboard.heroku.com/new?button-url=https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy&template=https%3A%2F%2Fgithub.com%2FTeamExtremePro%2FDeploy",
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "Updates and Support Group", "https://t.me/ExtremePro_userbot"
+                            "Updates and Support Group↗️", "https://t.me/ExtremeProuserbotSupport"
                         )
                     ],
                 ],
@@ -163,23 +158,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 "Please get your own Userbot from @ExtremeProUserbotSupport , and don't use mine!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            
-    @tgbot.on(
-        events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-            data=re.compile(rb"helpme_next\((.+?)\)")
-        )
-    )
-    async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == SUDO_LIST:  # pylint:disable=E0602
-            current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-            buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
-            # https://t.me/TelethonChat/115200
-            await event.edit(buttons=buttons)
-        else:
-            reply_pop_up_alert = (
-                "Please get your own Userbot from @ExtremeProUserbotSupport , and don't use mine!"
-            )
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
     async def on_pm_click(event):
@@ -194,15 +172,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
     async def megic(event):
         if event.query.user_id == bot.uid:
-            buttons = paginate_help(0, CMD_LIST, "helpme")
-            await event.edit("Menu Re-opened", buttons=buttons)
-        else:
-            reply_pop_up_alert = "This bot ain't for u!!"
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
- 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
-    async def megic(event):
-        if event.query.user_id == SUDO_LIST:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             await event.edit("Menu Re-opened", buttons=buttons)
         else:
@@ -285,17 +254,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await event.edit(
-                "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
-            )
-        else:
-            reply_pop_up_alert = "Please get your own userbot from @ExtremeProuserSupport "
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-            
-
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-    async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == SUDO_LIST:
             await event.edit(
                 "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
             )
