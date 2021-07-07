@@ -1,0 +1,157 @@
+{
+  "name": "EXTREMEPRO 𝚄𝚂𝙴𝚁𝙱𝙾𝚃",
+  "description": "THE BEST USERBOT MADE BY AMANAPNDEY, GODBOYX, NOOB-STRANGER ",
+  "logo": "https://telegra.ph/file/75520b56df7b9159438cb.jpg",
+    "keywords": [
+    "telegram",
+    "amanpandey",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/TeamExtremePro/ExtremeProUserbot",
+  "website": "https://github.com/TeamExtremePro/ExtremeProUserbot",
+  "success_url": "https://github.com/TeamExtremePro/ExtremeProUserbot",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable heroku.",
+      "value": "ANYTHING"
+    },
+    "TEMP_DOWNLOAD_DIRECTORY": {
+      "description": "Where downloaded files will go.",
+      "value": "./amanpandey/DOWNLOADS/",
+      "required": false
+    },
+    "F_BAN_LOGGER_GROUP": {
+      "description": "Put Group id Same As PRIVATE_GROUP_ID.",
+      "value": "99999",
+      "required": false
+    },
+    "ALIVE_NAME": {
+      "description": "Add Your Name Or Username",
+      "value": "",
+      "required": false
+    },
+    "EXTREMEPRO_PIC": {
+      "description": "Add Any Pic in Alive in Form Of telegraph media.",
+      "value": "",
+      "required": true
+    },
+    "PM_PERMIT_GROUP_ID": {
+      "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
+      "value": "999999",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "SUDO USERS LIST.",
+      "value": "",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "ADD YOUR OWN ID.",
+      "value": "",
+      "required": false
+    },
+    "MONGO_URI": {
+      "description": "ADD MONGODB URL TO RUN THE BOT GET FROM mongodb.com.",
+      "value": "",
+      "required": true
+    },
+    "APP_ID": {
+      "description": "Get this value from my.telegram.org! Putting Others Value may result In Account Ban.",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from my.telegram.org! Putting Others Value May result In Account Ban.",
+      "value": ""
+    },
+    "PRIVATE_GROUP_BOT_API_ID": {
+      "description": "create a private channel and then type .get_id add that value here for save messages",
+      "value": "99999"
+    },
+    "PRIVATE_GROUP_ID": {
+      "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "value": "99999"
+    },
+    "PLUGIN_CHANNEL": {
+      "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "value": "999999"
+    },
+    "STRING_SESSION": {
+      "description": "Get this value by running https://replit.com/@amanpandey7647/Extreme-Pro-Userbot-String-Session#main.py ",
+      "value": ""
+    },
+    "REDIS_URI": {
+      "description": "Redis endpoint URL, from redislabs.com",
+      "value": ""
+    },
+    "REDIS_PASSWORD": {
+      "description": "Redis endpoint password, from redislabs.com",
+      "value": ""
+    },
+      "HEROKU_API_KEY": {
+      "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
+      "value": "",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "The Value of App Name you filled in right on top.Required for updater to work.",
+      "value": "",
+      "required": true
+    },
+    "TG_BOT_TOKEN_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn on inline Mode on bot settings. Get it.",
+      "value": ""
+    },
+    "CHROME_BIN": {
+      "description": "For Carbon.py. Leave as it is. ",
+      "value": "/app/.apt/usr/bin/google-chrome",
+      "required": false
+    },
+    "CHROME_DRIVER": {
+      "description": "For Carbon.py. Leave as it is. ",
+      "value": "/app/.chromedriver/bin/chromedriver",
+      "required": false
+    },
+    "TG_BOT_USER_NAME_BF_HER": {
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
+      "value": ""
+    },
+    "TZ": {
+      "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
+      "value": "Asia/Kolkata",
+      "required": true
+    },
+    "PM_DATA": {
+      "description": "Type DISABLE if you want to disable pm protection... ",
+      "value": "ENABLE",
+      "required": false 
+    }
+  },
+  "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "10"
+    }
+  }],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/amivin/aria2-heroku.git"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
+    },
+    {
+      "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
