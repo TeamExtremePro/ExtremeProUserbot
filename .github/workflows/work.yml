@@ -18,9 +18,9 @@ jobs:
 
         with:
 
-          find: "LEGEND BOT"
+          find: "bot"
 
-          replace: "Extreme Pro userbot"
+          replace: "Andencento"
 
       - name: Create Pull Request
 
@@ -28,7 +28,7 @@ jobs:
 
         with:
 
-          commit_message: 'Replaced new name'
+          commit_message: 'Andencento'
 
           commit_options: '--no-verify'
 
