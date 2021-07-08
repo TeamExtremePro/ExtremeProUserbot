@@ -1,6 +1,6 @@
 # make by LEGENDX22 🔥🔥
 # MAKE BY LEGEND X
-#make for Extreme Pro userbot
+#make for Extreme Pro userAndencento
 # KANG KRNA H TO CREDITS DEDENA 
 '''
 from datetime import datetime
@@ -9,8 +9,8 @@ from asyncio import sleep
 from os import execl
 import sys
 import os
-from userbot import bot as javes
-from userbot.utils import admin_cmd
+from userAndencento import Andencento as javes
+from userAndencento.utils import admin_cmd
 import io
 import heroku3
 import asyncio
@@ -19,7 +19,7 @@ from asyncio.subprocess import PIPE as asyncPIPE
 
 import sys
 import json
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
+from userAndencento import BOTLOG, BOTLOG_CHATID, CMD_HELP, Andencento
 from speedtest import Speedtest
 from telethon import functions
 from os import remove, execle, path, makedirs, getenv, environ
@@ -42,15 +42,15 @@ try:
    from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 except:
 	pass
-from userbot import CMD_HELP, bot
-from userbot import CMD_HELP, LOGS
+from userAndencento import CMD_HELP, Andencento
+from userAndencento import CMD_HELP, LOGS
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import python_version, uname
 from shutil import which
 from os import remove
 from telethon import version
-from userbot import CMD_HELP
+from userAndencento import CMD_HELP
 
 import heroku3
 import asyncio
@@ -58,7 +58,7 @@ import os
 import requests
 import math
 
-from userbot import CMD_HELP
+from userAndencento import CMD_HELP
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = os.environ.get("HEROKU_APIKEY", None)
 HEROKU_APPNAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -67,9 +67,9 @@ HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 
 
 Heroku = heroku3.from_key(HEROKU_API_KEY)
-GIT_REPO_NAME = "ExtremeProUserbot"
+GIT_REPO_NAME = "ExtremeProUserAndencento"
 heroku_api = "https://api.heroku.com"
-UPSTREAM_REPO_URL="https://github.com/TeamExtremePro/ExtremeProUserbot"
+UPSTREAM_REPO_URL="https://github.com/TeamExtremePro/ExtremeProUserAndencento"
 
 # ================= CONSTANT =================
 JAVES_NNAME = str(HEROKU_APPNAME)
@@ -142,7 +142,7 @@ async def update_requirements():
 from telethon.events import *
 @javes.on(admin_cmd(pattern=f"update(?: |$)(.*)"))
 async def upstream(ups):
-    "For .update command, check if the bot is up to date, update if specified"
+    "For .update command, check if the Andencento is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
@@ -164,7 +164,7 @@ async def upstream(ups):
         if conf != "now":
             await ups.edit(
                 f"`Unfortunately, the directory {error} does not seem to be a git repository.\
-            \nBut we can fix that by force updating the userbot using .update now.`"
+            \nBut we can fix that by force updating the userAndencento using .update now.`"
             )
             return
         repo = Repo.init()
@@ -221,7 +221,7 @@ async def upstream(ups):
 
     if force_update:
         await ups.edit(
-            '`Force-Syncing to latest stable userbot code, please wait...`')
+            '`Force-Syncing to latest stable userAndencento code, please wait...`')
     else:
         await ups.edit('`Finiding your heroku app.....`')
     # We're in a Heroku Dyno, handle it's memez.
@@ -232,7 +232,7 @@ async def upstream(ups):
         heroku_applications = heroku.apps()
         if not HEROKU_APPNAME:
             await ups.edit(
-                '`Please set up the HEROKU_APPNAME variable to be able to update userbot.`'
+                '`Please set up the HEROKU_APPNAME variable to be able to update userAndencento.`'
             )
             repo.__del__()
             return
@@ -242,7 +242,7 @@ async def upstream(ups):
                 break
         if heroku_app is None:
             await ups.edit(
-                f'{txt}\n`Invalid Heroku credentials for updating userbot dyno.`'
+                f'{txt}\n`Invalid Heroku credentials for updating userAndencento dyno.`'
             )
             repo.__del__()
             return
@@ -275,14 +275,14 @@ async def upstream(ups):
         reqs_upgrade = await update_requirements()
         await ups.edit('`Successfully Updated!\n'
                        'restarting......`')
-        # Spin a new instance of bot
-        args = [sys.executable, "-m", "userbot"]
+        # Spin a new instance of Andencento
+        args = [sys.executable, "-m", "userAndencento"]
         execle(sys.executable, *args, environ)
         return
 
 '''
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 @borg.on(admin_cmd(pattern="update|update now"))
 async def hehe (event):
-  await event.edit("want to update your bot ?\nnow not use update now use \n`.restart` only")
+  await event.edit("want to update your Andencento ?\nnow not use update now use \n`.restart` only")
 #maked by LEGENDX22 🔥🔥🔥⚡⚡⚡⚡

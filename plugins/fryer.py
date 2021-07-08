@@ -20,7 +20,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-""" Userbot module for frying stuff. ported by @NeoMatrix90 """
+""" UserAndencento module for frying stuff. ported by @NeoMatrix90 """
 
 import io
 from random import randint, uniform
@@ -29,12 +29,12 @@ from PIL import Image, ImageEnhance, ImageOps
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeFilename
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(admin_cmd(pattern="frybot$"))
-@bot.on(sudo_cmd(pattern="frybot$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="fryAndencento$"))
+@Andencento.on(sudo_cmd(pattern="fryAndencento$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,8 +53,8 @@ async def _(event):
             event, "`Reply to an image or sticker to deep fry it!`"
         )
         return
-    chat = "@image_deepfrybot"
-    if reply_message.sender.bot:
+    chat = "@image_deepfryAndencento"
+    if reply_message.sender.Andencento:
         event = await edit_or_reply(event, "Reply to actual users message.")
         return
     event = await edit_or_reply(event, "```Processing```")
@@ -66,9 +66,9 @@ async def _(event):
             await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("unblock @image_deepfrybot and try again")
+            await event.reply("unblock @image_deepfryAndencento and try again")
             return
-        await bot.send_read_acknowledge(conv.chat_id)
+        await Andencento.send_read_acknowledge(conv.chat_id)
         if response.text.startswith("Forward"):
             await event.edit(
                 "```can you kindly disable your forward privacy settings for good?```"
@@ -78,8 +78,8 @@ async def _(event):
         await event.delete()
 
 
-@bot.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="deepfry(?: |$)(.*)", outgoing=True))
+@Andencento.on(sudo_cmd(pattern="deepfry(?: |$)(.*)", allow_sudo=True))
 async def deepfryer(event):
     try:
         frycount = int(event.pattern_match.group(1))
@@ -175,7 +175,7 @@ async def check_media(reply_message):
 
 CMD_HELP.update(
     {
-        "fryer": "**Syntax :** `.frybot` reply to image or sticker\
+        "fryer": "**Syntax :** `.fryAndencento` reply to image or sticker\
     \n**Usage : **Fries the given sticker or image\
     \n\n**Syntax : **`.deepfry <1 to 9>` reply to image or sticker\
     \n**Usage : **Fries the given sticker or image based on level if you dont give anything then it is default to 1\

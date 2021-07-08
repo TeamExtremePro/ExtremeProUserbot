@@ -10,7 +10,7 @@ import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="text (.*)"))
@@ -23,7 +23,7 @@ async def sticklet(event):
     # the text on which we would like to do the magic on
     sticktext = event.pattern_match.group(1)
 
-    # delete the userbot command,
+    # delete the userAndencento command,
     await event.delete()
 
     # https://docs.python.org/3/library/textwrap.html#textwrap.wrap

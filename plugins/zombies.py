@@ -9,7 +9,7 @@ from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 # =================== CONSTANT ===================
 

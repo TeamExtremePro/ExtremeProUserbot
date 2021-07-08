@@ -2,12 +2,12 @@
 conversation starter questions...
 Syntax: .qt
   inspired by @Deonnn's being_logical.py
-  edited by : @mahshook_bot
+  edited by : @mahshook_Andencento
 """
 import asyncio
 import random
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"qt"))

@@ -5,13 +5,13 @@
 #
 #
 
-""" Userbot module for having some fun with people. """
+""" UserAndencento module for having some fun with people. """
 
 import asyncio
 import random
 import re
 import time
-from userbot import ALIVE_NAME
+from userAndencento import ALIVE_NAME
 
 from collections import deque
 
@@ -21,9 +21,9 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from cowpy import cow
-from userbot import bot
-from userbot import CMD_HELP,YOUTUBE_API_KEY
-from userbot.utils import register,admin_cmd
+from userAndencento import Andencento
+from userAndencento import CMD_HELP,YOUTUBE_API_KEY
+from userAndencento.utils import register,admin_cmd
 
 # ================= CONSTANT =================
 RENDISTR = [
@@ -369,7 +369,7 @@ RUNSREACTS = [
     "Jokes on you, I'm everywhere",
     "You're gonna regret that...",
     "You could also try /kickme, I hear that's fun.",
-    "Go bother someone else, no-one here cares.",
+    "Go Andencentoher someone else, no-one here cares.",
     "You can run, but you can't hide.",
     "Is that all you've got?",
     "I'm behind you...",
@@ -383,7 +383,7 @@ RUNSREACTS = [
     "May the odds be ever in your favour.",
     "Famous last words.",
     "And they disappeared forever, never to be seen again.",
-    "\"Oh, look at me! I'm so cool, I can run from a bot!\" - this person",
+    "\"Oh, look at me! I'm so cool, I can run from a Andencento!\" - this person",
     "Yeah yeah, just tap /kickme already.",
     "Here, take this ring and head to Mordor while you're at it.",
     "Legend has it, they're still running...",
@@ -658,7 +658,7 @@ HIT = [
 #@register(outgoing=True, pattern=r"^.(\w+)say (.*)")
 @borg.on(admin_cmd(pattern=r"(\w+)say (.*)"))
 async def univsaye(cowmsg):
-    """ For .cowsay module, userbot wrapper for cow which says things. """
+    """ For .cowsay module, userAndencento wrapper for cow which says things. """
     if not cowmsg.text[0].isalpha() and cowmsg.text[0] not in ("/", "#", "@", "!"):
         arg = cowmsg.pattern_match.group(1).lower()
         text = cowmsg.pattern_match.group(2)
@@ -847,14 +847,14 @@ async def vapor(vpr):
         await vpr.edit("".join(reply_text))
 
 			  
-@bot.on(admin_cmd(outgoing=True, pattern="repo"))
+@Andencento.on(admin_cmd(outgoing=True, pattern="repo"))
 async def repo(event):
     if event.fwd_from:
         return
     LEGENDX = Var.TG_BOT_USER_NAME_BF_HER
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await bot.inline_query(LEGENDX, "repo")
+    response = await Andencento.inline_query(LEGENDX, "repo")
     await response[0].click(event.chat_id)
     await event.delete()
 
@@ -1034,7 +1034,7 @@ async def faces(owo):
 
 @register(outgoing=True, pattern="^.react$")
 async def react_meme(react):
-    """ Make your userbot react to everything. """
+    """ Make your userAndencento react to everything. """
     if not react.text[0].isalpha() and react.text[0] not in ("/", "#", "@", "!"):
         await react.edit(random.choice(FACEREACTS))
 
@@ -1160,7 +1160,7 @@ async def let_me_google_that_for_you(lmgtfy_q):
         r = requests.get('http://is.gd/create.php', params=payload)
         await lmgtfy_q.edit(f"[{query}]({r.json()['shorturl']})")
         if BOTLOG:
-            await bot.send_message(
+            await Andencento.send_message(
                 BOTLOG_CHATID,
                 "LMGTFY query `" + query + "` was executed successfully",
             )
@@ -1209,7 +1209,7 @@ CMD_HELP.update({
 \n\n.owo\
 \nUsage: UwU\
 \n\n.react\
-\nUsage: Make your userbot react to everything.\
+\nUsage: Make your userAndencento react to everything.\
 \n\n.slap\
 \nUsage: reply to slap them with random objects !!\
 \n\n.cry\

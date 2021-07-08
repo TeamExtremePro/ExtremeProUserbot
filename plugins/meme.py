@@ -1,5 +1,5 @@
 """
-Memes Plugin for Userbot
+Memes Plugin for UserAndencento
 usage = .meme someCharacter //default delay will be 3
 By : - @Zero_cool7870
 

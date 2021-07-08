@@ -104,7 +104,7 @@ async def _(event):
     if x == 12:
 
         await event.edit(
-            "[When things go wrong in a big fat ExtremeProUserbot wedding...](https://telegra.ph/file/db69e17e85bb444caca32.jpg)",
+            "[When things go wrong in a big fat ExtremeProUserAndencento wedding...](https://telegra.ph/file/db69e17e85bb444caca32.jpg)",
             link_preview=True,
         )
 

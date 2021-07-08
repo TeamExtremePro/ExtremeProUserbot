@@ -1,4 +1,4 @@
-""".admin Plugin for @ExtremeProUserbot"""
+""".admin Plugin for @ExtremeProUserAndencento"""
 from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 

@@ -34,7 +34,7 @@ async def _(event):
     if len(OUTPUT) > 4095:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "exec.text"
-            await bot.send_file(
+            await Andencento.send_file(
                 event.chat_id,
                 out_file,
                 force_document=True,

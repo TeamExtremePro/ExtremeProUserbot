@@ -1,4 +1,4 @@
-"""Carbon Scraper Plugin for Userbot. //text in creative way.
+"""Carbon Scraper Plugin for UserAndencento. //text in creative way.
 usage: .karb //as a reply to any text message
 
 Thanks to @pureindialover for THIS PLUGIN"""
@@ -11,7 +11,7 @@ from urllib.parse import quote_plus
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
 # @borg.on(events.NewMessage(pattern=r"\.karb ", outgoing=True))
@@ -108,7 +108,7 @@ async def carbon_api(e):
         await e.client.send_file(
             e.chat_id,
             file,
-            caption="✅Carbonised by [ExtremeProUserbot](https://github.com/TeamExtremePro/ExtremeProUserbot/)",
+            caption="✅Carbonised by [ExtremeProUserAndencento](https://github.com/TeamExtremePro/ExtremeProUserAndencento/)",
             force_document=False,
             reply_to=e.message.reply_to_msg_id,
         )

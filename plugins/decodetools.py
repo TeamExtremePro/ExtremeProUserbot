@@ -1,4 +1,4 @@
-""" Userbot module containing hash and encode/decode commands. """
+""" UserAndencento module containing hash and encode/decode commands. """
 
 from subprocess import PIPE
 from subprocess import run as runapp

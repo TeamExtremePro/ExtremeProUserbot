@@ -1,13 +1,13 @@
 #Credits to @spechide and his team for @TROLLVOICEBOT
-#made by @legendx22 from the snippets of waifu AKA stickerizerbot....
+#made by @legendx22 from the snippets of waifu AKA stickerizerAndencento....
 #kang karega kya madarchod?
 #aukaat h bsdk teri...jake baap ka loda chus ke aa....
 
 
 import re
 import random
-from userbot import bot
-from userbot.utils import admin_cmd
+from userAndencento import Andencento
+from userAndencento.utils import admin_cmd
 
 
 IF_EMOJI = re.compile(
@@ -57,7 +57,7 @@ async def nope(legendx22):
             await legendx22.edit("`Sir please give some query to search and download it for you..!`")
             return
 
-    troll = await bot.inline_query(
+    troll = await Andencento.inline_query(
 
         "TrollVoiceBot", f"{(deEmojify(hell))}")
 

@@ -7,15 +7,15 @@ from time import sleep
 
 
 UNAPPROVED_MSG = (
-    "`Bleep blop! I'm a bot and this is an AUTOMATED MESSAGE..\n\n`"
+    "`Bleep blop! I'm a Andencento and this is an AUTOMATED MESSAGE..\n\n`"
     "`My master hasn't approved you to PM.`"
     "`Please wait for my master to look in, he mostly approves PMs.\n\n`"
     "`As far as I know, he doesn't usually approve retards though.`"
 )
 
 
-@bot.on_message(Filters.private & ~Filters.me)
-def incoming_pm(bot: BOT, message: Message):
+@Andencento.on_message(Filters.private & ~Filters.me)
+def incoming_pm(Andencento: BOT, message: Message):
     if PM_PERMIT:
         approved = PmPermit().check_if_approved(message.chat.id)
         warned = PmPermit().check_if_warned(message.chat.id)
@@ -45,19 +45,19 @@ def incoming_pm(bot: BOT, message: Message):
                 PmPermit().increment_retard_level(message.chat.id)
 
 
-@bot.on_message(Filters.private & Filters.me)
-def auto_approve_user_on_message(bot: BOT, message: Message):
+@Andencento.on_message(Filters.private & Filters.me)
+def auto_approve_user_on_message(Andencento: BOT, message: Message):
     PmPermit().approve(message.chat.id)
 
 
-@bot.on_message(Filters.command('approve', '.') & Filters.me)
-def approve(bot: BOT, message: Message):
+@Andencento.on_message(Filters.command('approve', '.') & Filters.me)
+def approve(Andencento: BOT, message: Message):
     PmPermit().approve(message.chat.id)
     message.edit("You have been approved to PM me. Please continue on with your story.")
 
 
-@bot.on_message(Filters.command('block', '.') & Filters.me)
-def block(bot: BOT, message: Message):
+@Andencento.on_message(Filters.command('block', '.') & Filters.me)
+def block(Andencento: BOT, message: Message):
     PmPermit().block_pm(message.chat.id)
     message.edit("`You have been blocked. Sad day for you init.`")
     BOT.block_user(message.chat.id)

@@ -5,15 +5,15 @@ ported to telethon by @mrconfused and @sandy1709
 import asyncio
 import shlex
 from PIL import Image 
-from userbot import LOGS , CMD_HELP
+from userAndencento import LOGS , CMD_HELP
 from telethon import functions, types
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 from glitch_this import ImageGlitcher
 from typing import Optional, Tuple
 
 
-from userbot import bot, CMD_HELP, LOGS
-from userbot.events import register
+from userAndencento import Andencento, CMD_HELP, LOGS
+from userAndencento.events import register
 
 async def take_screen_shot(
     video_file: str, duration: int, path: str = ""
@@ -104,7 +104,7 @@ async def glitch(event):
         glitched = "./temp/" + "glitched.webp"
         glitch_img = glitcher.glitch_image(img, input, color_offset=True)
         glitch_img.save(glitched)
-        await bot.send_file(
+        await Andencento.send_file(
             event.chat_id,
             glitched,
             reply_to_message_id=reply_to_id)
@@ -123,7 +123,7 @@ async def glitch(event):
             save_all=True,
             duration=DURATION,
             loop=LOOP)
-        await bot.send_file(
+        await Andencento.send_file(
             event.chat_id,
             Glitched,
             reply_to_message_id=reply_to_id)

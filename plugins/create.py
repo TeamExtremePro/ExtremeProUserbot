@@ -5,12 +5,12 @@
 Available Commands:
 .create (b|g) GroupName"""
 from telethon.tl import functions
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(admin_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
-@bot.on(sudo_cmd(pattern="create (b|g|c) (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
+@Andencento.on(sudo_cmd(pattern="create (b|g|c) (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
         try:
             result = await event.client(
                 functions.messages.CreateChatRequest(  # pylint:disable=E0602
-                    users=["@sarah_robot"],
+                    users=["@sarah_roAndencento"],
                     # Not enough users (to create a chat, for example)
                     # Telegram, no longer allows creating a chat with ourselves
                     title=group_name,
@@ -30,7 +30,7 @@ async def _(event):
             created_chat_id = result.chats[0].id
             await event.client(
                 functions.messages.DeleteChatUserRequest(
-                    chat_id=created_chat_id, user_id="@sarah_robot"
+                    chat_id=created_chat_id, user_id="@sarah_roAndencento"
                 )
             )
             result = await event.client(
@@ -50,7 +50,7 @@ async def _(event):
             r = await event.client(
                 functions.channels.CreateChannelRequest(
                     title=group_name,
-                    about="Created By Extreme Pro userbot",
+                    about="Created By Extreme Pro userAndencento",
                     megagroup=type_of_group != "c",
                 )
             )
@@ -80,7 +80,7 @@ CMD_HELP.update(
     \n**USAGE : **Creates a private group and sends you link\
     \n\n**SYNTAX : **`.create c`\
     \n**USAGE : **Creates a Channel and sends you link\
-    \n\nhere the bot accout is owner\
+    \n\nhere the Andencento accout is owner\
     "
     }
 )

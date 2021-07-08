@@ -1,12 +1,12 @@
 """ Get the Bots in any chat*
-Syntax: .get_bot"""
+Syntax: .get_Andencento"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd
 
 
-@borg.on(admin_cmd("get_bot ?(.*)"))
+@borg.on(admin_cmd("get_Andencento ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -34,9 +34,9 @@ async def _(event):
     await event.edit(mentions)
 CMD_HELP.update(
     {
-        "get_bot": "**Plugin : **`get_bot`\
-    \n\n**Syntax : **`.get_bot`\
-    \n**Function : **all bots list use .get_bot"
+        "get_Andencento": "**Plugin : **`get_Andencento`\
+    \n\n**Syntax : **`.get_Andencento`\
+    \n**Function : **all Andencentos list use .get_Andencento"
     }
 )
 

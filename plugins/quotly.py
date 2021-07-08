@@ -1,14 +1,14 @@
-"""QuotLy: Avaible commands: .qbot
+"""QuotLy: Avaible commands: .qAndencento
 """
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import bot
-from userbot.utils import admin_cmd
+from userAndencento import Andencento
+from userAndencento.utils import admin_cmd
 
 
 # @register(outgoing=True, pattern="^.q(?: |$)(.*)")
-@borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern=r"qAndencento(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,16 +21,16 @@ async def _(event):
         return
     chat = "@QuotLyBot"
     reply_message.sender
-    if reply_message.sender.bot:
+    if reply_message.sender.Andencento:
         await event.edit("```Reply to actual users message.```")
         return
     await event.edit("```Making a Quote```")
-    async with bot.conversation(chat) as conv:
+    async with Andencento.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=1031952739)
             )
-            await bot.forward_messages(chat, reply_message)
+            await Andencento.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
             await event.reply("```Please unblock @QuotLyBot and try again```")
@@ -41,4 +41,4 @@ async def _(event):
             )
         else:
             await event.delete()
-            await bot.forward_messages(event.chat_id, response.message)
+            await Andencento.forward_messages(event.chat_id, response.message)

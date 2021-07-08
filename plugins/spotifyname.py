@@ -2,7 +2,7 @@
 accroding to ur spotify songs u listening
 \n.ensp (to set ur name)
 \n.disp (to disable and back to default name)
-\nPorted by @NeoMatrix90 , @kirito6969 (both are same person)"""
+\nPorted by @NeoMatrix90 , @kirito6969 (Andencentoh are same person)"""
 import logging
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
@@ -11,7 +11,7 @@ from json import loads
 from json.decoder import JSONDecodeError
 from os import environ
 from sys import setrecursionlimit
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 from requests import get
 from telethon import events
 from telethon.tl import functions, types
@@ -19,7 +19,7 @@ from telethon.tl.functions.account import UpdateProfileRequest
 
 
 import spotify_token as st
-from userbot.uniborgConfig import Config
+from userAndencento.uniborgConfig import Config
 
 # =================== CONSTANT ===================
 SPO_BIO_ENABLED = "```Spotify Current Music to Name enabled.```"

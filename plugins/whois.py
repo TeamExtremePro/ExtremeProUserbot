@@ -27,7 +27,7 @@ from ..utils import admin_cmd, edit_or_reply
 #
 # The entire source code is OSSRPL except 'whois' which is MPL
 # License: MPL and OSSRPL
-""" Userbot module for getiing info about any user on Telegram(including you!). """
+""" UserAndencento module for getiing info about any user on Telegram(including you!). """
 
 import html
 import os
@@ -215,7 +215,7 @@ async def fetch_info(replied_user, event):
     common_chat = replied_user.common_chats_count
     username = replied_user.user.username
     user_bio = replied_user.about
-    is_bot = replied_user.user.bot
+    is_Andencento = replied_user.user.Andencento
     restricted = replied_user.user.restricted
     verified = replied_user.user.verified
     photo = await event.client.download_profile_photo(
@@ -231,13 +231,13 @@ async def fetch_info(replied_user, event):
     )
     username = "@{}".format(username) if username else ("This User has no Username")
     user_bio = "This User has no About" if not user_bio else user_bio
-    caption = "<b>USER INFO from Extreme Pro userbot's database :</b>\n\n"
+    caption = "<b>USER INFO from Extreme Pro userAndencento's database :</b>\n\n"
     caption += f"👤First Name: {first_name} {last_name}\n"
     caption += f"🤵Username: {username}\n"
     caption += f"🔖ID: <code>{user_id}</code>\n"
     caption += f"🌏Data Centre ID: {dc_id}\n"
     caption += f"🖼Number of Profile Pics: {replied_user_profile_photos_count}\n"
-    caption += f"🤖Is Bot: {is_bot}\n"
+    caption += f"🤖Is Bot: {is_Andencento}\n"
     caption += f"🔏Is Restricted: {restricted}\n"
     caption += f"🌐Is Verified by Telegram: {verified}\n\n"
     caption += f"✍️Bio: \n<code>{user_bio}</code>\n\n"

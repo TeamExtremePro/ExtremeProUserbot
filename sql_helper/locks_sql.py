@@ -6,7 +6,7 @@ class Locks(BASE):
     __tablename__ = "locks"
     chat_id = Column(String(14), primary_key=True)
     # Booleans are for "is this locked", _NOT_ "is this allowed"
-    bots = Column(Boolean, default=False)
+    Andencentos = Column(Boolean, default=False)
     commands = Column(Boolean, default=False)
     email = Column(Boolean, default=False)
     forward = Column(Boolean, default=False)
@@ -15,7 +15,7 @@ class Locks(BASE):
 
     def __init__(self, chat_id):
         self.chat_id = str(chat_id)  # ensure string
-        self.bots = False
+        self.Andencentos = False
         self.commands = False
         self.email = False
         self.forward = False
@@ -40,8 +40,8 @@ def update_lock(chat_id, lock_type, locked):
     curr_perm = SESSION.query(Locks).get(str(chat_id))
     if not curr_perm:
         curr_perm = init_locks(chat_id)
-    if lock_type == "bots":
-        curr_perm.bots = locked
+    if lock_type == "Andencentos":
+        curr_perm.Andencentos = locked
     elif lock_type == "commands":
         curr_perm.commands = locked
     elif lock_type == "email":
@@ -59,8 +59,8 @@ def is_locked(chat_id, lock_type):
     SESSION.close()
     if not curr_perm:
         return False
-    elif lock_type == "bots":
-        return curr_perm.bots
+    elif lock_type == "Andencentos":
+        return curr_perm.Andencentos
     elif lock_type == "commands":
         return curr_perm.commands
     elif lock_type == "email":

@@ -15,8 +15,8 @@ from PIL import Image, ImageDraw
 import pygments, os, asyncio, shutil, scapy, sys, requests, re, subprocess, urllib
 from pygments.lexers import Python3Lexer
 from pygments.formatters import ImageFormatter
-from userbot import bot, CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd
+from userAndencento import Andencento, CMD_HELP
+from userAndencento.utils import admin_cmd, sudo_cmd
 from telegraph import upload_file
 from telethon import events
 from telethon.tl.types import MessageMediaPhoto
@@ -25,14 +25,14 @@ path = "./dcobra/"
 if not os.path.isdir(path):
     os.makedirs(path)
 
-@bot.on(admin_cmd(pattern=r"trig"))
+@Andencento.on(admin_cmd(pattern=r"trig"))
 async def dc(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to any media.")
         return
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    download = await bot.download_media(reply.media, path)
+    download = await Andencento.download_media(reply.media, path)
     img = cv2.VideoCapture(download)
     ret, frame = img.read()
     cv2.imwrite("danish.png", frame)
@@ -58,7 +58,7 @@ async def hmm(event):
     reply = await event.get_reply_message()
     await event.edit("```Processing```")
     os.system(f'wget https://telegra.ph/file/b3a6038bc825cc4edc4f0.png')
-    img = await bot.download_media(reply.media, path)
+    img = await Andencento.download_media(reply.media, path)
     mon = "b3a6038bc825cc4edc4f0.png"
     foreground = Image.open(mon).convert("RGBA")
     img = cv2.VideoCapture(img) 
@@ -94,13 +94,13 @@ async def hmm(event):
     os.remove("shivamgta.png")
             
 
-@bot.on(admin_cmd(pattern="rgif"))
+@Andencento.on(admin_cmd(pattern="rgif"))
 async def _(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to any media.")
         return
     reply = await event.get_reply_message()
-    download = await bot.download_media(reply.media, path)
+    download = await Andencento.download_media(reply.media, path)
     img = cv2.VideoCapture(download)
     ret, frame = img.read()
     cv2.imwrite("danish.png", frame)
@@ -122,14 +122,14 @@ async def _(event):
 
             
 
-@bot.on(admin_cmd("grey"))
+@Andencento.on(admin_cmd("grey"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to any Media.")
         return
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    image = await bot.download_media(reply.media, path)
+    image = await Andencento.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) 
@@ -148,7 +148,7 @@ async def _(event):
         return
     reply = await event.get_reply_message()
     await event.edit("`Coloring image 🎨🖌️...`")
-    image = await bot.download_media(reply.media, path)
+    image = await Andencento.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read()
     cv2.imwrite("danish.jpg", frame)
@@ -163,18 +163,18 @@ async def _(event):
     pic_id = r.json()["id"]
     link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
     result = f"{r_json}"
-    await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
+    await Andencento.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
     await event.delete()
     
    
-@bot.on(admin_cmd(pattern="circle", outgoing=True))
+@Andencento.on(admin_cmd(pattern="circle", outgoing=True))
 async def shiv(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to any media.")
         return
     await event.edit("```Processing...```")
     reply = await event.get_reply_message()
-    download = await bot.download_media(reply.media, path)
+    download = await Andencento.download_media(reply.media, path)
     danish = cv2.VideoCapture(download) 
     ret, frame = danish.read()
     cv2.imwrite("danish.jpg", frame)
@@ -201,7 +201,7 @@ async def _(event):
         return
     reply = await event.get_reply_message()
     await event.edit("```Toonifing face😜😝...```")
-    image = await bot.download_media(reply.media, path)
+    image = await Andencento.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read()
     cv2.imwrite("danish.jpg", frame)
@@ -217,7 +217,7 @@ async def _(event):
     pic_id = r.json()["id"]
     link = f"https://api.deepai.org/job-view-file/{pic_id}/inputs/image.jpg"
     result = f"{r_json}"
-    await bot.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
+    await Andencento.send_message(event.chat_id, file = result, reply_to=event.reply_to_msg_id)
     await event.delete()
 
 CMD_HELP.update(

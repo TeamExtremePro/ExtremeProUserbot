@@ -1,9 +1,9 @@
 from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
 from telethon.tl.types import ChatBannedRights
-from userbot import ALIVE_NAME
-from userbot import CMD_HELP
-from userbot.events import register, errors_handler
-from userbot.utils import admin_cmd
+from userAndencento import ALIVE_NAME
+from userAndencento import CMD_HELP
+from userAndencento.events import register, errors_handler
+from userAndencento.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 #@register(outgoing=True, pattern=r"^.lock ?(.*)")
@@ -39,7 +39,7 @@ async def locks(event):
         what = "games"
     elif input_str == "inline":
         ainline = True
-        what = "inline bots"
+        what = "inline Andencentos"
     elif input_str == "poll":
         gpoll = True
         what = "polls"
@@ -128,7 +128,7 @@ async def rem_locks(event):
         what = "games"
     elif input_str == "inline":
         ainline = False
-        what = "inline bots"
+        what = "inline Andencentos"
     elif input_str == "poll":
         gpoll = False
         what = "polls"

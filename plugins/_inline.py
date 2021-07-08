@@ -7,7 +7,7 @@ from math import ceil
 from telethon import Button, custom, events, functions
 from telethon.tl.functions.users import GetFullUserRequest
 
-from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
+from Extre import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, Andencento
 from plugins import extremeprostats
 from Extre.variables import Var
 
@@ -19,12 +19,12 @@ EXTREMEPROPIC = (
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
-myid = bot.uid
-mybot = Var.TG_BOT_USER_NAME_BF_HER
-if mybot.startswith("@"):
-    botname = mybot
+myid = Andencento.uid
+myAndencento = Var.TG_BOT_USER_NAME_BF_HER
+if myAndencento.startswith("@"):
+    Andencentoname = myAndencento
 else:
-    botname = f"@{mybot}"
+    Andencentoname = f"@{myAndencento}"
 LOG_GP = Var.PRIVATE_GROUP_ID
 MESAG = (
     str(CUSTOM_PMPERMIT)
@@ -41,7 +41,7 @@ if os.environ.get("LOAD_MYBOT", None) == "True":
         "{}\n\n"
         "For immediate help, PM me via {}"
         "\nPlease choose why you are here, from the available options\n\n".format(
-            DEFAULTUSER, myid, MESAG, botname
+            DEFAULTUSER, myid, MESAG, Andencentoname
         )
     )
 elif os.environ.get("LOAD_MYBOT", None) == "False":
@@ -57,14 +57,14 @@ CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "⚡")
 HELP_ROWS = int(os.environ.get("HELP_ROWS", 5))
 HELP_COLOUMNS = int(os.environ.get("HELP_COLOUMNS", 3))
 
-if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+if Var.TG_BOT_USER_NAME_BF_HER is not None and tgAndencento is not None:
 
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+    @tgAndencento.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("`Userbot"):
+        if event.query.user_id == Andencento.uid and query.startswith("`UserAndencento"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
@@ -73,22 +73,22 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 buttons=buttons,
                 link_preview=False,
             )
-        elif event.query.user_id == bot.uid and query == "stats":
+        elif event.query.user_id == Andencento.uid and query == "stats":
             result = builder.article(
                 title="Stats",
-                text=f"**ExtremProuserBot Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @ExtremeProuserbotBotSupport",
+                text=f"**ExtremProuserBot Stats For [{DEFAULTUSER}](tg://user?id={myid})**\n\n__Bot is functioning normally, master!__\n\n(c) @ExtremeProuserAndencentoBotSupport",
                 buttons=[
                     [custom.Button.inline("Stats", data="statcheck")],
-                    [Button.url("Repo", "https://github.com/TeamExtremePro/ExtremeProUserbot/")],
+                    [Button.url("Repo", "https://github.com/TeamExtremePro/ExtremeProUserAndencento/")],
                     [
                         Button.url(
                             "Deploy Now!",
-                            "https://github.com/TeamExtremePro/ExtremeProUserbot/",
+                            "https://github.com/TeamExtremePro/ExtremeProUserAndencento/",
                         )
                     ],
                 ],
             )
-        elif event.query.user_id == bot.uid and query.startswith("**PM"):
+        elif event.query.user_id == Andencento.uid and query.startswith("**PM"):
             TELEBT = USER_BOT_NO_WARN.format(DEFAULTUSER, myid, MESAG)
             result = builder.photo(
                 file=TELEPIC,
@@ -102,30 +102,30 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.inline("What is this ❓", data="pmclick")],
                 ],
             )
-        elif event.query.user_id == bot.uid and query == "repo":
+        elif event.query.user_id == Andencento.uid and query == "repo":
             result = builder.article(
                 title="Repository",
-                text=f"ExtremePro - Telegram Userbot.",
+                text=f"ExtremePro - Telegram UserAndencento.",
                 buttons=[
                     [
-                        Button.url("Repo", "https://github.com/TeamExtremePro/ExtremeProUserbot/"),
+                        Button.url("Repo", "https://github.com/TeamExtremePro/ExtremeProUserAndencento/"),
                         Button.url(
                             "Deploy",
-                            "https://github.com/TeamExtremePro/ExtremeProUserbot/",
+                            "https://github.com/TeamExtremePro/ExtremeProUserAndencento/",
                         ),
                     ],
-                    [Button.url("Support", "https://t.me/ExtremeProuserbot")],
+                    [Button.url("Support", "https://t.me/ExtremeProuserAndencento")],
                 ],
             )
         else:
             result = builder.article(
                 "Source Code",
-                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity and sourcecode of my ExtremePro userbot wait untill my master approves you else you will be blocked if send more than 3 msg.`",
+                text="**𝖂𝖊𝖑𝖈𝖔𝖒𝖊 𝖙𝖔 𝕰𝖝𝖙𝖗𝖊𝖒𝖊𝕻𝖗𝖔𝖀𝖘𝖊𝖗𝖇𝖔𝖙**\n\n`This is pmsecurity and sourcecode of my ExtremePro userAndencento wait untill my master approves you else you will be blocked if send more than 3 msg.`",
                 buttons=[
                     [custom.Button.url("Creator👨‍🦱", "https://t.me/useropbolte")],
                     [
                         custom.Button.url(
-                            "👨‍💻Source Code‍💻", "https://github.com/TeamExtremePro/ExtremeProUserbot"
+                            "👨‍💻Source Code‍💻", "https://github.com/TeamExtremePro/ExtremeProUserAndencento"
                         ),
                         custom.Button.url(
                             "Deploy 🌀",
@@ -134,7 +134,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     ],
                     [
                         custom.Button.url(
-                            "Updates and Support Group↗️", "https://t.me/ExtremeProuserbotSupport"
+                            "Updates and Support Group↗️", "https://t.me/ExtremeProuserAndencentoSupport"
                         )
                     ],
                 ],
@@ -142,45 +142,45 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         await event.answer([result] if result else None)
 
-    @tgbot.on(
+    @tgAndencento.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(rb"helpme_next\((.+?)\)")
         )
     )
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:  # pylint:disable=E0602
+        if event.query.user_id == Andencento.uid:  # pylint:disable=E0602
             current_page_number = int(event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
             reply_pop_up_alert = (
-                "Please get your own Userbot from @ExtremeProUserbotSupport , and don't use mine!"
+                "Please get your own UserAndencento from @ExtremeProUserAndencentoSupport , and don't use mine!"
             )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmclick")))
     async def on_pm_click(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             reply_pop_up_alert = "This ain't for you, master!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
             await event.edit(
-                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [ExtremePro](t.me/ExtremeProuserbotSupport)"
+                f"This is the PM Security for {DEFAULTUSER} to keep away spammers and retards.\n\nProtected by [ExtremePro](t.me/ExtremeProuserAndencentoSupport)"
             )
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"reopen")))
     async def megic(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             await event.edit("Menu Re-opened", buttons=buttons)
         else:
-            reply_pop_up_alert = "This bot ain't for u!!"
+            reply_pop_up_alert = "This Andencento ain't for u!!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
     async def on_pm_click(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             reply_pop_up_alert = "This ain't for you, master!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
@@ -193,12 +193,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
             tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) is **requesting** something in PM!"
-            await tgbot.send_message(LOG_GP, tosend)
+            await tgAndencento.send_message(LOG_GP, tosend)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chat")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"chat")))
     async def on_pm_click(event):
         event.query.user_id
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             reply_pop_up_alert = "This ain't for you, master!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
@@ -211,11 +211,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
             tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) wants to PM you for **Random Chatting**!"
-            await tgbot.send_message(LOG_GP, tosend)
+            await tgAndencento.send_message(LOG_GP, tosend)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"plshelpme")))
     async def on_pm_click(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             reply_pop_up_alert = "This ain't for you, master!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
@@ -228,11 +228,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
             tosend = f"Hey {DEFAULTUSER}, [{first_name}](tg://user?id={ok}) wants to PM you for **help**!"
-            await tgbot.send_message(LOG_GP, tosend)
+            await tgAndencento.send_message(LOG_GP, tosend)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"heheboi")))
     async def on_pm_click(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             reply_pop_up_alert = "This ain't for you, master!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
@@ -246,33 +246,33 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             if first_name is not None:
                 first_name = first_name.replace("\u2060", "")
             first_name = html.escape(target.user.first_name)
-            await tgbot.send_message(
+            await tgAndencento.send_message(
                 LOG_GP,
                 f"[{first_name}](tg://user?id={ok}) tried to **spam** your inbox.\nHenceforth, **blocked**",
             )
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             await event.edit(
                 "Menu Closed!!", buttons=[Button.inline("Re-open Menu", data="reopen")]
             )
         else:
-            reply_pop_up_alert = "Please get your own userbot from @ExtremeProuserSupport "
+            reply_pop_up_alert = "Please get your own userAndencento from @ExtremeProuserSupport "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
+    @tgAndencento.on(events.callbackquery.CallbackQuery(data=re.compile(b"statcheck")))
     async def rip(event):
         text = telestats
         await event.answer(text, alert=True)
 
-    @tgbot.on(
+    @tgAndencento.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(rb"helpme_prev\((.+?)\)")
         )
     )
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:  # pylint:disable=E0602
+        if event.query.user_id == Andencento.uid:  # pylint:disable=E0602
             current_page_number = int(event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
                 current_page_number - 1, CMD_LIST, "helpme"  # pylint:disable=E0602
@@ -280,16 +280,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Please get your own UserAndencento, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-    @tgbot.on(
+    @tgAndencento.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"us_plugin_(.*)")
         )
     )
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == bot.uid:
+        if event.query.user_id == Andencento.uid:
             plugin_name = event.data_match.group(1).decode("UTF-8")
             help_string = ""
             help_string += f"𝕮𝖔𝖒𝖒𝖆𝖓𝖉𝖘 𝕬𝖛𝖆𝖎𝖑𝖆𝖇𝖑𝖊 𝖎𝖓 {plugin_name} - \n"
@@ -318,14 +318,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 oops = "List too long!\nCheck your saved messages!"
                 await event.answer(oops, cache_time=0, alert=True)
                 help_string += "\n\nThis will be auto-deleted in 1 minute!"
-                if bot is not None and event.query.user_id == bot.uid:
-                    ok = await bot.send_message("me", help_string)
+                if Andencento is not None and event.query.user_id == Andencento.uid:
+                    ok = await Andencento.send_message("me", help_string)
                     await asyncio.sleep(60)
                     await ok.delete()
             else:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
-            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
+            reply_pop_up_alert = "Please get your own UserAndencento, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 

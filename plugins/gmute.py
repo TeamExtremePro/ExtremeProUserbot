@@ -1,7 +1,7 @@
 from sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd
 
 #@command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
 @borg.on(admin_cmd(pattern=r"gmute ?(\d+)?"))

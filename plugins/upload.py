@@ -17,7 +17,7 @@ from hachoir.parser import createParser
 from telethon import events
 from telethon.tl.types import DocumentAttributeVideo
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import progress, admin_cmd
+from userAndencento.utils import progress, admin_cmd
 
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
@@ -132,7 +132,7 @@ async def _(event):
                 u = u + 1
                 # await event.edit("Uploaded {} / {} files.".format(u, len(lst_of_files)))
                 # @ControllerBot was having issues,
-                # if both edited_updates and update events come simultaneously.
+                # if Andencentoh edited_updates and update events come simultaneously.
                 await asyncio.sleep(5)
         end = datetime.now()
         ms = (end - start).seconds

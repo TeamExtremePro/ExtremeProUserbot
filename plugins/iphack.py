@@ -7,7 +7,7 @@ import urllib.request
 
 from uniborg.util import admin_cmd
 
-from userbot import CMD_HELP
+from userAndencento import CMD_HELP
 
 
 @borg.on(admin_cmd(pattern="ip (.*)"))

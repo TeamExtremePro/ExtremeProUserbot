@@ -1,12 +1,12 @@
-from userbot import CMD_LIST, SUDO_LIST
-from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd, sudo_cmd
+from userAndencento import CMD_LIST, SUDO_LIST
+from userAndencento import ALIVE_NAME
+from userAndencento.utils import admin_cmd, sudo_cmd
 from platform import uname
 import sys
 from telethon import events, functions, __version__
 
-from userbot import SUDO_LIST
-from userbot.utils import sudo_cmd
+from userAndencento import SUDO_LIST
+from userAndencento.utils import sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "extremepro"
 

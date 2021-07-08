@@ -3,15 +3,15 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for purging unneeded messages(usually spam or ot). """
+""" UserAndencento module for purging unneeded messages(usually spam or ot). """
 
 from asyncio import sleep
 
 from telethon.errors import rpcbaseerrors
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import register, errors_handler
-from userbot.utils import admin_cmd
+from userAndencento import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userAndencento.utils import register, errors_handler
+from userAndencento.utils import admin_cmd
 
 
 #@register(outgoing=True, pattern="^.purge$")
@@ -158,5 +158,5 @@ CMD_HELP.update({
     'sd':
     '.sd <x> <message>\
 \nUsage: Creates a message that selfdestructs in x seconds.\
-\nKeep the seconds under 100 since it puts your bot to sleep.'
+\nKeep the seconds under 100 since it puts your Andencento to sleep.'
 })

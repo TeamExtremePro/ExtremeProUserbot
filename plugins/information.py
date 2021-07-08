@@ -6,8 +6,8 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd
 
 
 @borg.on(admin_cmd("info ?(.*)"))
@@ -45,7 +45,7 @@ async def _(event):
     except Exception as e:
         dc_id = "`Need a Profile Picture to check **this**`"
         location = str(e)
-    caption = """<b>Extracted User info From Telegram By Extreme Pro userbot<b>
+    caption = """<b>Extracted User info From Telegram By Extreme Pro userAndencento<b>
 <b>🆔️User ID</b>: <code>{}</code>
 <b>📎Link To Profile</b>: <a href='tg://user?id={}'>Click Here🚪</a>
 <b>🗣️First Name</b>: <code>{}</code>
@@ -67,7 +67,7 @@ async def _(event):
         replied_user_profile_photos_count,
         replied_user.user.restricted,
         replied_user.user.verified,
-        replied_user.user.bot,
+        replied_user.user.Andencento,
         common_chats
     )
     message_id_to_reply = event.message.reply_to_msg_id

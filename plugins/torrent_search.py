@@ -1,5 +1,5 @@
 """
-Torrent Search Plugin for Userbot. //torrentdownloads.me
+Torrent Search Plugin for UserAndencento. //torrentdownloads.me
 cmd: .search search_string
 Note: Number of results are currently limited to 15
 By:-@Zero_cool7870
@@ -7,7 +7,7 @@ By:-@Zero_cool7870
 """
 from bs4 import BeautifulSoup as bs 
 import requests
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 import asyncio
 import json
 from bs4 import BeautifulSoup 

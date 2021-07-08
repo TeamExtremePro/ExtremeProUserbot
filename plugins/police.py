@@ -2,9 +2,9 @@ import asyncio
 
 from uniborg.util import admin_cmd
 
-from userbot import ALIVE_NAME
+from userAndencento import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremeProUserbotBot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ExtremeProUserAndencentoBot"
 
 
 @borg.on(admin_cmd(pattern=r"police"))
@@ -32,7 +32,7 @@ async def _(event):
         "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
         "🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴",
         "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
-        "[ExtremeProUserbotBot](https://www.github.com/indianbhaiya/ExtremeProUserbotBot) **Police iz Here**",
+        "[ExtremeProUserAndencentoBot](https://www.github.com/indianbhaiya/ExtremeProUserAndencentoBot) **Police iz Here**",
     ]
 
     for i in animation_ttl:

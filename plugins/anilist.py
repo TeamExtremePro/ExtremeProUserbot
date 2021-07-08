@@ -1,5 +1,5 @@
 """	
-	Anilist Search Plugin for Userbot	
+	Anilist Search Plugin for UserAndencento	
 	Usage : .anilist animeName	
 	By :- @Zero_cool7870	
 """
@@ -8,8 +8,8 @@ import requests
 import re
 import json
 import asyncio
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 async def callAPI(search_str):
     query = '''
@@ -70,13 +70,13 @@ async def formatJSON(outData):
         msg += f"\n**Year** : {jsonData['startDate']['year']}"
         msg += f"\n**Score** : {jsonData['averageScore']}"
         msg += f"\n**Duration** : {jsonData['duration']} min\n\n"
-        #https://t.me/catuserbot_support/19496
+        #https://t.me/catuserAndencento_support/19496
         cat = f"{jsonData['description']}"
         msg += " __" + re.sub("<br>", '\n', cat) +"__"
         return msg
         
-@bot.on(admin_cmd(pattern="anilist (.*)"))
-@bot.on(sudo_cmd(pattern="anilist (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="anilist (.*)"))
+@Andencento.on(sudo_cmd(pattern="anilist (.*)", allow_sudo=True))
 async def anilist(event):
     if event.fwd_from:
         return

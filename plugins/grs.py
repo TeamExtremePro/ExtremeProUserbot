@@ -5,7 +5,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for reverse searching stickers and images on Google """
+""" UserAndencento module for reverse searching stickers and images on Google """
 
 import io
 import os
@@ -17,8 +17,8 @@ import re
 from telethon.tl.types import MessageMediaPhoto
 from PIL import Image
 
-from userbot import bot, CMD_HELP
-from userbot.utils import register, errors_handler
+from userAndencento import Andencento, CMD_HELP
+from userAndencento.utils import register, errors_handler
 
 opener = urllib.request.build_opener()
 useragent = 'Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36'
@@ -35,7 +35,7 @@ async def okgoogle(img):
     message = await img.get_reply_message()
     if message and message.media:
         photo = io.BytesIO()
-        await bot.download_media(message, photo)
+        await Andencento.download_media(message, photo)
     else:
         await img.edit("`Reply to photo or sticker nigger.`")
         return

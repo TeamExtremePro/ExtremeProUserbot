@@ -3,9 +3,9 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
-@borg.on(admin_cmd("frybot ?(.*)"))
+@borg.on(admin_cmd("fryAndencento ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
@@ -16,9 +16,9 @@ async def _(event):
     if not reply_message.media:
        await event.edit("```reply to text message```")
        return
-    chat = "@image_deepfrybot"
+    chat = "@image_deepfryAndencento"
     sender = reply_message.sender
-    if reply_message.sender.bot:
+    if reply_message.sender.Andencento:
        await event.edit("```Reply to actual users message.```")
        return
     await event.edit("```Processing```")
@@ -28,7 +28,7 @@ async def _(event):
               await borg.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("```Please unblock @sangmatainfo_bot and try again```")
+              await event.reply("```Please unblock @sangmatainfo_Andencento and try again```")
               return
           if response.text.startswith("Forward"):
               await event.edit("```can you kindly disable your forward privacy settings for good?```")

@@ -16,15 +16,15 @@ from telethon.errors.rpcerrorlist import (UserIdInvalidError,
 from telethon.errors import (BadRequestError, ChatAdminRequiredError,
                              ImageProcessFailedError, PhotoCropSizeSmallError,
                              UserAdminInvalidError)
-from userbot import CMD_HELP
-from userbot.utils import  errors_handler, admin_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import  errors_handler, admin_cmd
 
 @borg.on(admin_cmd(pattern="leave$"))
 async def leave(e):
         await e.edit("`Legend is leaving this chat.....!Goodbye aren't forever..` ")
         time.sleep(3)
         if '-' in str(e.chat_id):
-            await bot(LeaveChannelRequest(e.chat_id))
+            await Andencento(LeaveChannelRequest(e.chat_id))
         else:
             await e.edit('`Sar This is Not A Chat`')
 
@@ -117,8 +117,8 @@ async def fetch_info(chat, event):
     messages_sent_alt = chat.full_chat.read_outbox_max_id if hasattr(chat.full_chat, "read_outbox_max_id") else None
     exp_count = chat.full_chat.pts if hasattr(chat.full_chat, "pts") else None
     username = chat_obj_info.username if hasattr(chat_obj_info, "username") else None
-    bots_list = chat.full_chat.bot_info  # this is a list
-    bots = 0
+    Andencentos_list = chat.full_chat.Andencento_info  # this is a list
+    Andencentos = 0
     supergroup = "<b>Yes</b>" if hasattr(chat_obj_info, "megagroup") and chat_obj_info.megagroup else "No"
     slowmode = "<b>Yes</b>" if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else "No"
     slowmode_time = chat.full_chat.slowmode_seconds if hasattr(chat_obj_info, "slowmode_enabled") and chat_obj_info.slowmode_enabled else None
@@ -136,9 +136,9 @@ async def fetch_info(chat, event):
             admins = participants_admins.count if participants_admins else None
         except Exception as e:
             print("Exception:", e)
-    if bots_list:
-        for bot in bots_list:
-            bots += 1
+    if Andencentos_list:
+        for Andencento in Andencentos_list:
+            Andencentos += 1
 
     caption = "<b>CHAT INFO:</b>\n"
     caption += f"ID: <code>{chat_obj_info.id}</code>\n"
@@ -173,8 +173,8 @@ async def fetch_info(chat, event):
         caption += f"Members: <code>{members}</code>\n"
     if admins is not None:
         caption += f"Administrators: <code>{admins}</code>\n"
-    if bots_list:
-        caption += f"Bots: <code>{bots}</code>\n"
+    if Andencentos_list:
+        caption += f"Bots: <code>{Andencentos}</code>\n"
     if members_online:
         caption += f"Currently online: <code>{members_online}</code>\n"
     if restrcited_users is not None:

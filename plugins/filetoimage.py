@@ -1,7 +1,7 @@
 """COMMAND : .ftoimg 
 here file must be in image file """
 from io import BytesIO
-from userbot import utils
+from userAndencento import utils
 import asyncio
 from telethon import types
 from telethon.errors import PhotoInvalidDimensionsError

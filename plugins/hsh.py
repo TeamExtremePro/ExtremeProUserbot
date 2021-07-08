@@ -25,13 +25,13 @@ from pornhub_api import PornhubApi
 
 
     
-@tgbot.on(events.InlineQuery(pattern=r"ph (.*)"))
+@tgAndencento.on(events.InlineQuery(pattern=r"ph (.*)"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
-    if event.query.user_id != bot.uid:
+    if event.query.user_id != Andencento.uid:
         resultm = builder.article(
             title="- NIKAL LAWDE -",
-            text=f"You Can't Use This Bot. \nDeploy Extreme Pro userbotTo Get Your Own BOT Repo Link HERE",
+            text=f"You Can't Use This Bot. \nDeploy Extreme Pro userAndencentoTo Get Your Own BOT Repo Link HERE",
         )
         await event.answer([resultm])
         return

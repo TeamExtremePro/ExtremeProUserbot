@@ -1,5 +1,5 @@
 # MAKING IT EASIEST FOR EXTREME PRO USERBOT
-# THIS FILE IS PART OF https://github.com/TeamExtremePro/ExtremeProUserbot.git
+# THIS FILE IS PART OF https://github.com/TeamExtremePro/ExtremeProUserAndencento.git
 import asyncio
 import os
 from telethon import TelegramClient
@@ -24,7 +24,7 @@ from telethon.tl.types import Channel
 
 from Extre import *
 from Extre import *
-from Extre import ALIVE_NAME, bot
+from Extre import ALIVE_NAME, Andencento
 PMSECURITY = os.environ.get("PMSECURITY", None)
 extremeprover = "0.1"
 # stats
@@ -34,9 +34,9 @@ else:
     log = "Disabled"
 
 if Config.TG_BOT_USER_NAME_BF_HER:
-    bots = "Enabled"
+    Andencentos = "Enabled"
 else:
-    bots = "Disabled"
+    Andencentos = "Disabled"
 
 if Var.LYDIA_API_KEY:
     lyd = "Enabled"
@@ -57,7 +57,7 @@ TELEUSER = str(ALIVE_NAME) if ALIVE_NAME else "EXTREMEPRO USER"
 
 extremepro = f"EXTREMEPRO Version: {extremeprover}\n"
 extremepro += f"Log Group: {log}\n"
-extremepro += f"Assistant Bot: {bots}\n"
+extremepro += f"Assistant Bot: {Andencentos}\n"
 extremepro += f"Lydia: {lyd}\n"
 extremepro += f"Sudo: {sudo}\n"
 extremepro += f"PMSecurity: {pm}\n"

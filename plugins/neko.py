@@ -1,4 +1,4 @@
-# pastebin for catuserbot
+# pastebin for catuserAndencento
 from Extre.utils import extremepro_cmd, amanpandey_cmd
 import os
 from Extre import CMD_HELP
@@ -19,8 +19,8 @@ def progress(current, total):
     )
 from Extre.utils import extremepro_cmd, amanpandey_cmd
 
-@bot.on(extremepro_cmd(pattern="neko(?: |$)(.*)", outgoing=True))
-@bot.on(amanpandey_cmd(pattern="neko(?: |$)(.*)", allow_sudo=True))
+@Andencento.on(extremepro_cmd(pattern="neko(?: |$)(.*)", outgoing=True))
+@Andencento.on(amanpandey_cmd(pattern="neko(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -76,8 +76,8 @@ async def _(event):
     reply_text = f"**Pasted to Nekobin :** [Neko]({url})\n**Raw url :** [Raw](https://nekobin.com/raw/{key})\n\n**𝑷𝒂𝒔𝒕𝒆𝒅 𝒂𝒏𝒅 𝑼𝒑𝒍𝒐𝒂𝒅𝒆𝒅 𝒕𝒐 𝑵𝒆𝒌𝒐𝑩𝒊𝒏 𝒃𝒚 υℓтяα χ**"
     await catevent.edit(reply_text)
 
-@bot.on(extremepro_cmd(pattern="pcode(?: |$)(.*)"))
-@bot.on(amanpandey_cmd(pattern="pcode(?: |$)(.*)"))
+@Andencento.on(extremepro_cmd(pattern="pcode(?: |$)(.*)"))
+@Andencento.on(amanpandey_cmd(pattern="pcode(?: |$)(.*)"))
 async def code_print(event):
     if event.fwd_from:
         return

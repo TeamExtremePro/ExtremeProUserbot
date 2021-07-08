@@ -2,7 +2,7 @@ import logging
 from database.mongo import cli
 
 
-cli = cli["ExtremeProuserbot"]["Storage"]
+cli = cli["ExtremeProuserAndencento"]["Storage"]
 
 
 async def save_file(name, path, file):

@@ -1,12 +1,12 @@
 
 import random, re
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
 import asyncio
 from telethon import events
-from userbot import CMD_HELP
+from userAndencento import CMD_HELP
 
-@bot.on(admin_cmd(pattern="degi$"))
-@bot.on(sudo_cmd(pattern="degi$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="degi$"))
+@Andencento.on(sudo_cmd(pattern="degi$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -30,8 +30,8 @@ async def _(event):
     await event.edit("Wo DeGi TuM eKbAr MaNg KaR tOh DeKhO😄")
 
 
-@bot.on(admin_cmd(pattern=f"nehi$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"nehi$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=f"nehi$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=f"nehi$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

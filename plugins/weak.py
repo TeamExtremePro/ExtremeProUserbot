@@ -3,12 +3,12 @@
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot import CMD_HELP
+from userAndencento import CMD_HELP
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
-bot = "@MadBoy_Rotomgram2_Bot"
+Andencento = "@MadBoy_Rotomgram2_Bot"
 
 
 @borg.on(admin_cmd("weak ?(.*)"))
@@ -17,7 +17,7 @@ async def _(event):
       return
   sysarg = event.pattern_match.group(1)
   if sysarg == "":
-      async with borg.conversation(bot) as conv:
+      async with borg.conversation(Andencento) as conv:
           try:
               await conv.send_message("/start")
               await conv.get_response()
@@ -28,7 +28,7 @@ async def _(event):
           except YouBlockedUserError:
               await event.edit("Error: unblock @inhumanDexBot and retry!")
   elif "@" in sysarg:
-      async with borg.conversation(bot) as conv:
+      async with borg.conversation(Andencento) as conv:
           try:
               await conv.send_message("/start")
               await conv.get_response()
@@ -39,7 +39,7 @@ async def _(event):
           except YouBlockedUserError:
               await event.edit("Error: unblock @MadBoy_Rotomgram2_Bot and try again!")
   elif "" in sysarg:
-      async with borg.conversation(bot) as conv:
+      async with borg.conversation(Andencento) as conv:
           try:
               await conv.send_message("/start")
               await conv.get_response()

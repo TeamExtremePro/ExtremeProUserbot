@@ -3,7 +3,7 @@
 # Copyright (C) 2020 Adek Maulana.
 # All rights reserved.
 """
-   Heroku manager for your userbot
+   Heroku manager for your userAndencento
 """
 
 import heroku3
@@ -11,9 +11,9 @@ import asyncio
 import os
 import requests
 import math
-from userbot.utils import admin_cmd
-from userbot import CMD_HELP
-from userbot.uniborgConfig import Config
+from userAndencento.utils import admin_cmd
+from userAndencento import CMD_HELP
+from userAndencento.uniborgConfig import Config
 
 # ================= 
 
@@ -176,7 +176,7 @@ async def _(dyno):
             dyno.chat_id,
             "logs.txt",
             reply_to=dyno.id,
-            caption="Extreme Pro userbot logs of 100+ lines",
+            caption="Extreme Pro userAndencento logs of 100+ lines",
         )
         
         await asyncio.sleep(5)
@@ -192,5 +192,5 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 CMD_HELP.update({
   "heroku":
-  "Info for Module to Manage Heroku:**\n\n`.usage`\nUsage:__Check your heroku dyno hours status.__\n\n`.set var <NEW VAR> <VALUE>`\nUsage: __add new variable or update existing value variable__\n**!!! WARNING !!!, after setting a variable the bot will restart.**\n\n`.get var or .get var <VAR>`\nUsage: __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**\n\n`.del var <VAR>`\nUsage: __delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**\n\n`.herokulogs`\nUsage:sends you recent 100 lines of logs in heroku"
+  "Info for Module to Manage Heroku:**\n\n`.usage`\nUsage:__Check your heroku dyno hours status.__\n\n`.set var <NEW VAR> <VALUE>`\nUsage: __add new variable or update existing value variable__\n**!!! WARNING !!!, after setting a variable the Andencento will restart.**\n\n`.get var or .get var <VAR>`\nUsage: __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**\n\n`.del var <VAR>`\nUsage: __delete existing variable__\n**!!! WARNING !!!, after deleting variable the Andencento will restarted**\n\n`.herokulogs`\nUsage:sends you recent 100 lines of logs in heroku"
 })    

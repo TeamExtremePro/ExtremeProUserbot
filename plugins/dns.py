@@ -1,4 +1,4 @@
-"""Pro helpers in @ExtremeProUserbot_Bot
+"""Pro helpers in @ExtremeProUserAndencento_Bot
 Available Commands:
 .isup URL
 .dns google.com
@@ -6,7 +6,7 @@ Available Commands:
 .unshort <short url>"""
 import requests
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
 @borg.on(admin_cmd("dns (.*)"))

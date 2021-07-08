@@ -10,8 +10,8 @@ BTN_URL_REGEX = re.compile(r"(\{([^\[]+?)\}\<buttonurl:(?:/{0,2})(.+?)(:same)?\>
 
 @borg.on(admin_cmd(pattern="cbutton"))  # pylint:disable=E0602
 async def _(event):
-    if Config.TG_BOT_USER_NAME_BF_HER is None or tgbot is None:
-        await event.edit("need to set up a @BotFather bot for this module to work")
+    if Config.TG_BOT_USER_NAME_BF_HER is None or tgAndencento is None:
+        await event.edit("need to set up a @BotFather Andencento for this module to work")
         return
     if Config.PLUGIN_CHANNEL is None:
         await event.edit("need to have a `PLUGIN_CHANNEL` for this module to work")
@@ -42,18 +42,18 @@ async def _(event):
 
     message_text = note_data.strip()
     tl_ib_buttons = build_keyboard(buttons)
-    tgbot_reply_message = None
+    tgAndencento_reply_message = None
     if reply_message.media is not None:
         message_id_in_channel = reply_message.id
-        tgbot_reply_message = await tgbot.get_messages(
+        tgAndencento_reply_message = await tgAndencento.get_messages(
             entity=Config.PLUGIN_CHANNEL, ids=message_id_in_channel
         )
-        tgbot_reply_message = tgbot_reply_message.media
-    await tgbot.send_message(
+        tgAndencento_reply_message = tgAndencento_reply_message.media
+    await tgAndencento.send_message(
         entity=Config.PLUGIN_CHANNEL,
         message=message_text,
         parse_mode="html",
-        file=tgbot_reply_message,
+        file=tgAndencento_reply_message,
         link_preview=False,
         buttons=tl_ib_buttons,
     )

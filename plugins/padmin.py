@@ -5,7 +5,7 @@ Available Commands:
 .padmin"""
 import asyncio
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"padmin"))

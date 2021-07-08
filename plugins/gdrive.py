@@ -9,8 +9,8 @@ import time
 import math
 from datetime import datetime
 from telethon import events
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, progress
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd, progress
 #
 from googleapiclient.discovery import build
 from apiclient.http import MediaFileUpload
@@ -54,7 +54,7 @@ async def _(event):
         try:
             c_time = time.time()
             await mone.edit("Downloading to Local...")
-            downloaded_file_name = await bot.download_media(
+            downloaded_file_name = await Andencento.download_media(
                 reply_message,
                 Var.TEMP_DOWNLOAD_DIRECTORY
             )
@@ -245,7 +245,7 @@ async def create_token_file(token_file, event):
         redirect_uri=REDIRECT_URI
     )
     authorize_url = flow.step1_get_authorize_url()
-    async with bot.conversation(int(Var.PRIVATE_GROUP_ID)) as conv:
+    async with Andencento.conversation(int(Var.PRIVATE_GROUP_ID)) as conv:
         await conv.send_message(f"Go to the following link in your browser: {authorize_url} and reply the code")
         response = conv.wait_event(events.NewMessage(
             outgoing=True,
@@ -278,7 +278,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     media_body = MediaFileUpload(file_path, mimetype=mime_type, resumable=True)
     body = {
         "title": file_name,
-        "description": "Uploaded using Userbot gDrive v1",
+        "description": "Uploaded using UserAndencento gDrive v1",
         "mimeType": mime_type,
     }
     if parent_id is not None:

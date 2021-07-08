@@ -5,7 +5,7 @@ Available Commands:
 """
 import asyncio
 
-from userbot.utils import admin_cmd
+from userAndencento.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern=r"ding"))
@@ -25,7 +25,7 @@ async def _(event):
         "⬜⬜⬛⬜⬜\n⬜⬜⬛⬜⬜\n⬜⬜🔴⬜⬜",
         "⬜⬜⬛⬜⬜\n⬜⬛⬜⬜⬜\n🔴⬜⬜⬜⬜",
         "🔴⬛⬛⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-        "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜\n⬜  [BECOME A VIDHAYAK](https://github.com/TeamExtremePro/ExtremeProUserbot/) ⬜\n⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜",
+        "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜\n⬜  [BECOME A VIDHAYAK](https://github.com/TeamExtremePro/ExtremeProUserAndencento/) ⬜\n⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)

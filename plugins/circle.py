@@ -3,13 +3,13 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
 
 
 
-@bot.on(admin_cmd("circle ?(.*)"))
-@bot.on(sudo_cmd(pattern="circle ?(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd("circle ?(.*)"))
+@Andencento.on(sudo_cmd(pattern="circle ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -22,7 +22,7 @@ async def _(event):
         return
     chat = "@TelescopyBot"
     reply_message.sender
-    if reply_message.sender.bot:
+    if reply_message.sender.Andencento:
         await edit_or_reply(event, "Reply to actual users message.")
         return
     legendx22 = await edit_or_reply(event, "Trying to convert...")

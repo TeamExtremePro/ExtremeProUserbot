@@ -3,14 +3,14 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for getting info
+""" UserAndencento module for getting info
     about any user on Telegram(including you!). """
 
 from telethon.events import NewMessage
 from typing import Union
 
-from userbot import CMD_HELP
-from userbot.events import register
+from userAndencento import CMD_HELP
+from userAndencento.events import register
 
 from re import findall, match
 from typing import List
@@ -154,14 +154,14 @@ async def get_chat_from_event(event: NewMessage.Event, **kwargs):
 
 async def list_admins(event):
     adms = await event.client.get_participants(event.chat, filter=ChannelParticipantsAdmins)
-    adms = map(lambda x: x if not x.bot else None, adms)
+    adms = map(lambda x: x if not x.Andencento else None, adms)
     adms = [i for i in list(adms) if i]
     return adms
 
 
-async def list_bots(event):
-    bots = await event.client.get_participants(event.chat, filter=ChannelParticipantsBots)
-    return bots
+async def list_Andencentos(event):
+    Andencentos = await event.client.get_participants(event.chat, filter=ChannelParticipantsBots)
+    return Andencentos
 
 
 def make_mention(user):
@@ -308,7 +308,7 @@ async def who(event: NewMessage.Event):
         return
 
     args, user = parse_arguments(event.pattern_match.group(1), [
-        'id', 'forward', 'general', 'bot', 'misc', 'all', 'mention'
+        'id', 'forward', 'general', 'Andencento', 'misc', 'all', 'mention'
     ])
 
     args['forward'] = args.get('forward', True)
@@ -336,14 +336,14 @@ async def fetch_info(replied_user, **kwargs):
 
     id_only = kwargs.get('id', False)
     show_general = kwargs.get('general', True)
-    show_bot = kwargs.get('bot', False)
+    show_Andencento = kwargs.get('Andencento', False)
     show_misc = kwargs.get('misc', False)
     show_all = kwargs.get('all', False)
     mention_name = kwargs.get('mention', False)
 
     if show_all:
         show_general = True
-        show_bot = True
+        show_Andencento = True
         show_misc = True
 
     full_name = str(user.first_name + ' ' + (user.last_name or ''))
@@ -371,14 +371,14 @@ async def fetch_info(replied_user, **kwargs):
             'common groups', Code(
                 replied_user.common_chats_count)))
 
-    bot = SubSection(Bold('bot'),
-                     KeyValueItem('bot', Code(user.bot)),
-                     KeyValueItem('bot_chat_history', Code(user.bot_chat_history)),
-                     KeyValueItem('bot_info_version', Code(user.bot_info_version)),
-                     KeyValueItem('bot_inline_geo', Code(user.bot_inline_geo)),
-                     KeyValueItem('bot_inline_placeholder',
-                                  Code(user.bot_inline_placeholder)),
-                     KeyValueItem('bot_nochats', Code(user.bot_nochats)))
+    Andencento = SubSection(Bold('Andencento'),
+                     KeyValueItem('Andencento', Code(user.Andencento)),
+                     KeyValueItem('Andencento_chat_history', Code(user.Andencento_chat_history)),
+                     KeyValueItem('Andencento_info_version', Code(user.Andencento_info_version)),
+                     KeyValueItem('Andencento_inline_geo', Code(user.Andencento_inline_geo)),
+                     KeyValueItem('Andencento_inline_placeholder',
+                                  Code(user.Andencento_inline_placeholder)),
+                     KeyValueItem('Andencento_nochats', Code(user.Andencento_nochats)))
 
     misc = SubSection(
         Bold('misc'), KeyValueItem(
@@ -398,7 +398,7 @@ async def fetch_info(replied_user, **kwargs):
     return Section(title,
                    general if show_general else None,
                    misc if show_misc else None,
-                   bot if show_bot else None)
+                   Andencento if show_Andencento else None)
 
 
 
@@ -412,7 +412,7 @@ CMD_HELP.update({
     "Options:"
     "`.id`: Show only the user's ID"
     "`.general`: Show general user info"
-    "`.bot`: Show bot related info"
+    "`.Andencento`: Show Andencento related info"
     "`.misc`: Show miscelanious info"
     "`.all`: Show all info (overrides other options)"
     "`.mention`: Inline mention the user" 

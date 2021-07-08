@@ -13,8 +13,8 @@ import requests
 from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
@@ -38,8 +38,8 @@ async def get_tz(con):
         return
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="climate( (.*)|$)"))
-@bot.on(sudo_cmd(pattern="climate( (.*)|$)", allow_sudo=True))
+@Andencento.on(admin_cmd(outgoing=True, pattern="climate( (.*)|$)"))
+@Andencento.on(sudo_cmd(pattern="climate( (.*)|$)", allow_sudo=True))
 @errors_handler
 async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
@@ -137,11 +137,11 @@ async def get_weather(weather):
     )
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="setcity(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern="setcity(?: |$)(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(outgoing=True, pattern="setcity(?: |$)(.*)"))
+@Andencento.on(sudo_cmd(pattern="setcity(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def set_default_city(city):
-    """ For .ctime command, change the default userbot country for date and time commands. """
+    """ For .ctime command, change the default userAndencento country for date and time commands. """
     if not OWM_API:
         await edit_or_reply(
             city, "`Get an API key from` https://openweathermap.org/ `first.`"
@@ -186,8 +186,8 @@ async def set_default_city(city):
     await edit_or_reply(city, f"`Set default city as {cityname}, {fullc_n}.`")
 
 
-@bot.on(admin_cmd(pattern="wttr ?(.*)"))
-@bot.on(sudo_cmd(pattern="wttr ?(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="wttr ?(.*)"))
+@Andencento.on(sudo_cmd(pattern="wttr ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

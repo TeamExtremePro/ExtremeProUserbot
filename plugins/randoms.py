@@ -13,12 +13,12 @@ merged by @legendx22
 import random
 from asyncio import sleep
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
 
 
-@bot.on(admin_cmd(pattern=r"sing$", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"sing$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=r"sing$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=r"sing$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -43,7 +43,7 @@ async def _(event):
         )
     if x == 5:
         await event.edit(
-            "🎶 Walking down 29th and Park \n I saw you in another's arms \n Only a month we've been apart \n **You look happier** \n \n Saw you walk inside a bar \n He said something to make you laugh \n I saw that both your smiles were twice as wide as ours \n Yeah, you look happier, you do 🎶 \n **-Happier **"
+            "🎶 Walking down 29th and Park \n I saw you in another's arms \n Only a month we've been apart \n **You look happier** \n \n Saw you walk inside a bar \n He said something to make you laugh \n I saw that Andencentoh your smiles were twice as wide as ours \n Yeah, you look happier, you do 🎶 \n **-Happier **"
         )
     if x == 6:
         await event.edit(
@@ -99,7 +99,7 @@ async def _(event):
         )
     if x == 19:
         await event.edit(
-            "🎶 I can swallow a bottle of alcohol and I'll feel like Godzilla \n Better hit the deck like the card dealer \n My whole squad's in here, walking around the party \n A cross between a zombie apocalypse and big Bobby 'The \n Brain' Heenan which is probably the \n Same reason I wrestle with mania 🎶 \n **-Godzilla**"
+            "🎶 I can swallow a Andencentotle of alcohol and I'll feel like Godzilla \n Better hit the deck like the card dealer \n My whole squad's in here, walking around the party \n A cross between a zombie apocalypse and big Bobby 'The \n Brain' Heenan which is probably the \n Same reason I wrestle with mania 🎶 \n **-Godzilla**"
         )
     if x == 20:
         await event.edit(
@@ -151,14 +151,14 @@ async def _(event):
         )
     if x == 32:
         await event.edit(
-            "🎶 You won't find him down on Sunset \n Or at a party in the hills \n At the bottom of the bottle \n Or when you're tripping on some pills \n When they sold you the dream you were just 16 \n Packed a bag and ran away \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA 🎶 \n **-Jesus in LA**"
+            "🎶 You won't find him down on Sunset \n Or at a party in the hills \n At the Andencentotom of the Andencentotle \n Or when you're tripping on some pills \n When they sold you the dream you were just 16 \n Packed a bag and ran away \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA 🎶 \n **-Jesus in LA**"
         )
     if x == 33:
         await event.edit("Not in a mood to sing. Sorry!")
 
 
-@bot.on(admin_cmd(pattern=f"hps$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"hps$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=f"hps$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=f"hps$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -247,8 +247,8 @@ async def _(event):
         await event.edit("**Wingardium Leviosa**")
 
 
-@bot.on(admin_cmd(pattern=f"gott$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"gott$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=f"gott$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=f"gott$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -397,8 +397,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern=f"gotm$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"gotm$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=f"gotm$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=f"gotm$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -557,8 +557,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern="bello$", outgoing=True))
-@bot.on(sudo_cmd(pattern="bello$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="bello$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern="bello$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -943,8 +943,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern=r"tip$", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"tip$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=r"tip$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=r"tip$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -989,7 +989,7 @@ async def _(event):
         )
     if x == 10:
         await event.edit(
-            '`"Never leave water bottles, reading glasses, or anything else that can focus light in a spot that could get direct sunlight. A significant number of house/vehicle fires happen every year because of this."`'
+            '`"Never leave water Andencentotles, reading glasses, or anything else that can focus light in a spot that could get direct sunlight. A significant number of house/vehicle fires happen every year because of this."`'
         )
     if x == 11:
         await event.edit(
@@ -1101,11 +1101,11 @@ async def _(event):
         )
     if x == 38:
         await event.edit(
-            '`"Keep your water bottle near you and your alarm far from you in the morning for a great start to the day!"`'
+            '`"Keep your water Andencentotle near you and your alarm far from you in the morning for a great start to the day!"`'
         )
     if x == 39:
         await event.edit(
-            '`"If you borrow money from someone, don’t let it get to the point that he/she has to ask for it back. It sucks for both. If you can’t repay now, show intent by paying what you can and keeping the other person posted often"`'
+            '`"If you borrow money from someone, don’t let it get to the point that he/she has to ask for it back. It sucks for Andencentoh. If you can’t repay now, show intent by paying what you can and keeping the other person posted often"`'
         )
     if x == 40:
         await event.edit(
@@ -1141,7 +1141,7 @@ async def _(event):
         )
     if x == 48:
         await event.edit(
-            '`"Open chip bags upside down. They\'ve been sitting upright most of their lives which makes the seasoning settle to the bottom of the bag."`'
+            '`"Open chip bags upside down. They\'ve been sitting upright most of their lives which makes the seasoning settle to the Andencentotom of the bag."`'
         )
     if x == 49:
         await event.edit(
@@ -1149,7 +1149,7 @@ async def _(event):
         )
     if x == 50:
         await event.edit(
-            '`"When asked online to confirm "I am not a robot", if you long press on the tick box and release, you will not be asked to complete the "click all store front" etc tests."`'
+            '`"When asked online to confirm "I am not a roAndencento", if you long press on the tick box and release, you will not be asked to complete the "click all store front" etc tests."`'
         )
     if x == 51:
         await event.edit(
@@ -1169,7 +1169,7 @@ async def _(event):
         )
     if x == 55:
         await event.edit(
-            '`"Buy a small bottle of perfume you have never tried on before going for a vacation and use it for while you\'re there. At any point after your vacation, you get a sniff of it, it brings back those memories instantly. Because scents are among the most powerful memory triggers."`'
+            '`"Buy a small Andencentotle of perfume you have never tried on before going for a vacation and use it for while you\'re there. At any point after your vacation, you get a sniff of it, it brings back those memories instantly. Because scents are among the most powerful memory triggers."`'
         )
     if x == 56:
         await event.edit(
@@ -1189,7 +1189,7 @@ async def _(event):
         )
     if x == 60:
         await event.edit(
-            '`"Never shake spices over a hot pan. The steam will enter the bottle causing the spice to go hard."`'
+            '`"Never shake spices over a hot pan. The steam will enter the Andencentotle causing the spice to go hard."`'
         )
     if x == 61:
         await event.edit(
@@ -1269,7 +1269,7 @@ async def _(event):
         )
     if x == 79:
         await event.edit(
-            '`"If you burn food to the bottom of a pot and can\'t scrub it out, put the pot back on the stove and boil water in it. It will loosen the burnt food and make it easier to clean."`'
+            '`"If you burn food to the Andencentotom of a pot and can\'t scrub it out, put the pot back on the stove and boil water in it. It will loosen the burnt food and make it easier to clean."`'
         )
     if x == 80:
         await event.edit(
@@ -1305,8 +1305,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern=r"qt$"))
-@bot.on(sudo_cmd(pattern=r"qt$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=r"qt$"))
+@Andencento.on(sudo_cmd(pattern=r"qt$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -1493,8 +1493,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern=f"logic$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"logic$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=f"logic$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=f"logic$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

@@ -4,8 +4,8 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userbot.utils import admin_cmd
-from userbot import CMD_HELP
+from userAndencento.utils import admin_cmd
+from userAndencento import CMD_HELP
 
 @borg.on(admin_cmd(pattern="recognize ?(.*)"))
 async def _(event):
@@ -20,7 +20,7 @@ async def _(event):
        return
     chat = "@Rekognition_Bot"
     sender = reply_message.sender
-    if reply_message.sender.bot:
+    if reply_message.sender.Andencento:
        await event.edit("Reply to actual users message.")
        return
     cat = await event.edit("recognizeing this media")

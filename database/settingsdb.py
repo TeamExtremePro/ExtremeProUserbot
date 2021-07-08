@@ -1,7 +1,7 @@
 import logging
 from database.mongo import cli
 
-cli = cli["ExtremeProuserbot"]["Settings"]
+cli = cli["ExtremeProuserAndencento"]["Settings"]
 
 
 async def set_city(city):

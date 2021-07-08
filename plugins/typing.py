@@ -11,11 +11,11 @@ async def _(event):
         return
     # https://t.me/AnotherGroup/176551
     input_str = event.pattern_match.group(1)
-    shiiinabot = "\u2060"
+    shiiinaAndencento = "\u2060"
     for i in range(601):
-        shiiinabot += "\u2060"
+        shiiinaAndencento += "\u2060"
     try:
-        await event.edit(shiiinabot)
+        await event.edit(shiiinaAndencento)
     except Exception as e:
         logger.warn(str(e))
     typing_symbol = "|"

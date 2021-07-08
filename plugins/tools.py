@@ -12,12 +12,12 @@ from bs4 import BeautifulSoup
 from PIL import Image, ImageColor
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
 
 
-@bot.on(admin_cmd(pattern="scan ?(.*)"))
-@bot.on(sudo_cmd(pattern="scan ?(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="scan ?(.*)"))
+@Andencento.on(sudo_cmd(pattern="scan ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,7 +29,7 @@ async def _(event):
         await edit_or_reply(event, "Reply to a media message")
         return
     chat = "@DrWebBot"
-    if reply_message.sender.bot:
+    if reply_message.sender.Andencento:
         await edit_or_reply(event, "Reply to actual users message.")
         return
     hellevent = await edit_or_reply(event, " `Scanning This media..... wait👀`")
@@ -58,8 +58,8 @@ async def _(event):
                 )
 
 
-@bot.on(admin_cmd(pattern=r"decode$", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"decode$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=r"decode$", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=r"decode$", allow_sudo=True))
 async def parseqr(qr_e):
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
@@ -95,8 +95,8 @@ async def parseqr(qr_e):
         os.remove(downloaded_file_name)
 
 
-@bot.on(admin_cmd(pattern="barcode ?(.*)"))
-@bot.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="barcode ?(.*)"))
+@Andencento.on(sudo_cmd(pattern="barcode ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -147,8 +147,8 @@ async def _(event):
     await hellevent.delete()
 
 
-@bot.on(admin_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", outgoing=True))
-@bot.on(sudo_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", outgoing=True))
+@Andencento.on(sudo_cmd(pattern=r"makeqr(?: |$)([\s\S]*)", allow_sudo=True))
 async def make_qr(makeqr):
     #  .makeqr command, make a QR Code containing the given content.
     input_str = makeqr.pattern_match.group(1)
@@ -195,8 +195,8 @@ import json
 from uniborg.util import admin_cmd
 
 
-@bot.on(admin_cmd(pattern="cal (.*)"))
-@bot.on(sudo_cmd(pattern="cal (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="cal (.*)"))
+@Andencento.on(sudo_cmd(pattern="cal (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -222,8 +222,8 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).seconds
 
-@bot.on(admin_cmd(pattern="currency (.*)"))
-@bot.on(sudo_cmd(pattern="currency (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="currency (.*)"))
+@Andencento.on(sudo_cmd(pattern="currency (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -259,8 +259,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern="currencies$"))
-@bot.on(sudo_cmd(pattern="currencies$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="currencies$"))
+@Andencento.on(sudo_cmd(pattern="currencies$", allow_sudo=True))
 async def currencylist(ups):
     if ups.fwd_from:
         return
@@ -273,8 +273,8 @@ async def currencylist(ups):
     await edit_or_reply(ups, f"**List of some currencies:**\n{hmm}\n")
 
 
-@bot.on(admin_cmd(pattern="ifsc (.*)"))
-@bot.on(sudo_cmd(pattern="ifsc (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="ifsc (.*)"))
+@Andencento.on(sudo_cmd(pattern="ifsc (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -290,14 +290,14 @@ async def _(event):
         await edit_or_reply(event, "`{}`: {}".format(input_str, r.text))
 
 
-@bot.on(admin_cmd(pattern="color (.*)"))
-@bot.on(sudo_cmd(pattern="color (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="color (.*)"))
+@Andencento.on(sudo_cmd(pattern="color (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
     message_id = None
-    if event.sender_id != bot.uid:
+    if event.sender_id != Andencento.uid:
         message_id = event.message.id
     if event.reply_to_msg_id:
         message_id = event.reply_to_msg_id
@@ -326,8 +326,8 @@ async def _(event):
         )
 
 
-@bot.on(admin_cmd(pattern="xkcd ?(.*)"))
-@bot.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="xkcd ?(.*)"))
+@Andencento.on(sudo_cmd(pattern="xkcd ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -389,7 +389,7 @@ CMD_HELP.update(
         \n\n**Syntax : **`cal year ; month`\
         \n**Function : **__Shows you the calendar of given month and year__\
         \n\n**Syntax : **`.currency` amount (from currency) (to currency)\
-        \n**Function : **__Currency converter for userbot __**Example :** `.currency 10 usd inr`\
+        \n**Function : **__Currency converter for userAndencento __**Example :** `.currency 10 usd inr`\
         \n\n**Syntax : **`.currencies`\
         \n**Function : **__Shows you the some list of currencies__\
         \n\n**Syntax : **`.ifsc` <IFSC code>\

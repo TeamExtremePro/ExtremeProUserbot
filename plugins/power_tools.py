@@ -1,4 +1,4 @@
-"""Restart or Terminate the bot from any chat
+"""Restart or Terminate the Andencento from any chat
 Available Commands:
 .restartsys
 .shutdown"""

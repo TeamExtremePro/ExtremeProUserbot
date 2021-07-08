@@ -10,7 +10,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 devs = "1819992624"
 
 
-name = "userbot"
+name = "userAndencento"
 
 # Read from config file
 config_file = f"{name}.ini"
@@ -24,7 +24,7 @@ if bool(os.environ.get("ENV", False)):
 
     # MongoDB details
     MONGO_URI = os.environ.get("MONGO_URI", False)
-    DB_NAME = os.environ.get("DB_NAME", "userbot")
+    DB_NAME = os.environ.get("DB_NAME", "userAndencento")
 
     # Other Users
     try:
@@ -53,7 +53,7 @@ if bool(os.environ.get("ENV", False)):
 else:
     # MongoDB details
     MONGO_URL = config.get("mongo", "url")
-    DB_NAME = config.get("mongo", "db_name", fallback="userbot")
+    DB_NAME = config.get("mongo", "db_name", fallback="userAndencento")
     DB_USERNAME = config.get("mongo", "db_username")
     DB_PASSWORD = config.get("mongo", "db_password")
     IS_ATLAS = config.getboolean("mongo", "is_atlas", fallback=False)

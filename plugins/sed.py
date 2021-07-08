@@ -7,12 +7,12 @@ from telethon.tl import types, functions
 
 HEADER = "「sed」\n"
 KNOWN_RE_BOTS = re.compile(
-    r"(regex|moku|BananaButler_|rgx|l4mR)bot",
+    r"(regex|moku|BananaButler_|rgx|l4mR)Andencento",
     flags=re.IGNORECASE
 )
 
 # Heavily based on
-# https://github.com/SijmenSchoon/regexbot/blob/master/regexbot.py
+# https://github.com/SijmenSchoon/regexAndencento/blob/master/regexAndencento.py
 
 last_msgs = defaultdict(lambda: deque(maxlen=10))
 
@@ -62,11 +62,11 @@ def doit(chat_id, match, original):
     return None, None
 
 
-async def group_has_sedbot(group):
+async def group_has_sedAndencento(group):
     if isinstance(group, types.InputPeerChannel):
-        full = await bot(functions.channels.GetFullChannelRequest(group))
+        full = await Andencento(functions.channels.GetFullChannelRequest(group))
     elif isinstance(group, types.InputPeerChat):
-        full = await bot(functions.messages.GetFullChatRequest(group.chat_id))
+        full = await Andencento(functions.messages.GetFullChatRequest(group.chat_id))
     else:
         return False
 
@@ -90,8 +90,8 @@ async def on_regex(event):
     if event.fwd_from:
         return
     if not event.is_private and\
-            await group_has_sedbot(await event.get_input_chat()):
-        # await event.edit("This group has a sed bot. Ignoring this message!")
+            await group_has_sedAndencento(await event.get_input_chat()):
+        # await event.edit("This group has a sed Andencento. Ignoring this message!")
         return
 
     chat_id = utils.get_peer_id(await event.get_input_chat())
@@ -100,7 +100,7 @@ async def on_regex(event):
 
     if m is not None:
         s = f"{HEADER}{s}"
-        out = await bot.send_message(
+        out = await Andencento.send_message(
             await event.get_input_chat(), s, reply_to=m.id
         )
         last_msgs[chat_id].appendleft(out)

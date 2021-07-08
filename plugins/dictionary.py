@@ -6,12 +6,12 @@ Syntax: .ud Query"""
 import asyncurban
 from PyDictionary import PyDictionary
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
-@bot.on(admin_cmd(pattern="ud (.*)"))
-@bot.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="ud (.*)"))
+@Andencento.on(sudo_cmd(pattern="ud (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -29,8 +29,8 @@ async def _(event):
         await edit_or_reply(event, "No result found for **" + word + "**")
 
 
-@bot.on(admin_cmd(pattern="meaning (.*)"))
-@bot.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="meaning (.*)"))
+@Andencento.on(sudo_cmd(pattern="meaning (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

@@ -3,12 +3,12 @@ import time
 from telethon.events import NewMessage
 from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userbot import CMD_HELP
+from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userAndencento import CMD_HELP
 
 
-@bot.on(admin_cmd(pattern="stats$"))
-@bot.on(sudo_cmd(pattern="stats$", allow_sudo=True))
+@Andencento.on(admin_cmd(pattern="stats$"))
+@Andencento.on(sudo_cmd(pattern="stats$", allow_sudo=True))
 async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915
@@ -16,7 +16,7 @@ async def stats(
     hell = await edit_or_reply(event, "`Collecting stats...`")
     start_time = time.time()
     private_chats = 0
-    bots = 0
+    Andencentos = 0
     groups = 0
     broadcast_channels = 0
     admin_in_groups = 0
@@ -49,8 +49,8 @@ async def stats(
                     creator_in_groups += 1
         elif isinstance(entity, User):
             private_chats += 1
-            if entity.bot:
-                bots += 1
+            if entity.Andencento:
+                Andencentos += 1
         elif isinstance(entity, Chat):
             groups += 1
             if entity.creator or entity.admin_rights:
@@ -63,8 +63,8 @@ async def stats(
     full_name = inline_mention(await event.client.get_me())
     response = f'🔰**Stats for {full_name}**🔰\n\n'
     response += f'🔱 **Private Chats:** {private_chats} \n'
-    response += f'🔸   `Users: {private_chats - bots}` \n'
-    response += f'🔹   `Bots: {bots}` \n'
+    response += f'🔸   `Users: {private_chats - Andencentos}` \n'
+    response += f'🔹   `Bots: {Andencentos}` \n'
     response += f'🔱 **Groups:** {groups} \n'
     response += f'🔱 **Channels:** {broadcast_channels} \n'
     response += f'☣️  **Admin in Groups:** {admin_in_groups} \n'
@@ -76,7 +76,7 @@ async def stats(
     response += f'🔱 **Unread:** {unread} \n'
     response += f'🔱 **Unread Mentions:** {unread_mentions} \n\n'
     response += f'☣️   __It Took:__ {stop_time:.02f}s \n'
-    response += f'📌 **From The DataBase Of** :- [Extreme Pro userbot](https://github.com/TeamExtremePro/ExtremeProUserbot)'
+    response += f'📌 **From The DataBase Of** :- [Extreme Pro userAndencento](https://github.com/TeamExtremePro/ExtremeProUserAndencento)'
     await hell.edit(response)
 
 
