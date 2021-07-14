@@ -1,4 +1,4 @@
-"""Reply to an image/sticker with .mmf` 'text on top' ; 'text on Andencentotom
+"""Reply to an image/sticker with .mmf` 'text on top' ; 'text on bottom
 forked by: @legendx22
 created by: @A_Dark_Princ3
 """
@@ -6,7 +6,7 @@ created by: @A_Dark_Princ3
 from PIL import Image, ImageFont, ImageDraw
 
 import textwrap, os
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 

@@ -14,7 +14,7 @@ async def add_sudo(event):
     return await event.edit("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴘʟᴇᴀsᴇ")                              
   if event.is_reply:
     id = (await event.get_reply_message()).sender_id
-    name = (await Andencento.get_entity(id)).first_name
+    name = (await bot.get_entity(id)).first_name
     sudo = heroku_var["SUDO_USERS"]
     op = re.search(str(id), str(sudolist))
     if op:
@@ -43,7 +43,7 @@ async def remove_sudo(event):
     return await event.edit("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴘʟᴇᴀsᴇ")
   if event.is_reply:
     id = (await event.get_reply_message()).sender_id
-    name = (await Andencento.get_entity(id)).first_name
+    name = (await bot.get_entity(id)).first_name
     op = re.search(str(id), str(sudolist))
     if op:
       i = ""
@@ -77,7 +77,7 @@ async def sudolists(event):
   sudos = sudolist.split(" ")
   sudoz = "**»sᴜᴅᴏ ʟɪsᴛ«**"
   for sudo in sudos:
-    k = await Andencento.get_entity(int(sudo))
+    k = await bot.get_entity(int(sudo))
     pro = f'\n[**ɴᴀᴍᴇ:** {k.first_name} \n**ᴜsᴇʀɴᴀᴍᴇ:** @{k.chat_id or None}]\n'
     sudoz += pro
   await op.edit(sudoz)

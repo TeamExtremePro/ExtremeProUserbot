@@ -2,7 +2,7 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd("scan ?(.*)"))
@@ -18,7 +18,7 @@ async def _(event):
         return
     chat = "@DrWebBot"
     reply_message.sender
-    if reply_message.sender.Andencento:
+    if reply_message.sender.bot:
         await event.edit("```Reply to actual users message.```")
         return
     await event.edit(" `Sliding my tip, of fingers over it`")
@@ -30,7 +30,7 @@ async def _(event):
             await borg.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("```Please unblock @sangmatainfo_Andencento and try again```")
+            await event.reply("```Please unblock @sangmatainfo_bot and try again```")
             return
         if response.text.startswith("Forward"):
             await event.edit(

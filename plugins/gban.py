@@ -2,8 +2,8 @@
 
 
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
-from userAndencento import CMD_HELP
-from userAndencento.utils import admin_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd
 import html
 from telethon import events
 from telethon.tl.functions.photos import GetUserPhotosRequest
@@ -53,27 +53,27 @@ async def get_user_sender_id(user, event):
     return user_obj
 
 @borg.on(admin_cmd(pattern="gban ?(.*)"))
-async def gspider(userAndencento):
-    lol = userAndencento
+async def gspider(userbot):
+    lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
         friday = await lol.reply("Gbanning This Retard DumbAss😁😁")
     else:
         friday = await lol.edit("Wait Processing.....")
-    me = await userAndencento.client.get_me()
+    me = await userbot.client.get_me()
     await friday.edit(f"Global Ban Is Coming ! Wait And Watch You bitch😎🔥")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await userAndencento.get_chat()
+    await userbot.get_chat()
     a = b = 0
-    if userAndencento.is_private:
-        user = userAndencento.chat
-        reason = userAndencento.pattern_match.group(1)
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
     else:
-        userAndencento.chat.title
+        userbot.chat.title
     try:
-        user, reason = await get_full_user(userAndencento)
+        user, reason = await get_full_user(userbot)
     except:
         pass
     try:
@@ -87,21 +87,21 @@ async def gspider(userAndencento):
                 f"**Didn't , Your Father Teach You ? That You Cant Gban your creator😑😑🖕**"
             )
         try:
-            from userAndencento.modules.sql_helper.gmute_sql import gmute
+            from userbot.modules.sql_helper.gmute_sql import gmute
         except:
             pass
         try:
-            await userAndencento.client(BlockRequest(user))
+            await userbot.client(BlockRequest(user))
         except:
             pass
-        testuserAndencento = [
+        testuserbot = [
             d.entity.id
-            for d in await userAndencento.client.get_dialogs()
+            for d in await userbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testuserAndencento:
+        for i in testuserbot:
             try:
-                await userAndencento.client.edit_permissions(i, user, view_messages=False)
+                await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
                 await friday.edit(f"**GBANNED // Total Affected Chats **: `{a}`")
             except:
@@ -119,27 +119,27 @@ async def gspider(userAndencento):
 
 
 @borg.on(admin_cmd(pattern="ungban ?(.*)"))
-async def gspider(userAndencento):
-    lol = userAndencento
+async def gspider(userbot):
+    lol = userbot
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
         friday = await lol.reply("`Wait Let Me Process`")
     else:
         friday = await lol.edit("Just a Second ")
-    me = await userAndencento.client.get_me()
+    me = await userbot.client.get_me()
     await friday.edit(f"Trying To Ungban User !")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
-    await userAndencento.get_chat()
+    await userbot.get_chat()
     a = b = 0
-    if userAndencento.is_private:
-        user = userAndencento.chat
-        reason = userAndencento.pattern_match.group(1)
+    if userbot.is_private:
+        user = userbot.chat
+        reason = userbot.pattern_match.group(1)
     else:
-        userAndencento.chat.title
+        userbot.chat.title
     try:
-        user, reason = await get_full_user(userAndencento)
+        user, reason = await get_full_user(userbot)
     except:
         pass
     try:
@@ -151,21 +151,21 @@ async def gspider(userAndencento):
         if user.id == 1100231654:
             return await friday.edit("**You Cant gban him... as a result you can not ungban him... He is My Creator!**")
         try:
-            from userAndencento.modules.sql_helper.gmute_sql import ungmute
+            from userbot.modules.sql_helper.gmute_sql import ungmute
         except:
             pass
         try:
-            await userAndencento.client(UnblockRequest(user))
+            await userbot.client(UnblockRequest(user))
         except:
             pass
-        testuserAndencento = [
+        testuserbot = [
             d.entity.id
-            for d in await userAndencento.client.get_dialogs()
+            for d in await userbot.client.get_dialogs()
             if (d.is_group or d.is_channel)
         ]
-        for i in testuserAndencento:
+        for i in testuserbot:
             try:
-                await userAndencento.client.edit_permissions(i, user, send_messages=True)
+                await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
                 await friday.edit(f"**UNGBANNING // AFFECTED CHATS - {a} **")
             except:
@@ -188,7 +188,7 @@ async def gspider(userAndencento):
 async def handler(rkG): 
    if rkG.user_joined or rkG.user_added:      
        try:       	
-         from userAndencento.modules.sql_helper.gmute_sql import is_gmuted
+         from userbot.modules.sql_helper.gmute_sql import is_gmuted
          guser = await rkG.get_user()      
          gmuted = is_gmuted(guser.id)             
        except:      

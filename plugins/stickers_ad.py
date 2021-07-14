@@ -26,7 +26,7 @@ from telethon.tl.types import (
     InputStickerSetShortName,
     MessageMediaPhoto
 )
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="akang ?(.*)"))
@@ -70,55 +70,55 @@ async def _(event):
 
     await event.edit("Processing this sticker. Please Wait!")
 
-    async with borg.conversation("@Stickers") as Andencento_conv:
+    async with borg.conversation("@Stickers") as bot_conv:
         now = datetime.datetime.now()
         dt = now + datetime.timedelta(minutes=1)
-        if not await stickerset_exists(Andencento_conv, packshortname):
-            await silently_send_message(Andencento_conv, "/cancel")
+        if not await stickerset_exists(bot_conv, packshortname):
+            await silently_send_message(bot_conv, "/cancel")
             if is_a_s:
-                response = await silently_send_message(Andencento_conv, "/newanimated")
+                response = await silently_send_message(bot_conv, "/newanimated")
             else:
-                response = await silently_send_message(Andencento_conv, "/newpack")
+                response = await silently_send_message(bot_conv, "/newpack")
             if "Yay!" not in response.text:
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
-            response = await silently_send_message(Andencento_conv, packname)
+            response = await silently_send_message(bot_conv, packname)
             if not response.text.startswith("Alright!"):
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
-            w = await Andencento_conv.send_file(
+            w = await bot_conv.send_file(
                 file=uploaded_sticker,
                 allow_cache=False,
                 force_document=True
             )
-            response = await Andencento_conv.get_response()
+            response = await bot_conv.get_response()
             if "Sorry" in response.text:
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
-            await silently_send_message(Andencento_conv, sticker_emoji)
-            await silently_send_message(Andencento_conv, "/publish")
-            response = await silently_send_message(Andencento_conv, f"<{packname}>")
-            await silently_send_message(Andencento_conv, "/skip")
-            response = await silently_send_message(Andencento_conv, packshortname)
+            await silently_send_message(bot_conv, sticker_emoji)
+            await silently_send_message(bot_conv, "/publish")
+            response = await silently_send_message(bot_conv, f"<{packname}>")
+            await silently_send_message(bot_conv, "/skip")
+            response = await silently_send_message(bot_conv, packshortname)
             if response.text == "Sorry, this short name is already taken.":
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
         else:
-            await silently_send_message(Andencento_conv, "/cancel")
-            await silently_send_message(Andencento_conv, "/addsticker")
-            await silently_send_message(Andencento_conv, packshortname)
-            await Andencento_conv.send_file(
+            await silently_send_message(bot_conv, "/cancel")
+            await silently_send_message(bot_conv, "/addsticker")
+            await silently_send_message(bot_conv, packshortname)
+            await bot_conv.send_file(
                 file=uploaded_sticker,
                 allow_cache=False,
                 force_document=True
             )
-            response = await Andencento_conv.get_response()
+            response = await bot_conv.get_response()
             if "Sorry" in response.text:
                 await event.edit(f"**FAILED**! @Stickers replied: {response.text}")
                 return
-            await silently_send_message(Andencento_conv, response)
-            await silently_send_message(Andencento_conv, sticker_emoji)
-            await silently_send_message(Andencento_conv, "/done")
+            await silently_send_message(bot_conv, response)
+            await silently_send_message(bot_conv, sticker_emoji)
+            await silently_send_message(bot_conv, "/done")
 
     await event.edit(f"sticker added! Your pack can be found [here](t.me/addstickers/{packshortname})")
 
@@ -174,7 +174,7 @@ async def stickerset_exists(conv, setname):
 
 def resize_image(image, save_locaton):
     """ Copyright Rhyse Simpson:
-        https://github.com/skittles9823/SkittBot/blob/master/tg_Andencento/modules/stickers.py
+        https://github.com/skittles9823/SkittBot/blob/master/tg_bot/modules/stickers.py
     """
     im = Image.open(image)
     maxsize = (512, 512)

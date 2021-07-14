@@ -2,8 +2,8 @@ import asyncio
 import time
 from datetime import datetime
 
-from userAndencento import ALIVE_NAME, StartTime, CMD_HELP
-from userAndencento.utils import admin_cmd, sudo_cmd, edit_or_reply
+from userbot import ALIVE_NAME, StartTime, CMD_HELP
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "LEGEND USER"
 def get_readable_time(seconds: int) -> str:

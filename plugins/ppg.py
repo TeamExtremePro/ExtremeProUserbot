@@ -6,7 +6,7 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="ppg ?(.*)"))
@@ -57,7 +57,7 @@ Person: <a href='tg://user?id={}'>{}</a>
         replied_user_profile_photos_count,
         replied_user.user.restricted,
         replied_user.user.verified,
-        replied_user.user.Andencento,
+        replied_user.user.bot,
         common_chats
     )
     message_id_to_reply = event.message.reply_to_msg_id

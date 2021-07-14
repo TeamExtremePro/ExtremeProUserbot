@@ -9,9 +9,9 @@ import os.path
 import time
 from os.path import exists, isdir
 
-from userAndencento import CMD_HELP
-from userAndencento.events import register
-from userAndencento.utils import humanbytes
+from userbot import CMD_HELP
+from userbot.events import register
+from userbot.utils import humanbytes
 
 MAX_MESSAGE_SIZE_LIMIT = 4095
 
@@ -114,7 +114,7 @@ CMD_HELP.update(
     {
         "list": "**Plugin : **`list`\
     \n\n**Syntax : **`.ls`\
-    \n**Function : **this plugin give you your full files from userAndencento"
+    \n**Function : **this plugin give you your full files from userbot"
     }
 )
 

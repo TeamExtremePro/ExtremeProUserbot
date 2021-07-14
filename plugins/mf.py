@@ -8,7 +8,7 @@ from telethon import events, functions, __version__
 
 import asyncio
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd("(.*)"))
 

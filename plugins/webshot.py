@@ -9,7 +9,7 @@ import requests
 
 from telethon import events
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 

@@ -1,23 +1,23 @@
 #Ascii module by @legendx22 for @LEGENDBOT_official
-#A over powerful Andencento
+#A over powerful bot
 #I know u will kang... 
 #GTFO!! MOTHERFUCKER!!!!!!!!!!!
 
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userAndencento import CMD_HELP, ALIVE_NAME
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import CMD_HELP, ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
-USERID = Andencento.uid
+USERID = bot.uid
 
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 
-@Andencento.on(admin_cmd("ascii ?(.*)"))
-@Andencento.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
+@bot.on(admin_cmd("ascii ?(.*)"))
+@bot.on(sudo_cmd(pattern="ascii ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,9 +28,9 @@ async def _(event):
     if not reply_message.media:
         await edit_or_reply(event, "Reply to media message😒🤐")
         return
-    chat = "@asciiart_Andencento"
+    chat = "@asciiart_bot"
     reply_message.sender
-    if reply_message.sender.Andencento:
+    if reply_message.sender.bot:
         await edit_or_reply(event, "Reply to actual users message.😒🤐")
         return
     legendx22 = await edit_or_reply(event, "Wait making ASCII...🤓🔥🔥")
@@ -42,7 +42,7 @@ async def _(event):
             await event.client.send_message(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await legendx22.edit("`Please unblock @asciiart_Andencento and try again`")
+            await legendx22.edit("`Please unblock @asciiart_bot and try again`")
             return
         if response.text.startswith("Forward"):
             await legendx22.edit(
@@ -58,8 +58,8 @@ async def _(event):
             await event.client.send_read_acknowledge(conv.chat_id)
 
 
-@Andencento.on(admin_cmd(pattern="line ?(.*)"))
-@Andencento.on(sudo_cmd(pattern="line ?(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="line ?(.*)"))
+@bot.on(sudo_cmd(pattern="line ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -72,7 +72,7 @@ async def _(event):
         return
     chat = "@Lines50Bot"
     reply_message.sender
-    if reply_message.sender.Andencento:
+    if reply_message.sender.bot:
         await edit_or_reply(event, "Reply to actual users message.😒🤐")
         return
     legendx22 = await edit_or_reply(event, "`Processing`")

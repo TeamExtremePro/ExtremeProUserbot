@@ -9,7 +9,7 @@ from telethon import events
 import requests
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 # ================= CONSTANT =================
@@ -154,8 +154,8 @@ async def gey(e):
                     "\n┈┈┈┈┈┈┏━┓┈┈┈┈┈┈")    
 
 
-@borg.on(admin_cmd(outgoing=True, pattern="Andencento$"))
-async def Andencento(e):
+@borg.on(admin_cmd(outgoing=True, pattern="bot$"))
+async def bot(e):
         await e.edit("` \n   ╲╲╭━━━━╮ \n╭╮┃▆┈┈▆┃╭╮ \n┃╰┫▽▽▽┣╯┃ \n╰━┫△△△┣━╯`"
                      "`\n╲╲┃┈┈┈┈┃  \n╲╲┃┈┏┓┈┃ `")
 

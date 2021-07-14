@@ -6,13 +6,13 @@ import time
 from datetime import datetime
 from io import BytesIO
 from pathlib import Path
-from userAndencento import Andencento as borg
+from userbot import bot as borg
 from telethon import functions, types
 from telethon.errors import PhotoInvalidDimensionsError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import SendMediaRequest
 
-from userAndencento.utils import admin_cmd, progress
+from userbot.utils import admin_cmd, progress
 
 
 if not os.path.isdir("./temp"):

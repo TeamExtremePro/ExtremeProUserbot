@@ -1,10 +1,10 @@
 # Coded by @CyberBoyAyush
-# For LEGENDBOT : https://github.com/LEGENDXOP/ExtremeProUserAndencento
+# For LEGENDBOT : https://github.com/LEGENDXOP/ExtremeProUserbot
 
 
 from telethon import events
 import asyncio
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd("inflag"))
 async def _(event):

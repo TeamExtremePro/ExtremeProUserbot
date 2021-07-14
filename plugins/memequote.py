@@ -4,7 +4,7 @@
 #custom cmds by @heyworld to make it look more gayish
 #Thanks to @AbhinavShinde @jisan7509 for strings
 #Edited by @Sur_vivor
-""" UserAndencento module for having some fun with people. """
+""" Userbot module for having some fun with people. """
 
 import asyncio
 import random
@@ -12,7 +12,7 @@ from random import choice, getrandbits, randint
 from re import sub
 from random import randint
 from telethon import events, functions
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 # ================= CONSTANT =================
@@ -99,7 +99,7 @@ GDNOON = [
     "`You are every bit of special to me just like a relaxing afternoon is special after a toiling noon. Thinking of my special one in this special time of the day!`",
     "`May your Good afternoon be light, blessed, enlightened, productive and happy.`",
     "`Thinking of you is my most favorite hobby every afternoon. Your love is all I desire in life. Wishing my beloved an amazing afternoon!`",
-    "`I have tasted things that are so sweet, heard words that are soothing to the soul, but comparing the joy that they Andencentoh bring, I’ll rather choose to see a smile from your cheeks. You are sweet. I love you.`",
+    "`I have tasted things that are so sweet, heard words that are soothing to the soul, but comparing the joy that they both bring, I’ll rather choose to see a smile from your cheeks. You are sweet. I love you.`",
     "`How I wish the sun could obey me for a second, to stop its scorching ride on my angel. So sorry it will be hot there. Don’t worry, the evening will soon come. I love you.`",
     "`I want you when I wake up in the morning, I want you when I go to sleep at night and I want you when I relax under the sun in the afternoon!`",
     "`With you every day is my lucky day. So lucky being your love and don’t know what else to say. Morning night and noon, you make my day.`",
@@ -126,7 +126,7 @@ CHASE_STR = [
     "`Jokes on you, I'm everywhere`",
     "You're gonna regret that...",
     "You could also try /kickme, I hear that's fun.",
-    "`Go Andencentoher someone else, no-one here cares.`",
+    "`Go bother someone else, no-one here cares.`",
     "You can run, but you can't hide.",
     "Is that all you've got?",
     "I'm behind you...",
@@ -140,7 +140,7 @@ CHASE_STR = [
     "May the odds be ever in your favour.",
     "Famous last words.",
     "And they disappeared forever, never to be seen again.",
-    "\"Oh, look at me! I'm so cool, I can run from a Andencento!\" - this person",
+    "\"Oh, look at me! I'm so cool, I can run from a bot!\" - this person",
     "Yeah yeah, just tap /kickme already.",
     "Here, take this ring and head to Mordor while you're at it.",
     "Legend has it, they're still running...",

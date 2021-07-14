@@ -1,6 +1,6 @@
 #Made by@LEGENDX22 for @LEGEND_USERBOT_SUPPORT
 
-from userAndencento.utils import admin_cmd, sudo_cmd, edit_or_reply
+from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from var import Var
 
 
@@ -10,9 +10,9 @@ async def wspr(event):
     if event.fwd_from:
         return
     wwwspr = event.pattern_match.group(1)
-    Andencentousername = "@whisperBot"
+    botusername = "@whisperBot"
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
-    tap = await Andencento.inline_query(Andencentousername, wwwspr) 
+    tap = await bot.inline_query(botusername, wwwspr) 
     await tap[0].click(event.chat_id)
     await event.delete()

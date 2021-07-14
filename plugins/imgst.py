@@ -2,8 +2,8 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userAndencento.utils import admin_cmd
-from userAndencento import Andencento 
+from userbot.utils import admin_cmd
+from userbot import bot 
 
 @borg.on(admin_cmd(pattern="ss2 ?(.*)"))
 async def _(event):
@@ -16,7 +16,7 @@ async def _(event):
     if not reply_message.media:
        await event.edit("Sir, This is not a image ")
        return
-    chat = "@buildstickerAndencento"
+    chat = "@buildstickerbot"
     await event.edit("Making a sticker")
     async with event.client.conversation(chat) as conv:
           try:     
@@ -24,14 +24,14 @@ async def _(event):
               await event.client.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("Unblock me (@buildstickerAndencento) and try again")
+              await event.reply("Unblock me (@buildstickerbot) and try again")
               return
           if response.text.startswith("Hi!"):
              await event.edit("Can you kindly disable your forward privacy settings for good?")
           else: 
              await event.delete()
              await event.client.send_message(event.chat_id, response.message)
-          await Andencento.send_read_acknowledge(conv.chat_id)
+          await bot.send_read_acknowledge(conv.chat_id)
             
 @borg.on(admin_cmd(pattern="stoi ?(.*)"))
 async def _(event):
@@ -44,7 +44,7 @@ async def _(event):
     if not reply_message.media:
        await event.edit("Sir Reply to sticker message")
        return
-    chat = "@stickers_to_image_Andencento"
+    chat = "@stickers_to_image_bot"
     await event.edit("Making a image")
     async with event.client.conversation(chat) as conv:
           try:     
@@ -52,7 +52,7 @@ async def _(event):
               await event.client.forward_messages(chat, reply_message)
               response = await response 
           except YouBlockedUserError: 
-              await event.reply("Unblock me (@stickers_to_image_Andencento) to work")
+              await event.reply("Unblock me (@stickers_to_image_bot) to work")
               return
           if response.text.startswith("I understand only stickers"):
               await event.edit("Sorry i cant't convert it check wheter is non animated sticker or not")
@@ -66,4 +66,4 @@ async def _(event):
                   await event.client.send_message(event.chat_id, response.message , reply_to = reply_message.id)
               else:
                   await event.edit("try again")
-          await Andencento.send_read_acknowledge(conv.chat_id)
+          await bot.send_read_acknowledge(conv.chat_id)

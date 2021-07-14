@@ -1,5 +1,5 @@
 import pyfiglet
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 #@command(pattern="^.figlet ?(.*)", outgoing=True)
 @borg.on(admin_cmd(pattern=r"figlet ?(.*)"))

@@ -3,12 +3,12 @@
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userAndencento import ALIVE_NAME
-from userAndencento.utils import admin_cmd
+from userbot import ALIVE_NAME
+from userbot.utils import admin_cmd
 
 naam = str(ALIVE_NAME)
 
-Andencento = "@Carol5_Andencento"
+bot = "@Carol5_bot"
 
 @borg.on(admin_cmd("au ?(.*)"))
 async def _(event):
@@ -16,7 +16,7 @@ async def _(event):
         return
     sysarg = event.pattern_match.group(1)
     if sysarg == "":
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -25,9 +25,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and retry!")
+                await event.edit("Error: unblock @Carol5_bot and retry!")
     elif "@" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -36,9 +36,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and try again!")
+                await event.edit("Error: unblock @Carol5_bot and try again!")
     elif "" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -47,7 +47,7 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento `and try again!")
+                await event.edit("Error: unblock @Carol5_bot `and try again!")
 #made by LEGENDX22
 @borg.on(admin_cmd("ch ?(.*)"))
 async def _(event):
@@ -55,7 +55,7 @@ async def _(event):
         return
     sysarg = event.pattern_match.group(1)
     if sysarg == "":
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -64,9 +64,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and retry!")
+                await event.edit("Error: unblock @Carol5_bot and retry!")
     elif "@" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -75,9 +75,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and try again!")
+                await event.edit("Error: unblock @Carol5_bot and try again!")
     elif "" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -86,7 +86,7 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento `and try again!")
+                await event.edit("Error: unblock @Carol5_bot `and try again!")
 
 
 @borg.on(admin_cmd("stripe ?(.*)"))
@@ -95,7 +95,7 @@ async def _(event):
         return
     sysarg = event.pattern_match.group(1)
     if sysarg == "":
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -104,9 +104,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and retry!")
+                await event.edit("Error: unblock @Carol5_bot and retry!")
     elif "@" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -115,9 +115,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and try again!")
+                await event.edit("Error: unblock @Carol5_bot and try again!")
     elif "" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -126,7 +126,7 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento `and try again!")
+                await event.edit("Error: unblock @Carol5_bot `and try again!")
 
 
 @borg.on(admin_cmd("vbv ?(.*)"))
@@ -135,7 +135,7 @@ async def _(event):
         return
     sysarg = event.pattern_match.group(1)
     if sysarg == "":
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -144,9 +144,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and retry!")
+                await event.edit("Error: unblock @Carol5_bot and retry!")
     elif "@" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -155,9 +155,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and try again!")
+                await event.edit("Error: unblock @Carol5_bot and try again!")
     elif "" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -166,7 +166,7 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento `and try again!")
+                await event.edit("Error: unblock @Carol5_bot `and try again!")
 
 
 @borg.on(admin_cmd("bin ?(.*)"))
@@ -175,7 +175,7 @@ async def _(event):
         return
     sysarg = event.pattern_match.group(1)
     if sysarg == "":
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -184,9 +184,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and retry!")
+                await event.edit("Error: unblock @Carol5_bot and retry!")
     elif "@" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -195,9 +195,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and try again!")
+                await event.edit("Error: unblock @Carol5_bot and try again!")
     elif "" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -206,14 +206,14 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento `and try again!")
+                await event.edit("Error: unblock @Carol5_bot `and try again!")
 @borg.on(admin_cmd("key ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     sysarg = event.pattern_match.group(1)
     if sysarg == "":
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -222,9 +222,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and retry!")
+                await event.edit("Error: unblock @Carol5_bot and retry!")
     elif "@" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -233,9 +233,9 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento and try again!")
+                await event.edit("Error: unblock @Carol5_bot and try again!")
     elif "" in sysarg:
-        async with borg.conversation(Andencento) as conv:
+        async with borg.conversation(bot) as conv:
             try:
                 await conv.send_message("/start")
                 await conv.get_response()
@@ -244,5 +244,5 @@ async def _(event):
                 await borg.send_message(event.chat_id, audio.text)
                 await event.delete()
             except YouBlockedUserError:
-                await event.edit("Error: unblock @Carol5_Andencento `and try again!")
+                await event.edit("Error: unblock @Carol5_bot `and try again!")
 

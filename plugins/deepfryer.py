@@ -1,4 +1,4 @@
-""" UserAndencento module for frying stuff. ported by @ExtremeProUserAndencento """
+""" Userbot module for frying stuff. ported by @ExtremeProUserbot """
 import io
 from random import randint, uniform
 

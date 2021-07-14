@@ -4,31 +4,31 @@ import json
 import random
 import re
 from telethon import events, errors, custom
-from userAndencento import CMD_LIST
+from userbot import CMD_LIST
 import io
 
-if Var.TG_BOT_USER_NAME_BF_HER is not None and tgAndencento is not None:
-    @tgAndencento.on(events.InlineQuery)  # pylint:disable=E0602
+if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
+    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == Andencento.uid and query.startswith("UserAndencento"):
+        if event.query.user_id == bot.uid and query.startswith("Userbot"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© UserAndencento Help",
+                "© Userbot Help",
                 text="{}\nCurrently Loaded Plugins: {}".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False
             )
         await event.answer([result] if result else None)
-    @tgAndencento.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_next\((.+?)\)")
     ))
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == Andencento.uid:  # pylint:disable=E0602
+        if event.query.user_id == bot.uid:  # pylint:disable=E0602
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
@@ -36,15 +36,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgAndencento is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own UserAndencento, and don't use mine!"
+            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
-    @tgAndencento.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"helpme_prev\((.+?)\)")
     ))
     async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == Andencento.uid:  # pylint:disable=E0602
+        if event.query.user_id == bot.uid:  # pylint:disable=E0602
             current_page_number = int(
                 event.data_match.group(1).decode("UTF-8"))
             buttons = paginate_help(
@@ -55,9 +55,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgAndencento is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own UserAndencento, and don't use mine!"
+            reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-    @tgAndencento.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+    @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
         data=re.compile(b"us_plugin_(.*)")
     ))
     async def on_plug_in_callback_query_handler(event):
@@ -74,14 +74,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgAndencento is not None:
         else:
             reply_pop_up_alert = help_string
         reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
-            © UserAndencento".format(plugin_name)
+            © Userbot".format(plugin_name)
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         except: 
             #https://github.com/Dark-Princ3/X-tra-Telegram/commit/275fd0ec26b284d042bf56de325472e088e6f364#diff-2b2df8998ff11b6c15893b2c8d5d6af3
             with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
                 out_file.name = "{}.txt".format(plugin_name)
-                await Andencento.send_file(
+                await bot.send_file(
                     event.chat_id,
                     out_file,
                     force_document=True,

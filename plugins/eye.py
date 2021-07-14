@@ -3,7 +3,7 @@
 
 import asyncio
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="eye"))

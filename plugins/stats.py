@@ -3,10 +3,10 @@ from datetime import datetime
 from telethon.tl.types import Channel, Chat, User
 from uniborg.util import admin_cmd
 
-from userAndencento import Andencento
+from userbot import bot
 
 
-@Andencento.on(admin_cmd(pattern=r"stats"))
+@bot.on(admin_cmd(pattern=r"stats"))
 async def _(event):
     if event.fwd_from:
         return
@@ -16,11 +16,11 @@ async def _(event):
     c = 0
     bc = 0
     b = 0
-    dialogs = await Andencento.get_dialogs(limit=None, ignore_migrated=True)
+    dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
     for d in dialogs:
         currrent_entity = d.entity
         if type(currrent_entity) is User:
-            if currrent_entity.Andencento:
+            if currrent_entity.bot:
                 b += 1
             else:
                 u += 1

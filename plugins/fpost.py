@@ -8,7 +8,7 @@ import string
 
 from telethon import events
 from telethon.tl import types
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 msg_cache = {}
 

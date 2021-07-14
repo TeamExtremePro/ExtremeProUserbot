@@ -1,17 +1,17 @@
 
 
-from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userAndencento import CMD_HELP, ALIVE_NAME
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import CMD_HELP, ALIVE_NAME
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
-USERID = Andencento.uid
+USERID = bot.uid
 
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 
-@Andencento.on(admin_cmd(pattern="carry (.*)"))
-@Andencento.on(sudo_cmd(pattern="carry (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="carry (.*)"))
+@bot.on(sudo_cmd(pattern="carry (.*)", allow_sudo=True))
 async def legendx22(carry):
     name = carry.pattern_match.group(1)
     await edit_or_reply(
@@ -20,8 +20,8 @@ async def legendx22(carry):
     )
 
 
-@Andencento.on(admin_cmd(pattern="ded (.*)"))
-@Andencento.on(sudo_cmd(pattern="ded (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="ded (.*)"))
+@bot.on(sudo_cmd(pattern="ded (.*)", allow_sudo=True))
 async def legendx22(ded):
     name = ded.pattern_match.group(1)
     await edit_or_reply(
@@ -43,8 +43,8 @@ async def legendx22(ded):
     )
 
 
-@Andencento.on(admin_cmd(pattern="killer (.*)"))
-@Andencento.on(sudo_cmd(pattern="killer (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="killer (.*)"))
+@bot.on(sudo_cmd(pattern="killer (.*)", allow_sudo=True))
 async def legendx22(killer):
     name = killer.pattern_match.group(1)
     await edit_or_reply(
@@ -73,8 +73,8 @@ A = (
 )
 
 
-@Andencento.on(admin_cmd(pattern="sthink (.*)"))
-@Andencento.on(sudo_cmd(pattern="sthink (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="sthink (.*)"))
+@bot.on(sudo_cmd(pattern="sthink (.*)", allow_sudo=True))
 async def legendx22(think):
     name = think.pattern_match.group(1)
     B = (
@@ -98,8 +98,8 @@ async def legendx22(think):
     await edit_or_reply(think, B)
 
 
-@Andencento.on(admin_cmd(pattern="sfrog (.*)"))
-@Andencento.on(sudo_cmd(pattern="sfrog (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="sfrog (.*)"))
+@bot.on(sudo_cmd(pattern="sfrog (.*)", allow_sudo=True))
 async def legendx22(frogsay):
     name = frogsay.pattern_match.group(1)
     C = (
@@ -123,8 +123,8 @@ async def legendx22(frogsay):
     await edit_or_reply(frogsay, C)
 
 
-@Andencento.on(admin_cmd(pattern="sdead (.*)"))
-@Andencento.on(sudo_cmd(pattern="sdead (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="sdead (.*)"))
+@bot.on(sudo_cmd(pattern="sdead (.*)", allow_sudo=True))
 async def legendx22(deadfrog):
     name = deadfrog.pattern_match.group(1)
     D = (
@@ -148,8 +148,8 @@ async def legendx22(deadfrog):
     await edit_or_reply(deadfrog, D)
 
 
-@Andencento.on(admin_cmd(pattern="strump (.*)"))
-@Andencento.on(sudo_cmd(pattern="strump (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="strump (.*)"))
+@bot.on(sudo_cmd(pattern="strump (.*)", allow_sudo=True))
 async def legendx22(trumpsay):
     name = trumpsay.pattern_match.group(1)
     E = (
@@ -173,8 +173,8 @@ async def legendx22(trumpsay):
     await edit_or_reply(trumpsay, E)
 
 
-@Andencento.on(admin_cmd(pattern="schina (.*)"))
-@Andencento.on(sudo_cmd(pattern="schina (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="schina (.*)"))
+@bot.on(sudo_cmd(pattern="schina (.*)", allow_sudo=True))
 async def legendx22(ckmkb):
     name = ckmkb.pattern_match.group(1)
     F = (
@@ -199,14 +199,14 @@ async def legendx22(ckmkb):
     await edit_or_reply(ckmkb, F)
 
 
-@Andencento.on(admin_cmd(pattern=r"sshit$"))
-@Andencento.on(sudo_cmd(pattern="sshit$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"sshit$"))
+@bot.on(sudo_cmd(pattern="sshit$", allow_sudo=True))
 async def legendx22(shit):
     await edit_or_reply(shit, A)
 
 
-@Andencento.on(admin_cmd(pattern=r"elove$"))
-@Andencento.on(sudo_cmd(pattern="elove$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"elove$"))
+@bot.on(sudo_cmd(pattern="elove$", allow_sudo=True))
 async def kakashi(event):
     await edit_or_reply(
         event,
@@ -492,86 +492,86 @@ T = (
 )
 
 
-@Andencento.on(admin_cmd(pattern=r"monster$"))
-@Andencento.on(sudo_cmd(pattern="monster$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"monster$"))
+@bot.on(sudo_cmd(pattern="monster$", allow_sudo=True))
 async def bluedevilmonster(monster):
     await edit_or_reply(monster, G)
 
 
-@Andencento.on(admin_cmd(pattern=r"pig$"))
-@Andencento.on(sudo_cmd(pattern="pig$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"pig$"))
+@bot.on(sudo_cmd(pattern="pig$", allow_sudo=True))
 async def bluedevilpig(pig):
     await edit_or_reply(pig, H)
 
 
-@Andencento.on(admin_cmd(pattern=r"gun$"))
-@Andencento.on(sudo_cmd(pattern="gun$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"gun$"))
+@bot.on(sudo_cmd(pattern="gun$", allow_sudo=True))
 async def bluedevilgun(gun):
     await edit_or_reply(gun, I)
 
 
-@Andencento.on(admin_cmd(pattern=r"dog$"))
-@Andencento.on(sudo_cmd(pattern="dog$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"dog$"))
+@bot.on(sudo_cmd(pattern="dog$", allow_sudo=True))
 async def bluedevildog(dog):
     await edit_or_reply(dog, J)
 
 
-@Andencento.on(admin_cmd(pattern=r"hello$"))
-@Andencento.on(sudo_cmd(pattern="hello$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"hello$"))
+@bot.on(sudo_cmd(pattern="hello$", allow_sudo=True))
 async def bluedevilhello(hello):
     await edit_or_reply(hello, K)
 
 
-@Andencento.on(admin_cmd(pattern=r"hmf$"))
-@Andencento.on(sudo_cmd(pattern="hmf$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"hmf$"))
+@bot.on(sudo_cmd(pattern="hmf$", allow_sudo=True))
 async def bluedevilhmf(hmf):
     await edit_or_reply(hmf, L)
 
 
-@Andencento.on(admin_cmd(pattern=r"couple$"))
-@Andencento.on(sudo_cmd(pattern="couple$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"couple$"))
+@bot.on(sudo_cmd(pattern="couple$", allow_sudo=True))
 async def bluedevilcouple(couple):
     await edit_or_reply(couple, M)
 
 
-@Andencento.on(admin_cmd(pattern=r"sup$"))
-@Andencento.on(sudo_cmd(pattern="sup$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"sup$"))
+@bot.on(sudo_cmd(pattern="sup$", allow_sudo=True))
 async def bluedevilsupreme(supreme):
     await edit_or_reply(supreme, N)
 
 
-@Andencento.on(admin_cmd(pattern=r"india$"))
-@Andencento.on(sudo_cmd(pattern="india$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"india$"))
+@bot.on(sudo_cmd(pattern="india$", allow_sudo=True))
 async def bluedevilindia(india):
     await edit_or_reply(india, O)
 
 
-@Andencento.on(admin_cmd(pattern=r"wc$"))
-@Andencento.on(sudo_cmd(pattern="wc$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"wc$"))
+@bot.on(sudo_cmd(pattern="wc$", allow_sudo=True))
 async def bluedevilwelcome(welcome):
     await edit_or_reply(welcome, P)
 
 
-@Andencento.on(admin_cmd(pattern=r"snk$"))
-@Andencento.on(sudo_cmd(pattern="snk$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"snk$"))
+@bot.on(sudo_cmd(pattern="snk$", allow_sudo=True))
 async def bluedevilsnake(snake):
     await edit_or_reply(snake, Q)
 
 
-@Andencento.on(admin_cmd(pattern=r"bye$"))
-@Andencento.on(sudo_cmd(pattern="bye$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"bye$"))
+@bot.on(sudo_cmd(pattern="bye$", allow_sudo=True))
 async def bluedevilbye(bye):
     await edit_or_reply(bye, R)
 
 
-@Andencento.on(admin_cmd(pattern=r"shitos$"))
-@Andencento.on(sudo_cmd(pattern="shitos$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"shitos$"))
+@bot.on(sudo_cmd(pattern="shitos$", allow_sudo=True))
 async def bluedevilshitos(shitos):
     await edit_or_reply(shitos, S)
 
 
-@Andencento.on(admin_cmd(pattern=r"dislike$"))
-@Andencento.on(sudo_cmd(pattern="dislike$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"dislike$"))
+@bot.on(sudo_cmd(pattern="dislike$", allow_sudo=True))
 async def bluedevildislike(dislike):
     await edit_or_reply(dislike, T)
 

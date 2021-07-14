@@ -9,14 +9,14 @@ from datetime import datetime
 
 from pySmartDL import SmartDL
 
-from userAndencento.utils import admin_cmd, sudo_cmd, humanbytes, progress
-from userAndencento import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd, sudo_cmd, humanbytes, progress
+from userbot import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
 
-@Andencento.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
-@Andencento.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="download(?: |$)(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return

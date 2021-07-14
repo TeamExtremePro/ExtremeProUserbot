@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" UserAndencento module for kanging stickers or making new ones. Thanks @rupansh"""
+""" Userbot module for kanging stickers or making new ones. Thanks @rupansh"""
 
 import io
 import math
@@ -12,8 +12,8 @@ from os import remove
 from PIL import Image
 import random
 from telethon.tl.types import DocumentAttributeFilename, MessageMediaPhoto
-from userAndencento import Andencento, CMD_HELP
-from userAndencento.utils import register
+from userbot import bot, CMD_HELP
+from userbot.utils import register
 from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
@@ -35,7 +35,7 @@ KANGING_STR = [
 @register(outgoing=True, pattern="^.kang")
 async def kang(args):
     """ For .kang command, kangs stickers or creates new ones. """
-    user = await Andencento.get_me()
+    user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
     message = await args.get_reply_message()
@@ -48,18 +48,18 @@ async def kang(args):
         if isinstance(message.media, MessageMediaPhoto):
             await args.edit(f"`{random.choice(KANGING_STR)}`")
             photo = io.BytesIO()
-            photo = await Andencento.download_media(message.photo, photo)
+            photo = await bot.download_media(message.photo, photo)
         elif "image" in message.media.document.mime_type.split('/'):
             await args.edit(f"`{random.choice(KANGING_STR)}`")
             photo = io.BytesIO()
-            await Andencento.download_file(message.media.document, photo)
+            await bot.download_file(message.media.document, photo)
             if (DocumentAttributeFilename(file_name='sticker.webp') in
                     message.media.document.attributes):
                 emoji = message.media.document.attributes[1].alt
                 emojibypass = True
         elif "tgsticker" in message.media.document.mime_type:
             await args.edit(f"`{random.choice(KANGING_STR)}`")
-            await Andencento.download_file(message.media.document,
+            await bot.download_file(message.media.document,
                                     'AnimatedSticker.tgs')
 
             attributes = message.media.document.attributes
@@ -83,7 +83,7 @@ async def kang(args):
             emoji = "😎"
         pack = 1
         if len(splat) == 3:
-            pack = splat[2]  # User sent Andencentoh
+            pack = splat[2]  # User sent both
             emoji = splat[1]
         elif len(splat) == 2:
             if splat[1].isnumeric():
@@ -114,11 +114,11 @@ async def kang(args):
         htmlstr = response.read().decode("utf8").split('\n')
 
         if "  A <strong>Telegram</strong> user has created the <strong>Sticker&nbsp;Set</strong>." not in htmlstr:
-            async with Andencento.conversation('Stickers') as conv:
+            async with bot.conversation('Stickers') as conv:
                 await conv.send_message('/addsticker')
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.send_message(packname)
                 x = await conv.get_response()
                 while "120" in x.text:
@@ -133,11 +133,11 @@ async def kang(args):
                         await conv.send_message(cmd)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         await conv.send_message(packnick)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         if is_anim:
                             await conv.send_file('AnimatedSticker.tgs')
                             remove('AnimatedSticker.tgs')
@@ -147,7 +147,7 @@ async def kang(args):
                         await conv.get_response()
                         await conv.send_message(emoji)
                         # Ensure user doesn't get spamming notifications
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         await conv.send_message("/publish")
                         if is_anim:
@@ -155,17 +155,17 @@ async def kang(args):
                             await conv.send_message(f"<{packnick}>")
                         # Ensure user doesn't get spamming notifications
                         await conv.get_response()
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         await conv.send_message("/skip")
                         # Ensure user doesn't get spamming notifications
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         await conv.send_message(packname)
                         # Ensure user doesn't get spamming notifications
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         await conv.get_response()
                         # Ensure user doesn't get spamming notifications
-                        await Andencento.send_read_acknowledge(conv.chat_id)
+                        await bot.send_read_acknowledge(conv.chat_id)
                         await args.edit(f"`Sticker added in a Different Pack !\
                             \nThis Pack is Newly created!\
                             \nYour pack can be found [here](t.me/addstickers/{packname})",
@@ -180,28 +180,28 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     await args.edit(
-                        "`Failed to add sticker, use` @Stickers `Andencento to add the sticker manually.`"
+                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
                     )
                     return
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message('/done')
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
         else:
             await args.edit("`Brewing a new Pack...`")
-            async with Andencento.conversation('Stickers') as conv:
+            async with bot.conversation('Stickers') as conv:
                 await conv.send_message(cmd)
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.send_message(packnick)
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 if is_anim:
                     await conv.send_file('AnimatedSticker.tgs')
                     remove('AnimatedSticker.tgs')
@@ -211,12 +211,12 @@ async def kang(args):
                 rsp = await conv.get_response()
                 if "Sorry, the file type is invalid." in rsp.text:
                     await args.edit(
-                        "`Failed to add sticker, use` @Stickers `Andencento to add the sticker manually.`"
+                        "`Failed to add sticker, use` @Stickers `bot to add the sticker manually.`"
                     )
                     return
                 await conv.send_message(emoji)
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message("/publish")
                 if is_anim:
@@ -224,17 +224,17 @@ async def kang(args):
                     await conv.send_message(f"<{packnick}>")
                 # Ensure user doesn't get spamming notifications
                 await conv.get_response()
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.send_message("/skip")
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 await conv.send_message(packname)
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
                 await conv.get_response()
                 # Ensure user doesn't get spamming notifications
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(f"`Sticker kanged successfully!`\
             \nPack can be found [here](t.me/addstickers/{packname})",
@@ -289,7 +289,7 @@ async def get_pack_info(event):
         await event.edit("`This is not a sticker. Reply to a sticker.`")
         return
 
-    get_stickerset = await Andencento(
+    get_stickerset = await bot(
         GetStickerSetRequest(
             InputStickerSetID(
                 id=stickerset_attr.stickerset.id,
@@ -312,7 +312,7 @@ async def get_pack_info(event):
 CMD_HELP.update({
     "stickers":
     ".kang\
-\nUsage: Reply .kang to a sticker or an image to kang it to your userAndencento pack.\
+\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
 \n\n.kang [emoji('s)]\
 \nUsage: Works just like .kang but uses the emoji('s) you picked.\
 \n\n.kang [number]\

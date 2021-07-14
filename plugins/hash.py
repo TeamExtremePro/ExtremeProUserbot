@@ -3,13 +3,13 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" UserAndencento module containing hash and encode/decode commands. """
+""" Userbot module containing hash and encode/decode commands. """
 
 from subprocess import PIPE
 from subprocess import run as runapp
 import pybase64
-from userAndencento import CMD_HELP
-from userAndencento.events import register, errors_handler
+from userbot import CMD_HELP
+from userbot.events import register, errors_handler
 
 
 @register(outgoing=True, pattern="^.hash (.*)")

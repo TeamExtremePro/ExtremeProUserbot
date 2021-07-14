@@ -32,8 +32,8 @@ from urllib.error import HTTPError
 
 from pySmartDL import SmartDL
 
-from userAndencento.utils import admin_cmd, edit_or_reply, humanbytes, time_formatter
-from userAndencento import CMD_HELP, LOGS
+from userbot.utils import admin_cmd, edit_or_reply, humanbytes, time_formatter
+from userbot import CMD_HELP, LOGS
 
 TEMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 
@@ -53,7 +53,7 @@ async def subprocess_run(megadl, cmd):
     return stdout.decode().strip(), stderr.decode().strip(), exitCode
 
 
-@Andencento.on(admin_cmd(outgoing=True, pattern=r"mega(?: |$)(.*)"))
+@bot.on(admin_cmd(outgoing=True, pattern=r"mega(?: |$)(.*)"))
 async def mega_downloader(megadl):
     catevent = await edit_or_reply(megadl, "`Collecting information...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -189,6 +189,6 @@ CMD_HELP.update(
         "mega": "**Plugin :** `mega`\
         \n\n**Syntax :** `.mega` <MEGA.nz link>\
         \n**Usage : **Reply to a MEGA.nz link or paste your MEGA.nz link\
-        \n\n__ It will download the file into your userAndencento server.__"
+        \n\n__ It will download the file into your userbot server.__"
     }
 )

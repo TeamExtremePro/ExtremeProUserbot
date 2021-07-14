@@ -1,12 +1,12 @@
 #make by LEGENDX22 for direct message
 """
-UserAndencento module to help you dm msg
+Userbot module to help you dm msg
 """
 
 from telethon import *
 
-from userAndencento import CMD_HELP
-from userAndencento.utils import admin_cmd
+from userbot import CMD_HELP
+from userbot.utils import admin_cmd
 
 
 # Fixed by LEGDND X

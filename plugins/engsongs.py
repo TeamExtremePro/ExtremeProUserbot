@@ -16,7 +16,7 @@ import sys
 
 import random
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd(pattern=r"engsongs", outgoing=True))
 
@@ -50,7 +50,7 @@ async def _(event):
 
     if x==5:
 
-        await event.edit("🎶 Walking down 29th and Park \n I saw you in another's arms \n Only a month we've been apart \n **You look happier** \n \n Saw you walk inside a bar \n He said something to make you laugh \n I saw that Andencentoh your smiles were twice as wide as ours \n Yeah, you look happier, you do 🎶 \n **-Happier **")
+        await event.edit("🎶 Walking down 29th and Park \n I saw you in another's arms \n Only a month we've been apart \n **You look happier** \n \n Saw you walk inside a bar \n He said something to make you laugh \n I saw that both your smiles were twice as wide as ours \n Yeah, you look happier, you do 🎶 \n **-Happier **")
 
     if x==6:
 
@@ -106,7 +106,7 @@ async def _(event):
 
     if x==19:
 
-        await event.edit("🎶 I can swallow a Andencentotle of alcohol and I'll feel like Godzilla \n Better hit the deck like the card dealer \n My whole squad's in here, walking around the party \n A cross between a zombie apocalypse and big Bobby 'The \n Brain' Heenan which is probably the \n Same reason I wrestle with mania 🎶 \n **-Godzilla**")
+        await event.edit("🎶 I can swallow a bottle of alcohol and I'll feel like Godzilla \n Better hit the deck like the card dealer \n My whole squad's in here, walking around the party \n A cross between a zombie apocalypse and big Bobby 'The \n Brain' Heenan which is probably the \n Same reason I wrestle with mania 🎶 \n **-Godzilla**")
 
     if x==20:
 
@@ -158,7 +158,7 @@ async def _(event):
         
     if x==32:
         
-        await event.edit("🎶 You won't find him down on Sunset \n Or at a party in the hills \n At the Andencentotom of the Andencentotle \n Or when you're tripping on some pills \n When they sold you the dream you were just 16 \n Packed a bag and ran away \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA 🎶 \n **-Jesus in LA**")
+        await event.edit("🎶 You won't find him down on Sunset \n Or at a party in the hills \n At the bottom of the bottle \n Or when you're tripping on some pills \n When they sold you the dream you were just 16 \n Packed a bag and ran away \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA \n And it's a crying shame you came all this way \n 'Cause you won't find Jesus in LA 🎶 \n **-Jesus in LA**")
         
     if x==33:
         

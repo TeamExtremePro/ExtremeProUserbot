@@ -27,7 +27,7 @@ DEFAULTUSER = (
 CUSTOM_MIDDLE_PMP = (
     str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "Protection By Friday 🇮🇳"
 )
-USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By UserAndencento"
+USER_BOT_WARN_ZERO = "You Have Attempted To Spam Masters Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Userbot"
 
 devs_id = [1263617196, 573738900, 1315076555]
 
@@ -47,9 +47,9 @@ if PM_ON_OFF != "DISABLE":
         chat_ids = event.chat_id
         sender = await event.client(GetFullUserRequest(await event.get_input_chat()))
         first_name = sender.user.first_name
-        if chat_ids == Andencento.uid:
+        if chat_ids == bot.uid:
             return
-        if sender.user.Andencento:
+        if sender.user.bot:
             return
         if sender.user.verified:
             return
@@ -188,19 +188,19 @@ if PM_ON_OFF != "DISABLE":
     async def on_new_private_message(event):
         if not event.is_private:
             return
-        if event.sender_id == Andencento.uid:
+        if event.sender_id == bot.uid:
             return
         if Config.PRIVATE_GROUP_ID is None:
-            await borg.send_message(Andencento.uid, "Please Set `PRIVATE_GROUP_ID` For Working Of Pm Permit")
+            await borg.send_message(bot.uid, "Please Set `PRIVATE_GROUP_ID` For Working Of Pm Permit")
             return
         message_text = event.message.raw_text
         chat_ids = event.sender_id
         if USER_BOT_NO_WARN == message_text:
             return
         sender = await event.client.get_entity(await event.get_input_chat())
-        if chat_ids == Andencento.uid:
+        if chat_ids == bot.uid:
             return
-        if sender.Andencento:
+        if sender.bot:
             return
         if event.sender_id in devs_id:
             return
@@ -237,9 +237,9 @@ if PM_ON_OFF != "DISABLE":
                 return
             except BaseException:
                 return
-        trap_m = await tgAndencento.get_me()
-        Andencentousername = trap_m.username
-        tap = await Andencento.inline_query(Andencentousername, USER_BOT_NO_WARN)
+        trap_m = await tgbot.get_me()
+        botusername = trap_m.username
+        tap = await bot.inline_query(botusername, USER_BOT_NO_WARN)
         sed = await tap[0].click(event.chat_id)
         PM_WARNS[chat_ids] += 1
         if chat_ids in PREV_REPLY_MESSAGE:

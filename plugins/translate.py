@@ -5,7 +5,7 @@ Available Commands:
 
 import emoji
 from googletrans import Translator
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 from telethon import events
 
 
@@ -36,7 +36,7 @@ async def _(event):
         after_tr_text = translated.text
         # TODO: emojify the :
         # either here, or before translation
-        output_str = """**Translated By Extreme Pro userAndencento** 
+        output_str = """**Translated By Extreme Pro userbot** 
          Source **( {} )**
          Translation **( {} )**
          {}""".format(

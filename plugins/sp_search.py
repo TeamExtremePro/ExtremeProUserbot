@@ -1,5 +1,5 @@
 """
-StartPage Search Plugin for UserAndencento . //Alternative to Google Search
+StartPage Search Plugin for Userbot . //Alternative to Google Search
 cmd : .sch search_query 
 By: @Zero_cool7870
 

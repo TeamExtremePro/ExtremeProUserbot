@@ -8,7 +8,7 @@ import traceback
 from datetime import datetime
 from selenium import webdriver
 from telethon import events
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="screenshot (.*)"))
@@ -48,7 +48,7 @@ async def _(event):
         if event.reply_to_msg_id:
             message_id = event.reply_to_msg_id
         with io.BytesIO(im_png) as out_file:
-            out_file.name = "Extreme Pro userAndencento.ScreenCapture.PNG"
+            out_file.name = "Extreme Pro userbot.ScreenCapture.PNG"
             await borg.send_file(
                 event.chat_id,
                 out_file,

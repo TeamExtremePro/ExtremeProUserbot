@@ -8,7 +8,7 @@ async def quote_search(event):
         return
     await event.edit("Processing...")
     search_string = event.pattern_match.group(1)
-    input_url = "https://Andencentos.shrimadhavuk.me/Telegram/GoodReadsQuotesBot/?q={}".format(search_string)
+    input_url = "https://bots.shrimadhavuk.me/Telegram/GoodReadsQuotesBot/?q={}".format(search_string)
     headers = {"USER-AGENT": "UniBorg"}
     try:
         response = requests.get(input_url, headers=headers).json()

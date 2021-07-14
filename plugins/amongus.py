@@ -1,20 +1,20 @@
 # thanks to @Skastickers for stickers....
 # Among us.....
-#credits to catuserAndencento
+#credits to catuserbot
 
 
 import asyncio
 
-from userAndencento.utils import admin_cmd, edit_or_reply, sudo_cmd
-from userAndencento import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import ALIVE_NAME, CMD_HELP
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
 
 
-@Andencento.on(admin_cmd(pattern="imp(|n) (.*)", outgoing=True))
-@Andencento.on(sudo_cmd(pattern="imp(|n) (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="imp(|n) (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="imp(|n) (.*)", allow_sudo=True))
 async def _(event):
-    legendx22 = Andencento.uid
+    legendx22 = bot.uid
     USERNAME = f"tg://user?id={legendx22}"
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
@@ -96,8 +96,8 @@ async def _(event):
         await event.client.send_file(event.chat_id, "CAADAQADQAADnjOcH-WOkB8DEctJAg")
 
 
-@Andencento.on(admin_cmd(pattern="timp(|n) (.*)", outgoing=True))
-@Andencento.on(sudo_cmd(pattern="timp(|n) (.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="timp(|n) (.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="timp(|n) (.*)", allow_sudo=True))
 async def _(event):
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()

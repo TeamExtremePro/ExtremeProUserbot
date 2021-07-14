@@ -1,12 +1,12 @@
 #Originally made by @rkpavi for @javes05
-#porting to Extreme Pro userAndencento...
-#first userAndencento to port javes song module...
+#porting to Extreme Pro userbot...
+#first userbot to port javes song module...
 #keep credit if u wanna kang...
 #else u are a gay...no doubt in that....
 
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 import asyncio
 
  
@@ -26,7 +26,7 @@ async def FindMusicPleaseBot(gaana):
 
     await asyncio.sleep(2)
 
-    async with Andencento.conversation(chat) as conv:
+    async with bot.conversation(chat) as conv:
 
         await gaana.edit("`Downloading...Please wait`")
 
@@ -38,7 +38,7 @@ async def FindMusicPleaseBot(gaana):
 
             if response.text.startswith("Sorry"):
 
-                await Andencento.send_read_acknowledge(conv.chat_id)
+                await bot.send_read_acknowledge(conv.chat_id)
 
                 return await gaana.edit(f"Sorry, can't find {song}")
 
@@ -54,9 +54,9 @@ async def FindMusicPleaseBot(gaana):
 
         await gaana.edit("`Sending Your Music...wait!!! 😉😎`")
 
-        await Andencento.send_file(gaana.chat_id, cobra)
+        await bot.send_file(gaana.chat_id, cobra)
 
-        await Andencento.send_read_acknowledge(conv.chat_id)
+        await bot.send_read_acknowledge(conv.chat_id)
 
     await gaana.delete()
     
@@ -83,8 +83,8 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 from html import unescape
 from urllib.error import HTTPError
-from userAndencento.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
-from userAndencento import CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, progress, humanbytes, time_formatter
+from userbot import CMD_HELP
 import bs4
 from bs4 import BeautifulSoup
 from youtube_dl import YoutubeDL
@@ -348,8 +348,8 @@ async def download_video(v_url):
 
 from telethon import events
 import asyncio
-from userAndencento.events import register 
-from userAndencento import Andencento, CMD_HELP
+from userbot.events import register 
+from userbot import bot, CMD_HELP
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
@@ -377,7 +377,7 @@ async def getmusic(so):
     chat = "@SongsForYouBot"
     link = f"/song {song}"
     await so.edit("🔹Ok wait... 📡Searching your song🔸")
-    async with Andencento.conversation(chat) as conv:
+    async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
           await so.edit("📥Downloading...Please wait🤙")
           try:
@@ -385,13 +385,13 @@ async def getmusic(so):
               response = await conv.get_response()
               respond = await conv.get_response()
               """ - don't spam notif - """
-              await Andencento.send_read_acknowledge(conv.chat_id)
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await so.edit("Please unblock @SongsForYouBot and try searching again🤐")
               return
           await so.edit("Ohh.. I got something!! Wait sending😋🤙")
           await asyncio.sleep(3)
-          await Andencento.send_file(so.chat_id, respond)
+          await bot.send_file(so.chat_id, respond)
     await so.client.delete_messages(conv.chat_id,
                                        [msg.id, response.id, respond.id])
     await so.delete()
@@ -400,9 +400,9 @@ async def getmusic(so):
 
 from telethon import events
 import asyncio
-#from userAndencento.utils import admin_cmd
-from userAndencento.events import register 
-from userAndencento import Andencento, CMD_HELP
+#from userbot.utils import admin_cmd
+from userbot.events import register 
+from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 try:
@@ -430,7 +430,7 @@ async def DeezLoader(Deezlod):
     else:
         await Deezlod.edit("**Initiating Download!**")
     chat = "@DeezLoadBot"
-    async with Andencento.conversation(chat) as conv:
+    async with bot.conversation(chat) as conv:
           try:
               msg_start = await conv.send_message("/start")
               response = await conv.get_response()
@@ -439,11 +439,11 @@ async def DeezLoader(Deezlod):
               details = await conv.get_response()
               song = await conv.get_response()
               """ - don't spam notif - """
-              await Andencento.send_read_acknowledge(conv.chat_id)
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await Deezlod.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
               return
-          await Andencento.send_file(Deezlod.chat_id, song, caption=details.text)
+          await bot.send_file(Deezlod.chat_id, song, caption=details.text)
           await Deezlod.client.delete_messages(conv.chat_id,
                                              [msg_start.id, response.id, r.id, msg.id, details.id, song.id])
           await Deezlod.delete()   
@@ -456,7 +456,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 @borg.on(admin_cmd("sdd ?(.*)"))
 async def _(event):
@@ -467,7 +467,7 @@ async def _(event):
         await event.edit("` I need a link to download something pro.`**(._.)**")
     else:
         await event.edit("🎶**Initiating Download!**🎶")
-    Andencento = "@DeezLoadBot"
+    bot = "@DeezLoadBot"
     
     async with borg.conversation("@DeezLoadBot") as conv:
           try:

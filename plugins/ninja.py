@@ -3,7 +3,7 @@ import asyncio
 import telethon.utils
 from telethon import events
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 async def get_target_message(event):

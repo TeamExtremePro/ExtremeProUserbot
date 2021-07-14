@@ -5,7 +5,7 @@ from datetime import datetime
 
 import requests
 
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 def progress(current, total):

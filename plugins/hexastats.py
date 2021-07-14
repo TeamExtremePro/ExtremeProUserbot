@@ -3,9 +3,9 @@
 
 from telethon import events
 import asyncio
-#from userAndencento.utils import admin_cmd
-from userAndencento.events import register 
-from userAndencento import Andencento, CMD_HELP
+#from userbot.utils import admin_cmd
+from userbot.events import register 
+from userbot import bot, CMD_HELP
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 try:
@@ -29,30 +29,30 @@ async def _(event):
     if event.fwd_from:
         return
     link = event.pattern_match.group(1)
-    chat = "@hexamonAndencento"
+    chat = "@hexamonbot"
     await event.edit("```Hunting PokemOne```")
-    async with Andencento.conversation(chat) as conv:
+    async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
           await event.edit("`catching It Wait Kro`")
           try:
               response = conv.wait_event(events.NewMessage(incoming=True,from_users=752979930))
-              await Andencento.send_message(chat, link)
+              await bot.send_message(chat, link)
               respond = await response
           except YouBlockedUserError:
               await event.reply("```Please unblock @SpotifyMusicDownloaderBot and try again```")
               return
           await event.delete()
-          await Andencento.forward_messages(event.chat_id, respond.message)
+          await bot.forward_messages(event.chat_id, respond.message)
 
 @register(outgoing=True, pattern="^.hstats(?: |$)(.*)")
 async def WooMai(netase):
     if netase.fwd_from:
         return
     song = netase.pattern_match.group(1)
-    chat = "@hexamonAndencento"
+    chat = "@hexamonbot"
     link = f"/mystats {song}"
     await netase.edit("```check your stats wait```")
-    async with Andencento.conversation(chat) as conv:
+    async with bot.conversation(chat) as conv:
           await asyncio.sleep(2)
           await netase.edit("`wait saar`")
           try:
@@ -60,13 +60,13 @@ async def WooMai(netase):
               response =  conv.get_response(1)
               respond = await conv.get_response()
               """ - don't spam notif - """
-              await Andencento.send_read_acknowledge(conv.chat_id)
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
-              await netase.edit("```Please unblock @hexamonAndencento and try again```")
+              await netase.edit("```Please unblock @hexamonbot and try again```")
               return
           await netase.edit("`i send here sar !😎`")
           await asyncio.sleep(3)
-          await Andencento.send_file(netase.chat_id, respond)
+          await bot.send_file(netase.chat_id, respond)
     await netase.client.delete_messages(conv.chat_id,
                                        [msg.id, response.id, respond.id])
     await netase.delete()
@@ -82,7 +82,7 @@ async def DeezLoader(Deezlod):
     else:
         await Deezlod.edit("**Initiating Download!**")
     chat = "@DeezLoadBot"
-    async with Andencento.conversation(chat) as conv:
+    async with bot.conversation(chat) as conv:
           try:
               msg_start = await conv.send_message("/start")
               response = await conv.get_response()
@@ -91,11 +91,11 @@ async def DeezLoader(Deezlod):
               details = await conv.get_response()
               song = await conv.get_response()
               """ - don't spam notif - """
-              await Andencento.send_read_acknowledge(conv.chat_id)
+              await bot.send_read_acknowledge(conv.chat_id)
           except YouBlockedUserError:
               await Deezlod.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
               return
-          await Andencento.send_file(Deezlod.chat_id, song, caption=details.text)
+          await bot.send_file(Deezlod.chat_id, song, caption=details.text)
           await Deezlod.client.delete_messages(conv.chat_id,
                                              [msg_start.id, response.id, r.id, msg.id, details.id, song.id])
           await Deezlod.delete()          

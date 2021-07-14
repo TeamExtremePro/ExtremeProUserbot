@@ -1,4 +1,4 @@
-# (c) @TeleBotHelp and @ExtremeProUserAndencento_Official
+# (c) @TeleBotHelp and @ExtremeProUserbot_Official
 # By @xditya. Kangers keep credits xD
 # All in one code.
 

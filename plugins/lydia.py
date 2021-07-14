@@ -59,7 +59,7 @@ async def remcf(event):
     except KeyError:
         await event.edit("This person does not have Lydia activated on him/her.")
 
-@Andencento.on(events.NewMessage(incoming=True))
+@bot.on(events.NewMessage(incoming=True))
 async def user(event):
     user_text = event.text
     try:

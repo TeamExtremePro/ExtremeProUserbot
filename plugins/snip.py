@@ -9,7 +9,7 @@ Available Commands:
 from telethon import events, utils
 from telethon.tl import types
 from sql_helper.snips_sql import get_snips, add_snip, remove_snip, get_all_snips
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 TYPE_TEXT = 0

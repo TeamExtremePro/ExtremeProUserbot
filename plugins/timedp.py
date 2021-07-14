@@ -5,7 +5,7 @@ from pySmartDL import SmartDL
 from telethon.tl import functions
 import asyncio
 import shutil
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 FONT_FILE_TO_USE = "Fonts/digital.ttf"
@@ -13,10 +13,10 @@ FONT_FILE_TO_USE = "Fonts/digital.ttf"
 @command(pattern="^.seconddp", outgoing=True)
 #@borg.on(admin_cmd(pattern=r"seconddp"))
 async def seconddp(event):
-    downloaded_file_name = "userAndencento/original_pic.png"
+    downloaded_file_name = "userbot/original_pic.png"
     downloader = SmartDL(Var.DOWNLOAD_PFP_URL_CLOCK, downloaded_file_name, progress_bar=False)
     downloader.start(blocking=False)
-    photo = "userAndencento/photo_pfp.png"
+    photo = "userbot/photo_pfp.png"
     while not downloader.isFinished():
         place_holder = None
     counter = -30
@@ -30,9 +30,9 @@ async def seconddp(event):
         fnt = ImageFont.truetype(FONT_FILE_TO_USE, 50)
         drawn_text.text((250, 250), current_time, font=fnt, fill=(124, 252, 0))
         img.save(photo)
-        file = await Andencento.upload_file(photo)  # pylint:disable=E0602
+        file = await bot.upload_file(photo)  # pylint:disable=E0602
         try:
-            await Andencento(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
+            await bot(functions.photos.UploadProfilePhotoRequest(  # pylint:disable=E0602
                 file
             ))
             os.remove(photo)

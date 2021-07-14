@@ -54,7 +54,7 @@ async def _(event):
         try:
             time.time()
             await mone.edit("Downloading to Local...")
-            downloaded_file_name = await Andencento.download_media(
+            downloaded_file_name = await bot.download_media(
                 reply_message, Var.TEMP_DOWNLOAD_DIRECTORY
             )
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -290,7 +290,7 @@ async def create_token_file(token_file, event):
         CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, redirect_uri=REDIRECT_URI
     )
     authorize_url = flow.step1_get_authorize_url()
-    async with Andencento.conversation(int(Var.PRIVATE_GROUP_ID)) as conv:
+    async with bot.conversation(int(Var.PRIVATE_GROUP_ID)) as conv:
         await conv.send_message(
             f"Go to the following link in your browser: {authorize_url} and reply the code"
         )
@@ -324,7 +324,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     media_body = MediaFileUpload(file_path, mimetype=mime_type, resumable=True)
     body = {
         "title": file_name,
-        "description": "Uploaded using UserAndencento gDrive v1",
+        "description": "Uploaded using Userbot gDrive v1",
         "mimeType": mime_type,
     }
     if parent_id is not None:

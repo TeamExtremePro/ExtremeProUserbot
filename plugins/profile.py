@@ -7,7 +7,7 @@
 import os
 from telethon import events
 from telethon.tl import functions
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 from telethon.errors import ImageProcessFailedError, PhotoCropSizeSmallError
 from telethon.errors.rpcerrorlist import (PhotoExtInvalidError,
                                           UsernameOccupiedError)
@@ -18,7 +18,7 @@ from telethon.tl.functions.photos import (DeletePhotosRequest,
                                           GetUserPhotosRequest,
                                           UploadProfilePhotoRequest)
 from telethon.tl.types import InputPhoto, MessageMediaPhoto, User, Chat, Channel
-from userAndencento import Andencento, CMD_HELP
+from userbot import bot, CMD_HELP
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```The extension of the media entity is invalid.```"
@@ -120,11 +120,11 @@ async def count(event):
     b = 0
     result = ""
     await event.edit("`Processing..`")
-    dialogs = await Andencento.get_dialogs(limit=None, ignore_migrated=True)
+    dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
     for d in dialogs:
         currrent_entity = d.entity
         if isinstance(currrent_entity, User):
-            if currrent_entity.Andencento:
+            if currrent_entity.bot:
                 b += 1
             else:
                 u += 1
@@ -177,7 +177,7 @@ async def remove_profilepic(delpfp):
 async def _(event):
     if event.fwd_from:
         return
-    result = await Andencento(GetAdminedPublicChannelsRequest())
+    result = await bot(GetAdminedPublicChannelsRequest())
     output_str = ""
     for channel_obj in result.chats:
         output_str += f"- {channel_obj.title} @{channel_obj.username} \n"
@@ -198,5 +198,5 @@ CMD_HELP.update({
 \n\n.myusernames\
 \nUsage: Shows usernames reserved by you.that is created by you channels or groups\
 \n\n.count\
-\nUsage: Counts your groups, chats, Andencentos etc..."
+\nUsage: Counts your groups, chats, bots etc..."
 })

@@ -1,10 +1,10 @@
 from telethon import events
-from telethon.utils import pack_Andencento_file_id
+from telethon.utils import pack_bot_file_id
 from sql_helper.welcome_sql import get_current_welcome_settings, \
     add_welcome_setting, rm_welcome_setting, update_previous_welcome
 
 
-@Andencento.on(events.ChatAction())  # pylint:disable=E0602
+@bot.on(events.ChatAction())  # pylint:disable=E0602
 async def _(event):
     cws = get_current_welcome_settings(event.chat_id)
     if cws:
@@ -16,7 +16,7 @@ async def _(event):
         if event.user_joined:
             if cws.should_clean_welcome:
                 try:
-                    await Andencento.delete_messages(  # pylint:disable=E0602
+                    await bot.delete_messages(  # pylint:disable=E0602
                         event.chat_id,
                         cws.previous_welcome
                     )
@@ -24,7 +24,7 @@ async def _(event):
                     logger.warn(str(e))  # pylint:disable=E0602
             a_user = await event.get_user()
             chat = await event.get_chat()
-            me = await Andencento.get_me()
+            me = await bot.get_me()
 
             title = chat.title if chat.title else "this chat"
             participants = await event.client.get_participants(chat)
@@ -54,8 +54,8 @@ async def _(event):
         return
     msg = await event.get_reply_message()
     if msg and msg.media:
-        Andencento_api_file_id = pack_Andencento_file_id(msg.media)
-        add_welcome_setting(event.chat_id, msg.message, True, 0, Andencento_api_file_id)
+        bot_api_file_id = pack_bot_file_id(msg.media)
+        add_welcome_setting(event.chat_id, msg.message, True, 0, bot_api_file_id)
         await event.edit("Welcome note saved. ")
     else:
         input_str = event.text.split(None, 1)

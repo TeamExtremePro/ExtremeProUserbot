@@ -6,8 +6,8 @@ from Extre import CMD_HELP
 from Extre.utils import extremepro_cmd, edit_or_reply, amanpandey_cmd
 
 
-@Andencento.on(extremepro_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
-@Andencento.on(amanpandey_cmd(pattern="create (b|g|c) (.*)", allow_sudo=True))
+@bot.on(extremepro_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
+@bot.on(amanpandey_cmd(pattern="create (b|g|c) (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -18,7 +18,7 @@ async def _(event):
         try:
             result = await event.client(
                 functions.messages.CreateChatRequest(  # pylint:disable=E0602
-                    users=["@sarah_roAndencento"],
+                    users=["@sarah_robot"],
                     # Not enough users (to create a chat, for example)
                     # Telegram, no longer allows creating a chat with ourselves
                     title=group_name,
@@ -27,7 +27,7 @@ async def _(event):
             created_chat_id = result.chats[0].id
             await event.client(
                 functions.messages.DeleteChatUserRequest(
-                    chat_id=created_chat_id, user_id="@sarah_roAndencento"
+                    chat_id=created_chat_id, user_id="@sarah_robot"
                 )
             )
             result = await event.client(
@@ -77,7 +77,7 @@ CMD_HELP.update(
     \n**USAGE : **Creates a private group and sends you link\
     \n\n**SYNTAX : **`.create c`\
     \n**USAGE : **Creates a Channel and sends you link\
-    \n\nhere the Andencento accout is owner\
+    \n\nhere the bot accout is owner\
     "
     }
 )

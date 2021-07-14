@@ -22,7 +22,7 @@ from telethon import events
 import os
 import requests
 import json
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 
 
 

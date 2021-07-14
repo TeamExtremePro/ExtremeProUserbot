@@ -8,7 +8,7 @@ Syntax : .gps <location name>
 # don't edit credits 
 
 from geopy.geocoders import Nominatim
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 from telethon.tl import types
 
 
@@ -27,7 +27,7 @@ async def gps(event):
 
     await event.edit("Finding😁")
 
-    geolocator = Nominatim(user_agent="catuserAndencento")
+    geolocator = Nominatim(user_agent="catuserbot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:

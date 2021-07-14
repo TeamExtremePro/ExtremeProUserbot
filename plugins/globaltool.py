@@ -2,7 +2,7 @@
 
 import os
 
-from userAndencento import CMD_HELP
+from userbot import CMD_HELP
 from telethon import events
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
@@ -52,11 +52,11 @@ async def _(e):
             user.id = user.peer_id.user_id
         else:
             user.id = user.from_id.user_id
-        async for x in extremepro_Andencento.iter_dialogs():
+        async for x in extremepro_bot.iter_dialogs():
             if "group" in key.lower():
                 if x.is_group:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user.id,
@@ -70,7 +70,7 @@ async def _(e):
             elif "channel" in key.lower():
                 if x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user.id,
@@ -84,7 +84,7 @@ async def _(e):
             else:
                 if x.is_group or x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user.id,
@@ -104,7 +104,7 @@ async def _(e):
         if user.isdigit():
             user = int(user)
         try:
-            name = await extremepro_Andencento.get_entity(user)
+            name = await extremepro_bot.get_entity(user)
         except BaseException:
             return await eod(e, f"`No User Found Regarding {user}`")
         ev = await eor(e, f"`Promoting {name.first_name} globally.`")
@@ -116,11 +116,11 @@ async def _(e):
         if len(k) > 3:
             rank = k[3]
         c = 0
-        async for x in extremepro_Andencento.iter_dialogs():
+        async for x in extremepro_bot.iter_dialogs():
             if "group" in key.lower():
                 if x.is_group:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user,
@@ -134,7 +134,7 @@ async def _(e):
             elif "channel" in key.lower():
                 if x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user,
@@ -148,7 +148,7 @@ async def _(e):
             else:
                 if x.is_group or x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user,
@@ -183,11 +183,11 @@ async def _(e):
                 key = ok[1]
         rank = "Not AdMin"
         c = 0
-        async for x in extremepro_Andencento.iter_dialogs():
+        async for x in extremepro_bot.iter_dialogs():
             if "group" in key.lower():
                 if x.is_group:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user.id,
@@ -201,7 +201,7 @@ async def _(e):
             elif "channel" in key.lower():
                 if x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user.id,
@@ -215,7 +215,7 @@ async def _(e):
             else:
                 if x.is_group or x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user.id,
@@ -235,7 +235,7 @@ async def _(e):
         if user.isdigit():
             user = int(user)
         try:
-            name = await extremepro_Andencento.get_entity(user)
+            name = await extremepro_bot.get_entity(user)
         except BaseException:
             return await eod(e, f"`No User Found Regarding {user}`")
         ev = await eor(e, f"`Demoting {name.first_name} globally.`")
@@ -245,11 +245,11 @@ async def _(e):
                 key = k[2]
         rank = "Not AdMin"
         c = 0
-        async for x in extremepro_Andencento.iter_dialogs():
+        async for x in extremepro_bot.iter_dialogs():
             if "group" in key.lower():
                 if x.is_group:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user,
@@ -263,7 +263,7 @@ async def _(e):
             elif "channel" in key.lower():
                 if x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user,
@@ -277,7 +277,7 @@ async def _(e):
             else:
                 if x.is_group or x.is_channel:
                     try:
-                        await extremepro_Andencento(
+                        await extremepro_bot(
                             EditAdminRequest(
                                 x.id,
                                 user,

@@ -1,14 +1,14 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 """
-UserAndencento module to help you manage a group
+Userbot module to help you manage a group
 """
 
 from asyncio import sleep
 from os import remove
 from telethon.errors import BadRequestError, UserAdminInvalidError
 from telethon.errors.rpcerrorlist import UserIdInvalidError
-from userAndencento.utils import admin_cmd
+from userbot.utils import admin_cmd
 from telethon.tl.types import (PeerChannel, ChannelParticipantsAdmins,
                                ChatAdminRights, ChatBannedRights,
                                MessageEntityMentionName,

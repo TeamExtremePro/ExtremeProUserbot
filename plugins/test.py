@@ -3,7 +3,7 @@
 
 
 import random, re
-from userAndencento import CMD_HELP
+from userbot import CMD_HELP
 from uniborg.util import admin_cmd
 import asyncio
 from telethon import events
@@ -12,9 +12,9 @@ from telethon import events
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
        
-        await event.edit("`Testing Extreme Pro userAndencento....`")
+        await event.edit("`Testing Extreme Pro userbot....`")
         await asyncio.sleep(2)
-        await event.edit("`Testing Extreme Pro userAndencento..`")
+        await event.edit("`Testing Extreme Pro userbot..`")
         await asyncio.sleep(2)
         await event.edit("__Testing Successful__")
         await asyncio.sleep(2)
@@ -22,7 +22,7 @@ async def _(event):
         await asyncio.sleep(2)
         await event.edit("__Output Successful__")
         await asyncio.sleep(3.5)
-        await event.edit("Your[Extreme Pro userAndencento](https:/t.me/hackerget0) is working Fine...\n       Join @teamishere For Any Help......")
+        await event.edit("Your[Extreme Pro userbot](https:/t.me/hackerget0) is working Fine...\n       Join @teamishere For Any Help......")
 
 CMD_HELP.update(
     {

@@ -1,6 +1,6 @@
-#    This file is part of ExtremeProUserAndencento.
+#    This file is part of ExtremeProUserbot.
 
-#    ExtremeProUserhpt is free userAndencento: you can redistribute it and/or modify by permisson
+#    ExtremeProUserhpt is free userbot: you can redistribute it and/or modify by permisson
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
@@ -11,7 +11,7 @@
 #    GNU General Public License for more details.
 
 #    You should have received a copy of the GNU General Public License
-#    along with ExtremeProUserAndencento.  If not, see <https://www.gnu.org/licenses/>.
+#    along with ExtremeProUserbot.  If not, see <https://www.gnu.org/licenses/>.
 #    Kangers tum kang toh kar lete ho but banane me time aur mehnat lagta h 
 
 

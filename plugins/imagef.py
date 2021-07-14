@@ -11,8 +11,8 @@ from PIL import Image, ImageDraw
 import pygments, os, asyncio, shutil, scapy, sys, requests, re, subprocess
 from pygments.lexers import Python3Lexer
 from pygments.formatters import ImageFormatter
-from userAndencento import Andencento, CMD_HELP
-from userAndencento.utils import admin_cmd, sudo_cmd
+from userbot import bot, CMD_HELP
+from userbot.utils import admin_cmd, sudo_cmd
 from telegraph import upload_file
 from telethon import events
 from telethon.tl.types import MessageMediaPhoto
@@ -22,14 +22,14 @@ path = "./LEGENDX/"
 if not os.path.isdir(path):
     os.makedirs(path)
 
-@Andencento.on(admin_cmd("blur"))
+@bot.on(admin_cmd("blur"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    image = await Andencento.download_media(reply.media, path)
+    image = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read() 
     blur = cv2.GaussianBlur(frame, (35, 35), 0)
@@ -40,14 +40,14 @@ async def hehe(event):
     os.remove("danish.jpg")
 
 
-@Andencento.on(admin_cmd("invert"))
+@bot.on(admin_cmd("invert"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    image = await Andencento.download_media(reply.media, path)
+    image = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read()
     invert = cv2.bitwise_not(frame)
@@ -59,14 +59,14 @@ async def hehe(event):
 
 
     
-@Andencento.on(admin_cmd("mirror"))
+@bot.on(admin_cmd("mirror"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
         return
     await event.edit("```Processing...```")
     reply = await event.get_reply_message()
-    pathh = await Andencento.download_media(reply.media, path)
+    pathh = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(pathh)
     iss,dan = img.read()
     ish = cv2.flip(dan, 1)
@@ -79,14 +79,14 @@ async def hehe(event):
     
 
 
-@Andencento.on(admin_cmd("quad"))
+@bot.on(admin_cmd("quad"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
         return
     await event.edit("```Processing...```")
     reply = await event.get_reply_message()
-    pathh = await Andencento.download_media(reply.media, path)
+    pathh = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(pathh)
     ros,dcob = img.read()
     danish = cv2.flip(dcob, 1)
@@ -101,14 +101,14 @@ async def hehe(event):
     os.remove("dark.jpg")   
     
 
-@Andencento.on(admin_cmd("flip"))
+@bot.on(admin_cmd("flip"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.edit("Reply to media")
         return
     await event.edit("```Processing...```")
     reply = await event.get_reply_message()
-    pathh = await Andencento.download_media(reply.media, path)
+    pathh = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(pathh)
     iss,dan = img.read()
     trn = cv2.flip(dan, 1)
@@ -122,14 +122,14 @@ async def hehe(event):
     
 
 
-@Andencento.on(admin_cmd("enhance"))
+@bot.on(admin_cmd("enhance"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return   
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    image = await Andencento.download_media(reply.media, path)
+    image = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read()
     dtl = cv2.detailEnhance(frame, sigma_s=10, sigma_r=0.15)
@@ -140,14 +140,14 @@ async def hehe(event):
     os.remove("danish.jpg")
 
 
-@Andencento.on(admin_cmd("pencil"))
+@bot.on(admin_cmd("pencil"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return 
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    image = await Andencento.download_media(reply.media, path)
+    image = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read() 
     grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -161,14 +161,14 @@ async def hehe(event):
     shutil.rmtree(path)
     os.remove("danish.jpg")
     
-@Andencento.on(admin_cmd("smooth"))
+@bot.on(admin_cmd("smooth"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return   
     reply = await event.get_reply_message()
     await event.edit('`Processing...`')
-    image = await Andencento.download_media(reply.media, path)
+    image = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(image) 
     ret, frame = img.read() 
     smooth = cv2.edgePreservingFilter(frame, flags=1, sigma_s=60, sigma_r=0.4)
@@ -180,13 +180,13 @@ async def hehe(event):
 
     # .ytc by @shivam_patel
     #  kang with credits
-@Andencento.on(admin_cmd(pattern=r"ytc"))
+@bot.on(admin_cmd(pattern=r"ytc"))
 async def hehe(event):
     if not event.reply_to_msg_id:
         await event.reply("Reply to any Image.")
         return
     reply = await event.get_reply_message()
-    download = await Andencento.download_media(reply.media, path)
+    download = await bot.download_media(reply.media, path)
     img = cv2.VideoCapture(download)
     ret, frame = img.read()
     cv2.imwrite("danish.png", frame)

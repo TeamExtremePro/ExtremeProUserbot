@@ -23,13 +23,13 @@ from telethon import Button, custom, events, functions
 import math
 import heroku3
 
-from userAndencento import HEROKU_APP_NAME, HEROKU_API_KEY
+from userbot import HEROKU_APP_NAME, HEROKU_API_KEY
 
 heroku = heroku3.from_key(HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@tgAndencento.on(events.InlineQuery(pattern=r"logs"))
+@tgbot.on(events.InlineQuery(pattern=r"logs"))
 async def inline_id_handler(event: events.InlineQuery.Event):
     builder = event.builder
     me = await client.get_me()
@@ -47,6 +47,6 @@ async def inline_id_handler(event: events.InlineQuery.Event):
             await event.answer([shivamlog])
             return os.remove('logs.txt')
     if not event.query.user_id == me.id:
-        resultm = builder.article(title="me not your Andencento",description="Mind Your Business",text="Hey U Must Use https://github.com/TeamExtremePro/ExtremeProUserAndencento ",buttons=[[Button.switch_inline("Search Again", query="logs", same_peer=True)],], )
+        resultm = builder.article(title="me not your bot",description="Mind Your Business",text="Hey U Must Use https://github.com/TeamExtremePro/ExtremeProUserbot ",buttons=[[Button.switch_inline("Search Again", query="logs", same_peer=True)],], )
         await event.answer([resultm])
         return

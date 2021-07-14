@@ -1,6 +1,6 @@
 import asyncio, subprocess
 import time, re, io
-from userAndencento import Andencento, BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import bot, BOTLOG, BOTLOG_CHATID, CMD_HELP
 from telethon import events, functions, types
 from telethon.events import StopPropagation
 from telethon.tl.functions.messages import ExportChatInviteRequest
@@ -8,8 +8,8 @@ from telethon.tl.functions.contacts import BlockRequest
 from telethon.tl.functions.channels import LeaveChannelRequest, CreateChannelRequest, DeleteMessagesRequest
 from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
-from userAndencento.events import register
-from userAndencento.utils import admin_cmd
+from userbot.events import register
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(";__;$"))
@@ -137,7 +137,7 @@ CMD_HELP.update({
     "readme": "Reedme."
 })
 CMD_HELP.update({
-    "source": "Gives the source of your userAndencento"
+    "source": "Gives the source of your userbot"
 })
 CMD_HELP.update({
     "myusernames": "List of Usernames owned by you."

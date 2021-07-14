@@ -3,7 +3,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from Extre.utils import extremepro_cmd
-from Extre import Andencento, CMD_HELP
+from Extre import bot, CMD_HELP
 
 @borg.on(extremepro_cmd(pattern="sg ?(.*)"))
 async def _(event):
@@ -13,9 +13,9 @@ async def _(event):
        await event.edit("Reply to any user message.")
        return
     reply_message = await event.get_reply_message() 
-    chat = "Sangmatainfo_Andencento"
+    chat = "Sangmatainfo_bot"
     sender = reply_message.sender.id
-    if reply_message.sender.Andencento:
+    if reply_message.sender.bot:
        await event.edit("Reply to actual users message.")
        return
     await event.edit("Checking...")
@@ -30,7 +30,7 @@ async def _(event):
               response2 = await response2 
               response3= await response3 
           except YouBlockedUserError: 
-              await event.reply("Please unblock ( @Sangmatainfo_Andencento ) ")
+              await event.reply("Please unblock ( @Sangmatainfo_bot ) ")
               return
           if response1.text.startswith("No records found"):
              await event.edit("User never changed his Username...")

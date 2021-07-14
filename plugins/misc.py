@@ -5,13 +5,13 @@
 #
 # You can find misc modules, which dont fit in anything xD
 
-""" UserAndencento module for other small commands. """
+""" Userbot module for other small commands. """
 
 from random import randint
 from time import sleep
 
 
-from userAndencento.events import register
+from userbot.events import register
 
 
 @register(outgoing=True, pattern="^.random")
@@ -24,8 +24,8 @@ async def randomise(items):
 
 
 @register(outgoing=True, pattern="^.sleep( [0-9]+)?$")
-async def sleepyAndencento(time):
-    """ For .sleep command, let the userAndencento snooze for a few second. """
+async def sleepybot(time):
+    """ For .sleep command, let the userbot snooze for a few second. """
     message = time.text
     if not message[0].isalpha() and message[0] not in ("/", "#", "@", "!"):
         if " " not in time.pattern_match.group(1):
@@ -37,7 +37,7 @@ async def sleepyAndencento(time):
             if LOGGER:
                 await time.client.send_message(
                     LOGGER_GROUP,
-                    "You put the Andencento to sleep for " + str(counter) + " seconds",
+                    "You put the bot to sleep for " + str(counter) + " seconds",
                 )
             sleep(counter)
 

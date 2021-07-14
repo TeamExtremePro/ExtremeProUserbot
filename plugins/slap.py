@@ -1,5 +1,5 @@
 """
-SLAP Plugin For UserAndencento
+SLAP Plugin For Userbot
 usage:- .slap in reply to any message, or u gonna slap urself.
 
 """
@@ -10,7 +10,7 @@ from uniborg.util import admin_cmd
 import random
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from userAndencento import ALIVE_NAME
+from userbot import ALIVE_NAME
 
 SLAP_TEMPLATES = [
     "{user1} {hits} {user2} with a {item}.",

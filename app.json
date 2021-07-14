@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/TeamExtremePro/ExtremeProUserAndencento",
-  "website": "https://github.com/TeamExtremePro/ExtremeProUserAndencento",
-  "success_url": "https://github.com/TeamExtremePro/ExtremeProUserAndencento",
+  "repository": "https://github.com/TeamExtremePro/ExtremeProUserbot",
+  "website": "https://github.com/TeamExtremePro/ExtremeProUserbot",
+  "success_url": "https://github.com/TeamExtremePro/ExtremeProUserbot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable heroku.",
@@ -70,15 +70,15 @@
       "value": "99999"
     },
     "PRIVATE_GROUP_ID": {
-      "description": "Create a private group add rose Andencento then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID Andencentoh values should be same",
+      "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": "99999"
     },
     "PLUGIN_CHANNEL": {
-      "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID Andencentoh values should be same",
+      "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": "999999"
     },
     "STRING_SESSION": {
-      "description": "Get this value by running https://replit.com/@amanpandey7647/Extreme-Pro-UserAndencento-String-Session#main.py ",
+      "description": "Get this value by running https://replit.com/@amanpandey7647/Extreme-Pro-Userbot-String-Session#main.py ",
       "value": ""
     },
     "REDIS_URI": {
@@ -100,7 +100,7 @@
       "required": true
     },
     "TG_BOT_TOKEN_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a Andencento at [BotFather](http://telegram.dog/BotFather) and get the token of your Andencento. And Don't Forget To Turn on inline Mode on Andencento settings. Get it.",
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn on inline Mode on bot settings. Get it.",
       "value": ""
     },
     "CHROME_BIN": {
@@ -114,7 +114,7 @@
       "required": false
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a Andencento at [BotFather](http://telegram.dog/BotFather) and get the username of your Andencento",
+      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
       "value": ""
     },
     "TZ": {

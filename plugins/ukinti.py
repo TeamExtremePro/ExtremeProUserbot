@@ -1,4 +1,4 @@
-""" @ukinti_Andencento
+""" @ukinti_bot
 Available Commands:
 .unbanall
 .kick option
@@ -135,7 +135,7 @@ async def _(event):
                     break
                 else:
                     c = c + 1
-        if i.Andencento:
+        if i.bot:
             b = b + 1
             if "b" in input_str:
                 status, e = await ban_user(event.chat_id, i, rights)

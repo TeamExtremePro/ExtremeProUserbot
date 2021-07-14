@@ -7,12 +7,12 @@
 
 import re
 import random
-from userAndencento import Andencento, CMD_HELP
+from userbot import bot, CMD_HELP
 import asyncio
 import os
 from pathlib import Path
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userAndencento.utils import admin_cmd, edit_or_reply
+from userbot.utils import admin_cmd, edit_or_reply
 
 
 IF_EMOJI = re.compile(
@@ -45,7 +45,7 @@ async def nope(doit):
         else:
             await doit.edit("`Please give some query to search..!`")
             return
-    sticcers = await Andencento.inline_query(
+    sticcers = await bot.inline_query(
         "vid", f"{(deEmojify(ok))}")
     await sticcers[0].click(doit.chat_id,
                             reply_to=doit.reply_to_msg_id,
@@ -76,8 +76,8 @@ async def nope(doit):
         else:
             await doit.edit("`Sir please give some query to search and download it for you..!`")
             return
-    sticcers = await Andencento.inline_query(
-        "LyAndencento", f"{(deEmojify(ok))}")
+    sticcers = await bot.inline_query(
+        "Lybot", f"{(deEmojify(ok))}")
     await sticcers[0].click(doit.chat_id,
                             reply_to=doit.reply_to_msg_id,
                             silent=True if doit.is_reply else False,
@@ -89,14 +89,14 @@ async def nope(doit):
 SEARCH_STRING = "<code>Ok weit, searching....</code>"
 NOT_FOUND_STRING = "<code>Sorry !I am unable to find any results to your query</code>"
 SENDING_STRING = "<code>Ok I found something related to that.....</code>"
-BOT_BLOCKED_STRING = "<code>Please unblock @utubeAndencento and try again</code>"
+BOT_BLOCKED_STRING = "<code>Please unblock @utubebot and try again</code>"
 
-@Andencento.on(admin_cmd(pattern="ut ?(.*)"))
+@bot.on(admin_cmd(pattern="ut ?(.*)"))
 async def fetcher(event):
     if event.fwd_from:
         return
     song = event.pattern_match.group(1)
-    chat = "@utubeAndencento"
+    chat = "@utubebot"
     event = await edit_or_reply(event, SEARCH_STRING, parse_mode="html")
     async with event.client.conversation(chat) as conv:
         try:
@@ -136,9 +136,9 @@ CMD_HELP.update(
     {
         "utube": "__**PLUGIN NAME :** All YouTube__\
     \n\n📌** CMD ★** `.uta (song name)`\
-    \n**USAGE   ★  **Send sudio song via LyAndencento\
+    \n**USAGE   ★  **Send sudio song via Lybot\
     \n\n📌** CMD ★** `.utv (song name)`\
-    \n**USAGE   ★  **Send video song via vidAndencento \
+    \n**USAGE   ★  **Send video song via vidbot \
     \n\n📌** CMD ★** `.ut (utube video link)`\
     \n**USAGE   ★  **not fixed yet, we'll try to fix later 😅😅"
     }
